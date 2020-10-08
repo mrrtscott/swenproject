@@ -2,4 +2,6 @@
     <string name="app_name">Loan Hub</string>
     <string name="email_address">info@loanhub.com</string>
     <string name="head_institution">Institution</string>
+    <string name="welcome_app_started">Welcome to Loan Hub!</string>
+    <string name="welcome_app_resume">Welcome back!</string>
 </resources>
