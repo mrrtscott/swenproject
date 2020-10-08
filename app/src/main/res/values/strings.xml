@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Loan Hub</string>
+    <string name="email_address">info@loanhub.com</string>
 </resources>
