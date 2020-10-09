@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="top"
     android:background="@color/cornflower_blue"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -23,6 +23,40 @@
 
 
     </TextView>
+    
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/welcome_app_started"
+                android:textColor="@color/gray"
+                android:textSize="30sp">
+
+
+            </TextView>
+
+        </LinearLayout>
+
+        
+
+
+    </androidx.cardview.widget.CardView>
 
     <!-- TV means text view -->
 </LinearLayout>
