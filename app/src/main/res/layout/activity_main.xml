@@ -159,7 +159,7 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="16dp"
                android:text="@string/Submit"
-               style="@style/Widget.MaterialComponents.Button.TextButton"></Button>
+               style="@style/Widget.MaterialComponents.Button"></Button>
 
 
         </LinearLayout>
