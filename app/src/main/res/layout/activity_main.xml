@@ -69,7 +69,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:counterEnabled="true"
                 app:counterMaxLength="30">
@@ -92,7 +92,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:counterEnabled="true"
                 app:counterMaxLength="30">
@@ -116,6 +116,7 @@
                 android:id="@+id/city_TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="@string/instructions_city_hint"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
@@ -131,11 +132,12 @@
 
             <!--City input ends here-->
 
-            <!--City input starts here-->
+            <!--Parish input starts here-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/parish_TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="@string/instructions_parish_hint"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
@@ -149,14 +151,15 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--City input ends here-->
+            <!--Parish input ends here-->
 
            <Button
                android:id="@+id/buttons_start_main_act"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_marginTop="16dp"
-               android:text="@string/Submit"></Button>
+               android:text="@string/Submit"
+               style="@style/Widget.MaterialComponents.Button.TextButton"></Button>
 
 
         </LinearLayout>
