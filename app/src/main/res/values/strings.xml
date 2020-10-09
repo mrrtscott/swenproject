@@ -8,4 +8,23 @@
     <string name="instructions_enter_first_name_hint">First Name</string>
     <string name="instructions_enter_last_name">Please enter your first name.</string>
     <string name="instructions_enter_last_name_hint">Last Name</string>
+    <string name="instructions_city_hint">City</string>
+
+    <string-array name="cities">
+        <item name="Kingston">Kingston</item>
+        <item name="Portmore">Portmore</item>
+        <item name="Montego Bay">Montego Bay</item>
+        <item name="Spanish Town">Spanish Town</item>
+        <item name="May Pen">May Pen</item>
+        <item name="Mandeville">Mandeville</item>
+        <item name="Old Harbour">Old Harbour</item>
+        <item name="Savanna-la-Mar">Savanna-la-Mar</item>
+        <item name="Ocho Rios">Ocho Rios</item>
+        <item name="Port Antonio">Port Antonio</item>
+        <item name="Linstead">Linstead</item>
+        <item name="Saint Ann\&apos;s Bay">Saint Ann\&apos;s Bay</item>
+        <item name="Morant Bay">Morant Bay</item>
+
+
+    </string-array>
 </resources>
