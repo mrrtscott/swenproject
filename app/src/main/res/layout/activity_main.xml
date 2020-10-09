@@ -167,12 +167,12 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/mercedes01">
+        android:src="@drawable/bmw_3_series_front_view">
 
     </ImageView>
 
