@@ -23,6 +23,8 @@
 
 
     </TextView>
+
+
     
     
     <androidx.cardview.widget.CardView
@@ -109,7 +111,7 @@
             <!--Last name input ends here-->
 
 
-            <!--City inout starts here-->
+            <!--City input starts here-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/city_TextInputLayout"
                 android:layout_width="match_parent"
@@ -127,7 +129,27 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--City inout ends here-->
+            <!--City input ends here-->
+
+            <!--City input starts here-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parish_TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_parish_hint"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/drop_text_parish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--City input ends here-->
 
         </LinearLayout>
 
@@ -135,6 +157,16 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/mercedes01">
+
+    </ImageView>
 
     <!-- TV means text view -->
 </LinearLayout>

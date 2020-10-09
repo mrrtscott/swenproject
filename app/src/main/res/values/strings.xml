@@ -9,6 +9,7 @@
     <string name="instructions_enter_last_name">Please enter your first name.</string>
     <string name="instructions_enter_last_name_hint">Last Name</string>
     <string name="instructions_city_hint">City</string>
+    <string name="instructions_parish_hint">Parish</string>
 
     <string-array name="cities">
         <item name="Kingston">Kingston</item>
@@ -26,5 +27,22 @@
         <item name="Morant Bay">Morant Bay</item>
 
 
+    </string-array>
+
+    <string-array name="parishes">
+        <item name="Hanover">Hanover</item>
+        <item name="Saint Elizabeth">Saint Elizabeth</item>
+        <item name="Saint James">Saint James</item>
+        <item name="Trelawny">Trelawny</item>
+        <item name="Westmoreland">Westmoreland</item>
+        <item name="Clarendon">Clarendon</item>
+        <item name="Manchester">Manchester</item>
+        <item name="Saint Ann">Saint Ann</item>
+        <item name="Saint Catherine">Saint Catherine</item>
+        <item name="Saint Mary">Saint Mary</item>
+        <item name="Kingston">Kingston</item>
+        <item name="Portland">Portland</item>
+        <item name="Saint Andrew">Saint Andrew</item>
+        <item name="Saint Thomas">Saint Thomas</item>
     </string-array>
 </resources>
