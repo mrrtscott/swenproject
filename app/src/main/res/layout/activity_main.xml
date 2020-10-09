@@ -51,6 +51,59 @@
 
             </TextView>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/instructions_main_actvity_1"
+                android:textColor="@color/gray"
+                android:textSize="16sp">
+
+
+            </TextView>
+
+            <!--First name input starts here-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/instructions_enter_first_name_hint"
+                    android:textColor="@color/gray">
+
+                </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--First name input ends here-->
+
+            <!--Last name input starts here-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/instructions_enter_last_name_hint"
+                    android:textColor="@color/gray">
+
+                </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--First name input ends here-->
+
         </LinearLayout>
 
         
