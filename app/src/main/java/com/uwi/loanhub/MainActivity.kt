@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
         /* For city drop down on the main activity*/
         var cityTowns:TextInputLayout = findViewById<TextInputLayout>(R.id.city_TextInputLayout)
         var  cities =resources.getStringArray(R.array.cities) //Drop Down Items
