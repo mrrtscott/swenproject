@@ -5,6 +5,7 @@ import org.w3c.dom.Text
 data class Loans (
     val id: Int,
     val institution :Institution,
+    val loanName: String,
     val loanAmount: Int,
     val interestRate: Double,
     val termsRepay:String,

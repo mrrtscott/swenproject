@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAppearance="?attr/textAppearanceSubtitle2"
-    >
+    android:weightSum="100"
+    android:orientation="horizontal">
 
-</ListView>
+    <ImageView
+        android:id="@+id/institutionImage"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/sagicormg"
+        android:layout_weight="66.6">
+
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.3">
+
+        <TextView
+            android:gravity="center"
+            android:text="Institution Name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/institutionName" />
+
+        <TextView
+            android:gravity="center"
+            android:text="Loan Name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/loanName" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Loan Amount"
+            android:id="@+id/loanAmount">
+
+        </TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Interest Rate"
+            android:id="@+id/loanInterestRate">
+
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

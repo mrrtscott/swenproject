@@ -9,6 +9,16 @@ class Institution(inputInstitution:String, inputEmail: String, inputPhone: Strin
     private var logo: Int = inputLogo
 
 
+    fun getLogo (): Int {
+        return logo
+    }
+
+
+    fun getinstituionName (): String {
+        return instituionName
+    }
+
+
 
 
 
