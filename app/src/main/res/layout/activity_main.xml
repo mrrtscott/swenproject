@@ -75,6 +75,7 @@
                 app:counterMaxLength="30">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editText_First_Name_Main_Activity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/instructions_enter_first_name_hint"
@@ -98,6 +99,7 @@
                 app:counterMaxLength="30">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editText_Last_Name_Main_Activity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/instructions_enter_last_name_hint"
@@ -121,7 +123,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
                 <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                    android:id="@+id/drop_text_city"
+                        android:id="@+id/drop_text_city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

@@ -1,13 +1,16 @@
 package com.uwi.loanhub
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Spinner
+import android.widget.Toast
 
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +24,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        buttons_start_main_act.setOnClickListener {
+            if(editText_First_Name_Main_Activity.text.toString().isEmpty()  || editText_Last_Name_Main_Activity.text.toString().isEmpty() || drop_text_city.text.toString().isEmpty() || drop_text_parish.text.toString().isEmpty())
+            {
+                Toast.makeText(this, "Please enter fill all the fields",Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                val intent = Intent (this,AllLoan::class.java )
+                startActivity(intent)
+            }
+        }
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
