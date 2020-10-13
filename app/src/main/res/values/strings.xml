@@ -11,6 +11,7 @@
     <string name="instructions_city_hint">City</string>
     <string name="instructions_parish_hint">Parish</string>
     <string name="Submit">Submit</string>
+    <string name="search_here">Search Bank</string>
 
     <string-array name="cities">
         <item name="Kingston">Kingston</item>

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 
 class LoanListViewModel : ViewModel(){
 
-    var loan = mutableListOf<Loans>()
+    var  loan = mutableListOf<Loans>()
 
     init {
         val sagicor = Institution("Sagicor", "info@sagicor.com", "876-990-0909", arrayOf("Mandeville", "May Pen"),R.drawable.sagicormg)
@@ -29,6 +29,13 @@ class LoanListViewModel : ViewModel(){
 
 
     }
+
+     fun getLoanList(): MutableList<Loans>
+    {
+        return loan
+    }
+
+
 
 
 

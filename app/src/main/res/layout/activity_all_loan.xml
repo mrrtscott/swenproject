@@ -9,6 +9,13 @@
     tools:context=".AllLoan">
 
 <!-- TODO: Complete the List View To Have It Take To Additional Activity -->
+    <SearchView
+        android:id="@+id/searchInstitution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search_here">
+    </SearchView>
 
     <ListView
         android:layout_width="match_parent"
