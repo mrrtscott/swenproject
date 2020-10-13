@@ -35,6 +35,10 @@ class LoanViewAdapter(loanListModel: LoanListViewModel, c_context: Context): Bas
 
     }
 
+
+
+
+
     override fun getItem(position: Int): Any {
 
         return loansModel.loan[position]
