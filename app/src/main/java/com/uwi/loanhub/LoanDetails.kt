@@ -1,15 +1,21 @@
 package com.uwi.loanhub
 
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import java.text.DecimalFormat
 
 
 class LoanDetails : AppCompatActivity() {
 
-    lateinit var selectedLoan: Loans
+    lateinit var selectedLoan: Loans //Used to store the selected loan based on ID
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loan_details)
@@ -17,20 +23,26 @@ class LoanDetails : AppCompatActivity() {
         setSelectedLoan ()
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun currencyFormatter(num: String): String? {
+        val m = num.toDouble()
+        val formatter = DecimalFormat("###,###,###")
+        return formatter.format(m)
+    }
+
 
     private fun getSelectedLoan() {
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("id")
-        println("VALUEID"+parsedStringID)
         var xloan = AllLoan()
         selectedLoan = xloan.getFullLoanList().get(Integer.valueOf(parsedStringID))
 
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun setSelectedLoan ()
     {
-
 
         val institutionName = findViewById<TextView>(R.id.institutionNameLoanDetails)
         val institutionLogo = findViewById<ImageView>(R.id.institutionLogoLoanDetails)
@@ -54,7 +66,7 @@ class LoanDetails : AppCompatActivity() {
         loanEmail.text = selectedLoan.institution.getEmail()
         loanPhone.text= selectedLoan.institution.getPhone()
         loanDetails.text = selectedLoan.Description
-        loanAmount.text = "Amount: "+selectedLoan.loanAmount.toString()
+        loanAmount.text = "Amount: $"+currencyFormatter(selectedLoan.loanAmount.toString())
         loanInterestRate.text = "Interest Rate: "+ selectedLoan.interestRate.toString()
         loanRepay.text = "Repay Terms: "+selectedLoan.termsRepay
         loanPerCentFinance.text = "Financing: "+selectedLoan.percentFinancing.toString()+"%"
