@@ -21,8 +21,8 @@ class AllLoan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(com.uwi.loanhub.R.layout.activity_all_loan)
 
-        val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity)
-        loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this)
+        val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of
+        loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //
         initSearchWidgets()
 
 
@@ -39,12 +39,10 @@ class AllLoan : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
-
-                //
                 var loanList = LoanListViewModel().getLoanList()
                 val filteredLoans = ArrayList<Loans> ()
 
-                println(loanList.size)
+
 
 
                 for ( loan in loanList)
@@ -53,7 +51,7 @@ class AllLoan : AppCompatActivity() {
                     if (loan.institution.getinstituionName().toLowerCase().contains(query!!.toLowerCase()))
                     {
                         filteredLoans.add(loan)
-                        println("Added: "+loan.loanName)
+
 
                     }
                 }

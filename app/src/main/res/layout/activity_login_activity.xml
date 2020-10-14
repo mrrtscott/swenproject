@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="344dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:text="@string/logo_text"
         android:textAlignment="center"
