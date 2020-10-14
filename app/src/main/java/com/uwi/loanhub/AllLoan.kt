@@ -1,8 +1,6 @@
 package com.uwi.loanhub
 
-import android.R
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -46,7 +44,7 @@ class AllLoan : AppCompatActivity() {
                 for ( loan in loanList)
                 {
 
-                    if (loan.institution.getinstituionName().toLowerCase().contains(query!!.toLowerCase())) //This standardise the text of checking to prevent unintended omissions based on capitalisation
+                    if (loan.institution.getInstitutionName().toLowerCase().contains(query!!.toLowerCase())) //This standardise the text of checking to prevent unintended omissions based on capitalisation
                     {
                         filteredLoans.add(loan)
 

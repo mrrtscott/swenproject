@@ -1,6 +1,5 @@
 package com.uwi.loanhub
 
-import android.R
 import android.content.Context
 import android.os.Build
 import android.view.LayoutInflater
@@ -34,7 +33,7 @@ class newLoanViewAdapter(context_c: Context, resource: Int, objects: MutableList
         val layoutInflator = LayoutInflater.from(mycontext)
         val row = layoutInflator.inflate(com.uwi.loanhub.R.layout.layoutlistviewloan, parent, false)
         row.findViewById<ImageView>(com.uwi.loanhub.R.id.institutionImage).setImageResource(loaner[position].institution.getLogo())
-        row.findViewById<TextView>(com.uwi.loanhub.R.id.institutionName).text = loaner[position].institution.getinstituionName()
+        row.findViewById<TextView>(com.uwi.loanhub.R.id.institutionName).text = loaner[position].institution.getInstitutionName()
         row.findViewById<TextView>(com.uwi.loanhub.R.id.loanName).text = loaner[position].loanName
         row.findViewById<TextView>(com.uwi.loanhub.R.id.loanAmount).text = "Amount: $".plus(currencyFormatter(loaner[position].loanAmount.toString()))
         row.findViewById<TextView>(com.uwi.loanhub.R.id.loanInterestRate).text =  "Interest Rate: ".plus(loaner[position].interestRate.toString()).plus("%")
