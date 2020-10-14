@@ -23,7 +23,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarMaterialComponent"
+            android:theme="@style/NoActionBarVanilla"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
