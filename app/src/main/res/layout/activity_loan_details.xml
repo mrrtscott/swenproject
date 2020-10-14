@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/LoanDetails"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:gravity="center">
 
     </TextView>
@@ -37,7 +37,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/institutionEmail"
+        android:id="@+id/institutionEmailLoanDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -46,12 +46,84 @@
     </TextView>
 
     <TextView
-        android:id="@+id/institutionPhone"
+        android:id="@+id/institutionPhoneLoanDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Phone">
 
     </TextView>
+    
+    <TextView
+        android:id="@+id/loanNameLoanDetails"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="LoanName"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/loanDescriptionLoanDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="This is an example of the loan details">
+
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/loanAmountLoanDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="">
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/loanInterestRateLoanDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="">
+    </TextView>
+
+    <TextView
+        android:id="@+id/loanTermsRepayLoanDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="">
+    </TextView>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:gravity="left"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:text="Branches">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/loanBranchLoanDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:gravity="left"
+        android:layout_marginTop="10dp"
+        android:text="Johnson">
+
+    </TextView>
+    
 
 </LinearLayout>

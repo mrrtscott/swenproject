@@ -23,7 +23,6 @@ class LoanDetails : AppCompatActivity() {
         val parsedStringID = previousIntent.getStringExtra("id")
         println("VALUEID"+parsedStringID)
         var xloan = AllLoan()
-        //check
         selectedLoan = xloan.getFullLoanList().get(Integer.valueOf(parsedStringID))
 
     }
@@ -33,11 +32,43 @@ class LoanDetails : AppCompatActivity() {
     {
 
 
-        val tv = findViewById<TextView>(R.id.institutionNameLoanDetails)
-        val iv: ImageView = findViewById<ImageView>(R.id.institutionLogoLoanDetails)
+        val institutionName = findViewById<TextView>(R.id.institutionNameLoanDetails)
+        val institutionLogo = findViewById<ImageView>(R.id.institutionLogoLoanDetails)
+        val loanName = findViewById<TextView>(R.id.loanNameLoanDetails)
+        val loanEmail = findViewById<TextView>(R.id.institutionEmailLoanDetails)
+        val loanPhone = findViewById<TextView>(R.id.institutionPhoneLoanDetails)
+        val loanDetails = findViewById<TextView>(R.id.loanDescriptionLoanDetails)
+        val loanBranches= findViewById<TextView>(R.id.loanBranchLoanDetails)
 
-        tv.text = selectedLoan.institution.getInstitutionName()
-        iv.setImageResource(selectedLoan.institution.getLogo())
+        institutionName.text = selectedLoan.institution.getInstitutionName()
+        institutionLogo.setImageResource(selectedLoan.institution.getLogo())
+        loanName.text = selectedLoan.loanName
+        loanEmail.text = selectedLoan.institution.getEmail()
+        loanPhone.text= selectedLoan.institution.getPhone()
+        loanDetails.text = selectedLoan.Description
+
+        var branchString: String = ""
+
+        var i = 0
+
+        while(i<selectedLoan.institution.getBranch().size)
+        {
+            branchString = branchString.plus((selectedLoan.institution.getBranch().get(i)).plus("\n"))
+            println((selectedLoan.institution.getBranch().get(i)).plus("\n"))
+            i++
+
+        }
+
+        println(branchString)
+
+
+        loanBranches.text = branchString
+
+
+
+
+
+
 
     }
 
