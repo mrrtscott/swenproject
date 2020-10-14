@@ -14,7 +14,7 @@
         android:fontFamily="@font/bold"
         android:text="@string/signup_Text"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginStart="4dp"
         android:text="@string/signup_Link"
         android:textColor="@color/main_yellow"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +39,7 @@
 
     <ImageView
         android:id="@+id/logo_image"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="291dp"
         android:rotation="-5"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +47,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.034"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo_description" />
 
     <TextView
         android:id="@+id/textView3"
@@ -57,7 +58,7 @@
         android:text="@string/logo_text"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="26dp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,12 +69,12 @@
         android:id="@+id/login_btn"
         android:layout_width="167dp"
         android:layout_height="57dp"
-        android:background="@drawable/button"
+        android:background="@color/white"
         android:fontFamily="@font/regular"
         android:text="@string/login_text"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

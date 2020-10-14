@@ -9,9 +9,10 @@
     <string name="logo_text">JAMAICA AUTO LOAN INFORMATION </string>
     <string name="logo_text2">AUTO LOAN INFORMATION </string>
     <string name="login_text">LOGIN</string>
+    <string name="logo_description">Logo</string>
 
 
-    //
+    
     <string name="app_name">Loan Hub</string>
     <string name="email_address">info@loanhub.com</string>
     <string name="head_institution">Institution</string>

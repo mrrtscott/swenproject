@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".login_activity"></activity>
-        <activity android:name=".signup_activity" />
+
+        <activity android:name=".signup_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarMaterialComponent"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
         <activity
             android:name=".AllLoan"
             android:screenOrientation="portrait" />
