@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused")
+
 package com.uwi.loanhub
 
 class Institution(inputInstitution:String, inputEmail: String, inputPhone: String, inputBranch: Array<String>, inputLogo:Int ) {
