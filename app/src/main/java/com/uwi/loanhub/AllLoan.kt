@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+
 //import androidx.appcompat.widget.SearchView
 
 //import androidx.appcompat.widget.SearchView
@@ -22,6 +24,7 @@ class AllLoan : AppCompatActivity() {
         val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
         loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //This feeds information into the list view from the loans list model which contains the intital list of loans
         initSearchWidgets()
+
 
 
     }
@@ -54,6 +57,7 @@ class AllLoan : AppCompatActivity() {
 
                 val loan_listView:ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity)
                 loan_listView.adapter = newLoanViewAdapter(applicationContext,0, filteredLoans) // This is responsible for finally adding the filtered loan to the list view
+
                 return false
             }
         })
