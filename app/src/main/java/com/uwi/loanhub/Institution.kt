@@ -33,7 +33,10 @@ class Institution(inputInstitution:String, inputEmail: String, inputPhone: Strin
         return email
     }
 
-
+    /*
+    A public function which returns the phone number an institution as a string
+    @return String: Institution Phone
+     */
     fun getPhone (): String {
         return phone
     }
