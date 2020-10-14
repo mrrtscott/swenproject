@@ -1,4 +1,17 @@
 <resources>
+
+    <string name="signup_Text">Not a member?</string>
+    <string name="signup_Link">Signup.</string>
+    <string name="login_username">Username</string>
+    <string name="login_pass">Password</string>
+    <string name="login_pass_text">Forgot your password?</string>
+    <string name="login_Link">Recover now.</string>
+    <string name="logo_text">JAMAICA AUTO LOAN INFORMATION </string>
+    <string name="logo_text2">AUTO LOAN INFORMATION </string>
+    <string name="login_text">LOGIN</string>
+
+
+    //
     <string name="app_name">Loan Hub</string>
     <string name="email_address">info@loanhub.com</string>
     <string name="head_institution">Institution</string>
@@ -27,8 +40,6 @@
         <item name="Linstead">Linstead</item>
         <item name="Saint Ann\&apos;s Bay">Saint Ann\&apos;s Bay</item>
         <item name="Morant Bay">Morant Bay</item>
-
-
     </string-array>
 
     <string-array name="parishes">
