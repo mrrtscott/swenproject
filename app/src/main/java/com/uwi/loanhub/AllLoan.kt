@@ -87,7 +87,7 @@ class AllLoan : AppCompatActivity() {
             val selectLoan: Loans = loan_listView.getItemAtPosition(position) as Loans
             val showDetail = Intent(this, LoanDetails::class.java)
             showDetail.putExtra("id", selectLoan.id.toString())
-            println(selectLoan.id)
+            //Sending ID over
             startActivity(showDetail)
         }
     }
