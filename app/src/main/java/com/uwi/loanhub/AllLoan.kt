@@ -21,7 +21,7 @@ class AllLoan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(com.uwi.loanhub.R.layout.activity_all_loan)
 
-        val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of
+        val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
         loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //
         initSearchWidgets()
 
