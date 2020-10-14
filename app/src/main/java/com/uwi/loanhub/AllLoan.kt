@@ -22,7 +22,7 @@ class AllLoan : AppCompatActivity() {
         setContentView(com.uwi.loanhub.R.layout.activity_all_loan)
 
         val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
-        loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //
+        loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //This feeds information into the list view from the loans list model which contains the intital list of loans
         initSearchWidgets()
 
 
@@ -40,7 +40,7 @@ class AllLoan : AppCompatActivity() {
 
             override fun onQueryTextChange(query: String?): Boolean {
                 var loanList = LoanListViewModel().getLoanList()
-                val filteredLoans = ArrayList<Loans> ()
+                val filteredLoans = ArrayList<Loans> () //this array list is meant to store filtered loans based on the search query from the user
 
 
 
@@ -48,7 +48,7 @@ class AllLoan : AppCompatActivity() {
                 for ( loan in loanList)
                 {
 
-                    if (loan.institution.getinstituionName().toLowerCase().contains(query!!.toLowerCase()))
+                    if (loan.institution.getinstituionName().toLowerCase().contains(query!!.toLowerCase())) //This standardise the text of checking to prevent unintended omissions based on capitalisation
                     {
                         filteredLoans.add(loan)
 
