@@ -14,6 +14,7 @@ class signup_activity : AppCompatActivity() {
     private lateinit var drop_text_city: EditText;
     private lateinit var drop_text_parish: EditText;
     private lateinit var buttons_start_main_act: Button;
+    private lateinit var backButton:ImageView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,12 @@ class signup_activity : AppCompatActivity() {
         drop_text_city = findViewById(R.id.drop_text_city)
         drop_text_parish = findViewById(R.id.drop_text_parish)
         buttons_start_main_act = findViewById(R.id.buttons_start_main_act)
+        backButton = findViewById(R.id.blue_arrow_btn);
+
+        backButton.setOnClickListener {
+            val intent: Intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         buttons_start_main_act.setOnClickListener {
             if(editText_First_Name_Main_Activity.text.toString().isEmpty()  || editText_Last_Name_Main_Activity.text.toString().isEmpty() || drop_text_city.text.toString().isEmpty() || drop_text_parish.text.toString().isEmpty())
@@ -32,12 +39,13 @@ class signup_activity : AppCompatActivity() {
             }
             else
             {
+                Toast.makeText(this, "welcome!", Toast.LENGTH_SHORT).show()
                 val intent = Intent (this,AllLoan::class.java )
                 startActivity(intent)
             }
         }
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        /*window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         /* For city drop down on the main activity*/
         var cityTowns: TextInputLayout = findViewById<TextInputLayout>(R.id.city_TextInputLayout)
@@ -55,7 +63,7 @@ class signup_activity : AppCompatActivity() {
         var autoCompleteParishText = findViewById<AutoCompleteTextView>(R.id.drop_text_parish)
         var parishesOut = ArrayAdapter(this, R.layout.dropdown_parish, parishes)
         parishesOut.setDropDownViewResource(android.R.layout.simple_list_item_1)
-        autoCompleteParishText!!.setAdapter(parishesOut)
+        autoCompleteParishText!!.setAdapter(parishesOut) */
 
         /* For parish drop down on the main activity*/
 

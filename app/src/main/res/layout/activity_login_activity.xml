@@ -40,13 +40,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
         android:text="@string/login_pass_text"
-        android:textSize="18dp"
         android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintTop_toBottomOf="@+id/main_login_btn"
+        app:layout_constraintVertical_bias="0.272" />
 
     <TextView
         android:id="@+id/textView6"
@@ -95,6 +96,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usr_username"
         app:layout_constraintVertical_bias="0.081" />
+
     <Button
         android:id="@+id/main_login_btn"
         android:layout_width="140dp"
@@ -105,8 +107,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintTop_toBottomOf="@+id/usr_password"
+        app:layout_constraintVertical_bias="0.163" />
 
     <ImageView
         android:id="@+id/back_arrow_white"

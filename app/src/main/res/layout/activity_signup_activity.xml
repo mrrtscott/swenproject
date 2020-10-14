@@ -1,189 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:gravity="top"
-android:background="@color/cornflower_blue"
-android:orientation="vertical"
-tools:context=".signup_activity">
-
-<TextView
-    android:id="@+id/tv_app_name"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/app_name"
-    android:layout_marginBottom="30dp"
-    android:gravity="center"
-    android:textSize="45sp"
-    android:textStyle="bold"
-    android:textColor="@color/white">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_signup"
+    tools:context=".signup_activity">
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="116dp"
+        android:layout_height="2dp"
+        android:background="@color/main_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.022" />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="310dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/logo_text2"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="27dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
 
-</TextView>
-
-
-
-
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:background="@color/white"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="5dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248"
+        app:srcCompat="@drawable/car_mercedes" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/welcome_app_started"
-            android:textColor="@color/gray"
-            android:textSize="30sp">
+    <ImageView
+        android:id="@+id/blue_arrow_btn"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055"
+        app:srcCompat="@drawable/back_arrow_blue" />
 
+    <Button
+        android:id="@+id/buttons_start_main_act"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button2"
+        android:fontFamily="@font/bold"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
 
-        </TextView>
+    <EditText
+        android:id="@+id/editText_First_Name_Main_Activity"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Firstname"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/main_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/instructions_main_actvity_1"
-            android:textColor="@color/gray"
-            android:textSize="16sp">
+    <EditText
+        android:id="@+id/editText_Last_Name_Main_Activity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Lastname"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/main_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_First_Name_Main_Activity"
+        app:layout_constraintVertical_bias="0.007" />
 
+    <EditText
+        android:id="@+id/drop_text_city"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="City"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/main_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Last_Name_Main_Activity"
+        app:layout_constraintVertical_bias="0.005" />
 
-        </TextView>
+    <EditText
+        android:id="@+id/drop_text_parish"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Parish"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/main_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drop_text_city"
+        app:layout_constraintVertical_bias="0.826" />
 
-        <!--First name input starts here-->
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:counterEnabled="true"
-            app:counterMaxLength="30">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/editText_First_Name_Main_Activity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/instructions_enter_first_name_hint"
-                android:textColor="@color/gray">
-
-            </androidx.appcompat.widget.AppCompatEditText>
-
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <!--First name input ends here-->
-
-        <!--Last name input starts here-->
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:counterEnabled="true"
-            app:counterMaxLength="30">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/editText_Last_Name_Main_Activity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/instructions_enter_last_name_hint"
-                android:textColor="@color/gray">
-
-            </androidx.appcompat.widget.AppCompatEditText>
-
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <!--Last name input ends here-->
-
-
-        <!--City input starts here-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/city_TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/instructions_city_hint"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/drop_text_city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <!--City input ends here-->
-
-        <!--Parish input starts here-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/parish_TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/instructions_parish_hint"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/drop_text_parish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <!--Parish input ends here-->
-
-        <Button
-            android:id="@+id/buttons_start_main_act"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/Submit"
-            style="@style/Widget.MaterialComponents.Button"></Button>
-
-
-    </LinearLayout>
-
-
-
-
-</androidx.cardview.widget.CardView>
-
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginTop="15dp"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:src="@drawable/bmw_3_series_front_view">
-
-</ImageView>
-
-<!--TODO : Refine image buttom margin -->
-
-
-
-<!-- TV means text view -->
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
