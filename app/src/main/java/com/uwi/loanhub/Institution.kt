@@ -25,7 +25,10 @@ class Institution(inputInstitution:String, inputEmail: String, inputPhone: Strin
         return institutionName
     }
 
-
+    /*
+    A public function which returns the email address of an institution
+    @return String: Institution Email Address
+     */
     fun getEmail(): String {
         return email
     }
