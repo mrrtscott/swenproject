@@ -1,10 +1,12 @@
 package com.uwi.loanhub
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+
 
 //import androidx.appcompat.widget.SearchView
 
@@ -14,18 +16,28 @@ import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
 
 class AllLoan : AppCompatActivity() {
 
+    //val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
+    var  loanList = LoanListViewModel().getLoanList()
+    lateinit var loan_listView:ListView
+
+
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.uwi.loanhub.R.layout.activity_all_loan)
+        loan_listView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
 
-        val loan_listView: ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity) //Fetching the layout with the list of loans
         loan_listView.adapter = LoanViewAdapter(LoanListViewModel(), this) //This feeds information into the list view from the loans list model which contains the intital list of loans
+
         initSearchWidgets()
+        setUpOnclickListener()
+    }
 
-
+    fun getFullLoanList(): MutableList<Loans>
+    {
+        return loanList
 
     }
     /*
@@ -41,13 +53,15 @@ class AllLoan : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
-                var loanList = LoanListViewModel().getLoanList()
-                val filteredLoans = ArrayList<Loans> () //this array list is meant to store filtered loans based on the search query from the user
 
-                for ( loan in loanList)
-                {
+                val filteredLoans =
+                    ArrayList<Loans>() //this array list is meant to store filtered loans based on the search query from the user
 
-                    if (loan.institution.getInstitutionName().toLowerCase().contains(query!!.toLowerCase())) //This standardise the text of checking to prevent unintended omissions based on capitalisation
+                for (loan in loanList) {
+
+                    if (loan.institution.getInstitutionName().toLowerCase()
+                            .contains(query!!.toLowerCase())
+                    ) //This standardise the text of checking to prevent unintended omissions based on capitalisation
                     {
                         filteredLoans.add(loan)
 
@@ -55,13 +69,27 @@ class AllLoan : AppCompatActivity() {
                     }
                 }
 
-                val loan_listView:ListView = findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity)
-                loan_listView.adapter = newLoanViewAdapter(applicationContext,0, filteredLoans) // This is responsible for finally adding the filtered loan to the list view
-
+                val loan_listView: ListView =
+                    findViewById(com.uwi.loanhub.R.id.loan_listViewInActivity)
+                loan_listView.adapter = newLoanViewAdapter(
+                    applicationContext,
+                    0,
+                    filteredLoans
+                ) // This is responsible for finally adding the filtered loan to the list view
                 return false
             }
         })
 
+    }
+
+    private fun setUpOnclickListener() {
+        loan_listView.onItemClickListener = OnItemClickListener { adapterView, view, position, l ->
+            val selectLoan: Loans = loan_listView.getItemAtPosition(position) as Loans
+            val showDetail = Intent(this, LoanDetails::class.java)
+            showDetail.putExtra("id", selectLoan.id.toString())
+            println(selectLoan.id)
+            startActivity(showDetail)
+        }
     }
 
 

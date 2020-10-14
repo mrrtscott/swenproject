@@ -9,19 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LoanDetails"></activity>
         <activity
             android:name=".login_activity"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/NoActionBarVanilla">
-
-        </activity>
-
-        <activity android:name=".signup_activity"
+            android:theme="@style/NoActionBarVanilla"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".signup_activity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".AllLoan"
             android:screenOrientation="portrait" />
