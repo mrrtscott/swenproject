@@ -23,6 +23,7 @@ class LoanDetails : AppCompatActivity() {
         val parsedStringID = previousIntent.getStringExtra("id")
         println("VALUEID"+parsedStringID)
         var xloan = AllLoan()
+        //check
         selectedLoan = xloan.getFullLoanList().get(Integer.valueOf(parsedStringID))
 
     }
