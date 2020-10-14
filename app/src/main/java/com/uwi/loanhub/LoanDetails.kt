@@ -39,6 +39,14 @@ class LoanDetails : AppCompatActivity() {
         val loanPhone = findViewById<TextView>(R.id.institutionPhoneLoanDetails)
         val loanDetails = findViewById<TextView>(R.id.loanDescriptionLoanDetails)
         val loanBranches= findViewById<TextView>(R.id.loanBranchLoanDetails)
+        val loanAmount = findViewById<TextView>(R.id.loanAmountLoanDetails)
+        val loanInterestRate = findViewById<TextView>(R.id.loanInterestRateLoanDetails)
+        val loanRepay = findViewById<TextView>(R.id.loanTermsRepayLoanDetails)
+        val loanPerCentFinance= findViewById<TextView>(R.id.loanPerCentFinancingLoanDetails)
+        val loanMinCreditScore = findViewById<TextView>(R.id.loanMinCreditScoreLoanDetails)
+
+
+
 
         institutionName.text = selectedLoan.institution.getInstitutionName()
         institutionLogo.setImageResource(selectedLoan.institution.getLogo())
@@ -46,6 +54,12 @@ class LoanDetails : AppCompatActivity() {
         loanEmail.text = selectedLoan.institution.getEmail()
         loanPhone.text= selectedLoan.institution.getPhone()
         loanDetails.text = selectedLoan.Description
+        loanAmount.text = "Amount: "+selectedLoan.loanAmount.toString()
+        loanInterestRate.text = "Interest Rate: "+ selectedLoan.interestRate.toString()
+        loanRepay.text = "Repay Terms: "+selectedLoan.termsRepay
+        loanPerCentFinance.text = "Financing: "+selectedLoan.percentFinancing.toString()+"%"
+        loanMinCreditScore.text = "Minimum Credit Score: "+selectedLoan.creditScore.toString()
+
 
         var branchString: String = ""
 

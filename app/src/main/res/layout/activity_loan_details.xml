@@ -1,129 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".LoanDetails"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/LoanDetails"
-        android:textSize="40sp"
-        android:gravity="center">
+        android:orientation="vertical">
 
-    </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LoanDetails"
+            android:textSize="40sp"
+            android:gravity="center">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/institutionLogoLoanDetails"
-        android:src="@drawable/scotiabank"
-        >
+        </TextView>
 
-    </ImageView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/institutionLogoLoanDetails"
+            android:src="@drawable/scotiabank"
+            >
+
+        </ImageView>
 
 
-    <TextView
-        android:id="@+id/institutionNameLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Scotiabank"
-        android:gravity="center">
+        <TextView
+            android:id="@+id/institutionNameLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Scotiabank"
+            android:gravity="center">
 
-    </TextView>
+        </TextView>
 
-    <TextView
-        android:id="@+id/institutionEmailLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Email address">
+        <TextView
+            android:id="@+id/institutionEmailLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Email address">
 
-    </TextView>
+        </TextView>
 
-    <TextView
-        android:id="@+id/institutionPhoneLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Phone">
+        <TextView
+            android:id="@+id/institutionPhoneLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Phone">
 
-    </TextView>
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanNameLoanDetails"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="LoanName"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanDescriptionLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="This is an example of the loan details">
+
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanAmountLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/loanInterestRateLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanTermsRepayLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanPerCentFinancingLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanMinCreditScoreLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        </TextView>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:gravity="left"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="Branches">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanBranchLoanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="Johnson">
+
+        </TextView>
+
+    </LinearLayout>
+
+
     
-    <TextView
-        android:id="@+id/loanNameLoanDetails"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="LoanName"
-        android:textSize="20sp">
 
-    </TextView>
-
-    <TextView
-        android:id="@+id/loanDescriptionLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="This is an example of the loan details">
-
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/loanAmountLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-    </TextView>
-
-
-    <TextView
-        android:id="@+id/loanInterestRateLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-    </TextView>
-
-    <TextView
-        android:id="@+id/loanTermsRepayLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-    </TextView>
-
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:gravity="left"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:text="Branches">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/loanBranchLoanDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:gravity="left"
-        android:layout_marginTop="10dp"
-        android:text="Johnson">
-
-    </TextView>
-    
-
-</LinearLayout>
+</ScrollView>
