@@ -9,11 +9,11 @@ import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 class signup_activity : AppCompatActivity() {
-    private lateinit var editText_First_Name_Main_Activity: EditText;
-    private lateinit var editText_Last_Name_Main_Activity: EditText;
-    private lateinit var drop_text_city: EditText;
-    private lateinit var drop_text_parish: EditText;
-    private lateinit var buttons_start_main_act: Button;
+    private lateinit var editText_First_Name_Main_Activity: EditText
+    private lateinit var editText_Last_Name_Main_Activity: EditText
+    private lateinit var drop_text_city: EditText
+    private lateinit var drop_text_parish: EditText
+    private lateinit var buttons_start_main_act: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class signup_activity : AppCompatActivity() {
             }
             else
             {
-                val intent = Intent (this,AllLoan::class.java )
+                val intent = Intent (this,login_activity::class.java )
                 startActivity(intent)
             }
         }
