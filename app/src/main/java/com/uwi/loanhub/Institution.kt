@@ -41,6 +41,11 @@ class Institution(inputInstitution:String, inputEmail: String, inputPhone: Strin
         return phone
     }
 
+
+    /*
+    A public function which returns the branches of an institution as an array
+    @return Array: Institution Branches
+     */
     fun getBranch (): Array<String>{
         return branch
     }
