@@ -9,13 +9,34 @@ class Institution(inputInstitution:String, inputEmail: String, inputPhone: Strin
     private var logo: Int = inputLogo
 
 
+    /*
+    A public function which is responsible for returning the ID of a logo to be used for resource purposes
+    @return Int: logoID
+    */
     fun getLogo (): Int {
         return logo
     }
 
-
+    /*
+    A public function which returns the name an institution
+    @return String: Institution Name
+     */
     fun getinstituionName (): String {
         return instituionName
+    }
+
+
+    fun getEmail(): String {
+        return email
+    }
+
+
+    fun getPhone (): String {
+        return phone
+    }
+
+    fun getBranch (): Array<String>{
+        return branch
     }
 
 
