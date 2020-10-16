@@ -26,6 +26,8 @@
     <string name="instructions_parish_hint">Parish</string>
     <string name="Submit">Submit</string>
     <string name="search_here">Search Bank</string>
+    <string name="startUpButton">CONNECT TO THE HUB</string>
+    <string name="startActivityLoanString">LOAN</string>
 
     <string-array name="cities">
         <item name="Kingston">Kingston</item>
