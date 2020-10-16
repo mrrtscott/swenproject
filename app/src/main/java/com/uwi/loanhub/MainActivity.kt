@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.login_btn)
 
         loginButton.setOnClickListener {
-            Toast.makeText(this, "Button working", Toast.LENGTH_SHORT).show()
-            val intent: Intent = Intent(this, signup_activity::class.java)
+            //Toast.makeText(this, "Button working", Toast.LENGTH_SHORT).show()
+            val intent: Intent = Intent(this, login_activity::class.java)
             startActivity(intent)
 
         }
