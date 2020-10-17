@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivityNew"
-            android:theme="@style/NoActionBarVanilla"
+            android:theme="@style/NoActionBarMaterialComponent"
             android:windowSoftInputMode="adjustResize">
 
         </activity>
