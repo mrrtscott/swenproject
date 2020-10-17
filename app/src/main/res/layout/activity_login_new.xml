@@ -48,7 +48,8 @@
         app:boxBackgroundColor="#FFFFFF"
         app:counterEnabled="false"
         app:counterMaxLength="30"
-        app:counterTextColor="@color/gray">
+        app:counterTextColor="@color/gray"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24">
 
 
 
@@ -61,8 +62,30 @@
             android:hint="Username"
             />
 
-
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="#FFFFFF"
+        app:counterEnabled="false"
+        app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
+        app:endIconMode="password_toggle">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
 
 
