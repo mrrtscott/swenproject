@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivityNew"></activity>
+        <activity android:name=".LoginActivityNew"
+            android:theme="@style/NoActionBarVanilla"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
         <!--
         <activity android:name=".Start_Up_Activity"
             android:theme="@style/NoActionBarMaterialComponent"
