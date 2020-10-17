@@ -8,27 +8,58 @@
     android:orientation="vertical"
     android:background="@drawable/signinbgrd">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="310dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/menloregularfont"
+            android:textSize="@dimen/f40"
+            android:textFontWeight="800"
+            android:textColor="@color/white"
+            android:text="LOAN">
+
+        </TextView>
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="310dp"
+            android:fontFamily="@font/menloregularfont"
+            android:textSize="@dimen/f40"
+            android:textFontWeight="400"
+            android:textColor="@color/white"
+            android:text="HUB">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         app:boxBackgroundColor="#FFFFFF"
         app:counterEnabled="false"
         app:counterMaxLength="30"
         app:counterTextColor="@color/gray">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editText_First_Name_Main_Activity"
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            android:textColor="@color/gray"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
-            android:gravity="center">
-
-        </androidx.appcompat.widget.AppCompatEditText>
+            android:hint="Username"
+            />
 
 
     </com.google.android.material.textfield.TextInputLayout>

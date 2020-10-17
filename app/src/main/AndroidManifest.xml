@@ -10,17 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivityNew"
-            android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
+            android:theme="@style/NoActionBarMaterialComponent">
 
         </activity>
-        <!--
-        <activity android:name=".Start_Up_Activity"
-            android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
 
-        </activity>
-        -->
         <activity android:name=".LoanDetails"></activity>
         <activity
             android:name=".login_activity"
