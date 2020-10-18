@@ -9,9 +9,18 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
     companion object{
 
         private const val DATABASE_VERSION = 1
+
+        //DATABASE NAME
         private const val DATABASE_NAME = "LoanDatabase"
+
+        //TABLE NAMES
         private const val TABLE_USERS = "UsersTable"
         private const val TABLE_LOANS = "LoansTable"
+        private const val TABLE_INSTITUTIONS = "InstitutionsTable"
+
+
+
+
 
 
     }
