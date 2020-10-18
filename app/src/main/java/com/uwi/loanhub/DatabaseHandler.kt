@@ -2,7 +2,6 @@ package com.uwi.loanhub
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 
 class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_NAME, null, DATABASE_VERSION){
@@ -17,6 +16,11 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val TABLE_USERS = "UsersTable"
         private const val TABLE_LOANS = "LoansTable"
         private const val TABLE_INSTITUTIONS = "InstitutionsTable"
+
+        //COMMON COLUMNS
+
+        private const val KEY_ID = "id"
+        private const val KEY_CREATED_AT = "created_at"
 
 
 
