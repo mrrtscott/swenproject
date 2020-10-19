@@ -17,7 +17,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="310dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/menloregularfont"
             android:textSize="@dimen/f40"
             android:textFontWeight="800"
@@ -83,6 +83,34 @@
         android:inputType="textPassword"
         />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:backgroundTint="#77BEFF"
+            android:text="Sign up">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/cold"
+            android:text="Sign In">
+
+        </com.google.android.material.button.MaterialButton>
+
+    </LinearLayout>
+
+
 
 
 
