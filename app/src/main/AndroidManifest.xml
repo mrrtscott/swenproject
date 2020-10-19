@@ -20,7 +20,7 @@
             android:theme="@style/NoActionBarVanilla"
             android:windowSoftInputMode="adjustResize"></activity>
         <activity
-            android:name=".Signup_Activity"
+            android:name=".SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarMaterialComponent"
             android:windowSoftInputMode="adjustResize"></activity>
