@@ -18,7 +18,7 @@
     <string name="head_institution">Institution</string>
     <string name="welcome_app_started">Welcome to Loan Hub!</string>
     <string name="welcome_app_resume">Welcome back!</string>
-    <string name="instructions_main_actvity_1">Please enter the following requested details.</string>
+    <string name="instructions_main_actvity_1">Please fill in all the fields for maximum experience.</string>
     <string name="instructions_enter_first_name_hint">First Name</string>
     <string name="instructions_enter_last_name">Please enter your first name.</string>
     <string name="instructions_enter_last_name_hint">Last Name</string>
@@ -28,6 +28,8 @@
     <string name="search_here">Search Bank</string>
     <string name="startUpButton">CONNECT TO THE HUB</string>
     <string name="startActivityLoanString">LOAN</string>
+    <string name="sign_up">Sign up</string>
+    <string name="instructions_enter_username_hint">Username</string>
 
     <string-array name="cities">
         <item name="Kingston">Kingston</item>
