@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 android:gravity="top"
 android:background="#77BEFF"
 android:orientation="vertical"
-tools:context=".signup_activity">
+tools:context=".Signup_Activity">
 
 <TextView
     android:id="@+id/tv_app_name"

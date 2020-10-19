@@ -8,7 +8,7 @@ import android.widget.*
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
-class signup_activity : AppCompatActivity() {
+class Signup_Activity : AppCompatActivity() {
     private lateinit var editText_First_Name_Main_Activity: EditText
     private lateinit var editText_Last_Name_Main_Activity: EditText
     private lateinit var drop_text_city: EditText
