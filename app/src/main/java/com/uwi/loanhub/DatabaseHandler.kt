@@ -16,6 +16,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val TABLE_USERS = "UsersTable"
         private const val TABLE_LOANS = "LoansTable"
         private const val TABLE_INSTITUTIONS = "InstitutionsTable"
+        private const val TABLE_PARISH = "ParishTable"
 
         //COMMON COLUMNS
 
