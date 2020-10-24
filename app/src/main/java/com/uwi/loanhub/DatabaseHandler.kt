@@ -25,6 +25,24 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val KEY_CREATED_AT = "created_at"
 
 
+        //USER TABLE
+
+        private const val USER_FIRST_NAME = "firstName"
+        private const val USER_LAST_NAME =  "lastName"
+        private const val USER_EMAIL = "email"
+        private const val USER_USERNAME = "username"
+        private const val USER_PASSWORD = "password"
+        private const val USER_SEX = "sex"
+        private const val USER_DOB = "dob"
+        private const val USER_SALARY = "salary"
+        private const val USER_CITY = "city"
+        private const val USER_PARISH = "parish"
+        private const val USER_PRIMARY_BANK = "primaryBank"
+        private const val USER_LOAN_TYPE = "loanType"
+        private const val USER_LOAN_AMOUNT = "loanAmount"
+        private const val USER_OCCUPATION = "occupation"
+
+
 
 
 
