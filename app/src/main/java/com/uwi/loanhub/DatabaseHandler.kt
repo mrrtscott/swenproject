@@ -43,7 +43,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val USER_LOAN_AMOUNT = "loanAmount"
         private const val USER_OCCUPATION = "occupation"
 
-        private const val CREATE_TABLE_USER = "CREATE TABLE" + TABLE_USERS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + USER_FIRST_NAME + " TEXT, " + USER_LAST_NAME + " TEXT, " + USER_EMAIL + " TEXT, " + USER_USERNAME + " TEXT, " + USER_PASSWORD + " TEXT, " + USER_SEX + " TEXT," + USER_DOB + " TEXT," + USER_SALARY + " TEXT," + USER_CITY + " TEXT," + USER_PARISH + " TEXT," + USER_PRIMARY_BANK + " TEXT," + USER_LOAN_TYPE + " TEXT," + USER_LOAN_AMOUNT + " REAL," + USER_OCCUPATION + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
+        private const val CREATE_TABLE_USER = "CREATE TABLE" + TABLE_USERS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + USER_FIRST_NAME + " TEXT, " + USER_LAST_NAME + " TEXT, " + USER_EMAIL + " TEXT NOT NULL UNIQUE , " + USER_USERNAME + " TEXT NOT NULL UNIQUE , " + USER_PASSWORD + " TEXT, " + USER_SEX + " TEXT," + USER_DOB + " TEXT," + USER_SALARY + " TEXT," + USER_CITY + " TEXT," + USER_PARISH + " TEXT," + USER_PRIMARY_BANK + " TEXT," + USER_LOAN_TYPE + " TEXT," + USER_LOAN_AMOUNT + " REAL," + USER_OCCUPATION + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
 
 
         //LOAN TABLE
@@ -58,7 +58,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val LOAN_DESCRIPTION = "loanDescription"
         private const val LOAN_STATUS = "loanStatus"
 
-        private const val CREATE_TABLE_LOANS = "CREATE TABLE" + TABLE_LOANS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + LOAN_INSTITUTION + " TEXT, " + LOAN_NAME + " TEXT, " + LOAN_AMOUNT + " REAL, " + LOAN_INTEREST_RATE + " REAL, " + LOAN_TERMS_REPAY + " INTEGER, " + LOAN_PERCENT_FINANCING + " REAL," + LOAN_CREDIT_SCORE + " INTEGER," + LOAN_DESCRIPTION + " TEXT," + LOAN_STATUS + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
+        private const val CREATE_TABLE_LOANS = "CREATE TABLE" + TABLE_INSTITUTIONS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + LOAN_INSTITUTION + " TEXT, " + LOAN_NAME + " TEXT, " + LOAN_AMOUNT + " REAL, " + LOAN_INTEREST_RATE + " REAL, " + LOAN_TERMS_REPAY + " INTEGER, " + LOAN_PERCENT_FINANCING + " REAL," + LOAN_CREDIT_SCORE + " INTEGER," + LOAN_DESCRIPTION + " TEXT," + LOAN_STATUS + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
 
 
 
@@ -73,6 +73,9 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val INSTITUTION_WEBSITE = "website"
         private const val INSTITUTION_OPENING_HOURS = "openingHours"
         private const val INSTITUTION_STATUS = "institutionStatus"
+
+
+        private const val CREATE_TABLE_INSTITUTIONS = "CREATE TABLE" + TABLE_LOANS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + INSTITUTION_NAME + " TEXT, " + INSTITUTION_ABOUT + " TEXT, " + INSTITUTION_SLOGAN + " TEXT, " + INSTITUTION_LOGO + " BLOB, " + INSTITUTION_EMAIL + " TEXT, " + INSTITUTION_PHONE + " TEXT," + INSTITUTION_WEBSITE + " TEXT," + INSTITUTION_OPENING_HOURS + " TEXT," + INSTITUTION_STATUS + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
 
 
 
