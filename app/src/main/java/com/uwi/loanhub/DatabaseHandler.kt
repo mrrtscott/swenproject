@@ -21,12 +21,11 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
         //COMMON COLUMNS
 
-        private const val KEY_ID = "id"
+        private const val KEY_ID = "_id"
         private const val KEY_CREATED_AT = "created_at"
 
 
         //USER TABLE
-
         private const val USER_FIRST_NAME = "firstName"
         private const val USER_LAST_NAME =  "lastName"
         private const val USER_EMAIL = "email"
@@ -41,6 +40,11 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val USER_LOAN_TYPE = "loanType"
         private const val USER_LOAN_AMOUNT = "loanAmount"
         private const val USER_OCCUPATION = "occupation"
+
+        private const val CREATE_TABLE_USER = "CREATE TABLE" + TABLE_USERS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + USER_FIRST_NAME + " TEXT, " + USER_LAST_NAME + " TEXT, " + USER_EMAIL + " TEXT, " + USER_USERNAME + " TEXT, " + USER_PASSWORD + " TEXT, " + USER_SEX + " TEXT," + USER_DOB + " TEXT," + USER_SALARY + " TEXT," + USER_CITY + " TEXT," + USER_PARISH + " TEXT," + USER_PRIMARY_BANK + " TEXT," + USER_LOAN_TYPE + " TEXT," + USER_LOAN_AMOUNT + " REAL," + USER_OCCUPATION + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
+
+
+
 
 
 
