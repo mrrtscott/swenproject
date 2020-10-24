@@ -3,6 +3,7 @@ package com.uwi.loanhub.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.OffsetDateTime
 import java.util.*
 
 
@@ -19,5 +20,5 @@ data class LoanModel(
     var description: String,
     var target:String,
     var status: String,
-    var dateCreated: Date
+    var dateCreated: OffsetDateTime
 )

@@ -5,6 +5,7 @@ import kotlin.collections.ArrayList
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
+import java.time.OffsetDateTime
 
 @Entity(tableName = "Users")
 data class UserModel (
@@ -23,5 +24,5 @@ data class UserModel (
     var loanType: String,
     var loanAmount: Double,
     var occupation: String,
-    var dateCreated: Date
+    var dateCreated: OffsetDateTime
 )
