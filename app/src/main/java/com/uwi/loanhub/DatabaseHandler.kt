@@ -77,6 +77,17 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
 
 
+        //BRANCH
+
+        private const val BRANCH_NAME = "name"
+        private const val BRANCH_CITY = "city"
+        private const val BRANCH_PARISH = "parish"
+        private const val BRANCH_CLOSE_TO = "closeTo"
+        private const val BRANCH_STATUS = "branchStatus"
+
+
+
+
 
 
 
