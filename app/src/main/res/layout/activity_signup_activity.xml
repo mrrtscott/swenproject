@@ -177,7 +177,8 @@ tools:context=".SignupActivity">
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="@string/instructions_city_hint"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:startIconDrawable="@drawable/ic_outline_location_city_24">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:id="@+id/drop_text_city"
@@ -198,7 +199,8 @@ tools:context=".SignupActivity">
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="@string/instructions_parish_hint"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:startIconDrawable="@drawable/ic_outline_location_city_24">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:id="@+id/drop_text_parish"
