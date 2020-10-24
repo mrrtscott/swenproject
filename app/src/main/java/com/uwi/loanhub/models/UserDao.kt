@@ -1,10 +1,7 @@
 package com.uwi.loanhub.models
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 
 @Dao
@@ -15,5 +12,8 @@ interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addNewUser(user: User)
+
+    @Query("DELETE FROM Users WHERE username = :inputUsername")
+    fun deleteUser (inputUsername: String)
 
 }
