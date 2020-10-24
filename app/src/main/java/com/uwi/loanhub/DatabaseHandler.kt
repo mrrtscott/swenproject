@@ -124,6 +124,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
         }
 
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -131,6 +132,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
         if (db != null) {
             db.execSQL("DROP TABLE IF EXISTS " + DATABASE_NAME)
+            onCreate(db)
         }
     }
 
