@@ -8,7 +8,7 @@ import java.util.*
 
 
 @Entity(tableName = "Loans")
-data class LoanModel(
+data class Loan(
     @PrimaryKey(autoGenerate = true) var id: Int,
     var institution : String,
     var loanName: String,

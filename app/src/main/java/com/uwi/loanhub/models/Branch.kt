@@ -6,7 +6,7 @@ import java.time.OffsetDateTime
 
 
 @Entity
-data class BranchModel (
+data class Branch (
     @PrimaryKey var id: String,
     var name: String,
     var city: String,

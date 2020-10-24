@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull
 import java.time.OffsetDateTime
 
 @Entity(tableName = "Users")
-data class UserModel (
+data class User (
     @PrimaryKey(autoGenerate = true) var id: Int,
     @NotNull var firstName: String,
     @NotNull var lastName: String,

@@ -4,7 +4,7 @@ import androidx.room.Entity
 
 
 @Entity(tableName =  "InstitutionBranch", primaryKeys = ["institutionPriKey", "branchPriKey"])
-data class InstitutionBranchModel (
+data class InstitutionBranch (
     var institutionPriKey: String,
     var branchPriKey: String
 )
