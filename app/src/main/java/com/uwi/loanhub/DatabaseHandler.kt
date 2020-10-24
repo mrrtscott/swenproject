@@ -18,8 +18,8 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val TABLE_USERS = "UsersTable"
         private const val TABLE_LOANS = "LoansTable"
         private const val TABLE_INSTITUTIONS = "InstitutionsTable"
-        private const val TABLE_PARISH = "ParishTable"
-        private const val TABLE_CITY = "CityTable"
+
+
 
         //COMMON COLUMNS
 
@@ -46,7 +46,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val CREATE_TABLE_USER = "CREATE TABLE" + TABLE_USERS + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + USER_FIRST_NAME + " TEXT, " + USER_LAST_NAME + " TEXT, " + USER_EMAIL + " TEXT, " + USER_USERNAME + " TEXT, " + USER_PASSWORD + " TEXT, " + USER_SEX + " TEXT," + USER_DOB + " TEXT," + USER_SALARY + " TEXT," + USER_CITY + " TEXT," + USER_PARISH + " TEXT," + USER_PRIMARY_BANK + " TEXT," + USER_LOAN_TYPE + " TEXT," + USER_LOAN_AMOUNT + " REAL," + USER_OCCUPATION + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
 
 
-        //LOAN TABLES
+        //LOAN TABLE
 
         private const val LOAN_INSTITUTION = "institution"
         private const val LOAN_NAME = "loanName"
@@ -62,12 +62,31 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
 
 
+        //INSTITUTION TABLE
+
+        private const val INSTITUTION_NAME = "name"
+        private const val INSTITUTION_ABOUT = "about"
+        private const val INSTITUTION_SLOGAN = "slogan"
+        private const val INSTITUTION_LOGO = "logo"
+        private const val INSTITUTION_EMAIL = "email"
+        private const val INSTITUTION_PHONE = "phone"
+        private const val INSTITUTION_WEBSITE = "website"
+        private const val INSTITUTION_OPENING_HOURS = "openingHours"
+        private const val INSTITUTION_STATUS = "institutionStatus"
+
+
+
+
+
+
 
 
 
 
 
     }
+
+
 
     override fun onCreate(db: SQLiteDatabase?) {
 
