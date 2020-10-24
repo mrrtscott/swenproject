@@ -14,6 +14,12 @@ interface UserDao {
     suspend fun addNewUser(user: User)
 
     @Query("DELETE FROM Users WHERE username = :inputUsername")
-    fun deleteUser (inputUsername: String)
+    suspend fun deleteUser (inputUsername: String)
+
+    @Query("DELETE FROM Users")
+    suspend  fun deleteAllUsers()
+
+    @Query("SELECT * FROM Users ORDER BY lastName ASC")
+    fun getAllUsers(): LiveData<List<User>>
 
 }
