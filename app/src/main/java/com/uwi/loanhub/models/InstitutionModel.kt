@@ -8,8 +8,7 @@ import java.util.*
 
 @Entity(tableName = "Institutions")
 data class InstitutionModel(
-    @PrimaryKey(autoGenerate = true) var id:Int,
-    var name:String,
+    @PrimaryKey var name:String,
     var about:String,
     var slogan:String,
     var logo:Int,
