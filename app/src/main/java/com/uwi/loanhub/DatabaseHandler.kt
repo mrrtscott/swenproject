@@ -94,6 +94,13 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
 
 
 
+        //INSTITUTION-BRANCH
+
+        private const val INSTITUTION_KEY = "institution_key"
+        private const val BRANCH_KEY = "branch_key"
+
+        private const val CREATE_TABLE_INSTITUTION_BRANCH = "CREATE TABLE" + TABLE_INSTITUTIONS_BRANCH + "(" +INSTITUTION_KEY + " INTEGER PRIMARY KEY, " + BRANCH_KEY + " INTEGER PRIMARY KEY "  + ")"
+
 
 
 
@@ -112,13 +119,19 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
             db.execSQL(CREATE_TABLE_USER)
             db.execSQL(CREATE_TABLE_LOANS)
             db.execSQL(CREATE_TABLE_INSTITUTIONS)
+            db.execSQL(CREATE_TABLE_BRANCH)
+            db.execSQL(CREATE_TABLE_INSTITUTION_BRANCH)
 
         }
 
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-        TODO("Not yet implemented")
+    override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
+
+
+        if (db != null) {
+            db.execSQL("DROP TABLE IF EXISTS " + DATABASE_NAME)
+        }
     }
 
 
