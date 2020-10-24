@@ -18,6 +18,8 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val TABLE_USERS = "UsersTable"
         private const val TABLE_LOANS = "LoansTable"
         private const val TABLE_INSTITUTIONS = "InstitutionsTable"
+        private const val TABLE_BRANCH = "BranchTable"
+        private const val TABLE_INSTITUTIONS_BRANCH = "InstitutionBranchTable"
 
 
 
@@ -88,6 +90,8 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         private const val BRANCH_CLOSE_TO = "closeTo"
         private const val BRANCH_STATUS = "branchStatus"
 
+        private const val CREATE_TABLE_BRANCH = "CREATE TABLE" + TABLE_BRANCH + "(" + KEY_ID + " INTEGER PRIMARY KEY, " + BRANCH_NAME + " TEXT, " + BRANCH_CITY + " TEXT, " + BRANCH_PARISH + " TEXT, " + BRANCH_CLOSE_TO + " TEXT, " + BRANCH_STATUS + " TEXT," + KEY_CREATED_AT + " DATETIME" + ")"
+
 
 
 
@@ -107,6 +111,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper  (context, DATABASE_N
         if (db != null) {
             db.execSQL(CREATE_TABLE_USER)
             db.execSQL(CREATE_TABLE_LOANS)
+            db.execSQL(CREATE_TABLE_INSTITUTIONS)
 
         }
 
