@@ -14,7 +14,7 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
     val allUsers: LiveData<List<User>>
 
     init {
-        val UserDao = UserDatabase.getDatabase(application, viewModelScope).UserDao()
+        val UserDao = LoanHubDatabase.getDatabase(application, viewModelScope).UserDao()
         repository = UserRepository(UserDao)
 
         allUsers = repository.allUsers

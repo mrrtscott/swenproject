@@ -9,15 +9,12 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import java.security.Timestamp
-import java.time.Instant
 import java.time.LocalDateTime
-import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 
 @Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
-abstract class UserDatabase : RoomDatabase() {
+abstract class LoanHubDatabase : RoomDatabase() {
 
     abstract fun UserDao(): UserDao
 
@@ -25,9 +22,9 @@ abstract class UserDatabase : RoomDatabase() {
     companion object {
 
         @Volatile
-        private var INSTANCE: UserDatabase? = null
+        private var INSTANCE: LoanHubDatabase? = null
 
-        fun getDatabase(context: Context, scope: CoroutineScope): UserDatabase {
+        fun getDatabase(context: Context, scope: CoroutineScope): LoanHubDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -36,8 +33,8 @@ abstract class UserDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    UserDatabase::class.java,
-                    "Users_Database"
+                    LoanHubDatabase::class.java,
+                    "LoanHub_Database"
                 ).addCallback(UserDatabaseCallback(scope)).build()
                 INSTANCE = instance
                 return instance

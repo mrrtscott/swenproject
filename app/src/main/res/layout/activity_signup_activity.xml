@@ -106,7 +106,7 @@ tools:context=".SignupActivity">
         <!--Last name input ends here-->
 
 
-        <!-- Email input starts here-->
+        <!-- Email input starts here -->
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
