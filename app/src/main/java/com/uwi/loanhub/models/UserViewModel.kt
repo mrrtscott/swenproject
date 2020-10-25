@@ -18,11 +18,10 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
         repository = UserRepository(UserDao)
 
         allUsers = repository.allUsers
-
     }
 
 
-    fun addUser(user: User) = viewModelScope.launch(Dispatchers.IO){
+     fun addUser(user: User) = viewModelScope.launch(Dispatchers.IO){
         repository.addNewUser(user)
     }
 }

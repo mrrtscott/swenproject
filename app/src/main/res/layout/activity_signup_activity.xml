@@ -169,6 +169,7 @@ tools:context=".SignupActivity">
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_password_Main_Activity"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,10 +191,10 @@ tools:context=".SignupActivity">
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_password_Confirm_Main_Activity"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 />
@@ -250,7 +251,7 @@ tools:context=".SignupActivity">
         <!--Date of birth input ends here-->
 
 
-        <!-- Date of birth input starts here -->
+        <!-- Salary input starts here -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -273,7 +274,7 @@ tools:context=".SignupActivity">
 
 
         </com.google.android.material.textfield.TextInputLayout>
-        <!--Date of birth input ends here-->
+        <!--Salary input ends here-->
 
 
 
@@ -376,7 +377,61 @@ tools:context=".SignupActivity">
 
 
         </com.google.android.material.textfield.TextInputLayout>
-        <!--Date of birth input ends here-->
+        <!-- Loan type input ends here -->
+
+
+        <!-- Loan Amount input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_money_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_loan_Amount_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_loan_Amount_hint"
+                android:inputType="numberDecimal"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Loan Amount input ends here-->
+
+
+        <!-- Primary bank input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_work_outline_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_occupation_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_occupation_hint"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Primary bank input ends here-->
+
+
+
 
 
 
