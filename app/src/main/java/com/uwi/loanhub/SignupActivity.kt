@@ -83,7 +83,22 @@ class SignupActivity : AppCompatActivity() {
             }
             else
             {
-                val user = User(0, editText_First_Name_Main_Activity.text.toString(), editText_Last_Name_Main_Activity.text.toString(), editText_email_SignUp_Activity.text.toString(), editText_username_SignUp_Activity.text.toString(), editText_password_SignUp_Activity.text.toString(), editText_sex_SignUp_Activity.text.toString(),editText_dob_SignUp_Activity.text.toString(), 90000.90, drop_text_city.text.toString(), drop_text_parish.text.toString(), editText_primaryBank_SignUp_Activity.text.toString(), editText_loanType_SignUp_Activity.text.toString(), 6000.00, editText_occupation_SignUp_Activity.text.toString(), "1990-12-09")
+                val user = User(0,
+                    editText_First_Name_Main_Activity.text.toString(),
+                    editText_Last_Name_Main_Activity.text.toString(),
+                    editText_email_SignUp_Activity.text.toString(),
+                    editText_username_SignUp_Activity.text.toString(),
+                    editText_password_SignUp_Activity.text.toString(),
+                    editText_sex_SignUp_Activity.text.toString(),
+                    editText_dob_SignUp_Activity.text.toString(),
+                    editText_salary_SignUp_Activity.text.toString().toDouble(),
+                    drop_text_city.text.toString(),
+                    drop_text_parish.text.toString(),
+                    editText_primaryBank_SignUp_Activity.text.toString(),
+                    editText_loanType_SignUp_Activity.text.toString(),
+                    editText_loanAmount_Activity.text.toString().toDouble(),
+                    editText_occupation_SignUp_Activity.text.toString(),
+                    "1990-12-09")
                 userViewModel.addUser(user)
                 val intent = Intent (this,login_activity::class.java )
                 startActivity(intent)
