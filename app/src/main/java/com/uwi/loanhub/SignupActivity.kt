@@ -65,15 +65,17 @@ class SignupActivity : AppCompatActivity() {
         editText_loanType_SignUp_Activity = findViewById(R.id.editText_loan_Type_Main_Activity)
         editText_loanAmount_Activity = findViewById(R.id.editText_loan_Amount_Main_Activity)
         editText_occupation_SignUp_Activity = findViewById(R.id.editText_occupation_Main_Activity)
+
+        //Initialising buttons
         buttons_start_main_act = findViewById(R.id.buttons_start_main_act)
         buttonDateChooser =  findViewById(R.id.DateButtonChooser)
 
-
+        //Button for the the date chooser on the Sign Up Activity
         buttonDateChooser.setOnClickListener {
 
-            val builder : MaterialDatePicker.Builder<*> = MaterialDatePicker.Builder.datePicker() // 1
-            val picker : MaterialDatePicker<*> = builder.build()  // 2
-            picker.show(supportFragmentManager, picker.toString())   // 3
+            val builder : MaterialDatePicker.Builder<*> = MaterialDatePicker.Builder.datePicker()
+            val picker : MaterialDatePicker<*> = builder.build()
+            picker.show(supportFragmentManager, picker.toString())
 
             picker.addOnPositiveButtonClickListener {
 
