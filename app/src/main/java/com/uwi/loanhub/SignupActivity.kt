@@ -1,5 +1,6 @@
 package com.uwi.loanhub
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,8 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_activity)
 
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
         editText_First_Name_Main_Activity = findViewById(R.id.editText_First_Name_Main_Activity)
         editText_Last_Name_Main_Activity = findViewById(R.id.editText_Last_Name_Main_Activity)
         drop_text_city = findViewById(R.id.drop_text_city)
@@ -26,10 +29,14 @@ class SignupActivity : AppCompatActivity() {
         buttons_start_main_act = findViewById(R.id.buttons_start_main_act)
 
         buttons_start_main_act.setOnClickListener {
+
+            val replyIntent = Intent()
             if(editText_First_Name_Main_Activity.text.toString().isEmpty()  || editText_Last_Name_Main_Activity.text.toString().isEmpty() || drop_text_city.text.toString().isEmpty() || drop_text_parish.text.toString().isEmpty())
             {
                 Toast.makeText(this, "Please enter fill all the fields", Toast.LENGTH_SHORT).show()
+                setResult(Activity.RESULT_CANCELED, replyIntent)
             }
+
             else
             {
                 val intent = Intent (this,login_activity::class.java )
@@ -37,7 +44,7 @@ class SignupActivity : AppCompatActivity() {
             }
         }
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
 
         /* For city drop down on the main activity*/
         var cityTowns: TextInputLayout = findViewById<TextInputLayout>(R.id.city_TextInputLayout)
