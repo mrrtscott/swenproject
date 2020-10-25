@@ -1,12 +1,12 @@
 package com.uwi.loanhub
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.google.android.material.textfield.TextInputLayout
+import com.uwi.loanhub.models.User
 import kotlinx.android.synthetic.main.activity_main.*
 
 class SignupActivity : AppCompatActivity() {
@@ -30,15 +30,16 @@ class SignupActivity : AppCompatActivity() {
 
         buttons_start_main_act.setOnClickListener {
 
-            val replyIntent = Intent()
+
+
             if(editText_First_Name_Main_Activity.text.toString().isEmpty()  || editText_Last_Name_Main_Activity.text.toString().isEmpty() || drop_text_city.text.toString().isEmpty() || drop_text_parish.text.toString().isEmpty())
             {
                 Toast.makeText(this, "Please enter fill all the fields", Toast.LENGTH_SHORT).show()
-                setResult(Activity.RESULT_CANCELED, replyIntent)
             }
-
             else
             {
+
+
                 val intent = Intent (this,login_activity::class.java )
                 startActivity(intent)
             }
@@ -72,6 +73,8 @@ class SignupActivity : AppCompatActivity() {
 
 
     }
+
+
 
 
 

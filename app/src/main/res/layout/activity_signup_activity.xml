@@ -106,7 +106,35 @@ tools:context=".SignupActivity">
         <!--Last name input ends here-->
 
 
-        <!--Last name input starts here-->
+        <!-- Email input starts here-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_email_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_email_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_email_hint"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Email inout ends here-->
+
+
+        <!--Username input starts here-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -129,9 +157,9 @@ tools:context=".SignupActivity">
 
 
         </com.google.android.material.textfield.TextInputLayout>
-        <!--Last name input ends here-->
+        <!--Username input ends here-->
 
-
+        <!-- Password starts here -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -149,6 +177,7 @@ tools:context=".SignupActivity">
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <!--Password end here -->
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
