@@ -172,13 +172,15 @@ tools:context=".SignupActivity">
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
         <!--Password end here -->
 
+
+        <!--Password confirm input starts here  -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,11 +194,89 @@ tools:context=".SignupActivity">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:hint="Password"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <!--Password confirm input ends here  -->
+
+
+        <!-- Sex input starts here -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sex_TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/instructions_sex_hint"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:startIconDrawable="@drawable/ic_outline_people_outline_24">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/drop_text_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Sex input ends here -->
+
+
+        <!-- Date of birth input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_date_range_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_dob_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_dob_hint"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Date of birth input ends here-->
+
+
+        <!-- Date of birth input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_attach_money_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_salary_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_money_hint"
+                android:inputType="numberDecimal"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Date of birth input ends here-->
+
+
+
 
 
         <!--City input starts here-->
@@ -217,9 +297,11 @@ tools:context=".SignupActivity">
             </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
         <!--City input ends here-->
+
+
+
+
 
         <!--Parish input starts here-->
         <com.google.android.material.textfield.TextInputLayout
@@ -242,6 +324,31 @@ tools:context=".SignupActivity">
 
 
         <!--Parish input ends here-->
+
+
+        <!-- Primary bank input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_house_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_priBank_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_primaryBank_hint"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Primary bank input ends here-->
 
         <Button
             android:id="@+id/buttons_start_main_act"

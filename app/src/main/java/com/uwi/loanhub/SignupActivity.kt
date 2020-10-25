@@ -67,6 +67,16 @@ class SignupActivity : AppCompatActivity() {
 
         /* For parish drop down on the main activity*/
 
+        /* For sex drop down on sign up activity*/
+
+        var sex =resources.getStringArray(R.array.sex) //Drop Down Items
+        var autoCompleteSexText = findViewById<AutoCompleteTextView>(R.id.drop_text_sex)
+        var sexOut = ArrayAdapter(this, R.layout.dropdown_sex, sex)
+        sexOut.setDropDownViewResource(android.R.layout.simple_list_item_1)
+        autoCompleteSexText!!.setAdapter(sexOut)
+
+        /* For sex drop down on sign up activity*/
+
 
 
 
