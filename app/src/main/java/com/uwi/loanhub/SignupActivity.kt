@@ -10,9 +10,7 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
-import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.experimental.and
@@ -43,10 +41,10 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
 
 
-    fun encryptSys(cadena: String): String {
+    fun encryptSys(inputPassword: String): String {
 
         var md: MessageDigest = MessageDigest.getInstance("SHA-512")
-        var digest = md.digest(cadena.toByteArray())
+        var digest = md.digest(inputPassword.toByteArray())
         var sb: StringBuilder = StringBuilder()
 
         var i = 0
