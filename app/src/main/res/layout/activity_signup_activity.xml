@@ -350,6 +350,45 @@ tools:context=".SignupActivity">
         </com.google.android.material.textfield.TextInputLayout>
         <!--Primary bank input ends here-->
 
+
+
+
+
+        <!-- Loan type input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_outline_style_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_loan_Type_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_enter_loanType_hint"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Date of birth input ends here-->
+
+
+
+
+
+
+
+
+
+
+
+
         <Button
             android:id="@+id/buttons_start_main_act"
             android:layout_width="match_parent"
