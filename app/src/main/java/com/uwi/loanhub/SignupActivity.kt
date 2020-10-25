@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
@@ -33,6 +34,8 @@ class SignupActivity : AppCompatActivity() {
 
 
     private lateinit var buttons_start_main_act: Button
+    private lateinit var buttonDateChooser: Button
+
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +66,26 @@ class SignupActivity : AppCompatActivity() {
         editText_loanAmount_Activity = findViewById(R.id.editText_loan_Amount_Main_Activity)
         editText_occupation_SignUp_Activity = findViewById(R.id.editText_occupation_Main_Activity)
         buttons_start_main_act = findViewById(R.id.buttons_start_main_act)
+        buttonDateChooser =  findViewById(R.id.DateButtonChooser)
+
+
+        buttonDateChooser.setOnClickListener {
+
+            val builder : MaterialDatePicker.Builder<*> = MaterialDatePicker.Builder.datePicker() // 1
+            val picker : MaterialDatePicker<*> = builder.build()  // 2
+            picker.show(supportFragmentManager, picker.toString())   // 3
+
+            picker.addOnPositiveButtonClickListener {
+
+
+                editText_dob_SignUp_Activity.setText(picker.headerText.toString())
+
+
+            }
+
+        }
+
+
 
 
 
@@ -107,6 +130,12 @@ class SignupActivity : AppCompatActivity() {
 
 
 
+
+
+
+
+
+
         /* For city drop down on the main activity*/
         var cityTowns: TextInputLayout = findViewById<TextInputLayout>(R.id.city_TextInputLayout)
         var  cities =resources.getStringArray(R.array.cities) //Drop Down Items
@@ -136,6 +165,8 @@ class SignupActivity : AppCompatActivity() {
         autoCompleteSexText!!.setAdapter(sexOut)
 
         /* For sex drop down on sign up activity*/
+
+
 
 
 
