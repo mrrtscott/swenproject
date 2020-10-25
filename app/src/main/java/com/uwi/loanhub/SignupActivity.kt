@@ -1,17 +1,21 @@
 package com.uwi.loanhub
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.lifecycle.ViewModel
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
-import kotlinx.android.synthetic.main.activity_main.*
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import kotlin.experimental.and
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var editText_First_Name_Main_Activity: EditText
@@ -38,6 +42,31 @@ class SignupActivity : AppCompatActivity() {
 
     private lateinit var userViewModel: UserViewModel
 
+
+    fun encryptSys(cadena: String): String {
+
+        var md: MessageDigest = MessageDigest.getInstance("SHA-512")
+        var digest = md.digest(cadena.toByteArray())
+        var sb: StringBuilder = StringBuilder()
+
+        var i = 0
+        while (i < digest.count()) {
+            sb.append(((digest[i] and 0xff.toByte()) + 0x100).toString(16).substring(0, 1))
+            i++
+        }
+
+        return sb.toString()
+    }
+
+    fun getCurrentDate(): String{
+
+        var current = LocalDateTime.now()
+        var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+        var formatted = current.format(formatter)
+        return formatted
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_activity)
@@ -46,6 +75,7 @@ class SignupActivity : AppCompatActivity() {
 
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
 
 
 
@@ -113,7 +143,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_Last_Name_Main_Activity.text.toString(),
                     editText_email_SignUp_Activity.text.toString(),
                     editText_username_SignUp_Activity.text.toString(),
-                    editText_password_SignUp_Activity.text.toString(),
+                    encryptSys(editText_password_SignUp_Activity.text.toString()),
                     editText_sex_SignUp_Activity.text.toString(),
                     editText_dob_SignUp_Activity.text.toString(),
                     editText_salary_SignUp_Activity.text.toString().toDouble(),
@@ -123,7 +153,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_loanType_SignUp_Activity.text.toString(),
                     editText_loanAmount_Activity.text.toString().toDouble(),
                     editText_occupation_SignUp_Activity.text.toString(),
-                    "1990-12-09")
+                    getCurrentDate())
                 userViewModel.addUser(user)
                 val intent = Intent (this,login_activity::class.java )
                 startActivity(intent)
@@ -167,6 +197,9 @@ class SignupActivity : AppCompatActivity() {
         autoCompleteSexText!!.setAdapter(sexOut)
 
         /* For sex drop down on sign up activity*/
+
+
+
 
 
 

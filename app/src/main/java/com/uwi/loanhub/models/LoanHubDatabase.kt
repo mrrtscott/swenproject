@@ -65,7 +65,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
             var formatted = current.format(formatter)
 
-            userDao.deleteAllUsers()
+
 
             var user = User(0, "Romaro", "Scott", "scott.r.ja@gmail.com", "scottja", "12345678", "Male", formatted, 900000.00, "Kingston", "Kingston", "Scotiabank", "Long Term", 500000.00, "Engineer", formatted)
             userDao.addNewUser(user)
