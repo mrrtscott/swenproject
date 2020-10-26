@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.User
@@ -55,6 +56,12 @@ class LoginActivityNew : AppCompatActivity() {
             println(userHolderList.size)
             if (userHolderList.size == 1)
             {
+                Toast.makeText(this, "Welcome ".plus(userHolderList.get(0).firstName), Toast.LENGTH_SHORT).show()
+
+            }
+            else{
+
+                Toast.makeText(this, "Your username and password is incorrect", Toast.LENGTH_SHORT).show()
 
             }
 
