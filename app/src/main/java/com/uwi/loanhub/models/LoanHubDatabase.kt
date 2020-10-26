@@ -8,6 +8,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -35,7 +36,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     context.applicationContext,
                     LoanHubDatabase::class.java,
                     "LoanHub_Database"
-                ).addCallback(UserDatabaseCallback(scope)).build()
+                ).addCallback(UserDatabaseCallback(scope))
+                    .allowMainThreadQueries()
+                    .build()
                 INSTANCE = instance
                 return instance
             }
@@ -51,7 +54,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
         override fun onOpen(db: SupportSQLiteDatabase) {
             super.onOpen(db)
             INSTANCE?.let { database ->
-                scope.launch {
+                scope.launch {(Dispatchers.IO)
                     populateDatabase(database.UserDao())
                 }
 
@@ -60,15 +63,6 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
         @RequiresApi(Build.VERSION_CODES.O)
         suspend fun populateDatabase(userDao: UserDao) {
-
-            var current = LocalDateTime.now()
-            var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
-            var formatted = current.format(formatter)
-
-
-
-            var user = User(0, "Romaro", "Scott", "scott.r.ja@gmail.com", "scottja", "12345678", "Male", formatted, 900000.00, "Kingston", "Kingston", "Scotiabank", "Long Term", 500000.00, "Engineer", formatted)
-            userDao.addNewUser(user)
 
 
         }

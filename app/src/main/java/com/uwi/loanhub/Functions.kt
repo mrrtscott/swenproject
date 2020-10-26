@@ -1,6 +1,8 @@
 package com.uwi.loanhub
 
 import java.security.MessageDigest
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.experimental.and
 
 class Functions {
@@ -19,5 +21,15 @@ class Functions {
         }
 
         return sb.toString()
+    }
+
+
+    fun getCurrentDate(): String{
+
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+        val formatted = current.format(formatter)
+        return formatted
+
     }
 }

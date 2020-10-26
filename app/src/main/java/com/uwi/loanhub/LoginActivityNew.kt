@@ -1,18 +1,19 @@
 package com.uwi.loanhub
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
 
 class LoginActivityNew : AppCompatActivity() {
 
-    private lateinit var editText_username_SignUp_Activity: EditText
-    private lateinit var editText_password_SignUp_Activity: EditText
+    private lateinit var editText_username_Login_Activity: EditText
+    private lateinit var editText_password_Login_Activity: EditText
 
 
 
@@ -22,18 +23,19 @@ class LoginActivityNew : AppCompatActivity() {
 
 
     private lateinit var userViewModel: UserViewModel
+    private lateinit var functions: Functions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_new)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-
+        functions = Functions()
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
 
 
-        editText_username_SignUp_Activity = findViewById(R.id.editText_User_Name_Main_Activity)
-        editText_password_SignUp_Activity = findViewById(R.id.editText_password_Main_Activity)
+        editText_username_Login_Activity = findViewById(R.id.userNameLoginActivity)
+        editText_password_Login_Activity = findViewById(R.id.passwordLoginActivity)
 
 
         signUpButton = findViewById(R.id.signupLoginActivity)
@@ -49,8 +51,14 @@ class LoginActivityNew : AppCompatActivity() {
 
         loginButton = findViewById(R.id.LoginButtonSignInActicity)
         loginButton.setOnClickListener {
+            var userHolderList:List<User> = userViewModel.getUsernamePassword(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString()))
+            println(userHolderList.size)
+            if (userHolderList.size == 1)
+            {
 
-            userViewModel.getUsernamePassword(editText_username_SignUp_Activity.text.toString(), editText_password_SignUp_Activity.text.toString())
+            }
+
+
 
 
 
@@ -62,4 +70,8 @@ class LoginActivityNew : AppCompatActivity() {
 
 
     }
+
+
+
+
 }

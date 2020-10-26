@@ -8,7 +8,7 @@ import androidx.room.*
 interface UserDao {
 
     @Query("SELECT * FROM Users WHERE username = :inputUsername AND password = :inputPassword")
-    fun getUsernamePassword (inputUsername: String, inputPassword: String): List<User> //Will be used to confirm user.
+    fun getUsernamePassword (inputUsername: String, inputPassword: String):List<User> //Will be used to confirm user.
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addNewUser(user: User)

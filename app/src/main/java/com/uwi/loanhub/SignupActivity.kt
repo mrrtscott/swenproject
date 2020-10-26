@@ -44,14 +44,7 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-    fun getCurrentDate(): String{
 
-        var current = LocalDateTime.now()
-        var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
-        var formatted = current.format(formatter)
-        return formatted
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,7 +133,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_loanType_SignUp_Activity.text.toString(),
                     editText_loanAmount_Activity.text.toString().toDouble(),
                     editText_occupation_SignUp_Activity.text.toString(),
-                    getCurrentDate())
+                    functions.getCurrentDate())
                 userViewModel.addUser(user)
                 val intent = Intent (this,LoginActivityNew::class.java )
                 startActivity(intent)
@@ -152,14 +145,11 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-
-
-
         /* For city drop down on the main activity*/
         var cityTowns: TextInputLayout = findViewById<TextInputLayout>(R.id.city_TextInputLayout)
-        var  cities =resources.getStringArray(R.array.cities) //Drop Down Items
-        var autoCompleteCityText = findViewById<AutoCompleteTextView>(R.id.drop_text_city)
-        var aa = ArrayAdapter(this, R.layout.dropdown_city_towns, cities)
+        val cities =resources.getStringArray(R.array.cities) //Drop Down Items
+        val autoCompleteCityText = findViewById<AutoCompleteTextView>(R.id.drop_text_city)
+        val aa = ArrayAdapter(this, R.layout.dropdown_city_towns, cities)
         aa.setDropDownViewResource(android.R.layout.simple_list_item_1)
         autoCompleteCityText!!.setAdapter(aa)
 
@@ -167,9 +157,9 @@ class SignupActivity : AppCompatActivity() {
 
         /* For Parish drop down on the main activity*/
         var parishLayout: TextInputLayout = findViewById<TextInputLayout>(R.id.parish_TextInputLayout)
-        var parishes =resources.getStringArray(R.array.parishes) //Drop Down Items
-        var autoCompleteParishText = findViewById<AutoCompleteTextView>(R.id.drop_text_parish)
-        var parishesOut = ArrayAdapter(this, R.layout.dropdown_parish, parishes)
+        val parishes =resources.getStringArray(R.array.parishes) //Drop Down Items
+        val autoCompleteParishText = findViewById<AutoCompleteTextView>(R.id.drop_text_parish)
+        val parishesOut = ArrayAdapter(this, R.layout.dropdown_parish, parishes)
         parishesOut.setDropDownViewResource(android.R.layout.simple_list_item_1)
         autoCompleteParishText!!.setAdapter(parishesOut)
 
@@ -177,9 +167,9 @@ class SignupActivity : AppCompatActivity() {
 
         /* For sex drop down on sign up activity*/
 
-        var sex =resources.getStringArray(R.array.sex) //Drop Down Items
-        var autoCompleteSexText = findViewById<AutoCompleteTextView>(R.id.drop_text_sex)
-        var sexOut = ArrayAdapter(this, R.layout.dropdown_sex, sex)
+        val sex =resources.getStringArray(R.array.sex) //Drop Down Items
+        val autoCompleteSexText = findViewById<AutoCompleteTextView>(R.id.drop_text_sex)
+        val sexOut = ArrayAdapter(this, R.layout.dropdown_sex, sex)
         sexOut.setDropDownViewResource(android.R.layout.simple_list_item_1)
         autoCompleteSexText!!.setAdapter(sexOut)
 

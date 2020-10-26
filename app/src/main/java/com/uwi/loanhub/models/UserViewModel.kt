@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 class UserViewModel (application: Application): AndroidViewModel(application) {
     private val repository: UserRepository
 
+
     val allUsers: LiveData<List<User>>
 
     init {
@@ -18,6 +19,7 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
         repository = UserRepository(UserDao)
 
         allUsers = repository.allUsers
+        repository.allUsers
     }
 
 
@@ -25,9 +27,12 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
         repository.addNewUser(user)
     }
 
-    fun getUsernamePassword(inputUserName:String, inputPassword:String){
+    fun getUsernamePassword(inputUserName:String, inputPassword:String):List<User>{
 
-        repository.getUsernamePassword(inputUserName, inputPassword)
+        return repository.getUsernamePassword(inputUserName, inputPassword)
+
 
     }
+
+
 }
