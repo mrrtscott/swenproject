@@ -24,4 +24,10 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
      fun addUser(user: User) = viewModelScope.launch(Dispatchers.IO){
         repository.addNewUser(user)
     }
+
+    fun getUsernamePassword(inputUserName:String, inputPassword:String){
+
+        repository.getUsernamePassword(inputUserName, inputPassword)
+
+    }
 }

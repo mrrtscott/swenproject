@@ -31,6 +31,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var editText_loanType_SignUp_Activity: EditText
     private lateinit var editText_loanAmount_Activity: EditText
     private lateinit var editText_occupation_SignUp_Activity: EditText
+    private lateinit var functions: Functions
 
 
 
@@ -41,20 +42,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
 
 
-    fun encryptSys(inputPassword: String): String {
 
-        var md: MessageDigest = MessageDigest.getInstance("SHA-512")
-        var digest = md.digest(inputPassword.toByteArray())
-        var sb: StringBuilder = StringBuilder()
-
-        var i = 0
-        while (i < digest.count()) {
-            sb.append(((digest[i] and 0xff.toByte()) + 0x100).toString(16).substring(0, 1))
-            i++
-        }
-
-        return sb.toString()
-    }
 
     fun getCurrentDate(): String{
 
@@ -73,6 +61,7 @@ class SignupActivity : AppCompatActivity() {
 
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        functions = Functions()
 
 
 
@@ -141,7 +130,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_Last_Name_Main_Activity.text.toString(),
                     editText_email_SignUp_Activity.text.toString(),
                     editText_username_SignUp_Activity.text.toString(),
-                    encryptSys(editText_password_SignUp_Activity.text.toString()),
+                    functions.encryptSys(editText_password_SignUp_Activity.text.toString()),
                     editText_sex_SignUp_Activity.text.toString(),
                     editText_dob_SignUp_Activity.text.toString(),
                     editText_salary_SignUp_Activity.text.toString().toDouble(),
@@ -153,7 +142,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_occupation_SignUp_Activity.text.toString(),
                     getCurrentDate())
                 userViewModel.addUser(user)
-                val intent = Intent (this,login_activity::class.java )
+                val intent = Intent (this,LoginActivityNew::class.java )
                 startActivity(intent)
             }
         }

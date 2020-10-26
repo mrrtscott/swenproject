@@ -10,4 +10,9 @@ class UserRepository (private val inputUserDao: UserDao) {
         inputUserDao.addNewUser(user)
 
     }
+
+     fun getUsernamePassword(inputUserName:String, inputPassword:String ){
+        inputUserDao.getUsernamePassword(inputUserName, inputPassword)
+
+    }
 }
