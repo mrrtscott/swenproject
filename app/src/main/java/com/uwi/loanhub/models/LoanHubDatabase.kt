@@ -14,10 +14,11 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
-@Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class), version = 1, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
     abstract fun UserDao(): UserDao
+    abstract fun LoanDao (): LoanDao
 
 
     companion object {

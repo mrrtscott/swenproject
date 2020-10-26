@@ -20,5 +20,5 @@ data class Loan(
     var description: String,
     var target:String,
     var status: String,
-    var dateCreated: OffsetDateTime
+    var dateCreated: String
 )
