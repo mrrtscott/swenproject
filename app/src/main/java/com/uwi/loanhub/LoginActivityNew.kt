@@ -7,9 +7,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
+import kotlinx.coroutines.Dispatchers
 
 class LoginActivityNew : AppCompatActivity() {
 
@@ -48,22 +51,33 @@ class LoginActivityNew : AppCompatActivity() {
 
 
 
-
+        userViewModel.userList
 
         loginButton = findViewById(R.id.LoginButtonSignInActicity)
         loginButton.setOnClickListener {
-            var userHolderList:List<User> = userViewModel.getUsernamePassword(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString()))
-            println(userHolderList.size)
-            if (userHolderList.size == 1)
-            {
-                Toast.makeText(this, "Welcome ".plus(userHolderList.get(0).firstName), Toast.LENGTH_SHORT).show()
 
-            }
-            else{
+            userViewModel.getUsernamePassword(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString()))
 
-                Toast.makeText(this, "Your username and password is incorrect", Toast.LENGTH_SHORT).show()
 
-            }
+            userViewModel.userList.observe(this, Observer { users ->
+                println(users.size)
+                if (users.size == 1)
+                {
+                    Toast.makeText(this, "Welcome ".plus(users.get(0).firstName), Toast.LENGTH_SHORT).show()
+                    val intent = Intent (this,UserLoansActivity::class.java )
+                    startActivity(intent)
+
+                }
+                else{
+
+                    Toast.makeText(this, "Your username and password is incorrect", Toast.LENGTH_SHORT).show()
+
+                }
+
+
+            })
+
+
 
 
 

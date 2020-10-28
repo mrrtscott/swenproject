@@ -14,7 +14,7 @@ interface LoanDao {
     fun getAllLoans():LiveData<List<Loan>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addNewLoan(inputLoan:Loan)
+    suspend fun addNewLoan(inputLoan:Loan)
 
     @Query("DELETE FROM Loans")
     suspend fun deleteAllLoans()
