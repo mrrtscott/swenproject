@@ -7,7 +7,7 @@ import java.util.*
 
 
 @Entity(tableName = "Institutions")
-data class InstitutionModel(
+data class Institution(
     @PrimaryKey var name:String,
     var about:String,
     var slogan:String,
@@ -17,5 +17,5 @@ data class InstitutionModel(
     var website:String,
     var openingHours:String,
     var institutionStatus:String,
-    var dateCreated: OffsetDateTime
+    var dateCreated: String
 )

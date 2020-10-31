@@ -65,6 +65,7 @@ class LoginActivityNew : AppCompatActivity() {
                 {
                     Toast.makeText(this, "Welcome ".plus(users.get(0).firstName), Toast.LENGTH_SHORT).show()
                     val intent = Intent (this,UserLoansActivity::class.java )
+                    intent.putExtra(users[0].username, "USERNAME")
                     startActivity(intent)
 
                 }

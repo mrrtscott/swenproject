@@ -13,7 +13,7 @@ data class Branch (
     var parish: String,
     var closeTo: String,
     var status: String,
-    var dateCreated: OffsetDateTime
+    var dateCreated: String
 
 
 )
