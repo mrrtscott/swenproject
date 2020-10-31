@@ -244,6 +244,8 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             )
 
+            institutionDao.addNewInstitution(scotiabank)
+
         }
     }
 
