@@ -74,7 +74,6 @@ abstract class LoanHubDatabase : RoomDatabase() {
             var function: Functions = Functions()
 
             loansDao.deleteAllLoans()
-
             institutionDao.deleteAllInstitutions()
 
 
@@ -121,7 +120,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "www.sagicor.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
-                function.getCurrentDate().toString()
+                function.getCurrentDate()
 
 
             )
@@ -138,54 +137,112 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "www.jmmb.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
-                function.getCurrentDate().toString()
+                function.getCurrentDate()
+
             )
 
             institutionDao.addNewInstitution(jmmb)
-            /*
-            )
-            val ncb = Institution(
+
+
+            var ncb = Institution(
                 "NCB",
+                "Today, NCB stands as the largest financial group in Jamaica, focused on maintaining a profitable organization, which provides highly competitive and innovative products and service offerings for our customers. Its aim is to maintain a solid governance structure and robust compliance framework, while utilizing flexible business models and efficient operational processes and systems.",
+                "Quality our Focus.. Serving our Pleasure",
+                R.drawable.ncb,
                 "info@ncb.com",
-                "876-990-0909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.ncb
+                "876-990-0905",
+                "www.jncb.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
             )
-            val firstglobal = com.uwi.loanhub.Institution(
+
+            institutionDao.addNewInstitution(ncb)
+
+
+
+
+
+            var firstglobal = Institution(
                 "First Global",
+                "First Global Bank (Jamaica) Limited (FGB) is a comprehensive provider of first-rate commercial banking products and services registered to operate in Jamaica by the Bank of Jamaica. ",
+                "Your commercial bank from Grace Kennedy",
+                R.drawable.firstglobal,
                 "info@fgb.com",
-                "876-990-0909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.firstglobal
+                "876-990-1901",
+                "www.firstglobal-bank.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
             )
-            val jn = com.uwi.loanhub.Institution(
+
+            institutionDao.addNewInstitution(firstglobal)
+
+
+
+            var jn = Institution(
                 "JN Bank",
+                "JN Bank is Jamaica’s first mutually-owned commercial bank, 100 per cent held by its savers and borrowers. Invigorated with the values and principles of its predecessor, the Jamaica National Building Society, JN Bank is underpinned by nearly a century and a half of rich history and legacy, which it continues to build on as a member of The Jamaica National Group.",
+                "We'll help you find your way",
+                R.drawable.jn,
                 "info@jnbank.com",
-                "876-990-0909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.jn
+                "876-902-7904",
+                "www.jnbank.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
+
             )
-            val victoriamutal = com.uwi.loanhub.Institution(
+
+            institutionDao.addNewInstitution(jn)
+
+
+            var victoriamutal = Institution(
                 "Victoria Mutual",
+                "Built on a solid foundation of 130 years, Victoria Mutual Building Society (VMBS) is one of the leading financial institutions in the Caribbean. The organisation has provided financial solutions for generations of Jamaicans and Caribbean Nationals at home and in the Diaspora, with the core philosophy of creating value for members.",
+                "Together We Can Build a Better Society",
+                R.drawable.victoriamutual,
                 "info@victoriamutual.com",
                 "876-990-0909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.victoriamutual
+                "www.vmbs.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
             )
-            val cibc = com.uwi.loanhub.Institution(
+
+            institutionDao.addNewInstitution(victoriamutal)
+
+
+            var cibc = Institution(
                 "CIBC",
+                "CIBC FirstCaribbean is a relationship bank offering a full range of market leading financial services through our Corporate and Investment Banking, Retail and Business Banking and Wealth Management segments.",
+                "",
+                R.drawable.cibc,
                 "info@cibc.com",
                 "876-990-0909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.cibc
+                "www.cibcfcib.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
+
             )
-            val scotiabank = com.uwi.loanhub.Institution(
+
+            institutionDao.addNewInstitution(cibc)
+
+
+            var scotiabank = Institution(
                 "Scotiabank",
+                "Scotiabank is the leading bank in the Caribbean and Central America, with operations in 25 countries, including affiliates. We are the only Canadian bank with operations in four of the seven Central American countries, namely Costa Rica, Belize and Panama.",
+                "Discover what's possible",
+                R.drawable.scotiabank,
                 "info@scotiabank.com",
                 "876-997-7909",
-                arrayOf("Mandeville", "May Pen"),
-                R.drawable.scotiabank
-            ) */
+                "wwww.jm.scotiabank.com",
+                "Monday - Friday 8:00 AM - 3:00 PM",
+                "Active",
+                function.getCurrentDate()
+
+            )
 
         }
     }
