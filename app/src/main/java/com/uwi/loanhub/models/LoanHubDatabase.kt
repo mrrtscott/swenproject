@@ -23,6 +23,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun UserDao(): UserDao
     abstract fun LoanDao(): LoanDao
     abstract fun InstitutionDao(): InstitutionDao
+    abstract  fun LoanInstitutionDao (): LoanInstitutionDao
 
 
     companion object {
@@ -216,7 +217,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             var cibc = Institution(
                 "CIBC",
                 "CIBC FirstCaribbean is a relationship bank offering a full range of market leading financial services through our Corporate and Investment Banking, Retail and Business Banking and Wealth Management segments.",
-                "",
+                "For what matters",
                 R.drawable.cibc,
                 "info@cibc.com",
                 "876-990-0909",
