@@ -1,11 +1,22 @@
 package com.uwi.loanhub
 
-class LoansSpecificToUser {
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-    /*
-    This class will be used to specifically display loans based on the user's profile
-    -Get username from intent
-    -Query username to get all details on users
-    - Use sex, salary,creditScore, occupation, loantype, loanamount to query loan database
-     */
+class LoansSpecificToUser : AppCompatActivity() {
+
+    private lateinit var username:String
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_loans_specific_to_user)
+
+        val previousIntent = intent
+        val parsedStringID = previousIntent.getStringExtra("USERNAME")
+        username = parsedStringID
+
+
+    }
 }

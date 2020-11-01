@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserLoansActivity"></activity>
+        <activity android:name=".LoansSpecificToUser"></activity>
+        <activity android:name=".UserLoansActivity" />
         <activity
             android:name=".LoginActivityNew"
-            android:theme="@style/NoActionBarMaterialComponent"></activity>
+            android:theme="@style/NoActionBarMaterialComponent" />
         <activity android:name=".LoanDetails" />
         <activity
             android:name=".login_activity"
