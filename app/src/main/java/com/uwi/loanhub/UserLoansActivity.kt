@@ -12,6 +12,12 @@ import com.uwi.loanhub.models.LoanViewModel
 
 class UserLoansActivity : AppCompatActivity() {
 
+    /*
+
+   This class is used to display all the loans that is in the database that are active
+
+     */
+
     private lateinit var loanViewModel: LoanViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
 

@@ -298,6 +298,32 @@ tools:context=".SignupActivity">
         <!--Salary input ends here-->
 
 
+        <!-- Credit score input starts here -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_baseline_score_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="30">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editText_Credit_Score_Main_Activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructions_credit_hint"
+                android:inputType="number"
+                android:textColor="@color/gray">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Credit Score input ends here-->
+
+
 
 
 

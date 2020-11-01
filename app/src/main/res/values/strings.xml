@@ -45,6 +45,7 @@
     <string name="instructions_enter_loanType_hint">Loan Type</string>
     <string name="instructions_enter_loan_Amount_hint">Loan Amount</string>
     <string name="instructions_enter_occupation_hint">Occupation</string>
+    <string name="instructions_credit_hint">Credit Score</string>
 
     <string-array name="cities">
         <item name="Kingston">Kingston</item>

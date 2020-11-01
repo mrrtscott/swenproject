@@ -16,6 +16,7 @@ data class User(
     var sex: String,
     var dob: String,
     var salary: Double,
+    var creditScore: Int,
     var city:String,
     var parish: String,
     var primaryBank: String,

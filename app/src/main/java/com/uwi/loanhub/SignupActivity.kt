@@ -25,6 +25,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var editText_sex_SignUp_Activity: EditText
     private lateinit var editText_dob_SignUp_Activity: EditText
     private lateinit var editText_salary_SignUp_Activity: EditText
+    private lateinit var editText_credit_score_SignUp_Activity: EditText
     private lateinit var drop_text_city: EditText
     private lateinit var drop_text_parish: EditText
     private lateinit var editText_primaryBank_SignUp_Activity: EditText
@@ -69,6 +70,7 @@ class SignupActivity : AppCompatActivity() {
         editText_sex_SignUp_Activity = findViewById(R.id.drop_text_sex)
         editText_dob_SignUp_Activity = findViewById(R.id.editText_dob_Main_Activity)
         editText_salary_SignUp_Activity = findViewById(R.id.editText_salary_Main_Activity)
+        editText_salary_SignUp_Activity = findViewById(R.id.editText_Credit_Score_Main_Activity)
         drop_text_city = findViewById(R.id.drop_text_city)
         drop_text_parish = findViewById(R.id.drop_text_parish)
         editText_primaryBank_SignUp_Activity = findViewById(R.id.editText_priBank_Main_Activity)
@@ -127,6 +129,7 @@ class SignupActivity : AppCompatActivity() {
                     editText_sex_SignUp_Activity.text.toString().trim(),
                     editText_dob_SignUp_Activity.text.toString().trim(),
                     editText_salary_SignUp_Activity.text.toString().toDouble(),
+                    editText_credit_score_SignUp_Activity.text.toString().toInt(),
                     drop_text_city.text.toString(),
                     drop_text_parish.text.toString(),
                     editText_primaryBank_SignUp_Activity.text.toString(),
