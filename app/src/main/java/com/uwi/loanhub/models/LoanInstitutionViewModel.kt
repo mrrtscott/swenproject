@@ -26,9 +26,9 @@ class LoanInstitutionViewModel (application: Application): AndroidViewModel(appl
     }
 
 
-    fun getLoanInstitutionUserSpecific (inputSex:String, inputSalary:Double, inputCreditScore:Int, inputOccupation:String, inputPrimaryBank:String, inputLoanType:String, inputLoanAmount: Int, inputTarget:String) = viewModelScope.launch(
+    fun getLoanInstitutionUserSpecific (inputSex:String, inputCreditScore:Int, inputLoanAmount: Int) = viewModelScope.launch(
         Dispatchers.IO) {
-        val list = repository.getLoanInstitutionUserSpecific(inputSex, inputSalary, inputCreditScore, inputOccupation, inputPrimaryBank, inputLoanType, inputLoanAmount, inputTarget)
+        val list = repository.getLoanInstitutionUserSpecific(inputSex,  inputCreditScore, inputLoanAmount)
         loansSpecificToUser.postValue(list)
 
 

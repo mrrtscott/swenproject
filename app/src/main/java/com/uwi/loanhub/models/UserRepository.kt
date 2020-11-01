@@ -19,6 +19,12 @@ class UserRepository (private val inputUserDao: UserDao) {
 
     }
 
+    fun  getUser (inputUsername: String):List<User>{
+
+        return inputUserDao.getUser(inputUsername)
+
+    }
+
 
 
 

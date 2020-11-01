@@ -10,6 +10,9 @@ interface UserDao {
     @Query("SELECT * FROM Users WHERE username = :inputUsername AND password = :inputPassword")
     fun getUsernamePassword (inputUsername: String, inputPassword: String):List<User> //Will be used to confirm user.
 
+    @Query("SELECT * FROM Users WHERE username = :inputUsername")
+    fun getUser(inputUsername: String):List<User>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addNewUser(user: User)
 

@@ -7,7 +7,7 @@ class LoanInstitutionRepository (private val inputLoanInstitutionDao: LoanInstit
 
     val allLoanInstitution: LiveData<List<LoanInstitution>> = inputLoanInstitutionDao.getLoanInstitution()
 
-    fun getLoanInstitutionUserSpecific (inputSex:String, inputSalary:Double, inputCreditScore:Int, inputOccupation:String, inputPrimaryBank:String, inputLoanType:String, inputLoanAmount: Int, inputTarget:String):List<LoanInstitution>  {
-        return inputLoanInstitutionDao.getLoanInstitutionUserSpecific(inputSex, inputSalary, inputCreditScore, inputOccupation, inputPrimaryBank, inputLoanType, inputLoanAmount, inputTarget)
+    fun getLoanInstitutionUserSpecific (inputSex:String,  inputCreditScore:Int, inputLoanAmount: Int):List<LoanInstitution>  {
+        return inputLoanInstitutionDao.getLoanInstitutionUserSpecific(inputSex, inputCreditScore,   inputLoanAmount)
     }
 }

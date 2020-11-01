@@ -2,10 +2,38 @@ package com.uwi.loanhub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.uwi.loanhub.models.LoanInstitutionViewModel
+import com.uwi.loanhub.models.UserViewModel
+import org.jetbrains.annotations.NotNull
 
 class LoansSpecificToUser : AppCompatActivity() {
 
     private lateinit var username:String
+    private lateinit var userViewModel: UserViewModel
+    private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
+    private lateinit var functions: Functions
+
+
+    private lateinit var firstName: String
+    private lateinit var lastName: String
+    private lateinit var email: String
+    private lateinit var password: String
+    private lateinit var sex: String
+    private lateinit var dob: String
+    private var salary: Double = 0.00
+    private var creditScore: Int = 0
+    private lateinit var city:String
+    private lateinit var parish: String
+    private lateinit var primaryBank: String
+    private lateinit var loanType: String
+    private var loanAmount: Double = 0.00
+    private lateinit var occupation: String
+
 
 
 
@@ -13,9 +41,64 @@ class LoansSpecificToUser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loans_specific_to_user)
 
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        functions = Functions()
+        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
         username = parsedStringID
+
+
+        userViewModel.getUser(username)
+
+        userViewModel.singleUser.observe(this, Observer { singleUser ->
+
+            if(singleUser.size ==  1)
+            {
+                firstName = singleUser[0].firstName
+                lastName = singleUser[0].lastName
+                email = singleUser[0].email
+                password = singleUser[0].password
+                sex = singleUser[0].sex
+                dob = singleUser[0].dob
+                salary = singleUser[0].salary
+                creditScore = singleUser[0].creditScore
+                city  = singleUser[0].city
+                parish = singleUser[0].parish
+                primaryBank = singleUser[0].primaryBank
+                loanType =  singleUser[0].loanType
+                loanAmount = singleUser[0].loanAmount
+                occupation = singleUser[0].occupation
+
+
+
+
+            }
+        })
+
+
+        val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
+        val adapter = LoanListAdapter(this)
+        recycleView.adapter = adapter
+        recycleView.layoutManager = LinearLayoutManager(this)
+
+        loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex,  creditScore, loanAmount.toInt())
+
+        loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
+
+
+        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
+            loans?.let{ adapter.setLoan(it)}
+        })
+
+
+
+
+
+
+
+
 
 
     }
