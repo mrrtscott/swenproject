@@ -23,6 +23,7 @@
 
         </TextView>
 
+        <!-- Inner linear layout to manage the image and details pertaining to Institution -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
