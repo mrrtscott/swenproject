@@ -29,6 +29,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
+
+            <!-- Image view for the logo of the institution -->
             <ImageView
                 android:layout_width="160dp"
                 android:layout_height="160dp"
