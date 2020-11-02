@@ -93,4 +93,7 @@
     <string name="image_of_the_instittution">Image of the instittution</string>
     <string name="institution">Institution</string>
     <string name="slogan">Slogan</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
 </resources>

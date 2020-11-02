@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:textSize="16sp"
-                    android:text="Email"
+                    android:text="@string/email"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/avenirnextbold">
 
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:textSize="16sp"
-                    android:text="Phone"
+                    android:text="@string/phone"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/avenirnextbold">
 
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:textSize="16sp"
-                    android:text="Website"
+                    android:text="@string/website"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/avenirnextbold">
 
