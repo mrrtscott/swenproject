@@ -72,6 +72,8 @@
 
                 </TextView>
 
+
+                <!-- Text view to hold email -->
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -83,6 +85,7 @@
 
                 </TextView>
 
+                <!-- Text view to hold phone number -->
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
