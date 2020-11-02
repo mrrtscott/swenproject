@@ -40,6 +40,8 @@
                 android:contentDescription="@string/image_of_the_instittution">
 
             </ImageView>
+
+            <!-- Second inner layout to manage the list of institution detail-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
