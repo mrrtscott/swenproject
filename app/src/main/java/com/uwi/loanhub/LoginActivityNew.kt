@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -13,11 +14,14 @@ import androidx.lifecycle.viewModelScope
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
 import kotlinx.coroutines.Dispatchers
+import java.util.*
+import kotlin.concurrent.schedule
 
 class LoginActivityNew : AppCompatActivity() {
 
     private lateinit var editText_username_Login_Activity: EditText
     private lateinit var editText_password_Login_Activity: EditText
+    private  lateinit var startWaitBar: ProgressBar
 
 
 
@@ -29,12 +33,30 @@ class LoginActivityNew : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
     private lateinit var functions: Functions
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        loginButton.isEnabled = true
+        editText_username_Login_Activity.isEnabled = true
+        editText_password_Login_Activity.isEnabled = true
+
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        loginButton.isEnabled = true
+        editText_username_Login_Activity.isEnabled = true
+        editText_password_Login_Activity.isEnabled = true
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_new)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         functions = Functions()
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        startWaitBar = findViewById(R.id.startWaitBar)
+
+
 
 
 
@@ -55,6 +77,10 @@ class LoginActivityNew : AppCompatActivity() {
 
         loginButton = findViewById(R.id.LoginButtonSignInActicity)
         loginButton.setOnClickListener {
+            startWaitBar.visibility = View.VISIBLE
+            loginButton.isEnabled = false
+            editText_username_Login_Activity.isEnabled = false
+            editText_password_Login_Activity.isEnabled = false
 
             userViewModel.getUsernamePassword(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString()))
 
@@ -63,15 +89,36 @@ class LoginActivityNew : AppCompatActivity() {
                 println(users.size)
                 if (users.size == 1)
                 {
-                    Toast.makeText(this, "Welcome ".plus(users.get(0).firstName), Toast.LENGTH_SHORT).show()
-                    val intent = Intent (this,UserLoansActivity::class.java )
-                    intent.putExtra(users[0].username, "USERNAME")
-                    startActivity(intent)
+
+
+
+                    val intent = Intent (this,LoansSpecificToUser::class.java )
+                    intent.putExtra( "USERNAME", users[0].username)
+
+
+
+                    Timer().schedule(8000) {
+
+                        startActivity(intent)
+
+
+                    }
+
+                    Toast.makeText(this, "Welcome ".plus(users.get(0).firstName.plus("! Please wait")), Toast.LENGTH_SHORT).show()
+                    startWaitBar.visibility = View.GONE
+
+
+
+
 
                 }
                 else{
 
                     Toast.makeText(this, "Your username and password is incorrect", Toast.LENGTH_SHORT).show()
+                    startWaitBar.visibility = View.GONE
+                    loginButton.isEnabled = true
+                    editText_username_Login_Activity.isEnabled = true
+                    editText_password_Login_Activity.isEnabled = true
 
                 }
 

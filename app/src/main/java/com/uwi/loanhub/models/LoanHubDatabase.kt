@@ -13,6 +13,7 @@ import com.uwi.loanhub.Functions
 import com.uwi.loanhub.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -65,6 +66,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
                     populateDatabase(database.LoanDao(), database.InstitutionDao())
+
                 }
             }
 
@@ -82,14 +84,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
             var loan_0 = Loan(
                 0,
                 "NCB",
-                "NCB Loan",
+                "Empire Loan",
                 60000,
-                9.5,
+                1.5,
                 "70 months",
                 7.0,
                 80,
                 "Thinking of buying your own car? A National Bank car loan can be tailored to almost any budget—choose the payment options that are best for you. You can request a National Bank car loan at most dealerships.",
-                "Everyone",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -97,19 +99,831 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_1 = Loan(
                 0,
-                "CIBC",
-                "CIBC Loan",
-                70000,
+                function.givenList_shouldReturnARandomElement(),
+                "Loanara",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                50,
+                "Get 100% financing on new and used vehicles 2013 and newer. Sign Up For Newsletter. Apply Online.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_1)
+
+            var loan_2 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Zoom Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Get a personal loan with no hidden fees, no prepayment penalties, and no origination fees from one of the most trusted loan companies in the market.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_2)
+
+            var loan_3 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Scoot Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Fast Application, Competitive Rates And Quick Decisions. Apply for a new or used car loan or refinance your existing auto loan your bank.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_3)
+
+
+            var loan_4 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Turbo Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Get 100% financing on new and used vehicles 2013 and newer.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_4)
+
+
+
+            var loan_5 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Smart Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Apply online for a new or used car loan from this bank. Get approved for a financing based on your needs and within your budget.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_5)
+
+
+            var loan_6 = Loan(
+                0,
+            function.givenList_shouldReturnARandomElement(),
+            "Drive Loan",
+            90000,
+            10.5,
+            "80 months",
+            8.0,
+            90,
+            "Car Loans. Get your rates quickly on new, used and refinanced loans.",
+            "Male",
+            "Active",
+            "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_6)
+
+
+
+            var loan_7 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Quick Loan",
+                90000,
+                10.5,
+                "Get terms up to 84 months and no payments for 60 days.",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_7)
+
+            var loan_8 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Infinite Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "We don't hide any fees, so you know exactly how much you'll pay.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_8)
+
+            var loan_9 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Swift Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "We never penalize you for paying off your loan early.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_9)
+
+            var loan_10 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Anchor Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Our simple application only takes a few minutes.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_10)
+
+            var loan_11 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Ace Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Refinance your car loan with this bank and lower monthly payments.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_11)
+
+            var loan_12 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "King Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Our low rates on auto loans make us one of the top auto lenders in Jamaica for new and used vehicles, auto refinance loans, lease buyouts, RV loans.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_12)
+
+            var loan_13 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Dash Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Whether you're buying, refinancing or looking to turn your lease into a loan, this bank offers a solution for you. Buy the car you want with confidence.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_13)
+
+            var loan_14 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Easy Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "Be more confident when buying your next car or vehicle. Find an auto loan with our bank that fits your budget. See all financing options & apply now.",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_14)
+
+            var loan_15= Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Hustle Loan",
+                90000,
                 10.5,
                 "80 months",
                 8.0,
                 90,
                 "This is a CIBC loan description",
-                "Everyone",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_15)
+
+            var loan_16 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Atlas Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_16)
+
+            var loan_17 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Cornerstone Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_17)
+
+            var loan_18 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Top Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_18)
+
+            var loan_19 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Brisk Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_19)
+
+            var loan_20 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Pro Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_20)
+
+            var loan_21 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Express Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_21)
+
+            var loan_22 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Optimum Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_22)
+
+            var loan_23 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Elite Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_23)
+
+            var loan_24 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Dart Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_24)
+
+            var loan_25 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Path Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_25)
+
+            var loan_26 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Sturdy Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_26)
+
+            var loan_27 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Bound Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_27)
+
+            var loan_28 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Crypto Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_28)
+
+            var loan_29 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "GoLoan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_29)
+
+            var loan_30 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Post Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_30)
+
+            var loan_31 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Loanica",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_31)
+
+            var loan_32 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Loanus",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_32)
+
+            var loan_33 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Real Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_33)
+
+            var loan_34 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Loanzio",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_34)
+
+            var loan_35 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "mloan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_35)
+
+            var loan_36 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Loanvoyage",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_36)
+
+            var loan_37 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Bux Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_37)
+
+            var loan_38 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Lotus Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_38)
+
+            var loan_39 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Angel Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_39)
+
+            var loan_40 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Stack Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_40)
+
+            var loan_41 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Covered Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_41)
+
+            var loan_42 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Bite Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_42)
+
+            var loan_43 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Sact Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_43)
+
+            var loan_44 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Butt Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_1)
+
+            var loan_45 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Helix Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_45)
+
+            var loan_46 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Plow Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_46)
+
+            var loan_47 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Thirs Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_47)
+
+            var loan_48 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Billzo Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_48)
+
+            var loan_49 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Pier Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_49)
+
+            var loan_50 = Loan(
+                0,
+                function.givenList_shouldReturnARandomElement(),
+                "Wallet Loan",
+                90000,
+                10.5,
+                "80 months",
+                8.0,
+                90,
+                "This is a CIBC loan description",
+                "Male",
+                "Active",
+                "2020-09-01"
+            )
+            loansDao.addNewLoan(loan_50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             var sagicor = Institution(
                 "Sagicor",
@@ -215,7 +1029,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
             var cibc = Institution(
-                "CIBC",
+                function.givenList_shouldReturnARandomElement(),
                 "CIBC FirstCaribbean is a relationship bank offering a full range of market leading financial services through our Corporate and Investment Banking, Retail and Business Banking and Wealth Management segments.",
                 "For what matters",
                 R.drawable.cibc,

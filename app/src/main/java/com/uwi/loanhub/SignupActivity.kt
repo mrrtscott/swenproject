@@ -70,7 +70,7 @@ class SignupActivity : AppCompatActivity() {
         editText_sex_SignUp_Activity = findViewById(R.id.drop_text_sex)
         editText_dob_SignUp_Activity = findViewById(R.id.editText_dob_Main_Activity)
         editText_salary_SignUp_Activity = findViewById(R.id.editText_salary_Main_Activity)
-        editText_salary_SignUp_Activity = findViewById(R.id.editText_Credit_Score_Main_Activity)
+        editText_credit_score_SignUp_Activity = findViewById(R.id.editText_Credit_Score_Main_Activity)
         drop_text_city = findViewById(R.id.drop_text_city)
         drop_text_parish = findViewById(R.id.drop_text_parish)
         editText_primaryBank_SignUp_Activity = findViewById(R.id.editText_priBank_Main_Activity)

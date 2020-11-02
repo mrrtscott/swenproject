@@ -3,6 +3,7 @@ package com.uwi.loanhub
 import java.security.MessageDigest
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 import kotlin.experimental.and
 
 class Functions {
@@ -32,4 +33,12 @@ class Functions {
         return formatted
 
     }
+
+    fun givenList_shouldReturnARandomElement():String  {
+        val givenList = Arrays.asList("NCB", "First Global","Scotiabank", "Victoria Mutual", "JN Bank", "JMMB", "Sagicor", "CIBC")
+        val rand = Random()
+        val randomElement = givenList[rand.nextInt(givenList.size)]
+        return randomElement
+    }
+
 }

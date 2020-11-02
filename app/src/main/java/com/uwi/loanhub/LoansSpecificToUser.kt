@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
 import org.jetbrains.annotations.NotNull
+import java.util.*
+import kotlin.concurrent.schedule
 
 class LoansSpecificToUser : AppCompatActivity() {
 
@@ -19,20 +21,20 @@ class LoansSpecificToUser : AppCompatActivity() {
     private lateinit var functions: Functions
 
 
-    private lateinit var firstName: String
-    private lateinit var lastName: String
-    private lateinit var email: String
-    private lateinit var password: String
-    private lateinit var sex: String
-    private lateinit var dob: String
+    private  var firstName: String = ""
+    private  var lastName: String= ""
+    private  var email: String= ""
+    private  var password: String= ""
+    private  var sex: String= ""
+    private  var dob: String= ""
     private var salary: Double = 0.00
     private var creditScore: Int = 0
-    private lateinit var city:String
-    private lateinit var parish: String
-    private lateinit var primaryBank: String
-    private lateinit var loanType: String
+    private var city:String= ""
+    private  var parish: String= ""
+    private  var primaryBank: String= ""
+    private  var loanType: String= ""
     private var loanAmount: Double = 0.00
-    private lateinit var occupation: String
+    private  var occupation: String= ""
 
 
 
@@ -41,20 +43,30 @@ class LoansSpecificToUser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loans_specific_to_user)
 
+
+
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         functions = Functions()
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
+        println(parsedStringID)
         username = parsedStringID
 
 
         userViewModel.getUser(username)
 
+
+        loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
+
+
         userViewModel.singleUser.observe(this, Observer { singleUser ->
 
+
+
             if(singleUser.size ==  1)
+
             {
                 firstName = singleUser[0].firstName
                 lastName = singleUser[0].lastName
@@ -70,6 +82,11 @@ class LoansSpecificToUser : AppCompatActivity() {
                 loanType =  singleUser[0].loanType
                 loanAmount = singleUser[0].loanAmount
                 occupation = singleUser[0].occupation
+                loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex.substring(0), creditScore, loanAmount.toInt())
+                println(occupation + "OCCUPTATION")
+
+
+
 
 
 
@@ -78,17 +95,19 @@ class LoansSpecificToUser : AppCompatActivity() {
         })
 
 
-        val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
+        val recycleView = findViewById<RecyclerView>(R.id.loanSpecificToUserActivityRecycleView)
         val adapter = LoanListAdapter(this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
-        loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex,  creditScore, loanAmount.toInt())
-
-        loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
 
 
-        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
+
+        loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
+            println("change")
+            println(loans.size)
+
+
             loans?.let{ adapter.setLoan(it)}
         })
 
@@ -101,5 +120,14 @@ class LoansSpecificToUser : AppCompatActivity() {
 
 
 
+
+
+
+
+
     }
+
+
+
+
 }
