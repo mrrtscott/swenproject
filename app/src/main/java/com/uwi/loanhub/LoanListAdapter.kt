@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.uwi.loanhub.models.Loan
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.User
 
-class LoanListAdapter internal constructor(context: Context): RecyclerView.Adapter<LoanListAdapter.LoanViewHolder>()  {
+class LoanListAdapter internal constructor(context: Context, private val loanClickListener: OnLoanClickListener): RecyclerView.Adapter<LoanListAdapter.LoanViewHolder>()  {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var loanInstitution = emptyList<LoanInstitution>()
@@ -36,6 +35,11 @@ class LoanListAdapter internal constructor(context: Context): RecyclerView.Adapt
         holder.institutionNameView.text = "${current.institution}"
         holder.loanDescriptionView.text = "${current.description}"
         holder.institutionImage.setImageResource("${current.logo}".toInt())
+
+        holder.itemView.setOnClickListener {
+            loanClickListener.onLoanItemClicked(position)
+        }
+
     }
 
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +16,7 @@ import org.jetbrains.annotations.NotNull
 import java.util.*
 import kotlin.concurrent.schedule
 
-class LoansSpecificToUser : AppCompatActivity() {
+class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
     private lateinit var username:String
     private lateinit var userViewModel: UserViewModel
@@ -106,7 +107,7 @@ class LoansSpecificToUser : AppCompatActivity() {
 
 
         val recycleView = findViewById<RecyclerView>(R.id.loanSpecificToUserActivityRecycleView)
-        val adapter = LoanListAdapter(this)
+        val adapter = LoanListAdapter(this, this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -116,6 +117,7 @@ class LoansSpecificToUser : AppCompatActivity() {
         loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
             println("change")
             println(loans.size)
+
 
 
             loans?.let{ adapter.setLoan(it)}
@@ -129,15 +131,13 @@ class LoansSpecificToUser : AppCompatActivity() {
 
 
 
-
-
-
-
-
-
     }
 
-
+    override fun onLoanItemClicked(position: Int) {
+        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
+            println(loans[position].id)
+        })
+    }
 
 
 }

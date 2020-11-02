@@ -2,6 +2,7 @@ package com.uwi.loanhub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanViewModel
 
-class UserLoansActivity : AppCompatActivity() {
+class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
     /*
 
@@ -25,7 +26,7 @@ class UserLoansActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_loans)
         val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
-        val adapter = LoanListAdapter(this)
+        val adapter = LoanListAdapter(this, this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -37,5 +38,13 @@ class UserLoansActivity : AppCompatActivity() {
 
             }
         })
+    }
+
+
+
+
+
+    override fun onLoanItemClicked(position: Int) {
+        Toast.makeText(this, "Loan ".plus(position), Toast.LENGTH_LONG).show()
     }
 }
