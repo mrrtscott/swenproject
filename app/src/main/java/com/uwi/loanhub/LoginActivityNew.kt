@@ -22,7 +22,7 @@ class LoginActivityNew : AppCompatActivity() {
     private lateinit var editText_username_Login_Activity: EditText
     private lateinit var editText_password_Login_Activity: EditText
     private lateinit var startWaitBar: ProgressBar
-    private lateinit var otherButton: Button
+
 
 
 
@@ -71,6 +71,8 @@ class LoginActivityNew : AppCompatActivity() {
             val intent: Intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
+
+
 
 
 

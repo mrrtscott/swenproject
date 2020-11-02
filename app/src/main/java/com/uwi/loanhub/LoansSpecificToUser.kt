@@ -1,8 +1,10 @@
 package com.uwi.loanhub
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,6 +38,8 @@ class LoansSpecificToUser : AppCompatActivity() {
     private var loanAmount: Double = 0.00
     private  var occupation: String= ""
 
+    private lateinit var otherButton: Button
+
 
 
 
@@ -47,6 +51,12 @@ class LoansSpecificToUser : AppCompatActivity() {
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         functions = Functions()
+
+        otherButton = findViewById(R.id.otherLoansButton)
+        otherButton.setOnClickListener{
+            val intent: Intent = Intent(this, UserLoansActivity::class.java)
+            startActivity(intent)
+        }
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val previousIntent = intent

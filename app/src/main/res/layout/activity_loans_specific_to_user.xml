@@ -27,6 +27,7 @@
             </TextView>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/otherLoansButton"
                 android:layout_width="90dp"
                 android:layout_height="40dp"
                 android:text="OTHERS">
