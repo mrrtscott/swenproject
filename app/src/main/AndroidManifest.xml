@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoansSpecificToUser"></activity>
+        <activity android:name=".LoansSpecificToUser"
+            android:theme="@style/ActionBarMaterialComponent"></activity>
         <activity android:name=".UserLoansActivity" />
         <activity
             android:name=".LoginActivityNew"
