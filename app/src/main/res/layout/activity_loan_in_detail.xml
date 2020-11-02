@@ -110,6 +110,18 @@
 
                 </TextView>
 
+                <Button
+
+                app:icon="@drawable/ic_baseline_check_24"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#2699FB"
+                    android:layout_marginStart="20dp">
+
+                </Button>
+
 
 
 
