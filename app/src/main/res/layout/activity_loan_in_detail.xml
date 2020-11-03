@@ -257,12 +257,11 @@
             android:textColorHint="#2699FB">
 
             <AutoCompleteTextView
+                android:id="@+id/autoCompleteLoanInDetailRating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:inputType="none"
-
-                >
+                android:inputType="none">
 
             </AutoCompleteTextView>
 
