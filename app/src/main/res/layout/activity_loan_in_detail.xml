@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="@string/loan_name"
             android:gravity="center"
-            android:textSize="30sp"
+            android:textSize="36sp"
             android:fontFamily="@font/avenirnextbold"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp">
@@ -154,9 +154,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$37,000,000.00"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/avenirnextbold">
+
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Interest rate"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/avenirnextbold">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repayment"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/avenirnextbold">
 
         </TextView>
 
