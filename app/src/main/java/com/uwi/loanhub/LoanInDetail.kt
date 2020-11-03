@@ -34,18 +34,23 @@ class LoanInDetail : AppCompatActivity() {
             println(loans.get(0).loanName)
 
 
-            val institutionName = findViewById<TextView>(R.id.institutionNameLoanDetails)
-            val institutionLogo = findViewById<ImageView>(R.id.institutionLogoLoanDetails)
-            val loanName = findViewById<TextView>(R.id.loanNameLoanDetails)
-            val loanEmail = findViewById<TextView>(R.id.institutionEmailLoanDetails)
-            val loanPhone = findViewById<TextView>(R.id.institutionPhoneLoanDetails)
-            val loanDetails = findViewById<TextView>(R.id.loanDescriptionLoanDetails)
-            val loanBranches= findViewById<TextView>(R.id.loanBranchLoanDetails)
-            val loanAmount = findViewById<TextView>(R.id.loanAmountLoanDetails)
-            val loanInterestRate = findViewById<TextView>(R.id.loanInterestRateLoanDetails)
-            val loanRepay = findViewById<TextView>(R.id.loanTermsRepayLoanDetails)
-            val loanPerCentFinance= findViewById<TextView>(R.id.loanPerCentFinancingLoanDetails)
-            val loanMinCreditScore = findViewById<TextView>(R.id.loanMinCreditScoreLoanDetails)
+            val institutionName = findViewById<TextView>(R.id.loanDetailLoanInstitutionName)
+            val institutionLogo = findViewById<ImageView>(R.id.loanDetailLoanInstitutionLogo)
+            val loanName = findViewById<TextView>(R.id.loanDetailLoanName)
+            val loanEmail = findViewById<TextView>(R.id.loanDetailInstitutionEmail)
+            val loanPhone = findViewById<TextView>(R.id.loanDetailInstitutionPhone)
+            val loanDetails = findViewById<TextView>(R.id.loanDetailLoanDescription)
+            val loanAmount = findViewById<TextView>(R.id.loanDetailLoanMaximumAmount)
+            val loanInterestRate = findViewById<TextView>(R.id.loanDetailLoanInterestRate)
+            val loanRepay = findViewById<TextView>(R.id.loanDetailLoanRepayment)
+            //val loanPerCentFinance= findViewById<TextView>(R.id.loanDetail)
+            //val loanMinCreditScore = findViewById<TextView>(R.id.loanMinCreditScoreLoanDetails)
+
+            institutionName.text = loans.get(0).institution
+            institutionLogo.setImageResource(loans.get(0).logo!!.toInt())
+            loanName.text =loans.get(0).loanName
+
+            loanAmount.text= loans.get(0).loanAmount.toString()
 
 
         })
