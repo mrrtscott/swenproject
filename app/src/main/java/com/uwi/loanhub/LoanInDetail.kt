@@ -36,11 +36,14 @@ class LoanInDetail : AppCompatActivity() {
 
             val institutionName = findViewById<TextView>(R.id.loanDetailLoanInstitutionName)
             val institutionLogo = findViewById<ImageView>(R.id.loanDetailLoanInstitutionLogo)
+            val institutionWebsite = findViewById<TextView>(R.id.loanDetailInstitutionWebsite)
             val loanName = findViewById<TextView>(R.id.loanDetailLoanName)
+
             val loanEmail = findViewById<TextView>(R.id.loanDetailInstitutionEmail)
             val loanPhone = findViewById<TextView>(R.id.loanDetailInstitutionPhone)
             val loanDetails = findViewById<TextView>(R.id.loanDetailLoanDescription)
             val loanAmount = findViewById<TextView>(R.id.loanDetailLoanMaximumAmount)
+
             val loanInterestRate = findViewById<TextView>(R.id.loanDetailLoanInterestRate)
             val loanRepay = findViewById<TextView>(R.id.loanDetailLoanRepayment)
             //val loanPerCentFinance= findViewById<TextView>(R.id.loanDetail)
@@ -49,8 +52,11 @@ class LoanInDetail : AppCompatActivity() {
             institutionName.text = loans.get(0).institution
             institutionLogo.setImageResource(loans.get(0).logo!!.toInt())
             loanName.text =loans.get(0).loanName
-
-            loanAmount.text= functions.currencyFormatter(loans. get(0).loanAmount.toString())
+            loanEmail.text = loans.get(0).email
+            loanPhone.text  = loans.get(0).phone
+            institutionWebsite.text = loans.get(0).website
+            loanAmount.text= "$".plus(functions.currencyFormatter(loans. get(0).loanAmount.toString()))
+            loanDetails.text = loans.get(0).description
 
 
         })
