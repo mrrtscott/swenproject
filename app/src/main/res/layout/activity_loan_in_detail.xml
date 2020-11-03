@@ -139,6 +139,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/loanDetailLoanMaximumAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$37,000,000.00"
@@ -151,6 +152,7 @@
 
 
         <TextView
+            android:id="@+id/loanDetailLoanInterestRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/interest_rate"
