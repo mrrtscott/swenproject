@@ -3,10 +3,12 @@ package com.uwi.loanhub
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.uwi.loanhub.models.LoanInstitutionViewModel
 
 class LoanInDetail : AppCompatActivity() {
 
     private lateinit var functions: Functions
+    private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
