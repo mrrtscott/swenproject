@@ -1,5 +1,6 @@
 package com.uwi.loanhub
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -45,6 +46,10 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
 
     override fun onLoanItemClicked(position: Int) {
-        Toast.makeText(this, "Loan ".plus(position), Toast.LENGTH_LONG).show()
+        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
+            println(loans[position].id)
+            val intent: Intent = Intent(this, LoanInDetail::class.java)
+            startActivity(intent)
+        })
     }
 }
