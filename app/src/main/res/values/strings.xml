@@ -99,4 +99,6 @@
     <string name="loan_name">Loan Name</string>
     <string name="interest_rate">Interest rate</string>
     <string name="repayment">Repayment</string>
+    <string name="branchNear">Branch near you</string>
+    <string name="more">More</string>
 </resources>

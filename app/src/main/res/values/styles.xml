@@ -2,46 +2,82 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
+
     </style>
 
+
+
     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
+
 
 
     </style>
 
     <style name="NoActionBarMaterialComponent" parent="Theme.MaterialComponents.Light.NoActionBar">
 <!--    <style name="NoActionBarMaterialComponent" parent="Theme.AppCompat.Light.NoActionBar">-->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
 
 
+
+
+
+
+
     </style>
+
+
+
 
     <style name="ActionBarMaterialComponent" parent="Theme.MaterialComponents.Light">
         <!--    <style name="NoActionBarMaterialComponent" parent="Theme.AppCompat.Light.NoActionBar">-->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
+
+
+
+    </style>
+
+    <style name="ActionBarMaterialComponentDark" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+
 
 
     </style>
 
 
 
-        <style name="NoActionBarVanilla" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+    <style name="NoActionBarVanilla" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#094073</item>
+        <item name="colorPrimaryDark">@color/cornflower_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
 
 
+
+
+
     </style>
+
+
 
 
 </resources>

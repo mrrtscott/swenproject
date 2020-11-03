@@ -7,6 +7,34 @@
     tools:context=".LoansSpecificToUser"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/startActivityLoanString"
+            android:fontFamily="@font/menloregularfont"
+            android:textSize="@dimen/f40"
+            android:textFontWeight="800"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/app_blue">
+        </TextView>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/menloregularfont"
+            android:textFontWeight="400"
+            android:text="HUB"
+            android:textSize="40sp"
+            android:textColor="@color/app_blue">
+        </TextView>
+    </LinearLayout>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="60dp"

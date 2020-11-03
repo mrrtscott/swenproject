@@ -6,22 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".LoanInDetail">
     <!-- Child of scroll view-->
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <!-- Header -->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/startActivityLoanString"
+            android:fontFamily="@font/menloregularfont"
+            android:textSize="@dimen/f40"
+            android:textFontWeight="800"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/app_blue">
+        </TextView>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/menloregularfont"
+            android:textFontWeight="400"
+            android:text="HUB"
+            android:textSize="40sp"
+            android:textColor="@color/app_blue">
+        </TextView>
+    </LinearLayout>
+
         <TextView
             android:id="@+id/loanDetailLoanName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/loan_name"
-            android:gravity="center"
-            android:textSize="36sp"
-            android:fontFamily="@font/avenirnextbold"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp">
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/avenirnextbold"
+            android:gravity="center"
+            android:text="@string/loan_name"
+            android:textSize="36sp">
 
         </TextView>
 
@@ -32,15 +63,14 @@
             android:orientation="horizontal">
 
 
-
             <!-- Image view for the logo of the institution -->
             <ImageView
                 android:id="@+id/loanDetailLoanInstitutionLogo"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginStart="30dp"
-                android:src="@drawable/scotiabank"
-                android:contentDescription="@string/image_of_the_instittution">
+                android:contentDescription="@string/image_of_the_instittution"
+                android:src="@drawable/scotiabank">
 
             </ImageView>
 
@@ -56,10 +86,10 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:textSize="20sp"
-                    android:text="@string/institution"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/avenirnextbold">
+                    android:fontFamily="@font/avenirnextbold"
+                    android:text="@string/institution"
+                    android:textSize="20sp">
 
                 </TextView>
 
@@ -70,10 +100,10 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:textSize="16sp"
-                    android:text="@string/slogan"
                     android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/avenirnextbold">
+                    android:fontFamily="@font/avenirnextbold"
+                    android:text="@string/slogan"
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -84,10 +114,10 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:textSize="16sp"
-                    android:text="@string/email"
                     android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/avenirnextbold">
+                    android:fontFamily="@font/avenirnextbold"
+                    android:text="@string/email"
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -97,10 +127,10 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:textSize="16sp"
-                    android:text="@string/phone"
                     android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/avenirnextbold">
+                    android:fontFamily="@font/avenirnextbold"
+                    android:text="@string/phone"
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -111,10 +141,10 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:textSize="16sp"
-                    android:text="@string/website"
                     android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/avenirnextbold">
+                    android:fontFamily="@font/avenirnextbold"
+                    android:text="@string/website"
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -124,13 +154,7 @@
                     android:orientation="horizontal">
 
 
-
                 </LinearLayout>
-
-
-
-
-
 
 
             </LinearLayout>
@@ -142,11 +166,11 @@
             android:id="@+id/loanDetailLoanMaximumAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="$37,000,000.00"
-            android:textSize="20sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/avenirnextbold">
+            android:fontFamily="@font/avenirnextbold"
+            android:text="$37,000,000.00"
+            android:textSize="20sp">
 
         </TextView>
 
@@ -155,11 +179,11 @@
             android:id="@+id/loanDetailLoanInterestRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/interest_rate"
-            android:textSize="16sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/avenirnextbold">
+            android:fontFamily="@font/avenirnextbold"
+            android:text="@string/interest_rate"
+            android:textSize="16sp">
 
         </TextView>
 
@@ -167,11 +191,11 @@
             android:id="@+id/loanDetailLoanRepayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/repayment"
-            android:textSize="16sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/avenirnextbold">
+            android:fontFamily="@font/avenirnextbold"
+            android:text="@string/repayment"
+            android:textSize="16sp">
 
         </TextView>
 
@@ -180,32 +204,73 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
             android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.">
 
         </TextView>
 
 
         <Button
-            android:layout_marginTop="20dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="160dp"
             android:layout_height="40dp"
-            android:text="Requirements"
-            android:layout_marginRight="30dp"
             android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:backgroundTint="#F1F9FF"
-            app:strokeColor="#007FEB"
+            android:text="Requirements"
             android:textColor="#007FEB"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"></Button>
+            app:strokeColor="#007FEB"></Button>
 
+        <TextView
+            android:id="@+id/loanDetailBranchNear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/avenirnextbold"
+            android:text="@string/branchNear"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/loanDetailBranch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="Branch: Sagicor New Kingston">
+
+        </TextView>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:hint="Rate Loan"
+            android:textColorHint="#2699FB">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="none"
+
+                >
+
+            </AutoCompleteTextView>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
-
-
-
-
 
 
 </ScrollView>

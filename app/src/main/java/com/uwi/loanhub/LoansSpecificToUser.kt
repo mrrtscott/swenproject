@@ -50,8 +50,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        functions = Functions()
+
 
         otherButton = findViewById(R.id.otherLoansButton)
         otherButton.setOnClickListener{
