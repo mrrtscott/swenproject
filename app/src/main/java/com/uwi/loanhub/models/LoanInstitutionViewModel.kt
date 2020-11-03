@@ -26,7 +26,7 @@ class LoanInstitutionViewModel (application: Application, inputLoanID:String = "
 
     }
 
-    constructor()
+
 
 
     fun getLoanInstitutionUserSpecific (inputSex:String, inputCreditScore:Int, inputLoanAmount: Int) = viewModelScope.launch(
