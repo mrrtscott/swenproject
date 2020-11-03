@@ -116,13 +116,23 @@
                     android:orientation="horizontal">
 
                     <Button
-
                         app:icon="@drawable/ic_baseline_check_24"
                         style="@style/Widget.MaterialComponents.Button"
                         android:layout_height="40dp"
                         android:layout_width="50dp"
                         android:textColor="@color/white"
                         android:backgroundTint="#2699FB"
+                        android:layout_marginStart="20dp">
+
+                    </Button>
+
+                    <Button
+                        app:icon="@drawable/ic_baseline_close_24"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/dim_gray"
                         android:layout_marginStart="20dp">
 
                     </Button>
