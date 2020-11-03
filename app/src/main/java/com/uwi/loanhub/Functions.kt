@@ -1,6 +1,9 @@
 package com.uwi.loanhub
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.security.MessageDigest
+import java.text.DecimalFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -39,6 +42,13 @@ class Functions {
         val rand = Random()
         val randomElement = givenList[rand.nextInt(givenList.size)]
         return randomElement
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun currencyFormatter(num: String): String? {
+        val m = num.toDouble()
+        val formatter = DecimalFormat("###,###,###")
+        return formatter.format(m)
     }
 
 }

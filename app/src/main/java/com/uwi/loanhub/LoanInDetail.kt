@@ -50,7 +50,7 @@ class LoanInDetail : AppCompatActivity() {
             institutionLogo.setImageResource(loans.get(0).logo!!.toInt())
             loanName.text =loans.get(0).loanName
 
-            loanAmount.text= loans.get(0).loanAmount.toString()
+            loanAmount.text= functions.currencyFormatter(loans. get(0).loanAmount.toString())
 
 
         })
