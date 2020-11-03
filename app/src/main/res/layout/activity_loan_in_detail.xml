@@ -186,6 +186,21 @@
 
         </TextView>
 
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="Requirements"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="right"
+            android:backgroundTint="#F1F9FF"
+            app:strokeColor="#007FEB"
+            android:textColor="#007FEB"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"></Button>
+
+
+
     </LinearLayout>
 
 
