@@ -58,7 +58,7 @@ class LoanInDetail : AppCompatActivity() {
             loanAmount.text= "$".plus(functions.currencyFormatter(loans. get(0).loanAmount.toString()))
             loanDetails.text = loans.get(0).description
             loanInterestRate.text = getString(R.string.interestRateDetails).plus(loans.get(0).interestRate.toString().plus("%"))
-            loanRepay.text = "Terms to repay: ".plus(loans.get(0).termsRepay)
+            loanRepay.text = getString(R.string.termsToRepayLoanInDetail).plus(loans.get(0).termsRepay)
 
 
         })
