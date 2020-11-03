@@ -101,4 +101,5 @@
     <string name="repayment">Repayment</string>
     <string name="branchNear">Branch near you</string>
     <string name="more">More</string>
+    <string name="interestRateDetails">\"Interest Rate: \"</string>
 </resources>
