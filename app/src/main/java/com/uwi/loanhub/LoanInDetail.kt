@@ -19,7 +19,7 @@ class LoanInDetail : AppCompatActivity() {
         functions = Functions()
 
         val previousIntent = intent
-        val LoanID = previousIntent.getStringExtra("LOANID")
+        val LoanID = previousIntent.getIntExtra("LOANID",0)
         println("Received ".plus(LoanID))
 
 
@@ -29,6 +29,7 @@ class LoanInDetail : AppCompatActivity() {
 
         loanInstitutionViewModel.specificLoanDetail.observe(this, Observer { loans ->
             println(loans.size)
+            println(loans.get(0).loanName)
         })
 
 

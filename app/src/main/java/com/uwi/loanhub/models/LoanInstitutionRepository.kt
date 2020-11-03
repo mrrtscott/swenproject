@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 
-class LoanInstitutionRepository (private val inputLoanInstitutionDao: LoanInstitutionDao, idLoan:String) {
+class LoanInstitutionRepository (private val inputLoanInstitutionDao: LoanInstitutionDao, idLoan:Int) {
 
 
 

@@ -16,13 +16,13 @@ class LoanInstitutionViewModel (application: Application): AndroidViewModel(appl
 
     val loanInstitutionDao:LoanInstitutionDao
 
-    private var inputLoanID:String= ""
+    private var inputLoanID:Int= 0
 
 
     init{
 
         loanInstitutionDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanInstitutionDao()
-        repository = LoanInstitutionRepository(loanInstitutionDao,"230")
+        repository = LoanInstitutionRepository(loanInstitutionDao,0)
         allLoanInstitution =  repository.allLoanInstitution
 
         specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, inputLoanID)
@@ -41,7 +41,7 @@ class LoanInstitutionViewModel (application: Application): AndroidViewModel(appl
 
     }
 
-    fun setLoanID(input:String){
+    fun setLoanID(input:Int){
         inputLoanID = input
         println("The input ".plus(input))
 
