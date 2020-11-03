@@ -57,6 +57,7 @@ class LoanInDetail : AppCompatActivity() {
             institutionWebsite.text = loans.get(0).website
             loanAmount.text= "$".plus(functions.currencyFormatter(loans. get(0).loanAmount.toString()))
             loanDetails.text = loans.get(0).description
+            loanInterestRate.text = "Interest Rate: ".plus(loans.get(0).interestRate.toString().plus("%"))
 
 
         })
