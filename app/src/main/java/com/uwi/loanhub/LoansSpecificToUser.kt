@@ -137,7 +137,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
         loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
-            intent.putExtra("LOANID", loans[position].id)
+            intent.putExtra("LOANID", loans[position].loanName)
             startActivity(intent)
         })
     }

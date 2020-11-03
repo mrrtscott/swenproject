@@ -3,6 +3,8 @@ package com.uwi.loanhub
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 
 class LoanInDetail : AppCompatActivity() {
@@ -15,6 +17,20 @@ class LoanInDetail : AppCompatActivity() {
         setContentView(R.layout.activity_loan_in_detail)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         functions = Functions()
+
+        val previousIntent = intent
+        val LoanID = previousIntent.getStringExtra("LOANID")
+        println("Received ".plus(LoanID))
+
+
+        loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
+
+        loanInstitutionViewModel.setLoanID(LoanID)
+
+        loanInstitutionViewModel.specificLoanDetail.observe(this, Observer { loans ->
+            println(loans.size)
+        })
+
 
 
     }

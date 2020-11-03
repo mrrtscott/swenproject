@@ -5,20 +5,24 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class LoanInstitutionViewModel (application: Application, inputLoanID:String = ""): AndroidViewModel(application) {
+class LoanInstitutionViewModel (application: Application): AndroidViewModel(application) {
 
 
     private val repository:LoanInstitutionRepository
-    private val specificRepositoryForLoanDetails:LoanInstitutionRepository
+    private var specificRepositoryForLoanDetails:LoanInstitutionRepository
     val allLoanInstitution: LiveData<List<LoanInstitution>>
     val loansSpecificToUser = MutableLiveData<List<LoanInstitution>>()
-    val specificLoanDetail: LiveData<List<LoanInstitution>>
+    var specificLoanDetail: LiveData<List<LoanInstitution>>
+
+    val loanInstitutionDao:LoanInstitutionDao
+
+    private var inputLoanID:String= ""
 
 
     init{
 
-        val loanInstitutionDao:LoanInstitutionDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanInstitutionDao()
-        repository = LoanInstitutionRepository(loanInstitutionDao,"")
+        loanInstitutionDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanInstitutionDao()
+        repository = LoanInstitutionRepository(loanInstitutionDao,"230")
         allLoanInstitution =  repository.allLoanInstitution
 
         specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, inputLoanID)
@@ -35,5 +39,15 @@ class LoanInstitutionViewModel (application: Application, inputLoanID:String = "
         loansSpecificToUser.postValue(list)
 
 
+    }
+
+    fun setLoanID(input:String){
+        inputLoanID = input
+        println("The input ".plus(input))
+
+        println("Actual input".plus(inputLoanID))
+
+        specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, inputLoanID)
+        specificLoanDetail = specificRepositoryForLoanDetails.specificLoanInstitution
     }
 }

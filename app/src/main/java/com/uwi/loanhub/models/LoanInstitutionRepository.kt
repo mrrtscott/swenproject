@@ -7,6 +7,11 @@ import androidx.lifecycle.MutableLiveData
 class LoanInstitutionRepository (private val inputLoanInstitutionDao: LoanInstitutionDao, idLoan:String) {
 
 
+
+
+
+
+
     val allLoanInstitution: LiveData<List<LoanInstitution>> = inputLoanInstitutionDao.getLoanInstitution()
     val specificLoanInstitution: LiveData<List<LoanInstitution>> = inputLoanInstitutionDao.getSpecificLoan(idLoan)
 
