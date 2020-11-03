@@ -165,7 +165,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Interest rate"
+            android:text="@string/interest_rate"
             android:textSize="16sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
@@ -176,7 +176,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Repayment"
+            android:text="@string/repayment"
             android:textSize="16sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"

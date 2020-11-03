@@ -97,4 +97,6 @@
     <string name="phone">Phone</string>
     <string name="website">Website</string>
     <string name="loan_name">Loan Name</string>
+    <string name="interest_rate">Interest rate</string>
+    <string name="repayment">Repayment</string>
 </resources>
