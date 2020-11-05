@@ -17,7 +17,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class), version = 4, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class), version = 5, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -25,6 +25,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun LoanDao(): LoanDao
     abstract fun InstitutionDao(): InstitutionDao
     abstract  fun LoanInstitutionDao (): LoanInstitutionDao
+    abstract  fun LoanRequirementDao():LoanRequirementDao
 
 
     companion object {
