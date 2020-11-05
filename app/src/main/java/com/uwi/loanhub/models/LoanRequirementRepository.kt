@@ -8,4 +8,9 @@ class LoanRequirementRepository(private val inputLoanRequirementDao: LoanRequire
     val allLoanRequirement: LiveData<List<LoanRequirement>> = inputLoanRequirementDao.getAllRequirements(inputLoanID,inputInstitutionName)
 
 
+    suspend fun addNewLoanRequirement(inputLoanRequirement: LoanRequirement){
+        inputLoanRequirementDao.addLoanRequirement(inputLoanRequirement)
+    }
+
+
 }
