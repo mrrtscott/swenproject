@@ -3,11 +3,14 @@ package com.uwi.loanhub
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanInstitutionViewModel
+import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
 class LoanInDetail : AppCompatActivity() {
 
@@ -63,7 +66,21 @@ class LoanInDetail : AppCompatActivity() {
             institutionSlogan.text = loans.get(0).slogan
 
 
+            val rating =resources.getStringArray(R.array.rating)
+            val autocompleteRating  = findViewById<AutoCompleteTextView>(R.id.autoCompleteLoanInDetailRating)
+            val ratingOutput = ArrayAdapter(this, R.layout.dropdown_sex,rating)
+            ratingOutput.setDropDownViewResource(android.R.layout.simple_list_item_1)
+            autocompleteRating!!.setAdapter(ratingOutput)
+
+
+
+
+
+
+
         })
+
+
 
 
 
