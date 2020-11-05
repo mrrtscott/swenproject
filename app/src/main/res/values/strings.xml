@@ -88,7 +88,7 @@
 
 
 
-    <integer-array name="rating">
+    <string-array name="rating">
         <item name="0">0</item>
         <item name="1">1</item>
         <item name="2">2</item>
@@ -101,7 +101,7 @@
         <item name="9">9</item>
         <item name="10">10</item>
 
-    </integer-array>
+    </string-array>
 
     <string name="title_activity_loan_detail">LoanDetail</string>
     <!--
@@ -122,4 +122,5 @@
     <string name="more">More</string>
     <string name="interestRateDetails">Interest Rate: </string>
     <string name="termsToRepayLoanInDetail">Terms to repay: </string>
+    <string name="instructions_rating_hint">rating</string>
 </resources>

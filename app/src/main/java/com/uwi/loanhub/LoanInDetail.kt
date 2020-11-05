@@ -66,9 +66,9 @@ class LoanInDetail : AppCompatActivity() {
             institutionSlogan.text = loans.get(0).slogan
 
 
-            val rating =resources.getStringArray(R.array.rating)
+            val rating =resources.getStringArray (R.array.rating)
             val autocompleteRating  = findViewById<AutoCompleteTextView>(R.id.autoCompleteLoanInDetailRating)
-            val ratingOutput = ArrayAdapter(this, R.layout.dropdown_sex,rating)
+            val ratingOutput = ArrayAdapter(this, R.layout.rating,rating)
             ratingOutput.setDropDownViewResource(android.R.layout.simple_list_item_1)
             autocompleteRating!!.setAdapter(ratingOutput)
 
