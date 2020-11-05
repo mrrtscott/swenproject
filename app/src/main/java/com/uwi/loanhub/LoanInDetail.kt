@@ -36,6 +36,7 @@ class LoanInDetail : AppCompatActivity() {
 
             val institutionName = findViewById<TextView>(R.id.loanDetailLoanInstitutionName)
             val institutionLogo = findViewById<ImageView>(R.id.loanDetailLoanInstitutionLogo)
+            val institutionSlogan = findViewById<TextView>(R.id.loanDetailInstitutionSlogan)
             val institutionWebsite = findViewById<TextView>(R.id.loanDetailInstitutionWebsite)
             val loanName = findViewById<TextView>(R.id.loanDetailLoanName)
 
@@ -59,6 +60,7 @@ class LoanInDetail : AppCompatActivity() {
             loanDetails.text = loans.get(0).description
             loanInterestRate.text = getString(R.string.interestRateDetails).plus(loans.get(0).interestRate.toString().plus("%"))
             loanRepay.text = getString(R.string.termsToRepayLoanInDetail).plus(loans.get(0).termsRepay)
+            institutionSlogan.text = loans.get(0).slogan
 
 
         })
