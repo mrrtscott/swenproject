@@ -11,12 +11,20 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
 
     private val repository:LoanRequirementRepository
     val allLoanRequirement: LiveData<List<LoanRequirement>>
-    private val inputArrayList:ArrayList<String> =  arrayListOf("", "")
+    private var inputArrayList:ArrayList<String> =  arrayListOf("", "")
 
 
     init {
         val LoanRequirementDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanRequirementDao()
         repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList )
         allLoanRequirement = repository.allLoanRequirement
+    }
+
+
+
+    fun setArray(inputArray:ArrayList<String>){
+
+        inputArrayList = inputArray
+
     }
 }
