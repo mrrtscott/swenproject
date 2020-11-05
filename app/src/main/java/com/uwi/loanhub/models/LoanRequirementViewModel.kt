@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -25,6 +27,13 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
     fun setArray(inputArray:ArrayList<String>){
 
         inputArrayList = inputArray
+
+    }
+
+    fun insertLoanRequirement(inputLoanRequirement: LoanRequirement) = viewModelScope.launch(
+        Dispatchers.IO){
+
+        repository.addNewLoanRequirement(inputLoanRequirement)
 
     }
 }
