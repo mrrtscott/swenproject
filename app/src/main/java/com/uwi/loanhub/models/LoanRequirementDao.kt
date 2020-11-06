@@ -9,8 +9,8 @@ import androidx.room.Query
 @Dao
 interface LoanRequirementDao {
 
-    @Query("SELECT * FROM LoanRequirement WHERE LoanRequirement.loanID = :inputLoanID AND LoanRequirement.institutionName = :inputInstitutionName")
-    fun getAllRequirements(inputLoanID:Int, inputInstitutionName:String): LiveData<List<LoanRequirement>>
+    @Query("SELECT * FROM LoanRequirement WHERE  LoanRequirement.institutionName = :inputInstitutionName")
+    fun getAllRequirements( inputInstitutionName:String): LiveData<List<LoanRequirement>>
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

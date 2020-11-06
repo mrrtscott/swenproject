@@ -11,15 +11,21 @@ import kotlin.collections.ArrayList
 
 class LoanRequirementViewModel (application: Application): AndroidViewModel(application) {
 
-    private val repository:LoanRequirementRepository
-    val allLoanRequirement: LiveData<List<LoanRequirement>>
-    private var inputArrayList:ArrayList<String> =  arrayListOf("", "")
+    private var repository:LoanRequirementRepository
+    var LoanRequirementDao:LoanRequirementDao
+    var allLoanRequirement: LiveData<List<LoanRequirement>>
+    private var inputArrayList:ArrayList<String> =  arrayListOf("1")
+    /*private var specificRepositoryForLoanRequirement:LoanRequirementRepository
+    var specificLoanRequirement: LiveData<List<LoanRequirement>>*/
 
 
     init {
-        val LoanRequirementDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanRequirementDao()
-        repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList )
+        LoanRequirementDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanRequirementDao()
+        repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
         allLoanRequirement = repository.allLoanRequirement
+
+        /*specificRepositoryForLoanRequirement = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
+        specificLoanRequirement = specificRepositoryForLoanRequirement.allLoanRequirement*/
     }
 
 
@@ -27,6 +33,15 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
     fun setArray(inputArray:ArrayList<String>){
 
         inputArrayList = inputArray
+        println(inputArray[0])
+        repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
+        allLoanRequirement = repository.allLoanRequirement
+
+
+
+
+
+
 
     }
 

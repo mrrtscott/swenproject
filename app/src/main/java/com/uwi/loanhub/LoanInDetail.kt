@@ -55,7 +55,7 @@ class LoanInDetail : AppCompatActivity() {
             //val loanPerCentFinance= findViewById<TextView>(R.id.loanDetail)
             //val loanMinCreditScore = findViewById<TextView>(R.id.loanMinCreditScoreLoanDetails)
 
-            institutionName.text = loans.get(0).institution
+            institutionName.text = loans[0].institution
             institutionLogo.setImageResource(loans.get(0).logo!!.toInt())
             loanName.text =loans.get(0).loanName
             loanEmail.text = loans.get(0).email
@@ -77,6 +77,7 @@ class LoanInDetail : AppCompatActivity() {
 
             requirementsButton.setOnClickListener{
                 val intent = Intent (this,RequirementActivity::class.java )
+                intent.putExtra("INSTITUTION", loans[0].institution)
                 startActivity(intent)
             }
 

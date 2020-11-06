@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanRequirementViewModel
@@ -15,16 +16,32 @@ class RequirementActivity : AppCompatActivity() {
     lateinit var section2:View
     lateinit var section3:View
     private lateinit var loanRequirementViewModel:LoanRequirementViewModel
+    val inputArrayList:ArrayList<String> = arrayListOf()
+
+    lateinit var employmentTextView: TextView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_requirement)
 
-        //loanRequirementViewModel = ViewModelProvider(this).get(LoanRequirementViewModel::class.java)
+        val previousIntent = intent
+        val receivedInstitution = previousIntent.getStringExtra("INSTITUTION")
+
+        loanRequirementViewModel = ViewModelProvider(this).get(LoanRequirementViewModel::class.java)
+
+        inputArrayList.clear()
+        inputArrayList.add(receivedInstitution)
+
+        loanRequirementViewModel.setArray(inputArrayList)
 
         section1 = findViewById(R.id.section1)
         section2 = findViewById(R.id.section2)
         section3 = findViewById(R.id.section3)
+
+        employmentTextView = findViewById(R.id.identificationInformationRequirement)
+
         val header1 = findViewById<TextView>(R.id.header1)
 
         header1.setOnClickListener{
@@ -50,6 +67,11 @@ class RequirementActivity : AppCompatActivity() {
                 section3.visibility = View.GONE
             }
         }
+
+
+        loanRequirementViewModel.allLoanRequirement.observe(this, Observer { requirements ->
+            employmentTextView.text =  requirements.get(0).identification
+        })
 
 
 

@@ -1,10 +1,8 @@
 package com.uwi.loanhub.models
 
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.viewModelScope
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -13,11 +11,10 @@ import com.uwi.loanhub.Functions
 import com.uwi.loanhub.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class), version = 5, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class), version = 6, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -66,14 +63,18 @@ abstract class LoanHubDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-                    populateDatabase(database.LoanDao(), database.InstitutionDao())
+                    populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao())
 
                 }
             }
 
         }
 
-        suspend fun populateDatabase(loansDao: LoanDao, institutionDao: InstitutionDao) {
+        suspend fun populateDatabase(
+            loansDao: LoanDao,
+            institutionDao: InstitutionDao,
+            loanRequirementDao: LoanRequirementDao
+        ) {
             // Delete all content here.
             var function: Functions = Functions()
 
@@ -1061,6 +1062,11 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
 
             institutionDao.addNewInstitution(scotiabank)
+
+
+            var NCBEmpireLoan = LoanRequirement ("Scotiabank","Two photo identification", "Employed for over 6 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            loanRequirementDao.addLoanRequirement(NCBEmpireLoan)
+
 
         }
     }
