@@ -36,18 +36,18 @@ class RequirementActivity : AppCompatActivity() {
         }
 
         header2.setOnClickListener{
-            if (section1.visibility === View.GONE) {
-                section1.visibility = View.VISIBLE
+            if (section2.visibility === View.GONE) {
+                section2.visibility = View.VISIBLE
             } else {
-                section1.visibility = View.GONE
+                section2.visibility = View.GONE
             }
         }
 
         header3.setOnClickListener{
-            if (section1.visibility === View.GONE) {
-                section1.visibility = View.VISIBLE
+            if (section3.visibility === View.GONE) {
+                section3.visibility = View.VISIBLE
             } else {
-                section1.visibility = View.GONE
+                section3.visibility = View.GONE
             }
         }
 
