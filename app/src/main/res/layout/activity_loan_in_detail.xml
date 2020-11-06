@@ -212,6 +212,7 @@
 
 
         <Button
+            android:id="@+id/requirementsButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="160dp"
             android:layout_height="40dp"

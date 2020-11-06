@@ -1,12 +1,10 @@
 package com.uwi.loanhub
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanInstitutionViewModel
@@ -16,16 +14,20 @@ class LoanInDetail : AppCompatActivity() {
 
     private lateinit var functions: Functions
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
+    private lateinit var requirementsButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loan_in_detail)
+
 
         functions = Functions()
 
         val previousIntent = intent
         val LoanID = previousIntent.getIntExtra("LOANID",0)
         println("Received ".plus(LoanID))
+
+        requirementsButton = findViewById(R.id.requirementsButton)
 
 
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
@@ -71,6 +73,12 @@ class LoanInDetail : AppCompatActivity() {
             val ratingOutput = ArrayAdapter(this, R.layout.rating,rating)
             ratingOutput.setDropDownViewResource(android.R.layout.simple_list_item_1)
             autocompleteRating!!.setAdapter(ratingOutput)
+
+
+            requirementsButton.setOnClickListener{
+                val intent = Intent (this,RequirementActivity::class.java )
+                startActivity(intent)
+            }
 
 
 
