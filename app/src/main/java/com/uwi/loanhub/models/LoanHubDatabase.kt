@@ -1064,8 +1064,26 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(scotiabank)
 
 
-            var NCBEmpireLoan = LoanRequirement ("Scotiabank","Two photo identification", "Employed for over 6 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
-            loanRequirementDao.addLoanRequirement(NCBEmpireLoan)
+            var scotiabankLR = LoanRequirement ("Scotiabank","Two photo identification", "Employed for over 6 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            var ncbLR = LoanRequirement ("NCB","Three photo identification", "Employed for over 8 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            var cibcLR = LoanRequirement ("CIBC","Two photo identification", "Employed for over 7 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
+            var victoriamutalLR = LoanRequirement ("Victoria Mutual","Two photo identification", "Employed for over 5 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            var firstglobalLR = LoanRequirement ("First Global","Two photo identification", "Employed for over 3 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            var jnLR = LoanRequirement ("JN Bank","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
+            var jmmbLR = LoanRequirement ("JMMB","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            var sagicorLR = LoanRequirement ("Sagicor","Two photo identification", "Employed for over 12 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+
+
+            loanRequirementDao.addLoanRequirement(scotiabankLR)
+            loanRequirementDao.addLoanRequirement(ncbLR)
+            loanRequirementDao.addLoanRequirement(cibcLR)
+            loanRequirementDao.addLoanRequirement(victoriamutalLR)
+            loanRequirementDao.addLoanRequirement(firstglobalLR)
+            loanRequirementDao.addLoanRequirement(jnLR)
+            loanRequirementDao.addLoanRequirement(jmmbLR)
+            loanRequirementDao.addLoanRequirement(sagicorLR)
+
+
 
 
         }

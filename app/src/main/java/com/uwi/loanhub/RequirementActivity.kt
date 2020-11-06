@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanRequirementViewModel
 import kotlinx.android.synthetic.main.activity_requirement.*
 
@@ -18,7 +17,10 @@ class RequirementActivity : AppCompatActivity() {
     private lateinit var loanRequirementViewModel:LoanRequirementViewModel
     val inputArrayList:ArrayList<String> = arrayListOf()
 
+    lateinit var identificationTextView: TextView
     lateinit var employmentTextView: TextView
+    lateinit var characterTextView: TextView
+
 
 
 
@@ -40,7 +42,11 @@ class RequirementActivity : AppCompatActivity() {
         section2 = findViewById(R.id.section2)
         section3 = findViewById(R.id.section3)
 
-        employmentTextView = findViewById(R.id.identificationInformationRequirement)
+        identificationTextView = findViewById(R.id.identificationInformationRequirement)
+        employmentTextView = findViewById(R.id.employmentInformationRequirement)
+        characterTextView = findViewById(R.id.characterInformationRequirement)
+
+
 
         val header1 = findViewById<TextView>(R.id.header1)
 
@@ -70,7 +76,10 @@ class RequirementActivity : AppCompatActivity() {
 
 
         loanRequirementViewModel.allLoanRequirement.observe(this, Observer { requirements ->
-            employmentTextView.text =  requirements.get(0).identification
+            identificationTextView.text =  requirements.get(0).identification
+            employmentTextView.text = requirements.get(0).employment
+            characterTextView.text = requirements.get(0).character
+
         })
 
 
