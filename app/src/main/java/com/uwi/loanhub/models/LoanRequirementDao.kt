@@ -16,3 +16,4 @@ interface LoanRequirementDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addLoanRequirement(requirement: LoanRequirement)
 }
+

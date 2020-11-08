@@ -149,6 +149,8 @@
                 </TextView>
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/likeToggleGroup"
+                    app:singleSelection="true"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:layout_gravity="right"
@@ -156,13 +158,14 @@
                     android:layout_marginEnd="30dp"
                     >
                     <Button
-
+                        android:id="@+id/likeButton"
                         app:icon="@drawable/ic_outline_thumb_up_24"
                         style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <Button
+                        android:id="@+id/dislikeButton"
                         app:icon="@drawable/ic_outline_thumb_down_24"
                         style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                         android:layout_width="wrap_content"

@@ -14,15 +14,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class), version = 6, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class), version = 7, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
     abstract fun UserDao(): UserDao
     abstract fun LoanDao(): LoanDao
     abstract fun InstitutionDao(): InstitutionDao
-    abstract  fun LoanInstitutionDao (): LoanInstitutionDao
-    abstract  fun LoanRequirementDao():LoanRequirementDao
+    abstract fun LoanInstitutionDao (): LoanInstitutionDao
+    abstract fun LoanRequirementDao():LoanRequirementDao
+    abstract fun LoanLikesDao(): LoanLikesDao
 
 
     companion object {
@@ -78,8 +79,8 @@ abstract class LoanHubDatabase : RoomDatabase() {
             // Delete all content here.
             var function: Functions = Functions()
 
-            loansDao.deleteAllLoans()
-            institutionDao.deleteAllInstitutions()
+            //loansDao.deleteAllLoans()
+            //institutionDao.deleteAllInstitutions()
 
 
             // Preload loans
