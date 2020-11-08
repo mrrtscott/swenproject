@@ -127,4 +127,5 @@
     <string name="item1Identification">Sample data</string>
     <string name="section_2">EMPLOYMENT</string>
     <string name="characterSection">CHARACTER</string>
+    <string name="vehicleSection">VEHICLE</string>
 </resources>

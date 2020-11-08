@@ -20,6 +20,7 @@ class RequirementActivity : AppCompatActivity() {
     lateinit var identificationTextView: TextView
     lateinit var employmentTextView: TextView
     lateinit var characterTextView: TextView
+    lateinit var vehicleTextView: TextView
 
 
 
@@ -45,6 +46,7 @@ class RequirementActivity : AppCompatActivity() {
         identificationTextView = findViewById(R.id.identificationInformationRequirement)
         employmentTextView = findViewById(R.id.employmentInformationRequirement)
         characterTextView = findViewById(R.id.characterInformationRequirement)
+        vehicleTextView = findViewById(R.id.vehicleInformationRequirement)
 
 
 
@@ -74,11 +76,20 @@ class RequirementActivity : AppCompatActivity() {
             }
         }
 
+        header4.setOnClickListener{
+            if (section4.visibility === View.GONE) {
+                section4.visibility = View.VISIBLE
+            } else {
+                section4.visibility = View.GONE
+            }
+        }
+
 
         loanRequirementViewModel.allLoanRequirement.observe(this, Observer { requirements ->
             identificationTextView.text =  requirements.get(0).identification
             employmentTextView.text = requirements.get(0).employment
             characterTextView.text = requirements.get(0).character
+            vehicleTextView.text = requirements.get(0).vehicle
 
         })
 

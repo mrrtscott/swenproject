@@ -114,7 +114,6 @@
                 android:minHeight="?android:attr/listPreferredItemHeight"
                 android:padding="20dp"
                 android:text="@string/item1Identification"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="22sp"
                 />
 
@@ -151,7 +150,6 @@
                 android:minHeight="?android:attr/listPreferredItemHeight"
                 android:padding="20dp"
                 android:text="@string/item1Identification"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="22sp"
                 />
 
@@ -159,6 +157,47 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/header4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_blue"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:padding="20dp"
+            android:text="@string/vehicleSection"
+            android:textColor="@android:color/white"
+            android:textSize="33sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/section4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/vehicleInformationRequirement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeight"
+                android:padding="20dp"
+                android:text="@string/item1Identification"
+                android:textSize="22sp"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
 
 
