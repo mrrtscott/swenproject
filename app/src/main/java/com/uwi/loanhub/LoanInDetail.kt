@@ -13,6 +13,7 @@ import com.google.android.material.button.MaterialButtonToggleGroup
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanLikes
 import com.uwi.loanhub.models.LoanLikesViewModel
+import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
 
 class LoanInDetail : AppCompatActivity() {
@@ -25,7 +26,7 @@ class LoanInDetail : AppCompatActivity() {
 
     private lateinit var requirementsButton: Button
     private lateinit var likeButtonGroup: MaterialButtonToggleGroup
-    private lateinit var sentArrayListLoanLikes:ArrayList<String>
+    private  var sentArrayListLoanLikes:ArrayList<String> = arrayListOf()
 
 
     var loanIDForLikes: Int = 0
@@ -91,37 +92,39 @@ class LoanInDetail : AppCompatActivity() {
 
 
 
-
-            likeButtonGroup.addOnButtonCheckedListener{ group, checkedId, isChecked ->
-
-                println("checked ID: ")
-                println(checkedId)
-                println("Like button ID: ")
-                println(R.id.likeButton)
+            sentArrayListLoanLikes.clear()
+            sentArrayListLoanLikes = arrayListOf(loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(0).institution.toString(), "marioscott" )
+            loanLikesViewModel.setArrayInput(sentArrayListLoanLikes)
 
 
+            //For the likes
 
+            loanLikesViewModel.allLoansLikes.observe(this, Observer { likes ->
 
+                println("working")
+                println("size ".plus(likes.size))
+                if(likes.size ==1){
 
-                if(isChecked && checkedId == R.id.likeButton){
+                    println("inside")
 
-                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString(),loans.get(0).loanName.toString(), 1)
-                    loanLikesViewModel.insert(loanLike)
+                    if(likes.get(0).value == 1){
+                        println("value".plus(likes.get(0).value))
+                        likeToggleGroup.check(R.id.likeButton)
+                    }
 
+                    else{
+
+                        likeToggleGroup.check(R.id.dislikeButton)
+
+                    }
 
                 }
 
-                else if (isChecked && checkedId == R.id.dislikeButton)
-                {
-
-                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString(),loans.get(0).loanName.toString(), 0)
-                    loanLikesViewModel.insert(loanLike)
-
-                }
+            })
 
 
 
-            }
+
 
 
 
@@ -150,18 +153,52 @@ class LoanInDetail : AppCompatActivity() {
             }
 
 
+            likeButtonGroup.addOnButtonCheckedListener{ group, checkedId, isChecked ->
+
+                println("checked ID: ")
+                println(checkedId)
+                println("Like button ID: ")
+                println(R.id.likeButton)
+
+
+
+
+
+                if(isChecked && checkedId == R.id.likeButton){
+
+                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 1)
+                    loanLikesViewModel.insert(loanLike)
+
+
+                }
+
+                else if (isChecked && checkedId == R.id.dislikeButton)
+                {
+
+                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 0)
+                    loanLikesViewModel.insert(loanLike)
+
+                }
+
+
+
+            }
+
+
 
 
 
         })
 
-        //For the likes
 
-        loanLikesViewModel.allLoansLikes.observe(this, Observer { likes ->
 
-            println("working")
 
-        })
+
+
+
+
+
+
 
 
 

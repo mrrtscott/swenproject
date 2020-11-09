@@ -12,7 +12,7 @@ class LoanLikesViewModel(application: Application): AndroidViewModel(application
     private var repository:LoanLikesRepository
 
     var allLoansLikes: LiveData<List<LoanLikes>>
-    private var inputArray: ArrayList<String> =  arrayListOf("0", "h", "b", "c", "d")
+    private var inputArray: ArrayList<String> =  arrayListOf("0", " ", " ", " ")
     val LoanLikesDao:LoanLikesDao
 
     init{
@@ -35,6 +35,7 @@ class LoanLikesViewModel(application: Application): AndroidViewModel(application
         inputArray = inputArrayList
         repository = LoanLikesRepository(LoanLikesDao, inputArray)
         allLoansLikes = repository.allLoanLikes
+
 
 
     }

@@ -10,6 +10,9 @@ import androidx.room.Query
 @Dao
 interface LoanLikesDao {
 
+    @Query("SELECT * FROM LoanLikes")
+    fun getLoanLikes (): LiveData<List<LoanLikes>>
+
     @Query("SELECT * FROM LoanLikes WHERE LoanLikes.loanID = :inputLoanID AND LoanLikes.loanName = :inputLoanName AND LoanLikes.institution = :inputInstitution AND LoanLikes.username = :inputUsername ")
     fun getSpecificLoanLikes (inputLoanID:Int, inputLoanName:String, inputInstitution:String,inputUsername:String):LiveData<List<LoanLikes>>
 
