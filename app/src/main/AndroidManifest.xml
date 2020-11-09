@@ -26,7 +26,11 @@
             android:name=".LoansSpecificToUser"
             android:theme="@style/NoActionBarMaterialComponent"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".UserLoansActivity" />
+        <activity android:name=".UserLoansActivity"
+            android:theme="@style/NoActionBarMaterialComponent"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
         <activity
             android:name=".LoginActivityNew"
             android:theme="@style/NoActionBarMaterialComponent" />
