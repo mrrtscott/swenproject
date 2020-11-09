@@ -43,6 +43,7 @@ class LoanInDetail : AppCompatActivity() {
 
         val previousIntent = intent
         val LoanID = previousIntent.getIntExtra("LOANID", 0)
+        val username = previousIntent.getStringExtra("USERNAME")
         requirementsButton = findViewById(R.id.requirementsButton)
         likeButtonGroup = findViewById(R.id.likeToggleGroup)
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
@@ -52,9 +53,6 @@ class LoanInDetail : AppCompatActivity() {
 
 
         loanInstitutionViewModel.specificLoanDetail.observe(this, Observer { loans ->
-            println(loans.size)
-            println(loans.get(0).loanName)
-
 
             val institutionName = findViewById<TextView>(R.id.loanDetailLoanInstitutionName)
             val institutionLogo = findViewById<ImageView>(R.id.loanDetailLoanInstitutionLogo)
@@ -93,7 +91,7 @@ class LoanInDetail : AppCompatActivity() {
 
 
             sentArrayListLoanLikes.clear()
-            sentArrayListLoanLikes = arrayListOf(loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(0).institution.toString(), "marioscott" )
+            sentArrayListLoanLikes = arrayListOf(loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(0).institution.toString(), username )
             loanLikesViewModel.setArrayInput(sentArrayListLoanLikes)
 
 
@@ -166,7 +164,7 @@ class LoanInDetail : AppCompatActivity() {
 
                 if(isChecked && checkedId == R.id.likeButton){
 
-                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 1)
+                    var loanLike = LoanLikes(username, loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 1)
                     loanLikesViewModel.insert(loanLike)
 
 
@@ -175,7 +173,7 @@ class LoanInDetail : AppCompatActivity() {
                 else if (isChecked && checkedId == R.id.dislikeButton)
                 {
 
-                    var loanLike = LoanLikes("marioscott", loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 0)
+                    var loanLike = LoanLikes(username, loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 0)
                     loanLikesViewModel.insert(loanLike)
 
                 }

@@ -22,10 +22,18 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
     private lateinit var loanViewModel: LoanViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
+    var username:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_loans)
+
+        val previousIntent = intent
+        username = previousIntent.getStringExtra("USERNAME")
+
+        println("USERNAME")
+        println(username)
+
         val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
         val adapter = LoanListAdapter(this, this)
         recycleView.adapter = adapter
@@ -50,6 +58,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
+            intent.putExtra("USERNAME", username)
             startActivity(intent)
         })
     }

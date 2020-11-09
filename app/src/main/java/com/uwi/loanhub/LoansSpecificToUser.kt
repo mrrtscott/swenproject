@@ -39,6 +39,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
     private var loanAmount: Double = 0.00
     private  var occupation: String= ""
 
+
+
     private lateinit var otherButton: Button
 
 
@@ -47,8 +49,6 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loans_specific_to_user)
-
-
 
 
 
@@ -61,6 +61,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
+
+
         println(parsedStringID)
         username = parsedStringID
 
@@ -93,7 +95,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
                 loanAmount = singleUser[0].loanAmount
                 occupation = singleUser[0].occupation
                 loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex.substring(0), creditScore, loanAmount.toInt())
-                println(occupation + "OCCUPTATION")
+
 
 
 
@@ -137,6 +139,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
+            intent.putExtra("USERNAME", username)
             startActivity(intent)
         })
     }
