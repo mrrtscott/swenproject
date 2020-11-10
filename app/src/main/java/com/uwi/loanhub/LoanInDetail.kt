@@ -145,14 +145,24 @@ class LoanInDetail : AppCompatActivity() {
             autocompleteRating.onItemClickListener = AdapterView.OnItemClickListener{
                     parent,view,position,id->
                 val selectedItem = parent.getItemAtPosition(position).toString()
-                //var loanRatingArrayList:ArrayList<String> = arrayListOf(username.toString(), loans.get(0).id.toString())
-                //loanRatingViewModel.setArrayInput(loanRatingArrayList)
+
                 var loanRating = LoanRating(loans.get(0).id, username.toString(), selectedItem.toInt())
                 loanRatingViewModel.insert(loanRating)
 
 
 
             }
+
+            var loanRatingArrayList:ArrayList<String> = arrayListOf(username.toString(), loans.get(0).id.toString())
+            loanRatingViewModel.setArrayInput(loanRatingArrayList)
+
+
+            loanRatingViewModel.allLoanRating.observe(this, Observer { rating ->
+                autocompleteRating.setText(rating.get(0).rating.toString(), false)
+
+            })
+
+
 
 
 
