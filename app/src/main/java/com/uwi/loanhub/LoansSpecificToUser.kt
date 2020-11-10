@@ -55,6 +55,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
         otherButton = findViewById(R.id.otherLoansButton)
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
+            intent.putExtra("USERNAME", username)
             startActivity(intent)
         }
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -63,7 +64,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
 
 
-        println(parsedStringID)
+
         username = parsedStringID
 
 

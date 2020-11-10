@@ -3,6 +3,7 @@ package com.uwi.loanhub
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.View.NO_ID
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
-import com.uwi.loanhub.models.LoanInstitutionViewModel
-import com.uwi.loanhub.models.LoanLikes
-import com.uwi.loanhub.models.LoanLikesViewModel
+import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
 
@@ -20,8 +19,8 @@ class LoanInDetail : AppCompatActivity() {
 
     private lateinit var functions: Functions
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
-
     private lateinit var loanLikesViewModel: LoanLikesViewModel
+    private lateinit var loanRatingViewModel:LoanRatingViewModel
 
 
     private lateinit var requirementsButton: Button
@@ -48,6 +47,7 @@ class LoanInDetail : AppCompatActivity() {
         likeButtonGroup = findViewById(R.id.likeToggleGroup)
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
         loanLikesViewModel = ViewModelProvider(this).get(LoanLikesViewModel::class.java)
+        loanRatingViewModel = ViewModelProvider(this).get(LoanRatingViewModel::class.java)
         loanInstitutionViewModel.setLoanID(LoanID)
 
 
@@ -99,14 +99,9 @@ class LoanInDetail : AppCompatActivity() {
 
             loanLikesViewModel.allLoansLikes.observe(this, Observer { likes ->
 
-                println("working")
-                println("size ".plus(likes.size))
                 if(likes.size ==1){
 
-                    println("inside")
-
                     if(likes.get(0).value == 1){
-                        println("value".plus(likes.get(0).value))
                         likeToggleGroup.check(R.id.likeButton)
                     }
 
@@ -142,6 +137,35 @@ class LoanInDetail : AppCompatActivity() {
             val ratingOutput = ArrayAdapter(this, R.layout.rating, rating)
             ratingOutput.setDropDownViewResource(android.R.layout.simple_list_item_1)
             autocompleteRating!!.setAdapter(ratingOutput)
+
+
+
+
+
+            autocompleteRating.onItemClickListener = AdapterView.OnItemClickListener{
+                    parent,view,position,id->
+                val selectedItem = parent.getItemAtPosition(position).toString()
+                //var loanRatingArrayList:ArrayList<String> = arrayListOf(username.toString(), loans.get(0).id.toString())
+                //loanRatingViewModel.setArrayInput(loanRatingArrayList)
+                var loanRating = LoanRating(loans.get(0).id, username.toString(), selectedItem.toInt())
+                loanRatingViewModel.insert(loanRating)
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             requirementsButton.setOnClickListener {
@@ -205,15 +229,12 @@ class LoanInDetail : AppCompatActivity() {
 
 
 
+
+
     }
 
 
-    private fun getCheckedButton() {
-        val checkedButtonId: Int = likeButtonGroup.checkedButtonId
-        Log.i(LoanInDetail::class.java.simpleName, "getCheckedButton(): $checkedButtonId")
-        if (checkedButtonId != NO_ID) {
-            val checkedButton = findViewById<MaterialButton>(checkedButtonId)
-            Toast.makeText(this, checkedButton.toString(), Toast.LENGTH_SHORT).show()
-        }
-    }
+
+
+
 }

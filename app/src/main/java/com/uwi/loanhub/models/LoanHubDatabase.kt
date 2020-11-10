@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class), version = 7, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class), version = 8, exportSchema = true)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -24,6 +24,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun LoanInstitutionDao (): LoanInstitutionDao
     abstract fun LoanRequirementDao():LoanRequirementDao
     abstract fun LoanLikesDao(): LoanLikesDao
+    abstract fun LoanRatingDao(): LoanRatingDao
 
 
     companion object {

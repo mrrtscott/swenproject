@@ -277,6 +277,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loanRatingInput"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
@@ -295,7 +296,11 @@
             </AutoCompleteTextView>
 
 
+
+
         </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
     </LinearLayout>
