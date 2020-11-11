@@ -40,6 +40,8 @@ class LoanListAdapter internal constructor(context: Context, private val loanCli
             loanClickListener.onLoanItemClicked(position)
         }
 
+
+
     }
 
 

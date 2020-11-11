@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanViewModel
 
@@ -23,6 +24,10 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
     private lateinit var loanViewModel: LoanViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     var username:String = ""
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +48,9 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
 
         loanInstitutionViewModel.allLoanInstitution.observe(this, Observer { loans ->
+
             loans?.let{ adapter.setLoan(it)
+
 
             }
         })
