@@ -24,13 +24,17 @@ class LoanInDetail : AppCompatActivity() {
 
 
     private lateinit var requirementsButton: Button
+    private lateinit var likeLoanButton:Button
     private lateinit var likeButtonGroup: MaterialButtonToggleGroup
-    private  var sentArrayListLoanLikes:ArrayList<String> = arrayListOf()
+    private var sentArrayListLoanLikes:ArrayList<String> = arrayListOf()
+    private var sentArrayLoanInstitution:ArrayList<String> = arrayListOf()
 
 
     var loanIDForLikes: Int = 0
     var loanNameLikes:String = ""
     var loanInstitutionLikes: String = ""
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,11 +48,15 @@ class LoanInDetail : AppCompatActivity() {
         val LoanID = previousIntent.getIntExtra("LOANID", 0)
         val username = previousIntent.getStringExtra("USERNAME")
         requirementsButton = findViewById(R.id.requirementsButton)
+        likeLoanButton = findViewById(R.id.likedLoans)
         likeButtonGroup = findViewById(R.id.likeToggleGroup)
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
         loanLikesViewModel = ViewModelProvider(this).get(LoanLikesViewModel::class.java)
         loanRatingViewModel = ViewModelProvider(this).get(LoanRatingViewModel::class.java)
-        loanInstitutionViewModel.setLoanID(LoanID)
+        sentArrayLoanInstitution.add(LoanID.toString())
+        sentArrayLoanInstitution.add(username)
+
+        loanInstitutionViewModel.setArray(sentArrayLoanInstitution)
 
 
 
@@ -93,6 +101,13 @@ class LoanInDetail : AppCompatActivity() {
             sentArrayListLoanLikes.clear()
             sentArrayListLoanLikes = arrayListOf(loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(0).institution.toString(), username )
             loanLikesViewModel.setArrayInput(sentArrayListLoanLikes)
+
+            likeLoanButton.setOnClickListener{
+                val intent = Intent (this,LoanInterest::class.java )
+                intent.putExtra( "USERNAME", username)
+                intent.putExtra( "LOANID", loans.get(0).id)
+                startActivity(intent)
+            }
 
 
             //For the likes
@@ -158,7 +173,11 @@ class LoanInDetail : AppCompatActivity() {
 
 
             loanRatingViewModel.allLoanRating.observe(this, Observer { rating ->
-                autocompleteRating.setText(rating.get(0).rating.toString(), false)
+
+                if(rating.size ==1){
+                    autocompleteRating.setText(rating.get(0).rating.toString(), false)
+                }
+
 
             })
 
@@ -186,14 +205,6 @@ class LoanInDetail : AppCompatActivity() {
 
 
             likeButtonGroup.addOnButtonCheckedListener{ group, checkedId, isChecked ->
-
-                println("checked ID: ")
-                println(checkedId)
-                println("Like button ID: ")
-                println(R.id.likeButton)
-
-
-
 
 
                 if(isChecked && checkedId == R.id.likeButton){

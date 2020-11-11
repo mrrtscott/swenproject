@@ -9,28 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ActionBarMaterialComponent">
+        <activity android:name=".LoanInterest"
+            android:theme="@style/NoActionBarMaterialComponent"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
 
+        </activity>
         <activity
             android:name=".RequirementActivity"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".LoanInDetail"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".LoansSpecificToUser"
             android:theme="@style/NoActionBarMaterialComponent"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".UserLoansActivity"
+        <activity
+            android:name=".UserLoansActivity"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".LoginActivityNew"
             android:theme="@style/NoActionBarMaterialComponent" />

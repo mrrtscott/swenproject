@@ -13,20 +13,24 @@ class LoanInstitutionViewModel (application: Application): AndroidViewModel(appl
     val allLoanInstitution: LiveData<List<LoanInstitution>>
     val loansSpecificToUser = MutableLiveData<List<LoanInstitution>>()
     var specificLoanDetail: LiveData<List<LoanInstitution>>
-
     val loanInstitutionDao:LoanInstitutionDao
 
-    private var inputLoanID:Int= 0
+    private var receiveArrayList:ArrayList<String> = arrayListOf("0", "")
+    var loanInstitutionLikesRating: LiveData<List<LoanInstitution>>
 
 
     init{
 
         loanInstitutionDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanInstitutionDao()
-        repository = LoanInstitutionRepository(loanInstitutionDao,0)
+        repository = LoanInstitutionRepository(loanInstitutionDao,receiveArrayList)
         allLoanInstitution =  repository.allLoanInstitution
 
-        specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, inputLoanID)
+        specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, receiveArrayList)
         specificLoanDetail = specificRepositoryForLoanDetails.specificLoanInstitution
+
+        loanInstitutionLikesRating = repository.loanInstitutionLikesRating
+
+
 
     }
 
@@ -41,13 +45,14 @@ class LoanInstitutionViewModel (application: Application): AndroidViewModel(appl
 
     }
 
-    fun setLoanID(input:Int){
-        inputLoanID = input
-        println("The input ".plus(input))
 
-        println("Actual input".plus(inputLoanID))
 
-        specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, inputLoanID)
+
+    fun setArray(input:ArrayList<String>){
+        receiveArrayList = input
+
+        specificRepositoryForLoanDetails  = LoanInstitutionRepository(loanInstitutionDao, receiveArrayList)
         specificLoanDetail = specificRepositoryForLoanDetails.specificLoanInstitution
+        loanInstitutionLikesRating = specificRepositoryForLoanDetails.loanInstitutionLikesRating
     }
 }

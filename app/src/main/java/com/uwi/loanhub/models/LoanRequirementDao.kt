@@ -13,6 +13,8 @@ interface LoanRequirementDao {
     fun getAllRequirements( inputInstitutionName:String): LiveData<List<LoanRequirement>>
 
 
+
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addLoanRequirement(requirement: LoanRequirement)
 }
