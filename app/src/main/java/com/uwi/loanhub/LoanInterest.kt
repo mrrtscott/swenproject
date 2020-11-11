@@ -55,9 +55,6 @@ class LoanInterest : AppCompatActivity(), OnLoanClickListener {
 
     }
 
-    private fun shareIntent() {
-
-    }
 
     override fun onLoanItemClicked(position: Int) {
 

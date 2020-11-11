@@ -117,8 +117,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
         loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
-            println("change")
-            println(loans.size)
+
 
 
 

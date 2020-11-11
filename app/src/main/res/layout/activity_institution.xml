@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoanInterest"
+    tools:context=".InstitutionActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -42,50 +42,54 @@
         </LinearLayout>
     </LinearLayout>
 
+
     <TextView
+        android:id="@+id/institutionInstitutionActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:text="Loan of Interest"
+        android:text="Institution"
         android:fontFamily="@font/avenirnextbold"
         android:textSize="30sp"
         android:textColor="@color/black">
 
     </TextView>
 
-    <com.google.android.material.card.MaterialCardView
+    <ImageView
+        android:id="@+id/imageInstitutionActivity"
+        android:layout_marginLeft="30dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/scotiabank">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/sloganInstitutionActivity"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/black"
-        android:layout_margin="30dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:text="It is a long established fact that"
+        android:textStyle="italic"
+        android:textColor="#2699FB"
+        android:textSize="20sp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:text="Here is a list of all the loan products you liked.">
+    </TextView>
 
-            </TextView>
-
-
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/loanInterestActivityRecycleView"
+    <TextView
+        android:id="@+id/aboutInstitutionActivity"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/recycleviewiteminterest"
-        android:padding="30dp"/>
+        android:layout_height="wrap_content"
+        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).">
+
+    </TextView>
+
+
 
 </LinearLayout>
