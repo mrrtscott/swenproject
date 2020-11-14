@@ -113,6 +113,7 @@ class LoanInDetail : AppCompatActivity() {
 
             institutionButton.setOnClickListener {
                 val intent = Intent (this,InstitutionActivity::class.java )
+                intent.putExtra("INSTITUTION", loans[0].institution)
                 startActivity(intent)
             }
 

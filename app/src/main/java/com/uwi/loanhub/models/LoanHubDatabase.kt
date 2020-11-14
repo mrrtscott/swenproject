@@ -1087,6 +1087,10 @@ abstract class LoanHubDatabase : RoomDatabase() {
             loanRequirementDao.addLoanRequirement(jmmbLR)
             loanRequirementDao.addLoanRequirement(sagicorLR)
 
+
+
+            //Assets are being added
+
             var scotiabankAssets2017 = InstitutionAssets("Scotiabank", 2017, 39.42,  12.40, 490.88)
             institutionAssetsDao.addNewAssets(scotiabankAssets2017)
 

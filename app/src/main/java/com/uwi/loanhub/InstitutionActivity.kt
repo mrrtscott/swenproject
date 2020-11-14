@@ -16,6 +16,8 @@ import com.anychart.scales.Linear
 
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.anychart.AnyChart
@@ -43,14 +45,21 @@ class InstitutionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_institution)
 
 
+        val previousIntent = intent
+        val institution = previousIntent.getStringExtra("INSTITUTION")
+
+
 
 
         val anyChartView = findViewById<AnyChartView>(R.id.chartInstitutionActivity)
+        val institutionNameTextView = findViewById<TextView>(R.id.institutionInstitutionActivity)
+        val institutionImageView = findViewById<ImageView>(R.id.imageInstitutionActivity)
+
         institutionAssets = ViewModelProvider(this).get(InstitutionAssetsViewModel::class.java)
 
 
 
-        inputArrayList.add("Scotiabank")
+        inputArrayList.add(institution)
         institutionAssets.setArray(inputArrayList)
 
 
@@ -59,12 +68,19 @@ class InstitutionActivity : AppCompatActivity() {
         institutionAssets.specificInstitutionInstitutionAssets.observe(this, androidx.lifecycle.Observer { institution ->
             println("The size".plus(institution.size))
 
+
+
+
+
             val column = AnyChart.column()
 
             val seriesData: MutableList<DataEntry> = ArrayList()
 
             if(institution.isNotEmpty()){
-                for (i in institution){
+
+                institutionNameTextView.text =institution[0].name
+
+                    for (i in institution){
                     println(i.year.toString())
                     seriesData.add(CustomDataEntry(i.year.toString(), i.revenue, i.income, i.totalAssets))
                 }
