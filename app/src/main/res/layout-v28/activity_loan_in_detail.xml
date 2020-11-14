@@ -50,6 +50,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"/>
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/institutionDetail"
+            app:icon="@drawable/ic_outline_domain_24"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
         <TextView

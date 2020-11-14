@@ -25,6 +25,7 @@ class LoanInDetail : AppCompatActivity() {
 
     private lateinit var requirementsButton: Button
     private lateinit var likeLoanButton:Button
+    private lateinit var institutionButton:Button
     private lateinit var likeButtonGroup: MaterialButtonToggleGroup
     private var sentArrayListLoanLikes:ArrayList<String> = arrayListOf()
     private var sentArrayLoanInstitution:ArrayList<String> = arrayListOf()
@@ -49,6 +50,7 @@ class LoanInDetail : AppCompatActivity() {
         val username = previousIntent.getStringExtra("USERNAME")
         requirementsButton = findViewById(R.id.requirementsButton)
         likeLoanButton = findViewById(R.id.likedLoans)
+        institutionButton = findViewById(R.id.institutionDetail)
         likeButtonGroup = findViewById(R.id.likeToggleGroup)
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
         loanLikesViewModel = ViewModelProvider(this).get(LoanLikesViewModel::class.java)
@@ -106,6 +108,11 @@ class LoanInDetail : AppCompatActivity() {
                 val intent = Intent (this,LoanInterest::class.java )
                 intent.putExtra( "USERNAME", username)
                 intent.putExtra( "LOANID", loans.get(0).id)
+                startActivity(intent)
+            }
+
+            institutionButton.setOnClickListener {
+                val intent = Intent (this,InstitutionActivity::class.java )
                 startActivity(intent)
             }
 

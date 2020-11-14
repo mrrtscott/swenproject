@@ -66,7 +66,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-                    populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao())
+                    populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao(), database.InstitutionAssetsDao())
 
                 }
             }
@@ -76,7 +76,8 @@ abstract class LoanHubDatabase : RoomDatabase() {
         suspend fun populateDatabase(
             loansDao: LoanDao,
             institutionDao: InstitutionDao,
-            loanRequirementDao: LoanRequirementDao
+            loanRequirementDao: LoanRequirementDao,
+            institutionAssetsDao: InstitutionAssetsDao
         ) {
             // Delete all content here.
             var function: Functions = Functions()
@@ -1086,6 +1087,11 @@ abstract class LoanHubDatabase : RoomDatabase() {
             loanRequirementDao.addLoanRequirement(jmmbLR)
             loanRequirementDao.addLoanRequirement(sagicorLR)
 
+            var scotiabankAssets2017 = InstitutionAssets("Scotiabank", 2017, 39.42,  12.40, 490.88)
+            institutionAssetsDao.addNewAssets(scotiabankAssets2017)
+
+            var scotiabankAssets2018 = InstitutionAssets("Scotiabank", 2018, 31.42,  17.40, 498.88)
+            institutionAssetsDao.addNewAssets(scotiabankAssets2018)
 
 
 

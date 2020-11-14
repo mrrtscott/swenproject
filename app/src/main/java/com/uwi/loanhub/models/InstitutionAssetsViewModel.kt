@@ -2,24 +2,41 @@ package com.uwi.loanhub.models
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class InstitutionAssetsViewModel (application: Application): AndroidViewModel(application) {
 
-    val repository:InstitutionAssetsRepository
+    var repository:InstitutionAssetsRepository
+    var receivedArrayList:ArrayList<String> = arrayListOf(" ")
+    var InstitutionAssetsDao:InstitutionAssetsDao
+    var specificInstitutionInstitutionAssets:LiveData<List<InstitutionInstitutionAssets>>
 
 
     init{
 
-        val InstitutionAssetsDao = LoanHubDatabase.getDatabase(application, viewModelScope).InstitutionAssetsDao()
-        repository = InstitutionAssetsRepository(InstitutionAssetsDao)
+        InstitutionAssetsDao = LoanHubDatabase.getDatabase(application, viewModelScope).InstitutionAssetsDao()
+        repository = InstitutionAssetsRepository(InstitutionAssetsDao, receivedArrayList)
+        specificInstitutionInstitutionAssets = repository.specificInstitutionAssets
 
     }
 
 
-    fun addNewInstitution(inputInstitutionAssets: InstitutionAssets) = viewModelScope.launch(Dispatchers.IO) {
+    fun addNewInstitutionAssets(inputInstitutionAssets: InstitutionAssets) = viewModelScope.launch(Dispatchers.IO) {
         repository.addNewInstitutionAssets(inputInstitutionAssets)
+    }
+
+    fun setArray(inputArrayList:ArrayList<String>){
+
+        receivedArrayList = inputArrayList
+        repository = InstitutionAssetsRepository(InstitutionAssetsDao, receivedArrayList)
+        specificInstitutionInstitutionAssets = repository.specificInstitutionAssets
+
+        println(receivedArrayList[0])
+
+
+
     }
 }
