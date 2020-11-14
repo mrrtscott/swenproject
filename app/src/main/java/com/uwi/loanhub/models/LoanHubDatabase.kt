@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class), version = 10, exportSchema = true)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class), version = 11, exportSchema = true)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -1092,10 +1092,40 @@ abstract class LoanHubDatabase : RoomDatabase() {
             //Assets are being added
 
             var scotiabankAssets2017 = InstitutionAssets("Scotiabank", 2017, 39.42,  12.40, 490.88)
-            institutionAssetsDao.addNewAssets(scotiabankAssets2017)
 
             var scotiabankAssets2018 = InstitutionAssets("Scotiabank", 2018, 31.42,  17.40, 498.88)
+
+            var ncbAssets2017 = InstitutionAssets("NCB", 2017, 61.56, 16.5, 718.81)
+
+            var cibcAssets2017 = InstitutionAssets("CIBC", 2017, 79.36,2.05, 1076.50  )
+
+            var victoriamutalAssets2017 =InstitutionAssets("Victoria Mutual", 2017, 6.53, 4.01, 115.6 )
+
+            var firstglobal2017 = InstitutionAssets("First Global", 2017, 4.53, 0.468, 54.49)
+
+            var jn2017 = InstitutionAssets("JN Bank", 2017, 11.64, 1.87, 180.66)
+
+            var jmmb2017 =  InstitutionAssets("JMMB", 2017, 14.65, 3.35, 251.56)
+
+            var sagicor2017 = InstitutionAssets("Sagicor", 2017, 10.85, 1.78, 125.25)
+
+            institutionAssetsDao.addNewAssets(scotiabankAssets2017)
             institutionAssetsDao.addNewAssets(scotiabankAssets2018)
+            institutionAssetsDao.addNewAssets(ncbAssets2017)
+            institutionAssetsDao.addNewAssets(cibcAssets2017)
+            institutionAssetsDao.addNewAssets(victoriamutalAssets2017)
+            institutionAssetsDao.addNewAssets(firstglobal2017)
+            institutionAssetsDao.addNewAssets(jn2017)
+            institutionAssetsDao.addNewAssets(jmmb2017)
+            institutionAssetsDao.addNewAssets(sagicor2017)
+
+
+
+
+
+
+
+
 
 
 

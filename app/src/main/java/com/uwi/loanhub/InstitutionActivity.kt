@@ -54,6 +54,8 @@ class InstitutionActivity : AppCompatActivity() {
         val anyChartView = findViewById<AnyChartView>(R.id.chartInstitutionActivity)
         val institutionNameTextView = findViewById<TextView>(R.id.institutionInstitutionActivity)
         val institutionImageView = findViewById<ImageView>(R.id.imageInstitutionActivity)
+        val institutionSloganTextView = findViewById<TextView>(R.id.sloganInstitutionActivity)
+        val institutionAboutTextView = findViewById<TextView>(R.id.aboutInstitutionActivity)
 
         institutionAssets = ViewModelProvider(this).get(InstitutionAssetsViewModel::class.java)
 
@@ -79,6 +81,10 @@ class InstitutionActivity : AppCompatActivity() {
             if(institution.isNotEmpty()){
 
                 institutionNameTextView.text =institution[0].name
+                institutionImageView.setImageResource(institution[0].logo)
+                institutionSloganTextView.text = institution[0].slogan
+                institutionAboutTextView.text = institution[0].about
+
 
                     for (i in institution){
                     println(i.year.toString())
