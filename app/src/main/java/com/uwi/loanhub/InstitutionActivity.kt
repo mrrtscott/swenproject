@@ -58,9 +58,7 @@ class InstitutionActivity : AppCompatActivity() {
         val institutionAboutTextView = findViewById<TextView>(R.id.aboutInstitutionActivity)
 
         institutionAssets = ViewModelProvider(this).get(InstitutionAssetsViewModel::class.java)
-
-
-
+        inputArrayList.clear()
         inputArrayList.add(institution)
         institutionAssets.setArray(inputArrayList)
 

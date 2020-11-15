@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class), version = 11, exportSchema = true)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class), version = 12, exportSchema = true)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -26,6 +26,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun LoanLikesDao(): LoanLikesDao
     abstract fun LoanRatingDao(): LoanRatingDao
     abstract fun InstitutionAssetsDao(): InstitutionAssetsDao
+    abstract fun BranchDao():BranchDao
 
 
     companion object {
@@ -80,14 +81,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionAssetsDao: InstitutionAssetsDao
         ) {
             // Delete all content here.
-            var function: Functions = Functions()
+            val function: Functions = Functions()
 
             //loansDao.deleteAllLoans()
             //institutionDao.deleteAllInstitutions()
 
 
             // Preload loans
-            var loan_0 = Loan(
+            val loan_0 = Loan(
                 0,
                 "NCB",
                 "Empire Loan",
@@ -103,7 +104,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_0)
 
-            var loan_1 = Loan(
+            val loan_1 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Loanara",
@@ -119,7 +120,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_1)
 
-            var loan_2 = Loan(
+            val loan_2 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Zoom Loan",
@@ -135,7 +136,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_2)
 
-            var loan_3 = Loan(
+            val loan_3 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Scoot Loan",
@@ -170,7 +171,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
-            var loan_5 = Loan(
+            val loan_5 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Smart Loan",
@@ -701,7 +702,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_37)
 
-            var loan_38 = Loan(
+            val loan_38 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Lotus Loan",
@@ -717,7 +718,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_38)
 
-            var loan_39 = Loan(
+            val loan_39 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Angel Loan",
@@ -733,7 +734,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_39)
 
-            var loan_40 = Loan(
+            val loan_40 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Stack Loan",
@@ -749,7 +750,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_40)
 
-            var loan_41 = Loan(
+            val loan_41 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Covered Loan",
@@ -765,7 +766,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_41)
 
-            var loan_42 = Loan(
+            val loan_42 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Bite Loan",
@@ -781,7 +782,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_42)
 
-            var loan_43 = Loan(
+            val loan_43 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Sact Loan",
@@ -797,7 +798,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_43)
 
-            var loan_44 = Loan(
+            val loan_44 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Butt Loan",
@@ -813,7 +814,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_1)
 
-            var loan_45 = Loan(
+            val loan_45 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Helix Loan",
@@ -829,7 +830,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_45)
 
-            var loan_46 = Loan(
+            val loan_46 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Plow Loan",
@@ -845,7 +846,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_46)
 
-            var loan_47 = Loan(
+            val loan_47 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Thirs Loan",
@@ -861,7 +862,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_47)
 
-            var loan_48 = Loan(
+            val loan_48 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Billzo Loan",
@@ -877,7 +878,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_48)
 
-            var loan_49 = Loan(
+            val loan_49 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Pier Loan",
@@ -893,7 +894,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_49)
 
-            var loan_50 = Loan(
+            val loan_50 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Wallet Loan",
@@ -931,7 +932,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
-            var sagicor = Institution(
+            val sagicor = Institution(
                 "Sagicor",
                 "Sagicor Group Jamaica is a majority owned subsidiary of the Sagicor Financial Corporation (SFC). The history of Sagicor dates back to 1840, SFC is a dynamic, indigenous Group which has been redefining financial services in the Caribbean, building a strong base from which it has expanded into the international financial services market. Sagicor now operates in 22 countries in the Caribbean, Latin America, the United Kingdom and the United States.",
                 "Wise Financial Thinking for Life",
@@ -948,7 +949,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             institutionDao.addNewInstitution(sagicor)
 
-            var jmmb = Institution(
+            val jmmb = Institution(
                 "JMMB",
                 "JMMB is an integrated financial services provider who is committed to showing heart-to-heart connections and providing genuine, caring relationships, as we proactively deliver personalised financial plans that offer access to our wide range of financial solutions, including banking and investments.  We currently partner with 283,000 clients, and their families, and we also want to be your Financial Life Goals Partner, holding your hand and coaching you along the journey towards your goals.",
                 "Our Promise to You",
@@ -965,7 +966,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(jmmb)
 
 
-            var ncb = Institution(
+            val ncb = Institution(
                 "NCB",
                 "Today, NCB stands as the largest financial group in Jamaica, focused on maintaining a profitable organization, which provides highly competitive and innovative products and service offerings for our customers. Its aim is to maintain a solid governance structure and robust compliance framework, while utilizing flexible business models and efficient operational processes and systems.",
                 "Quality our Focus.. Serving our Pleasure",
@@ -984,7 +985,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
-            var firstglobal = Institution(
+            val firstglobal = Institution(
                 "First Global",
                 "First Global Bank (Jamaica) Limited (FGB) is a comprehensive provider of first-rate commercial banking products and services registered to operate in Jamaica by the Bank of Jamaica. ",
                 "Your commercial bank from Grace Kennedy",
@@ -1001,7 +1002,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
-            var jn = Institution(
+            val jn = Institution(
                 "JN Bank",
                 "JN Bank is Jamaica’s first mutually-owned commercial bank, 100 per cent held by its savers and borrowers. Invigorated with the values and principles of its predecessor, the Jamaica National Building Society, JN Bank is underpinned by nearly a century and a half of rich history and legacy, which it continues to build on as a member of The Jamaica National Group.",
                 "We'll help you find your way",
@@ -1018,7 +1019,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(jn)
 
 
-            var victoriamutal = Institution(
+            val victoriamutal = Institution(
                 "Victoria Mutual",
                 "Built on a solid foundation of 130 years, Victoria Mutual Building Society (VMBS) is one of the leading financial institutions in the Caribbean. The organisation has provided financial solutions for generations of Jamaicans and Caribbean Nationals at home and in the Diaspora, with the core philosophy of creating value for members.",
                 "Together We Can Build a Better Society",
@@ -1034,7 +1035,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(victoriamutal)
 
 
-            var cibc = Institution(
+            val cibc = Institution(
                 function.givenList_shouldReturnARandomElement(),
                 "CIBC FirstCaribbean is a relationship bank offering a full range of market leading financial services through our Corporate and Investment Banking, Retail and Business Banking and Wealth Management segments.",
                 "For what matters",
@@ -1051,7 +1052,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(cibc)
 
 
-            var scotiabank = Institution(
+            val scotiabank = Institution(
                 "Scotiabank",
                 "Scotiabank is the leading bank in the Caribbean and Central America, with operations in 25 countries, including affiliates. We are the only Canadian bank with operations in four of the seven Central American countries, namely Costa Rica, Belize and Panama.",
                 "Discover what's possible",
@@ -1068,14 +1069,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionDao.addNewInstitution(scotiabank)
 
 
-            var scotiabankLR = LoanRequirement ("Scotiabank","Two photo identification", "Employed for over 6 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
-            var ncbLR = LoanRequirement ("NCB","Three photo identification", "Employed for over 8 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
-            var cibcLR = LoanRequirement ("CIBC","Two photo identification", "Employed for over 7 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
-            var victoriamutalLR = LoanRequirement ("Victoria Mutual","Two photo identification", "Employed for over 5 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
-            var firstglobalLR = LoanRequirement ("First Global","Two photo identification", "Employed for over 3 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
-            var jnLR = LoanRequirement ("JN Bank","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
-            var jmmbLR = LoanRequirement ("JMMB","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
-            var sagicorLR = LoanRequirement ("Sagicor","Two photo identification", "Employed for over 12 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            val scotiabankLR = LoanRequirement ("Scotiabank","Two photo identification", "Employed for over 6 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            val ncbLR = LoanRequirement ("NCB","Three photo identification", "Employed for over 8 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            val cibcLR = LoanRequirement ("CIBC","Two photo identification", "Employed for over 7 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
+            val victoriamutalLR = LoanRequirement ("Victoria Mutual","Two photo identification", "Employed for over 5 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
+            val firstglobalLR = LoanRequirement ("First Global","Two photo identification", "Employed for over 3 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            val jnLR = LoanRequirement ("JN Bank","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 3 year")
+            val jmmbLR = LoanRequirement ("JMMB","Three photo identification", "Employed for over 9 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 2 year")
+            val sagicorLR = LoanRequirement ("Sagicor","Two photo identification", "Employed for over 12 months. Applicant should produce three (3) playslips and a bank statement","Applicant should produce two character reference from two justices of peace", "Vehicle should at less than 1 year")
 
 
             loanRequirementDao.addLoanRequirement(scotiabankLR)
@@ -1091,23 +1092,23 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             //Assets are being added
 
-            var scotiabankAssets2017 = InstitutionAssets("Scotiabank", 2017, 39.42,  12.40, 490.88)
+            val scotiabankAssets2017 = InstitutionAssets("Scotiabank", 2017, 39.42,  12.40, 490.88)
 
-            var scotiabankAssets2018 = InstitutionAssets("Scotiabank", 2018, 31.42,  17.40, 498.88)
+            val scotiabankAssets2018 = InstitutionAssets("Scotiabank", 2018, 31.42,  17.40, 498.88)
 
-            var ncbAssets2017 = InstitutionAssets("NCB", 2017, 61.56, 16.5, 718.81)
+            val ncbAssets2017 = InstitutionAssets("NCB", 2017, 61.56, 16.5, 718.81)
 
-            var cibcAssets2017 = InstitutionAssets("CIBC", 2017, 79.36,2.05, 1076.50  )
+            val cibcAssets2017 = InstitutionAssets("CIBC", 2017, 79.36,2.05, 1076.50  )
 
-            var victoriamutalAssets2017 =InstitutionAssets("Victoria Mutual", 2017, 6.53, 4.01, 115.6 )
+            val victoriamutalAssets2017 =InstitutionAssets("Victoria Mutual", 2017, 6.53, 4.01, 115.6 )
 
-            var firstglobal2017 = InstitutionAssets("First Global", 2017, 4.53, 0.468, 54.49)
+            val firstglobal2017 = InstitutionAssets("First Global", 2017, 4.53, 0.468, 54.49)
 
-            var jn2017 = InstitutionAssets("JN Bank", 2017, 11.64, 1.87, 180.66)
+            val jn2017 = InstitutionAssets("JN Bank", 2017, 11.64, 1.87, 180.66)
 
-            var jmmb2017 =  InstitutionAssets("JMMB", 2017, 14.65, 3.35, 251.56)
+            val jmmb2017 =  InstitutionAssets("JMMB", 2017, 14.65, 3.35, 251.56)
 
-            var sagicor2017 = InstitutionAssets("Sagicor", 2017, 10.85, 1.78, 125.25)
+            val sagicor2017 = InstitutionAssets("Sagicor", 2017, 10.85, 1.78, 125.25)
 
             institutionAssetsDao.addNewAssets(scotiabankAssets2017)
             institutionAssetsDao.addNewAssets(scotiabankAssets2018)
@@ -1118,6 +1119,44 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionAssetsDao.addNewAssets(jn2017)
             institutionAssetsDao.addNewAssets(jmmb2017)
             institutionAssetsDao.addNewAssets(sagicor2017)
+
+
+            val scotiabankSavannaLaMar = Branch("Savanna La Mar", "Scotiabank", "19 Great George's Street","Savanna La Mar", "Westmoreland", "Negril", 0.00, 0.00,"Caswell Dawes", "Active")
+            val scotiabankFalmouth= Branch("Falmouth", "Scotiabank", "Trewlany Wharf","Falmouth", "Trelawny", "", 0.00, 0.00,"Robert Wright", "Active")
+            val scotiabankMontegoBay = Branch("Montego Bay", "Scotiabank", "6-7 Sam Sharpe Square","Montego Bay", "St James", "", 0.00, 0.00,"Rayon Clarke", "Active")
+            val scotiabankBrownsTown = Branch("Brown's Town", "Scotiabank", "B11, Brown's Town","Savanna La Mar", "Westmoreland", "", 0.00, 0.00,"Tamayo Wilson", "Active")
+            val scotiabankIronshore = Branch("Ironshore", "Scotiabank", "Shops #2 & 3 Golden Triangle Shopping Centre","Montego Bay", "St James", "", 0.00, 0.00,"Garfield Holness", "Active")
+            val scotiabankOchoRios = Branch("Ocho Rios", "Scotiabank", "Main Street P.O. Box 150","Ocho Rios", "St Ann", "", 0.00, 0.00,"Cary Wiggan", "Active")
+            val scotiabankFairviewFinancialCentre = Branch("Fairview Financial Centre", "Scotiabank", "1 Port Avenue Fairview","Montego Bay", "Westmoreland", "", 0.00, 0.00,"Paolo Fakhourie", "Active")
+            val scotiabankNegril = Branch("Negril", "Scotiabank", "Negril Square","Negril", "Westmoreland", "Savanna La Mar", 0.00, 0.00,"Andrea Rhule-Hudson", "Active")
+            val scotiabankChristiana = Branch("Christiana", "Scotiabank", "Main Street","Christiana", "Manchester", "Mandeville", 0.00, 0.00,"Robert Douglas", "Active")
+            val scotiabankJunction = Branch("Junction", "Scotiabank", "Shop #1 Tony Rowe Plaza","Junction", "St Elizabeth", "Santa Cruz, Black River, Mandeville", 0.00, 0.00,"Murphy Greg", "Active")
+            val scotiabankKingStreet = Branch("King Street", "Scotiabank", "35-45 King Street","Kingston", "Kingston", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Linley Reynolds", "Active")
+            val scotiabankMayPen = Branch("May Pen", "Scotiabank", "36 Main Street","May Pen", "Clarendon", "Old Harbour", 0.00, 0.00,"Craig Richards", "Active")
+            val scotiabankBlackRiver = Branch("Black River", "Scotiabank", "6 High Street","Black River", "St Elizabeth", "Savanna La Mar, Santa Cruz", 0.00, 0.00,"Pat Thompson", "Active")
+            val scotiabankOldHarbour = Branch("Old Harbour", "Scotiabank", "4 South Street","Old Harbour", "St Catherine", "May Pen, Portmore, Portmore, Spanish Town", 0.00, 0.00,"Basil Depass", "Active")
+            val scotiabankMandeville = Branch("Mandeville", "Scotiabank", "1A Caledonia Road","Mandeville", "Manchester", "Santa Cruz, Black River, Junction, Christiana", 0.00, 0.00,"Keisha Brown", "Active")
+            val scotiabankStAnnsBay = Branch("St Ann's Bay", "Scotiabank", "18 Bravo Street","St Ann's Bay", "St Ann", "Brown's Town, Ocho Rios", 0.00, 0.00,"Denise Hyman", "Active")
+            val scotiabankConstantSpring = Branch("Constant Spring", "Scotiabank", "132-132a Constant Spring","Constant Spring", "St Andrew", "New Kingston, Oxford Road, Cross Roads, Hagley Park Road, Half Way Tree", 0.00, 0.00,"Peter Mohan", "Active")
+            val scotiabankSantaCruz = Branch("Santa Cruz", "Scotiabank", "77 Main Street","Santa Cruz", "St Elizabeth", "Black River, Junction, Mandeville", 0.00, 0.00,"Kevin Burton", "Active")
+            val scotiabankScotiabankCentre = Branch("Scotiabank Centre", "Scotiabank", "Corner Duke & Port Royal","Kingston", "Kingston", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Christopher Samuels", "Active")
+            val scotiabankLiguanea = Branch("Liguanea", "Scotiabank", "125-127 Old Hope Road","Liguanea", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Andrea Douglas", "Active")
+            val scotiabankHagleyParkRoad = Branch("Hagley Park Road", "Scotiabank", "128 Hagley Park Road","Hagley Park", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Stredic Thompson", "Active")
+            val scotiabankUWI = Branch("UWI", "Scotiabank", "Corner Ring Road & Shed Lane","Mona", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Rosemarie Edwards", "Active")
+            val scotiabankPortMaria = Branch("Port Maria", "Scotiabank", "57 Warner Street","Port Maria", "St Mary", "Ocho Rios", 0.00, 0.00,"Paul Wallace", "Active")
+            val scotiabankNewKingston = Branch("New Kingston", "Scotiabank", "2 Knutsford Boulevard","New Kingston", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Pamela Douglas", "Active")
+            val scotiabankHalfWayTree = Branch("Half Way Tree", "Scotiabank", "82-84 Half Way Tree Road","Half Way Tree", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Michelle Lee-Gaynor", "Active")
+            val scotiabankMorantBay = Branch("Morant Bay", "Scotiabank", "23 Queen Street","Morant Bay", "St Thomas", "", 0.00, 0.00,"Nazeree Baker", "Active")
+            val scotiabankLinstead = Branch("Linstead", "Scotiabank", "42 King Street","Linstead", "St Catherine", "", 0.00, 0.00,"Rhoan Bennett", "Active")
+            val scotiabankPortAntonio = Branch("Port Antonio", "Scotiabank", "3 Harbour Street","Port Antonio", "Portland", "", 0.00, 0.00,"Mark Thompson", "Active")
+            val scotiabankCrossRoads = Branch("Cross Roads", "Scotiabank", "86 Slipe Road","Cross Roads", "St Andrew", "New Kingston, Oxford Road, Half Way Tree", 0.00, 0.00,"Michelle Senior", "Active")
+            val scotiabankSpanishTown = Branch("Spanish Town", "Scotiabank", "6 March Pen Road, Shops 25 & 26 Oasis Shopping Plaza","Spanish Town", "St Catherine", "", 0.00, 0.00,"Conrad Wright", "Active")
+            val scotiabankOxfordRoad = Branch("Oxford Road", "Scotiabank", "6 Oxford Road","New Kingston", "St Andrew", "New Kingston", 0.00, 0.00,"Hewan Lewis", "Active")
+            val scotiabankPortmore = Branch("Portmore", "Scotiabank", "Lot 2 Cookson Pen","Portmore", "St Catherine", "Spanish Town", 0.00, 0.00,"Derrick Palmer", "Active")
+
+
+
+
 
 
 

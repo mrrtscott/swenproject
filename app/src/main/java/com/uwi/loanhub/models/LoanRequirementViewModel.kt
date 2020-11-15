@@ -15,8 +15,7 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
     var LoanRequirementDao:LoanRequirementDao
     var allLoanRequirement: LiveData<List<LoanRequirement>>
     private var inputArrayList:ArrayList<String> =  arrayListOf("1")
-    /*private var specificRepositoryForLoanRequirement:LoanRequirementRepository
-    var specificLoanRequirement: LiveData<List<LoanRequirement>>*/
+
 
 
     init {
@@ -24,8 +23,6 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
         repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
         allLoanRequirement = repository.allLoanRequirement
 
-        /*specificRepositoryForLoanRequirement = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
-        specificLoanRequirement = specificRepositoryForLoanRequirement.allLoanRequirement*/
     }
 
 
@@ -33,15 +30,8 @@ class LoanRequirementViewModel (application: Application): AndroidViewModel(appl
     fun setArray(inputArray:ArrayList<String>){
 
         inputArrayList = inputArray
-        println(inputArray[0])
         repository = LoanRequirementRepository(LoanRequirementDao,inputArrayList)
         allLoanRequirement = repository.allLoanRequirement
-
-
-
-
-
-
 
     }
 

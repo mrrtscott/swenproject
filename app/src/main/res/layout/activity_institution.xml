@@ -151,6 +151,30 @@
             android:layout_marginRight="30dp"
             />
 
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Branches"
+            android:textSize="40sp">
+
+        </TextView>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            tools:listitem="@layout/branchrecycleitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     </LinearLayout>
 

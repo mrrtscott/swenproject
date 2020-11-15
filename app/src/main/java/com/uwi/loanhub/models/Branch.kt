@@ -5,15 +5,17 @@ import androidx.room.PrimaryKey
 import java.time.OffsetDateTime
 
 
-@Entity
+@Entity (tableName = "Branch", primaryKeys = ["name", "bank"] )
 data class Branch (
-    @PrimaryKey var id: String,
     var name: String,
+    var bank: String,
+    var street: String,
     var city: String,
     var parish: String,
     var closeTo: String,
-    var status: String,
-    var dateCreated: String
-
+    var latitude: Double,
+    var longitude: Double,
+    var manager: String,
+    var status: String
 
 )
