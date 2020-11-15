@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.google.android.material.snackbar.Snackbar
 import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
@@ -59,6 +60,15 @@ class LoanInDetail : AppCompatActivity() {
         sentArrayLoanInstitution.add(username)
 
         loanInstitutionViewModel.setArray(sentArrayLoanInstitution)
+
+
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener { view ->
+            
+            //Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                //.setAction("Action", null)
+                //.show()
+        }
 
 
 

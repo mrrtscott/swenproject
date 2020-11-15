@@ -1282,6 +1282,16 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(ncbSavannaLaMar)
             branchDao.addBranch(ncbLucea)
 
+            val firstGlobalDowntown = Branch("Downtown", "First Global", "2 Duke Street", "Kingston", "Kingston", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalLiguanea = Branch("Liguanea", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalMandeville = Branch("Mandeville", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalOchoRios = Branch("Ocho Rios", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalNewKingston = Branch("New Kingston", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalManorPark = Branch("Manor Park", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalMontegoBay = Branch("Montego Bay", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalPortmore = Branch("Portmore", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+
+
 
         }
     }
