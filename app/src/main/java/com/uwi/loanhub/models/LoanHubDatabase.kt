@@ -1243,14 +1243,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val ncbFalmouth = Branch("Falmouth", "NCB", "Water Square","Falmouth", "Trelawny", "", 0.00, 0.00,"Robert Wright", "Active")
             val ncbBlackRiver= Branch("Black River", "NCB", "1 Brigade Street","Black River", "St Elizabeth", "", 0.00, 0.00,"Robert Wright", "Active")
             val ncbStJamesStreet= Branch("St James Street", "NCB", "41 St. James Street","Montego Bay", "St James", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbBaywest= Branch("KnutsfordBoulevard", "NCB", "Harbour Street","Montego Bay", "St James", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
-            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbBaywest= Branch("Baywest", "NCB", "Harbour Street","Montego Bay", "St James", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbSavannaLaMar= Branch("Savanna La Mar", "NCB", "68 Great George Street","Savanna La Mar", "Westmoreland", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbLucea= Branch("Lucea", "NCB", "Lucea","Lucea", "Hanover", "", 0.00, 0.00,"Robert Wright", "Active")
 
 
         }
