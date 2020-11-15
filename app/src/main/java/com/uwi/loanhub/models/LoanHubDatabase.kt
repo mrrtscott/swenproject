@@ -1283,7 +1283,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(ncbLucea)
 
             val firstGlobalDowntown = Branch("Downtown", "First Global", "2 Duke Street", "Kingston", "Kingston", "", 0.00, 0.00,"", "Active" )
-            val firstGlobalLiguanea = Branch("Liguanea", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalLiguanea = Branch("Liguanea", "First Global", " Shop 27, Lane Plaza, 121 Old Hope Road", "Liguanea", "St Andrew", "", 0.00, 0.00,"", "Active" )
             val firstGlobalMandeville = Branch("Mandeville", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
             val firstGlobalOchoRios = Branch("Ocho Rios", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
             val firstGlobalNewKingston = Branch("New Kingston", "First Global", "", "", "", "", 0.00, 0.00,"", "Active" )
