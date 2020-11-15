@@ -44,6 +44,8 @@ class InstitutionActivity : AppCompatActivity() {
     private lateinit var branchesModel: BranchViewModel
     private lateinit var websiteButton:Button
     private lateinit var phoneButton:Button
+    private lateinit var emailButton:Button
+
 
     var inputArrayList: ArrayList<String> = arrayListOf()
     var inputBranchArrayList: ArrayList<String> = arrayListOf()
@@ -76,6 +78,7 @@ class InstitutionActivity : AppCompatActivity() {
 
         websiteButton = findViewById(R.id.websiteInstitutionActivity)
         phoneButton = findViewById(R.id.phoneInstitutionActivity)
+        emailButton =  findViewById(R.id.emailInstitutionActivity)
 
 
 
@@ -133,6 +136,17 @@ class InstitutionActivity : AppCompatActivity() {
                         intent = Intent(Intent.ACTION_DIAL)
                         intent.data = Uri.fromParts("tel", institution[0].phone , null)
                         startActivity(intent)
+
+                    }
+                }
+
+                emailButton.setOnClickListener {
+                    if(institution[0].email.isNotEmpty()){
+                        intent = Intent(Intent.ACTION_SENDTO)
+                        intent.data = Uri.fromParts("mailto", institution[0].email, null)
+                        intent.putExtra(Intent.EXTRA_SUBJECT, institution[0].name)
+                        startActivity(Intent.createChooser(intent,"Enquire about loan"))
+
 
                     }
                 }
