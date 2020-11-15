@@ -940,7 +940,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.sagicormg,
                 "info@sagicor.com",
                 "876-990-0001",
-                "www.sagicor.com",
+                "https://sagicor.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -957,7 +957,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.jmmb,
                 "info@jmmb.com",
                 "876-990-0909",
-                "www.jmmb.com",
+                "https://jmmb.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -974,7 +974,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.ncb,
                 "info@ncb.com",
                 "876-990-0905",
-                "www.jncb.com",
+                "https://jncb.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -993,7 +993,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.firstglobal,
                 "info@fgb.com",
                 "876-990-1901",
-                "www.firstglobal-bank.com",
+                "https://firstglobal-bank.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -1010,7 +1010,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.jn,
                 "info@jnbank.com",
                 "876-902-7904",
-                "www.jnbank.com",
+                "https://jnbank.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -1027,7 +1027,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.victoriamutual,
                 "info@victoriamutual.com",
                 "876-990-0909",
-                "www.vmbs.com",
+                "https://vmbs.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -1043,7 +1043,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.cibc,
                 "info@cibc.com",
                 "876-990-0909",
-                "www.cibcfcib.com",
+                "https://cibcfcib.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()
@@ -1060,7 +1060,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 R.drawable.scotiabank,
                 "info@scotiabank.com",
                 "876-997-7909",
-                "wwww.jm.scotiabank.com",
+                "https://jm.scotiabank.com",
                 "Monday - Friday 8:00 AM - 3:00 PM",
                 "Active",
                 function.getCurrentDate()

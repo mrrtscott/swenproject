@@ -15,7 +15,10 @@ import com.anychart.scales.Linear
 
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +42,8 @@ class InstitutionActivity : AppCompatActivity() {
 
     private lateinit var institutionAssets: InstitutionAssetsViewModel
     private lateinit var branchesModel: BranchViewModel
+    private lateinit var websiteButton:Button
+    private lateinit var phoneButton:Button
 
     var inputArrayList: ArrayList<String> = arrayListOf()
     var inputBranchArrayList: ArrayList<String> = arrayListOf()
@@ -69,6 +74,13 @@ class InstitutionActivity : AppCompatActivity() {
 
 
 
+        websiteButton = findViewById(R.id.websiteInstitutionActivity)
+        phoneButton = findViewById(R.id.phoneInstitutionActivity)
+
+
+
+
+
         val anyChartView = findViewById<AnyChartView>(R.id.chartInstitutionActivity)
         val institutionNameTextView = findViewById<TextView>(R.id.institutionInstitutionActivity)
         val institutionImageView = findViewById<ImageView>(R.id.imageInstitutionActivity)
@@ -88,8 +100,6 @@ class InstitutionActivity : AppCompatActivity() {
 
 
 
-
-
             val column = AnyChart.column()
 
             val seriesData: MutableList<DataEntry> = ArrayList()
@@ -106,6 +116,32 @@ class InstitutionActivity : AppCompatActivity() {
                     println(i.year.toString())
                     seriesData.add(CustomDataEntry(i.year.toString(), i.revenue, i.income, i.totalAssets))
                 }
+
+
+                websiteButton.setOnClickListener {
+
+                    if(institution[0].website.startsWith("http")){
+                        intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse(institution[0].website)
+                        startActivity(intent)
+                    }
+
+                }
+
+                phoneButton.setOnClickListener {
+                    if (institution[0].phone.isNotEmpty()){
+                        intent = Intent(Intent.ACTION_DIAL)
+                        intent.data = Uri.fromParts("tel", institution[0].phone , null)
+                        startActivity(intent)
+
+                    }
+                }
+
+
+
+
+
+
             }
 
             val set = Set.instantiate()
