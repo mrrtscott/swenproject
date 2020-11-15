@@ -1289,7 +1289,18 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val firstGlobalNewKingston = Branch("New Kingston", "First Global", "28-48 Barbados Avenue", "New Kingston", "St Andrew", "", 0.00, 0.00,"", "Active" )
             val firstGlobalManorPark = Branch("Manor Park", "First Global", "", "184 Constant Spring Road", "St Andrew", "", 0.00, 0.00,"", "Active" )
             val firstGlobalMontegoBay = Branch("Montego Bay", "First Global", "Fairview Shopping Centre", "Montego Bay", "St James", "", 0.00, 0.00,"", "Active" )
-            val firstGlobalPortmore = Branch("Portmore", "First Global", "Portmore Pines Plaza", "Portmore", "St Catherine", "", 0.00, 0.00,"", "Active" )
+            val firstGlobalPortmore = Branch("Portmore", "First Global", "Portmore Pines Plaza", "Portmore", "St Catherine", "", 0.00, 0.00,"", "Active")
+
+
+            branchDao.addBranch(firstGlobalDowntown)
+            branchDao.addBranch(firstGlobalLiguanea)
+            branchDao.addBranch(firstGlobalMandeville)
+            branchDao.addBranch(firstGlobalOchoRios)
+            branchDao.addBranch(firstGlobalNewKingston)
+            branchDao.addBranch(firstGlobalManorPark)
+            branchDao.addBranch(firstGlobalMontegoBay)
+            branchDao.addBranch(firstGlobalPortmore)
+
 
 
 
