@@ -1157,8 +1157,6 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val scotiabankStAnnsBay = Branch("St Ann's Bay", "Scotiabank", "18 Bravo Street","St Ann's Bay", "St Ann", "Brown's Town, Ocho Rios", 0.00, 0.00,"Denise Hyman", "Active")
             val scotiabankConstantSpring = Branch("Constant Spring", "Scotiabank", "132-132a Constant Spring","Constant Spring", "St Andrew", "New Kingston, Oxford Road, Cross Roads, Hagley Park Road, Half Way Tree", 0.00, 0.00,"Peter Mohan", "Active")
 
-
-
             val scotiabankSantaCruz = Branch("Santa Cruz", "Scotiabank", "77 Main Street","Santa Cruz", "St Elizabeth", "Black River, Junction, Mandeville", 0.00, 0.00,"Kevin Burton", "Active")
             val scotiabankScotiabankCentre = Branch("Scotiabank Centre", "Scotiabank", "Corner Duke & Port Royal","Kingston", "Kingston", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Christopher Samuels", "Active")
             val scotiabankLiguanea = Branch("Liguanea", "Scotiabank", "125-127 Old Hope Road","Liguanea", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Andrea Douglas", "Active")
@@ -1210,6 +1208,41 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(scotiabankSpanishTown)
             branchDao.addBranch(scotiabankOxfordRoad)
             branchDao.addBranch(scotiabankPortmore)
+
+
+            /* NCB Branches*/
+
+            val ncbKnutsfordBoulevard= Branch("Knutsford Boulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbOxfordPlace= Branch("Oxford Place", "NCB", "10 Oxford Road","New Kingston", "St Andrew", "New Kingston", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbKHalfWayTree= Branch("Half Way Tree", "NCB", "94 Half Way Tree Road","Half Way Tree", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbCrossRoads= Branch("Cross Roads", "NCB", "90 Cross Roads","Cross Roads", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbSovereignCentre= Branch("Sovereign Centre", "NCB", "Sovereign Centre","Liguanea", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbConstantSpring= Branch("Constant Spring", "NCB", "124 Constant Spring Road","Constant Spring", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbUWI= Branch("University (UWI)", "NCB", "Mona Campus","Mona", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbHagleyPark= Branch("Hagley Park", "NCB", "211 Hagley Park Road","Hagley Park", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbDukeStreet= Branch("Duke Street", "NCB", "37 Duke Street","Kingston", "Kingston", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbWindwardRoad= Branch("Windward Road", "NCB", "89 Windward Road","Kingston", "Kingston", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbPortmore = Branch("Portmore", "NCB", "13 West Trade Way","Portmore", "St Catherine", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbHiloPortmorePines= Branch("Hilo Portmore Pines", "NCB", "Portmore Pines","Portmore", "St Catherine   ", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbStJago = Branch("St. Jago Shopping Centre", "NCB", "Burke Road","St Jago", "St Catherine", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbAnnottoBay = Branch("Annotto Bay", "NCB", "Main Street","Annotto Bay", "St Mary", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbLinstead = Branch("Linstead", "NCB", "29 King Street","Linstead", "St Catherine", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbPortAntonio= Branch("Port Antonio", "NCB", "Gideon Avenue","Port Antonio", "Portland ", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbPortMaria= Branch("Port Maria", "NCB", "8 Main Street","Port Maria", "Mary Mary", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbMorantBay= Branch("Morant Bay", "NCB", "36 Queen Street","Morant Bay", "St Thomas", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbMayPen= Branch("May Pen", "NCB", "41 Main Street","May Pen", "Clarendon", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbChapelton= Branch("Chapelton", "NCB", "Main Street","Chapelton", "Clarendon", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbOchoRios= Branch("Ocho Rios", "NCB", "40 Main Street","Ocho Rios", "St Ann", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbSpalding= Branch("Spalding", "NCB", "Spalding","Spalding", "Clarendon", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbBrownsTown= Branch("Brown's Town", "NCB", "17 Main Street","Brown's Townn", "St Ann", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbChristiana= Branch("Christiana", "NCB", "Main Street","Christiana", "Manchester", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbMandeville= Branch("Mandeville", "NCB", "6 Perth Road","Mandeville", "Manchester", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbJunction= Branch("Junction", "NCB", "1 Knutsford Boulevard","Junction", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+            val ncbKnutsfordBoulevard= Branch("KnutsfordBoulevard", "NCB", "1 Knutsford Boulevard","New Kingston", "St Andrew", "", 0.00, 0.00,"Robert Wright", "Active")
+
 
         }
     }
