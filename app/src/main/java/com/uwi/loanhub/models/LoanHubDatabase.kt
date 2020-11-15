@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, Branch::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class), version = 12, exportSchema = true)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class), version = 17, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -68,6 +68,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
                     populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao(), database.InstitutionAssetsDao())
+                    populateBranch(database.BranchDao())
 
                 }
             }
@@ -1110,6 +1111,8 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val sagicor2017 = InstitutionAssets("Sagicor", 2017, 10.85, 1.78, 125.25)
 
+
+
             institutionAssetsDao.addNewAssets(scotiabankAssets2017)
             institutionAssetsDao.addNewAssets(scotiabankAssets2018)
             institutionAssetsDao.addNewAssets(ncbAssets2017)
@@ -1121,7 +1124,22 @@ abstract class LoanHubDatabase : RoomDatabase() {
             institutionAssetsDao.addNewAssets(sagicor2017)
 
 
+
+
+
+
+
+
+
+
+
+        }
+
+
+        suspend fun populateBranch(branchDao: BranchDao) {
+
             val scotiabankSavannaLaMar = Branch("Savanna La Mar", "Scotiabank", "19 Great George's Street","Savanna La Mar", "Westmoreland", "Negril", 0.00, 0.00,"Caswell Dawes", "Active")
+
             val scotiabankFalmouth= Branch("Falmouth", "Scotiabank", "Trewlany Wharf","Falmouth", "Trelawny", "", 0.00, 0.00,"Robert Wright", "Active")
             val scotiabankMontegoBay = Branch("Montego Bay", "Scotiabank", "6-7 Sam Sharpe Square","Montego Bay", "St James", "", 0.00, 0.00,"Rayon Clarke", "Active")
             val scotiabankBrownsTown = Branch("Brown's Town", "Scotiabank", "B11, Brown's Town","Savanna La Mar", "Westmoreland", "", 0.00, 0.00,"Tamayo Wilson", "Active")
@@ -1138,6 +1156,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val scotiabankMandeville = Branch("Mandeville", "Scotiabank", "1A Caledonia Road","Mandeville", "Manchester", "Santa Cruz, Black River, Junction, Christiana", 0.00, 0.00,"Keisha Brown", "Active")
             val scotiabankStAnnsBay = Branch("St Ann's Bay", "Scotiabank", "18 Bravo Street","St Ann's Bay", "St Ann", "Brown's Town, Ocho Rios", 0.00, 0.00,"Denise Hyman", "Active")
             val scotiabankConstantSpring = Branch("Constant Spring", "Scotiabank", "132-132a Constant Spring","Constant Spring", "St Andrew", "New Kingston, Oxford Road, Cross Roads, Hagley Park Road, Half Way Tree", 0.00, 0.00,"Peter Mohan", "Active")
+
+
+
             val scotiabankSantaCruz = Branch("Santa Cruz", "Scotiabank", "77 Main Street","Santa Cruz", "St Elizabeth", "Black River, Junction, Mandeville", 0.00, 0.00,"Kevin Burton", "Active")
             val scotiabankScotiabankCentre = Branch("Scotiabank Centre", "Scotiabank", "Corner Duke & Port Royal","Kingston", "Kingston", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Christopher Samuels", "Active")
             val scotiabankLiguanea = Branch("Liguanea", "Scotiabank", "125-127 Old Hope Road","Liguanea", "St Andrew", "Half Way Tree, Cross Roads, Constant Spring", 0.00, 0.00,"Andrea Douglas", "Active")
@@ -1156,17 +1177,39 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
+            branchDao.addBranch(scotiabankSavannaLaMar)
+            branchDao.addBranch(scotiabankFalmouth)
+            branchDao.addBranch(scotiabankMontegoBay)
+            branchDao.addBranch(scotiabankBrownsTown)
+            branchDao.addBranch(scotiabankIronshore)
+            branchDao.addBranch(scotiabankOchoRios)
+            branchDao.addBranch(scotiabankFairviewFinancialCentre)
+            branchDao.addBranch(scotiabankNegril)
+            branchDao.addBranch(scotiabankChristiana)
+            branchDao.addBranch(scotiabankJunction)
+            branchDao.addBranch(scotiabankKingStreet)
+            branchDao.addBranch(scotiabankMayPen)
+            branchDao.addBranch(scotiabankBlackRiver)
+            branchDao.addBranch(scotiabankOldHarbour)
+            branchDao.addBranch(scotiabankMandeville)
+            branchDao.addBranch(scotiabankStAnnsBay)
+            branchDao.addBranch(scotiabankConstantSpring)
 
-
-
-
-
-
-
-
-
-
-
+            branchDao.addBranch(scotiabankSantaCruz)
+            branchDao.addBranch(scotiabankScotiabankCentre)
+            branchDao.addBranch(scotiabankLiguanea)
+            branchDao.addBranch(scotiabankHagleyParkRoad)
+            branchDao.addBranch(scotiabankUWI)
+            branchDao.addBranch(scotiabankPortMaria)
+            branchDao.addBranch(scotiabankNewKingston)
+            branchDao.addBranch(scotiabankHalfWayTree)
+            branchDao.addBranch(scotiabankMorantBay)
+            branchDao.addBranch(scotiabankLinstead)
+            branchDao.addBranch(scotiabankPortAntonio)
+            branchDao.addBranch(scotiabankCrossRoads)
+            branchDao.addBranch(scotiabankSpanishTown)
+            branchDao.addBranch(scotiabankOxfordRoad)
+            branchDao.addBranch(scotiabankPortmore)
 
         }
     }

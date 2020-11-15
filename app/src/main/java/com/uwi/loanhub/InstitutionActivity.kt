@@ -20,6 +20,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
 import com.anychart.chart.common.dataentry.DataEntry
@@ -28,9 +30,7 @@ import com.anychart.core.cartesian.series.Column
 import com.anychart.data.Set
 import com.anychart.enums.LegendLayout
 import com.anychart.enums.Orientation
-import com.uwi.loanhub.models.InstitutionAssets
-import com.uwi.loanhub.models.InstitutionAssetsViewModel
-import com.uwi.loanhub.models.LoanLikesViewModel
+import com.uwi.loanhub.models.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -38,7 +38,11 @@ import kotlin.collections.ArrayList
 class InstitutionActivity : AppCompatActivity() {
 
     private lateinit var institutionAssets: InstitutionAssetsViewModel
+    private lateinit var branchesModel: BranchViewModel
+
     var inputArrayList: ArrayList<String> = arrayListOf()
+    var inputBranchArrayList: ArrayList<String> = arrayListOf()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +51,20 @@ class InstitutionActivity : AppCompatActivity() {
 
         val previousIntent = intent
         val institution = previousIntent.getStringExtra("INSTITUTION")
+
+
+        branchesModel = ViewModelProvider(this).get(BranchViewModel::class.java)
+
+        val recycleView= findViewById<RecyclerView>(R.id.recycleViewBranch)
+        val adapter = BranchListAdapter(this)
+        recycleView.adapter = adapter
+        recycleView.layoutManager = LinearLayoutManager(this)
+
+
+        inputBranchArrayList.add("Scotiabank")
+        inputBranchArrayList.add("Mandeville")
+        inputBranchArrayList.add("Manchester")
+
 
 
 
@@ -119,6 +137,15 @@ class InstitutionActivity : AppCompatActivity() {
                 .itemsLayout(LegendLayout.VERTICAL)
 
             anyChartView.setChart(column)
+        })
+
+
+        branchesModel.setArray(inputBranchArrayList)
+
+        branchesModel.bankBranches.observe(this, androidx.lifecycle.Observer { branch ->
+
+            branch?.let { adapter.setBranch(it) }
+
         })
 
 
