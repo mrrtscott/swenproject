@@ -1316,10 +1316,11 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val sagicorHopeRoad = Branch("Hope Road","Sagicor", "85 Hope Road", "Hope Road", "St Andrew", "", 0.0, 0.0, "", "Active")
             val sagicorFairview = Branch("Fairview","Sagicor", "21B Fairview Shopping Centre", "Montego Bay", "St James", "", 0.0, 0.0, "", "Active")
             val sagicorManorPark = Branch("Manor Park","Sagicor", "184 Constant Spring Road", "Manor Park", "St Andrew", "", 0.0, 0.0, "", "Active")
-            val sagicorHO = Branch("","Sagicor", "", "", "", "", 0.0, 0.0, "", "Active")
-            val sagicorHO = Branch("","Sagicor", "", "", "", "", 0.0, 0.0, "", "Active")
-            val sagicorHO = Branch("","Sagicor", "", "", "", "", 0.0, 0.0, "", "Active")
-            val sagicorHO = Branch("","Sagicor", "", "", "", "", 0.0, 0.0, "", "Active")
+            val sagicorSavannaLaMar = Branch("Savanna La Mar","Sagicor", "Great George St", "Savanna La Mar", "Westmoreland", "", 0.0, 0.0, "", "Active")
+            val sagicorMayPen = Branch("May Pen","Sagicor", "6B Manchester Ave", "May Pen", "Clarendon", "", 0.0, 0.0, "", "Active")
+            val sagicorPortmore = Branch("Portmore","Sagicor", "Portmore Pines Plaza", "Portmore", "St Catherine", "", 0.0, 0.0, "", "Active")
+            val sagicorLiguanea = Branch("Liguanea","Sagicor", "106 Hope Road", "Liguanea", "St Andrew", "", 0.0, 0.0, "", "Active")
+            val sagicorMontegoBay = Branch("Montego Bay","Sagicor", "Commercial Shopping Centre, Howard Cooke Blvd", "Montego Bay", "St James", "", 0.0, 0.0, "", "Active")
 
 
 
