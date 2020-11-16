@@ -1350,14 +1350,24 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val jmmbJunction = Branch("Junction", "JMMB", "", "Junction", "St Elizabeth", "", 0.00, 0.00, "", "Active")
             val jmmbChurchStreet = Branch("Montego Bay Church Street", "JMMB", "25 Church Street", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
             val jmmbHaughtonAvenue = Branch("Haughton Avenue", "JMMB", "5 Haughton Avenue", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
-            val jmmbMandeville = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
-            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbMandeville = Branch("Mandeville", "JMMB", "23 Ward Avenue", "Mandeville", "Manchester", "", 0.00, 0.00, "", "Active")
+            val jmmbMayPen = Branch("May Pen", "JMMB", "35 Main Street", "May Pen", "Clarendon", "", 0.00, 0.00, "", "Active")
+            val jmmbSantaCruz = Branch("Santa Cruz", "JMMB", "Coke Drive", "Santa Cruz", "St Elizabeth", "", 0.00, 0.00, "", "Active")
+            val jmmbFairviewBranch = Branch("Fairview Branch", "JMMB", "Alice Eldemire Drive", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
+
+
+            branchDao.addBranch(jmmbHO)
+            branchDao.addBranch(jmmbKnutsfordBoulevard)
+            branchDao.addBranch(jmmbOchoRios)
+            branchDao.addBranch(jmmbPortmore)
+            branchDao.addBranch(jmmbJunction)
+            branchDao.addBranch(jmmbChurchStreet)
+            branchDao.addBranch(jmmbHaughtonAvenue)
+            branchDao.addBranch(jmmbMandeville)
+            branchDao.addBranch(jmmbMayPen)
+            branchDao.addBranch(jmmbSantaCruz)
+            branchDao.addBranch(jmmbFairviewBranch)
+
 
 
 
