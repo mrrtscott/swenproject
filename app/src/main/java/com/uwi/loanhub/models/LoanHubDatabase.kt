@@ -1380,12 +1380,25 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val cibcOchoRios = Branch("Ocho Rios", "CIBC", "Ocean Village Shopping Centre", "Ocho Rios", "St Ann", "", 0.00, 0.00, "Lorna Escoffery", "Active")
             val cibcPortAntonio = Branch("Port Antonio", "CIBC", "", "Port Antonio", "Portland", "", 0.00, 0.00, "Roxan Bowen", "Active")
             val cibcPortmore = Branch("Portmore", "CIBC", "Corner Old Port Henderson Road & Braeton Parkway", "Portmore", "St Catherine", "", 0.00, 0.00, "Marion Wilson", "Active")
-            val cibcnSavannaLaMar = Branch("Savanna La Mar", "CIBC", "", "Savanna La Mar", "Westmoreland", "", 0.00, 0.00, " Wenley Wright", "Active")
-            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
-            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
-            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
-            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
-            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnSavannaLaMar = Branch("Savanna La Mar", "CIBC", "33-35 Beckford Street", "Savanna La Mar", "Westmoreland", "", 0.00, 0.00, " Wenley Wright", "Active")
+            val cibcStJamesStreet = Branch("St James Street", "CIBC", "59 St James Street", "Montego Bay", "t James", "", 0.00, 0.00, "Horace Watson", "Active")
+            val cibcTwinGates = Branch("Twin Gates Shopping Centre", "CIBC", "Twin Gates", "Half Way Tree", "St Andrew", "", 0.00, 0.00, "Diana Warren", "Active")
+
+            branchDao.addBranch(cibcnewKingston)
+            branchDao.addBranch(cibcHalfWayTree)
+            branchDao.addBranch(cibcKingStreet)
+            branchDao.addBranch(cibcLiguanea)
+            branchDao.addBranch(cibcMandeville)
+            branchDao.addBranch(cibcManorPark)
+            branchDao.addBranch(cibcMayPen)
+            branchDao.addBranch(cibcMontegoBay)
+            branchDao.addBranch(cibcOchoRios)
+            branchDao.addBranch(cibcPortAntonio)
+            branchDao.addBranch(cibcPortmore)
+            branchDao.addBranch(cibcnSavannaLaMar)
+            branchDao.addBranch(cibcStJamesStreet)
+            branchDao.addBranch(cibcTwinGates)
+
 
 
 
