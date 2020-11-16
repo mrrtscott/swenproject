@@ -1323,6 +1323,25 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val sagicorMontegoBay = Branch("Montego Bay","Sagicor", "Commercial Shopping Centre, Howard Cooke Blvd", "Montego Bay", "St James", "", 0.0, 0.0, "", "Active")
 
 
+            branchDao.addBranch(sagicorHO)
+            branchDao.addBranch(sagicorUpParkCamp)
+            branchDao.addBranch(sagicorDominicaDrive)
+            branchDao.addBranch(sagicorTropicalPlaza)
+            branchDao.addBranch(sagicorBlackRiver)
+            branchDao.addBranch(sagicoOchoRios)
+            branchDao.addBranch(sagicorMandeville)
+            branchDao.addBranch(sagicorBankDukeTowerStreet)
+            branchDao.addBranch(sagicorHalfWayTree)
+            branchDao.addBranch(sagicorHopeRoad)
+            branchDao.addBranch(sagicorFairview)
+            branchDao.addBranch(sagicorManorPark)
+            branchDao.addBranch(sagicorSavannaLaMar)
+            branchDao.addBranch(sagicorMayPen)
+            branchDao.addBranch(sagicorPortmore)
+            branchDao.addBranch(sagicorLiguanea)
+            branchDao.addBranch(sagicorMontegoBay)
+
+
 
 
         }
