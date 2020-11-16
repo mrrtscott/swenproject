@@ -1423,6 +1423,24 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
+            branchDao.addBranch(vmDukeStreet)
+            branchDao.addBranch(vmFalmouth)
+            branchDao.addBranch(vmHWT)
+            branchDao.addBranch(vmLiguanea)
+            branchDao.addBranch(vmLinstead)
+            branchDao.addBranch(vmMandeville)
+            branchDao.addBranch(vmMayPen)
+            branchDao.addBranch(vmMontegoBay)
+            branchDao.addBranch(vmFairview)
+            branchDao.addBranch(vmNewKingston)
+            branchDao.addBranch(vmOchoRios)
+            branchDao.addBranch(vmPapine)
+            branchDao.addBranch(vmPortmore)
+            branchDao.addBranch(vmSantaCruz)
+            branchDao.addBranch(vmSavannaLaMar)
+            branchDao.addBranch(vmSpanishTown)
+
+
 
 
 
