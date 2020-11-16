@@ -1343,6 +1343,24 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
+            val jmmbHO = Branch("Head Office", "JMMB", "6 Haughton Terrace", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jmmbKnutsfordBoulevard = Branch("Knutsford Boulevard", "JMMB", "11 Knutsford Boulevard", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jmmbOchoRios = Branch("Ocho Rios", "JMMB", "2 Graham Street", "Ocho Rios", "St Ann", "", 0.00, 0.00, "", "Active")
+            val jmmbPortmore = Branch("Portmore", "JMMB", "47-48 West Trade Way", "Portmore", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val jmmbJunction = Branch("Junction", "JMMB", "", "Junction", "St Elizabeth", "", 0.00, 0.00, "", "Active")
+            val jmmbChurchStreet = Branch("Montego Bay Church Street", "JMMB", "25 Church Street", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
+            val jmmbHaughtonAvenue = Branch("Haughton Avenue", "JMMB", "5 Haughton Avenue", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jmmbMandeville = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+            val jmmbHO = Branch("", "JMMB", "", "", "", "", 0.00, 0.00, "", "Active")
+
+
+
 
         }
     }
