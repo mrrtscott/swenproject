@@ -1369,6 +1369,26 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(jmmbFairviewBranch)
 
 
+            val cibcnewKingston = Branch("New Kingston", "CIBC", "23-27 Knutsford Blvd", "New Kingston", "St Andrew", "", 0.00, 0.00, "Paula Brown", "Active")
+            val cibcHalfWayTree = Branch("Half Way Tree", "CIBC", "78 Half WayTree Rd", "Half Way Tree", "St Andrew", "", 0.00, 0.00, " Lorna Burns", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+            val cibcnewKingston = Branch("", "CIBC", "", "", "", "", 0.00, 0.00, "", "Active")
+
+
+
 
 
 
