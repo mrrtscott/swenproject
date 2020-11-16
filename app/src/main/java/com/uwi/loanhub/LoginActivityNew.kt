@@ -98,6 +98,8 @@ class LoginActivityNew : AppCompatActivity() {
 
                     val intent = Intent (this,LoansSpecificToUser::class.java )
                     intent.putExtra( "USERNAME", users[0].username)
+                    intent.putExtra( "CITY", users[0].city)
+                    intent.putExtra( "PARISH", users[0].parish)
 
 
 

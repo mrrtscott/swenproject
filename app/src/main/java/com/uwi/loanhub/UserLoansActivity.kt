@@ -24,6 +24,8 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
     private lateinit var loanViewModel: LoanViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     var username:String = ""
+    var city:String = ""
+    var parish:String = ""
 
 
 
@@ -35,9 +37,10 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
         val previousIntent = intent
         username = previousIntent.getStringExtra("USERNAME")
+        city = previousIntent.getStringExtra("CITY")
+        parish = previousIntent.getStringExtra("PARISH")
 
-        println("USERNAME")
-        println(username)
+
 
         val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
         val adapter = LoanListAdapter(this, this)
@@ -66,6 +69,8 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
             intent.putExtra("USERNAME", username)
+            intent.putExtra("CITY", city)
+            intent.putExtra("PARISH", parish)
             startActivity(intent)
         })
     }

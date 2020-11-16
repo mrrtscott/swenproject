@@ -35,6 +35,8 @@ class LoanInDetail : AppCompatActivity() {
     var loanIDForLikes: Int = 0
     var loanNameLikes:String = ""
     var loanInstitutionLikes: String = ""
+    var city: String = ""
+    var parish: String = ""
 
 
 
@@ -49,6 +51,11 @@ class LoanInDetail : AppCompatActivity() {
         val previousIntent = intent
         val LoanID = previousIntent.getIntExtra("LOANID", 0)
         val username = previousIntent.getStringExtra("USERNAME")
+
+        city = previousIntent.getStringExtra("CITY")
+        parish = previousIntent.getStringExtra("PARISH")
+
+
         requirementsButton = findViewById(R.id.requirementsButton)
         likeLoanButton = findViewById(R.id.likedLoans)
         institutionButton = findViewById(R.id.institutionDetail)
@@ -64,7 +71,7 @@ class LoanInDetail : AppCompatActivity() {
 
         val fab: View = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
-            
+
             //Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                 //.setAction("Action", null)
                 //.show()
@@ -124,6 +131,8 @@ class LoanInDetail : AppCompatActivity() {
             institutionButton.setOnClickListener {
                 val intent = Intent (this,InstitutionActivity::class.java )
                 intent.putExtra("INSTITUTION", loans[0].institution)
+                intent.putExtra("CITY", city)
+                intent.putExtra("PARISH", parish)
                 startActivity(intent)
             }
 

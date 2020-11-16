@@ -58,6 +58,8 @@ class InstitutionActivity : AppCompatActivity() {
 
         val previousIntent = intent
         val institution = previousIntent.getStringExtra("INSTITUTION")
+        val city = previousIntent.getStringExtra("CITY")
+        val parish = previousIntent.getStringExtra("PARISH")
 
 
         branchesModel = ViewModelProvider(this).get(BranchViewModel::class.java)
@@ -68,9 +70,9 @@ class InstitutionActivity : AppCompatActivity() {
         recycleView.layoutManager = LinearLayoutManager(this)
 
 
-        inputBranchArrayList.add("Scotiabank")
-        inputBranchArrayList.add("Mandeville")
-        inputBranchArrayList.add("Manchester")
+        inputBranchArrayList.add(institution)
+        inputBranchArrayList.add(city)
+        inputBranchArrayList.add(parish)
 
 
 
