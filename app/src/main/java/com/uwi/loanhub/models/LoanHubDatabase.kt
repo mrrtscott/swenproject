@@ -1399,6 +1399,30 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(cibcStJamesStreet)
             branchDao.addBranch(cibcTwinGates)
 
+            //JN
+
+
+            //VM
+
+            val vmDukeStreet = Branch("Duke Street  ", "Victoria Mutual", "8-10 Duke Street", "Kingston", "Kingston", "", 0.00, 0.00, "", "Active")
+            val vmFalmouth = Branch("Falmouth", "Victoria Mutual", "15 Market Street", "Falmouth", "Trelawny", "", 0.00, 0.00, "", "Active")
+            val vmHWT = Branch("Half Way Tree", "Victoria Mutual", "73-75 Half Way Tree", "Half Way Tree", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val vmLiguanea = Branch("Liguanea", "Victoria Mutual", "115 Hope Road", "Liguanea", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val vmLinstead = Branch("Linstead", "Victoria Mutual", "110 King Street", "Linstead", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val vmMandeville = Branch("Mandeville", "Victoria Mutual", "Manchester Shopping Centre", "Mandeville", "Manchester", "", 0.00, 0.00, "", "Active")
+            val vmMayPen = Branch("May Pen", "Victoria Mutual", "40 Main Street", "May Pen", "Clarendon", "", 0.00, 0.00, "", "Active")
+            val vmMontegoBay = Branch("Montego Bay", "Victoria Mutual", "30-34 Market Street", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
+            val vmFairview = Branch("Fairview", "Victoria Mutual", "Fairview Shopping Complex", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
+            val vmNewKingston = Branch("New Kingston", "Victoria Mutual", "53 Knutsford Boulevard", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val vmOchoRios = Branch("Ocho Rios", "Victoria Mutual", "7 Newlin Street", "Ocho Rios", "St Ann", "", 0.00, 0.00, "", "Active")
+            val vmPapine = Branch("Papine", "Victoria Mutual", "237 Old Hope Road", "Papine", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val vmPortmore = Branch("Portmore", "Victoria Mutual", "Sea Grape Close", "Portmore", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val vmSantaCruz = Branch("Santa Cruz", "Victoria Mutual", "56 Main Street", "Santa Cruz", "St Elizabeth", "", 0.00, 0.00, "", "Active")
+            val vmSavannaLaMar = Branch("Savanna La Mar", "Victoria Mutual", "123 Great George Street", "Savanna La Mar", "Westmoreland", "", 0.00, 0.00, "", "Active")
+            val vmSpanishTown = Branch("Spanish Town", "Victoria Mutual", "22  Oxford Road", "Spanish Town", "St Catherine", "", 0.00, 0.00, "", "Active")
+
+
+
 
 
 
