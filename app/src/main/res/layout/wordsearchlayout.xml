@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#CCF1F9FF"
+    android:id="@+id/wordSearchFragment">
 
     <EditText
         android:id="@+id/inputWordSearch"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="Search term here">
+        android:hint="Search word here"
+        android:maxLines="1"
+        android:drawableEnd="@drawable/ic_outline_search_blue_24">
 
     </EditText>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textDefinition"
-        android:layout_width="match_parent"
-        android:layout_height="300dp">
 
-    </com.google.android.material.textview.MaterialTextView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/searchWordButtonCanel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            android:text="CANCEL">
 
-        </com.google.android.material.button.MaterialButton>
+
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/searchWordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:text="SEARCH"
-            android:layout_gravity="right">
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp">
 
         </com.google.android.material.button.MaterialButton>
 
-    </LinearLayout>
+
 
 
 

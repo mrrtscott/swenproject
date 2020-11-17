@@ -1,27 +1,33 @@
 package com.uwi.loanhub
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButtonToggleGroup
-import com.uwi.loanhub.fragments.searchWord
+import com.uwi.loanhub.fragments.SearchWord
 import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
 
-class LoanInDetail : AppCompatActivity() {
+
+class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListener {
 
     private lateinit var functions: Functions
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     private lateinit var loanLikesViewModel: LoanLikesViewModel
     private lateinit var loanRatingViewModel:LoanRatingViewModel
 
-    private lateinit var searchWord: searchWord
+    private lateinit var searchWordFragment:SearchWord
 
 
     private lateinit var requirementsButton: Button
@@ -41,14 +47,21 @@ class LoanInDetail : AppCompatActivity() {
 
 
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loan_in_detail)
 
 
         functions = Functions()
-        searchWord = searchWord()
+
         val manager: FragmentManager = supportFragmentManager
+        searchWordFragment = SearchWord()
+
+
+
 
 
         val previousIntent = intent
@@ -77,7 +90,8 @@ class LoanInDetail : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
 
-            searchWord.show(manager,"Search")
+            searchWordFragment.show(manager, "Search")
+
 
 
 
@@ -294,6 +308,16 @@ class LoanInDetail : AppCompatActivity() {
 
 
 
+    override fun onFragmentInteraction(uri: String?) {
+        println(uri)
+
+
+
+
+
+
+
+    }
 
 
 }
