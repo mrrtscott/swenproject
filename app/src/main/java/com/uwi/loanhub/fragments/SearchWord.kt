@@ -15,8 +15,11 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.uwi.loanhub.R
+import com.uwi.loanhub.models.GlossaryViewModel
 import com.uwi.loanhub.models.LoanHubDatabase
 import java.lang.ClassCastException
 
@@ -32,8 +35,9 @@ private const val ARG_PARAM2 = "param2"
  */
 
 lateinit var searchWordButton:Button
-//lateinit var wordDefinition:TextView
+lateinit var wordDefinition:TextView
 lateinit var searchWordTxt:EditText
+lateinit var glossaryModel:GlossaryViewModel
 
 
 
@@ -51,8 +55,11 @@ class SearchWord : DialogFragment() {
 
         val view:View = inflater.inflate(R.layout.wordsearchlayout, container, false)
         searchWordTxt= view.findViewById<EditText>(R.id.inputWordSearch)
-        //wordDefinition  = view.findViewById<TextView>(R.id.textDefinition)
+        wordDefinition  = view.findViewById<TextView>(R.id.textDefinition)
         searchWordButton = view.findViewById<Button>(R.id.searchWordButton)
+
+        glossaryModel = ViewModelProvider(this).get(GlossaryViewModel::class.java)
+
 
 
         return view
@@ -69,6 +76,11 @@ class SearchWord : DialogFragment() {
 
 
             mListener!!.onFragmentInteraction(searchWordTxt.text.toString())
+
+            glossaryModel.setArray(arrayListOf(searchWordTxt.text.toString()))
+            glossaryModel.glossaryDefinition.observe(viewLifecycleOwner, Observer { definition->
+                wordDefinition.text = definition[0].definition
+            })
 
 
         }

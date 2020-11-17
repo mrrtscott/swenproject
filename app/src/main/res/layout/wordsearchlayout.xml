@@ -4,8 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCF1F9FF"
-    android:id="@+id/wordSearchFragment">
+    android:background="#CCF1F9FF">
 
     <EditText
         android:id="@+id/inputWordSearch"
@@ -19,6 +18,36 @@
 
 
 
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Definition:">
+
+    </TextView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:id="@+id/separatorTop"
+        android:visibility="visible"
+        android:background="@android:color/darker_gray"/>
+
+    <com.google.android.material.textview.MaterialTextView
+
+        android:id="@+id/textDefinition"
+        android:layout_width="350dp"
+        android:layout_height="100dp">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:id="@+id/separator"
+        android:visibility="visible"
+        android:background="@android:color/darker_gray"/>
 
 
 
