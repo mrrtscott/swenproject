@@ -116,19 +116,41 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/privacyPolicyButton"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="Privacy Policy"
-        android:textColor="@color/white"
         android:layout_height="wrap_content">
 
-    </TextView>
+        <TextView
+            android:id="@+id/privacyPolicyButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="60dp"
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Privacy Policy"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/privacyTermsButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Terms of Use"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+
+
 
     <ProgressBar
         android:id="@+id/startWaitBar"

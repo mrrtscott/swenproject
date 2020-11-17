@@ -28,6 +28,7 @@ class LoginActivityNew : AppCompatActivity() {
     private lateinit var signUpButton: Button
     private lateinit var loginButton: Button
     private lateinit var privacyPolicyButton:TextView
+    private lateinit var termOfUseButton:TextView
 
 
     private lateinit var userViewModel: UserViewModel
@@ -59,6 +60,12 @@ class LoginActivityNew : AppCompatActivity() {
         privacyPolicyButton = findViewById(R.id.privacyPolicyButton)
         privacyPolicyButton.setOnClickListener {
             val intent:Intent = Intent(this, PrivacyPolicy::class.java)
+            startActivity(intent)
+        }
+
+        termOfUseButton = findViewById(R.id.privacyTermsButton)
+        termOfUseButton.setOnClickListener{
+            val intent:Intent = Intent(this, TermsOfUse::class.java)
             startActivity(intent)
         }
 

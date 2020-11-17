@@ -12,8 +12,6 @@ class PrivacyPolicy : AppCompatActivity() {
         setContentView(R.layout.activity_privacy_policy)
 
         val web =findViewById<WebView>(R.id.webView)
-
-
         web.loadUrl("file:///android_asset/privacypolicy.html")
         }
 }
