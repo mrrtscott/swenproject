@@ -1,13 +1,14 @@
 package com.uwi.loanhub.models
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 import java.time.OffsetDateTime
 
-@Entity(tableName = "Users")
+@Entity(tableName = "Users", primaryKeys = ["username"], indices = arrayOf(Index(value = ["email"], unique = true)))
 data class User(
-    @PrimaryKey(autoGenerate = true) var id: Int,
+
     @NotNull var firstName: String,
     @NotNull var lastName: String,
     @NotNull var email: String,

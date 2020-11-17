@@ -12,20 +12,28 @@ import kotlinx.coroutines.withContext
 
 
 class UserViewModel (application: Application): AndroidViewModel(application) {
-    private val repository: UserRepository
 
 
+    private var repository: UserRepository
     val allUsers: LiveData<List<User>>
-    val userList = MutableLiveData<List<User>>()
-    val singleUser = MutableLiveData<List<User>>()
+    var userList: LiveData<List<User>>
+    var singleUser:LiveData<List<User>>
+
+    val UserDao:UserDao
+
+
+    var receivedArrayList:ArrayList<String> = arrayListOf(" ", " ")
 
 
     init {
-        val UserDao = LoanHubDatabase.getDatabase(application, viewModelScope).UserDao()
-        repository = UserRepository(UserDao)
+        UserDao = LoanHubDatabase.getDatabase(application, viewModelScope).UserDao()
+        repository = UserRepository(UserDao, receivedArrayList)
 
         allUsers = repository.allUsers
-        repository.allUsers
+        userList = repository.getUsernamePassword
+        singleUser = repository.getUser
+
+
 
         
         
@@ -36,14 +44,17 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
         repository.addNewUser(user)
     }
 
-      fun getUsernamePassword(inputUserName:String, inputPassword:String) = viewModelScope.launch(Dispatchers.IO) {
-         val list = repository.getUsernamePassword(inputUserName, inputPassword)
-         userList.postValue(list)
-    }
 
-    fun getUser(inputUserName:String) = viewModelScope.launch(Dispatchers.IO) {
-        val list = repository.getUser(inputUserName)
-        singleUser.postValue(list)
+
+
+
+    fun inputArrayList(inputArrayList: ArrayList<String>){
+
+        receivedArrayList = inputArrayList
+        repository = UserRepository(UserDao, receivedArrayList)
+        userList = repository.getUsernamePassword
+        singleUser = repository.getUser
+
     }
 
 

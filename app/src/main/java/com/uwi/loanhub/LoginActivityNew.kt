@@ -86,7 +86,7 @@ class LoginActivityNew : AppCompatActivity() {
             editText_username_Login_Activity.isEnabled = false
             editText_password_Login_Activity.isEnabled = false
 
-            userViewModel.getUsernamePassword(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString()))
+            userViewModel.inputArrayList(arrayListOf(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString())))
 
 
             userViewModel.userList.observe(this, Observer { users ->
@@ -95,11 +95,11 @@ class LoginActivityNew : AppCompatActivity() {
                 {
 
 
-
                     val intent = Intent (this,LoansSpecificToUser::class.java )
                     intent.putExtra( "USERNAME", users[0].username)
                     intent.putExtra( "CITY", users[0].city)
                     intent.putExtra( "PARISH", users[0].parish)
+                    intent.putExtra( "PASSWORD", functions.encryptSys(editText_password_Login_Activity.text.toString()))
 
 
 

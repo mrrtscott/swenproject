@@ -19,6 +19,7 @@ import kotlin.concurrent.schedule
 class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
     private lateinit var username:String
+    private lateinit var receivedPassword:String
     private lateinit var userViewModel: UserViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     private lateinit var functions: Functions
@@ -66,8 +67,10 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
+        receivedPassword = previousIntent.getStringExtra("PASSWORD")
         receivedCity = previousIntent.getStringExtra("CITY")
         receivedParish = previousIntent.getStringExtra("PARISH")
+
 
 
 
@@ -75,13 +78,13 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
         username = parsedStringID
 
 
-        userViewModel.getUser(username)
+        userViewModel.inputArrayList(arrayListOf(username, receivedPassword))
 
 
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
 
 
-        userViewModel.singleUser.observe(this, Observer { singleUser ->
+        userViewModel.userList.observe(this, Observer { singleUser ->
 
 
 
@@ -103,6 +106,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
                 loanAmount = singleUser[0].loanAmount
                 occupation = singleUser[0].occupation
                 loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex.substring(0), creditScore, loanAmount.toInt())
+                println(creditScore)
 
 
 
@@ -125,10 +129,11 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
         loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
 
+                loans?.let{ adapter.setLoan(it)}
 
 
 
-            loans?.let{ adapter.setLoan(it)}
+
         })
 
 

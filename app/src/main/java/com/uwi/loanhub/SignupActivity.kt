@@ -120,7 +120,7 @@ class SignupActivity : AppCompatActivity() {
             }
             else
             {
-                val user = User(0,
+                val user = User(
                     editText_First_Name_Main_Activity.text.toString().trim(),
                     editText_Last_Name_Main_Activity.text.toString().trim(),
                     editText_email_SignUp_Activity.text.toString().trim(),

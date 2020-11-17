@@ -3,9 +3,14 @@ package com.uwi.loanhub.models
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 
-class UserRepository (private val inputUserDao: UserDao) {
+class UserRepository (private val inputUserDao: UserDao, inputArrayList: ArrayList<String>) {
+
+    var inputUsername = inputArrayList[0]
+    var inputPassword = inputArrayList[1]
 
     val allUsers: LiveData<List<User>> = inputUserDao.getAllUsers()
+    val getUsernamePassword:LiveData<List<User>> = inputUserDao.getUsernamePassword(inputUsername, inputPassword)
+    val getUser:LiveData<List<User>> = inputUserDao.getUser(inputUsername)
 
 
     suspend fun addNewUser(user: User){
@@ -13,17 +18,8 @@ class UserRepository (private val inputUserDao: UserDao) {
 
     }
 
-    fun  getUsernamePassword (inputUsername: String, inputPassword: String):List<User>{
 
-        return inputUserDao.getUsernamePassword(inputUsername, inputPassword)
 
-    }
-
-    fun  getUser (inputUsername: String):List<User>{
-
-        return inputUserDao.getUser(inputUsername)
-
-    }
 
 
 
