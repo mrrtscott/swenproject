@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class), version = 18, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class, Glossary::class), version = 19, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -27,6 +27,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun LoanRatingDao(): LoanRatingDao
     abstract fun InstitutionAssetsDao(): InstitutionAssetsDao
     abstract fun BranchDao():BranchDao
+    abstract fun GlossaryDao():GlossaryDao
 
 
     companion object {
@@ -75,6 +76,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     populateJMMBBranch(database.BranchDao())
                     populateCIBC(database.BranchDao())
                     populateVMBranch(database.BranchDao())
+                    populateGlossary(database.GlossaryDao())
 
                 }
             }
@@ -2755,6 +2757,41 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
         }
+
+        suspend fun populateGlossary(glossaryDao: GlossaryDao) {
+            val word1 = Glossary("Amortization" ,"The process of writing off or liquidating an asset or loan periodically on an installment basis.")
+            val word2 = Glossary("Accrued liabilities", "Liabilities that represent obligation for certain services for which payments are yet to be made and are indirect sources of financing.")
+            val word3 = Glossary( "Annuity","A series of receipts or payments of a fixed amount for a specified number of years. Alternatively, a pattern of cash flows that are equal in each year, that is, equal annual cash flow.")
+            val word4 = Glossary("Arbitrage", "Act of buying an asset/security in one market and selling simultaneously in another. This restores equilibrium in markets that are temporarily out of equilibrium.")
+            val word5 = Glossary("Assets", "Valuable resources owned by a business, which were acquired at a measurable money cost.")
+            val word6 = Glossary("Bad debt", "Debts that are not collectible and therefore, proves to be of no worth to the creditor.")
+            val word7 = Glossary("Balance Sheet", "A statement of assets and liabilities at a specified date.")
+            val word8 = Glossary("Bonds" , "Long-term debt instruments.")
+            val word9 = Glossary("Bonus Share", "Dividend paid in form of equity share and not in cash.")
+            val word10 = Glossary("Bridge Loan" , "Refers to short-term loan to fund temporary needs as long as permanent financing is not available.")
+            val word11 = Glossary("Business Plan", "A plan that illustrates the current business strata of an organization and its future plans towards the achievement of its organizational objectives.")
+            val word12 = Glossary("Capital", "Money put into the business transactions.")
+
+            glossaryDao.insert(word1)
+            glossaryDao.insert(word2)
+            glossaryDao.insert(word3)
+            glossaryDao.insert(word4)
+            glossaryDao.insert(word5)
+            glossaryDao.insert(word6)
+            glossaryDao.insert(word7)
+            glossaryDao.insert(word8)
+            glossaryDao.insert(word9)
+            glossaryDao.insert(word10)
+            glossaryDao.insert(word11)
+            glossaryDao.insert(word12)
+
+
+
+        }
+
+
+
+
     }
 
 
