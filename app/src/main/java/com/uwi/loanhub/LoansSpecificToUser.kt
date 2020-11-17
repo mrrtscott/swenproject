@@ -38,6 +38,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
     private  var loanType: String= ""
     private var loanAmount: Double = 0.00
     private  var occupation: String= ""
+    private var receivedCity:String = ""
+    private var receivedParish:String = ""
 
 
 
@@ -56,12 +58,17 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
             intent.putExtra("USERNAME", username)
+            intent.putExtra("CITY", receivedCity)
+            intent.putExtra("PARISH", receivedParish)
             startActivity(intent)
         }
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
+        receivedCity = previousIntent.getStringExtra("CITY")
+        receivedParish = previousIntent.getStringExtra("PARISH")
+
 
 
 
@@ -140,6 +147,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
             intent.putExtra("USERNAME", username)
+            intent.putExtra("CITY", receivedCity)
+            intent.putExtra("PARISH", receivedParish)
             startActivity(intent)
         })
     }

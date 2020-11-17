@@ -2,16 +2,14 @@ package com.uwi.loanhub
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.View.NO_ID
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
-import com.google.android.material.snackbar.Snackbar
+import com.uwi.loanhub.fragments.searchWord
 import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
@@ -22,6 +20,8 @@ class LoanInDetail : AppCompatActivity() {
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     private lateinit var loanLikesViewModel: LoanLikesViewModel
     private lateinit var loanRatingViewModel:LoanRatingViewModel
+
+    private lateinit var searchWord: searchWord
 
 
     private lateinit var requirementsButton: Button
@@ -47,6 +47,9 @@ class LoanInDetail : AppCompatActivity() {
 
 
         functions = Functions()
+        searchWord = searchWord()
+        val manager: FragmentManager = supportFragmentManager
+
 
         val previousIntent = intent
         val LoanID = previousIntent.getIntExtra("LOANID", 0)
@@ -60,6 +63,7 @@ class LoanInDetail : AppCompatActivity() {
         likeLoanButton = findViewById(R.id.likedLoans)
         institutionButton = findViewById(R.id.institutionDetail)
         likeButtonGroup = findViewById(R.id.likeToggleGroup)
+
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
         loanLikesViewModel = ViewModelProvider(this).get(LoanLikesViewModel::class.java)
         loanRatingViewModel = ViewModelProvider(this).get(LoanRatingViewModel::class.java)
@@ -70,7 +74,12 @@ class LoanInDetail : AppCompatActivity() {
 
 
         val fab: View = findViewById(R.id.fab)
+
         fab.setOnClickListener { view ->
+
+            searchWord.show(manager,"Search")
+
+
 
             //Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                 //.setAction("Action", null)
@@ -118,18 +127,22 @@ class LoanInDetail : AppCompatActivity() {
 
 
             sentArrayListLoanLikes.clear()
-            sentArrayListLoanLikes = arrayListOf(loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(0).institution.toString(), username )
+            sentArrayListLoanLikes = arrayListOf(
+                loans.get(0).id.toString(), loans.get(0).loanName.toString(), loans.get(
+                    0
+                ).institution.toString(), username
+            )
             loanLikesViewModel.setArrayInput(sentArrayListLoanLikes)
 
-            likeLoanButton.setOnClickListener{
-                val intent = Intent (this,LoanInterest::class.java )
-                intent.putExtra( "USERNAME", username)
-                intent.putExtra( "LOANID", loans.get(0).id)
+            likeLoanButton.setOnClickListener {
+                val intent = Intent(this, LoanInterest::class.java)
+                intent.putExtra("USERNAME", username)
+                intent.putExtra("LOANID", loans.get(0).id)
                 startActivity(intent)
             }
 
             institutionButton.setOnClickListener {
-                val intent = Intent (this,InstitutionActivity::class.java )
+                val intent = Intent(this, InstitutionActivity::class.java)
                 intent.putExtra("INSTITUTION", loans[0].institution)
                 intent.putExtra("CITY", city)
                 intent.putExtra("PARISH", parish)
@@ -141,13 +154,11 @@ class LoanInDetail : AppCompatActivity() {
 
             loanLikesViewModel.allLoansLikes.observe(this, Observer { likes ->
 
-                if(likes.size ==1){
+                if (likes.size == 1) {
 
-                    if(likes.get(0).value == 1){
+                    if (likes.get(0).value == 1) {
                         likeToggleGroup.check(R.id.likeButton)
-                    }
-
-                    else{
+                    } else {
 
                         likeToggleGroup.check(R.id.dislikeButton)
 
@@ -156,21 +167,6 @@ class LoanInDetail : AppCompatActivity() {
                 }
 
             })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             val rating = resources.getStringArray(R.array.rating)
@@ -184,24 +180,30 @@ class LoanInDetail : AppCompatActivity() {
 
 
 
-            autocompleteRating.onItemClickListener = AdapterView.OnItemClickListener{
-                    parent,view,position,id->
-                val selectedItem = parent.getItemAtPosition(position).toString()
+            autocompleteRating.onItemClickListener =
+                AdapterView.OnItemClickListener { parent, view, position, id ->
+                    val selectedItem = parent.getItemAtPosition(position).toString()
 
-                var loanRating = LoanRating(loans.get(0).id, username.toString(), selectedItem.toInt())
-                loanRatingViewModel.insert(loanRating)
+                    var loanRating = LoanRating(
+                        loans.get(0).id,
+                        username.toString(),
+                        selectedItem.toInt()
+                    )
+                    loanRatingViewModel.insert(loanRating)
 
 
+                }
 
-            }
-
-            var loanRatingArrayList:ArrayList<String> = arrayListOf(username.toString(), loans.get(0).id.toString())
+            var loanRatingArrayList: ArrayList<String> = arrayListOf(
+                username.toString(),
+                loans.get(0).id.toString()
+            )
             loanRatingViewModel.setArrayInput(loanRatingArrayList)
 
 
             loanRatingViewModel.allLoanRating.observe(this, Observer { rating ->
 
-                if(rating.size ==1){
+                if (rating.size == 1) {
                     autocompleteRating.setText(rating.get(0).rating.toString(), false)
                 }
 
@@ -231,31 +233,40 @@ class LoanInDetail : AppCompatActivity() {
             }
 
 
-            likeButtonGroup.addOnButtonCheckedListener{ group, checkedId, isChecked ->
+            likeButtonGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
 
 
-                if(isChecked && checkedId == R.id.likeButton){
+                if (isChecked && checkedId == R.id.likeButton) {
 
-                    var loanLike = LoanLikes(username, loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 1)
+                    var loanLike = LoanLikes(
+                        username,
+                        loans.get(0).id,
+                        loans.get(0).institution.toString().trim(),
+                        loans.get(
+                            0
+                        ).loanName.toString().trim(),
+                        1
+                    )
                     loanLikesViewModel.insert(loanLike)
 
 
-                }
+                } else if (isChecked && checkedId == R.id.dislikeButton) {
 
-                else if (isChecked && checkedId == R.id.dislikeButton)
-                {
-
-                    var loanLike = LoanLikes(username, loans.get(0).id, loans.get(0).institution.toString().trim(),loans.get(0).loanName.toString().trim(), 0)
+                    var loanLike = LoanLikes(
+                        username,
+                        loans.get(0).id,
+                        loans.get(0).institution.toString().trim(),
+                        loans.get(
+                            0
+                        ).loanName.toString().trim(),
+                        0
+                    )
                     loanLikesViewModel.insert(loanLike)
 
                 }
-
 
 
             }
-
-
-
 
 
         })
