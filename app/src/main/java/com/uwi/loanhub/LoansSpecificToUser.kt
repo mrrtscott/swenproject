@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -45,6 +46,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
     private lateinit var otherButton: Button
+    private lateinit var counterText:TextView
 
 
 
@@ -56,6 +58,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
         otherButton = findViewById(R.id.otherLoansButton)
+        counterText= findViewById(R.id.counterLoan)
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
             intent.putExtra("USERNAME", username)
@@ -128,6 +131,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
         loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
+
+            counterText.text = loans.size.toString()
 
                 loans?.let{ adapter.setLoan(it)}
 
