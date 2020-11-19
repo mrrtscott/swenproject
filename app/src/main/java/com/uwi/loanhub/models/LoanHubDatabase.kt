@@ -162,7 +162,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             loansDao.addNewLoan(loan_3)
 
 
-            var loan_4 = Loan(
+            val loan_4 = Loan(
                 0,
                 "Sagicor",
                 "Turbo Loan",
@@ -321,7 +321,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "Whether you're buying, refinancing or looking to turn your lease into a loan, this bank offers a solution for you. Buy the car you want with confidence.",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -398,7 +398,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 4790000,
                 10.5,
                 "80 months",
-                30.0,
+                50.0,
                 90,
                 "Be more confident when buying your next car or vehicle.",
                 "Male",
@@ -443,12 +443,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "CIBC",
                 "Express Loan",
-                90000,
+                9000000,
                 10.5,
                 "80 months",
-                8.0,
+                90.0,
                 90,
-                "This is a CIBC loan description",
+                "Let's steer you in the right direction. Take control of your payments. Explore our great car loan rates and apply for a loan online today.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -507,13 +507,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "Scotiabank",
                 "Path Loan",
-                90000,
+                9000000,
                 10.5,
                 "80 months",
                 85.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                70,
+                "Buy a new or used vehicle (car, truck, RV, or motorcycle). Benefit from competitive rates and a quick approval process.",
+                "Female",
                 "Active",
                 "2020-09-01"
             )
@@ -523,12 +523,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "JMMB",
                 "Sturdy Loan",
-                90000,
+                4000000,
                 10.5,
-                "80 months",
-                8.0,
+                "52 months",
+                85.0,
                 90,
-                "This is a CIBC loan description",
+                "Take the stress out of shopping for a vehicle.",
                 "Everybody",
                 "Active",
                 "2020-09-01"
@@ -544,56 +544,56 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "80 months",
                 8.0,
                 90,
-                "This is a CIBC loan description",
+                "A car loan is secured against the vehicle you intend to purchase, which means the vehicle serves as collateral for the loan.",
                 "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_27)
 
-            var loan_28 = Loan(
+            val loan_28 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "First Global",
                 "Crypto Loan",
-                90000,
-                10.5,
+                6000000,
+                11.75,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                100.0,
+                70,
+                "No matter how you buy your next car, our auto loans offer: Instant loan decisions; Discounted interest rate available when you set up automatic payments.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_28)
 
-            var loan_29 = Loan(
+            val loan_29 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JMMB",
                 "GoLoan",
-                90000,
-                10.5,
+                5000000,
+                6.5,
                 "80 months",
-                8.0,
+                85.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "The interest rate on car loans is calculated on the daily reducing balance and is based on the credit score.",
+                "Female",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_29)
 
-            var loan_30 = Loan(
+            val loan_30 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Post Loan",
                 90000,
-                10.5,
+                6.75,
                 "80 months",
                 8.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Get pre-approved before you buy a new or used vehicle or refinance your existing auto loan. ",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -601,15 +601,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_31 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JN Bank",
                 "Loanica",
-                90000,
+                20000000,
                 10.5,
-                "80 months",
-                8.0,
+                "70 months",
+                100.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Car Buying Made Easy. We have auto loans for your budget.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -619,13 +619,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "CIBC",
                 "Loanus",
-                90000,
+                9000000,
                 10.5,
-                "80 months",
+                "70 months",
                 80.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Auto loan rates and terms are good for new and used cars and trucks.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -635,13 +635,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "CIBC",
                 "Real Loan",
-                90000,
+                8000000,
                 10.5,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                100.0,
+                60,
+                "We can help you save money when purchasing a new or used auto or by refinancing a higher interest rate loan.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -651,13 +651,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "JN Bank",
                 "Loanzio",
-                90000,
-                10.5,
+                7000000,
+                15.5,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                80.0,
+                60,
+                "Whether you're shopping for a hot car or a minivan, we'll help you choose from a wide variety of financing options made to accommodate every vehicle.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -670,9 +670,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90000,
                 10.5,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
+                100.0,
+                70,
+                "Looking for an easy, hassle-free way to finance your next vehicle? Whether you' re buying new or used, you'll get a great rate on an auto loan.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -683,12 +683,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "Victoria Mutual",
                 "Loanvoyage",
-                90000,
-                10.5,
+                12000000,
+                6.5,
                 "80 months",
-                8.0,
+                85.0,
                 90,
-                "This is a CIBC loan description",
+                "Not only do we offer great rates and personal service, but we don't add costly fees and penalties. Hit the road with a Vehicle Loan that saves you money!",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -699,12 +699,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "NCB",
                 "Bux Loan",
-                90000,
-                10.5,
+                7000000,
+                11.5,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
+                90.0,
+                80,
+                "We believe getting a car loan should be convenient and come with personal service.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -713,14 +713,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_38 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "Lotus Loan",
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                90.0,
                 90,
-                "This is a CIBC loan description",
+                "Looking for an Auto Loan in Florida? We've Got You Covered.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -729,15 +729,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_39 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoria Mutual",
                 "Angel Loan",
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Grab the keys and go. When it's time for a new or used vehicle – don't let financing hassles get in the way.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -745,15 +745,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_40 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Stack Loan",
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Whether you're buying a new or used car, we can help make your purchase a little easier.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -761,15 +761,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_41 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JMMB",
                 "Covered Loan",
-                90000,
-                10.5,
+                8000000,
+                8.5,
                 "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                100.0,
+                70,
+                "We believe getting a car loan should be convenient and come with personal service. When you finance your new car, truck, or SUV.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -777,15 +777,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_42 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Bite Loan",
-                90000,
+                3000000,
                 10.5,
-                "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                "72 months",
+                90.0,
+                60,
+                " Whether you're buying a new car, a used car, or just refinancing your existing auto loan.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -793,15 +793,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_43 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "Sact Loan",
-                90000,
-                10.5,
+                8000000,
+                12.5,
                 "80 months",
-                8.0,
+                90.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Get Rates Fast, Call Now. Auto Loans & Financial Service. Select Your Car, We'll Fiance It & Get You Going. Apply Today. Low Monthly Payments. Low Processing Fees",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -809,31 +809,31 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_44 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JN Bank",
                 "Butt Loan",
-                90000,
-                10.5,
+                40000000,
+                12.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "Affordable rates and flexible terms for new and used car, rv and boat loans. Already have a car loan? Refinance and get cash back!",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
-            loansDao.addNewLoan(loan_1)
+            loansDao.addNewLoan(loan_44)
 
             val loan_45 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "Helix Loan",
-                90000,
+                20000000,
                 10.5,
-                "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                "84 months",
+                70.0,
+                85,
+                "Car Buying Made Easy. Helping you get the car you want, fast. Whether you're purchasing new or used, we're here to help you finance your new vehicle.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -841,15 +841,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_46 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "First Global",
                 "Plow Loan",
-                90000,
-                10.5,
+                4000000,
+                11.25,
                 "80 months",
-                8.0,
+                100.0,
                 90,
-                "This is a CIBC loan description",
-                "Male",
+                "We make the car buying process easy with competitive rates, flexible terms.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -857,14 +857,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_47 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "Thirs Loan",
-                90000,
-                10.5,
+                6000000,
+                9.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
-                "This is a CIBC loan description",
+                "We have the BEST loan offerings that will have you driving your dream car in no time.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -873,12 +873,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_48 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "First Global",
                 "Billzo Loan",
-                90000,
-                10.5,
-                "80 months",
-                8.0,
+                3000000,
+                9.5,
+                "60 months",
+                90.0,
                 90,
                 "Drive away happy with a low rate auto loan.",
                 "Male",
@@ -891,13 +891,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "Victoria Mutual",
                 "Pier Loan",
-                90000,
-                10.5,
-                "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Female",
+                9000000,
+                11.25,
+                "72 months",
+                80.0,
+                60,
+                "Getting a car loan doesn't have to be a major journey.",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -912,9 +912,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "72 months",
                 90.0,
                 85,
-                "Finance your dream car with Victoria Mutual",
+                "Finance your dream car with Victoria Mutual. Get the money you need to claim the wheels you want.",
                 "Male",
-                "Active",
+                "Everybody",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_50)
