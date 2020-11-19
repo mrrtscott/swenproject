@@ -76,7 +76,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     populateJMMBBranch(database.BranchDao())
                     populateCIBC(database.BranchDao())
                     populateVMBranch(database.BranchDao())
+                    populateJN(database.BranchDao())
                     populateGlossary(database.GlossaryDao())
+
 
                 }
             }
@@ -2783,6 +2785,31 @@ abstract class LoanHubDatabase : RoomDatabase() {
             val jnStAnnsBay = Branch("St Ann’s Bay", "JN Bank", "10 Bravo Street", "St Ann’s Bay", "St Ann", "", 0.00, 0.00, "", "Active")
             val jnBarbican = Branch("Barbican", "JN Bank", "84 Barbican Road", "Barbican", "St Andrew", "", 0.00, 0.00, "", "Active")
 
+            branchDao.addBranch(jnHWT)
+            branchDao.addBranch(jnNewKingston)
+            branchDao.addBranch(jnDowntown)
+            branchDao.addBranch(jnMorantBay)
+            branchDao.addBranch(jnMandeville)
+            branchDao.addBranch(jnMayPen)
+            branchDao.addBranch(jnSantaCruz)
+            branchDao.addBranch(jnSpanishTown)
+            branchDao.addBranch(jnSav)
+            branchDao.addBranch(jnBrownsTown)
+            branchDao.addBranch(jnOchoRios)
+            branchDao.addBranch(jnPortAntonio)
+            branchDao.addBranch(jnPortMaria)
+            branchDao.addBranch(jnUWI)
+            branchDao.addBranch(jnChristiana)
+            branchDao.addBranch(jnFalmouth)
+            branchDao.addBranch(jnHighgate)
+            branchDao.addBranch(jnJunction)
+            branchDao.addBranch(jnLinstead)
+            branchDao.addBranch(jnLucea)
+            branchDao.addBranch(jnMontegoBay)
+            branchDao.addBranch(jnOldHarbour)
+            branchDao.addBranch(jnPortmorePines)
+            branchDao.addBranch(jnStAnnsBay)
+            branchDao.addBranch(jnBarbican)
 
 
         }
