@@ -172,7 +172,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 85.0,
                 70,
                 "Get 100% financing on new and used vehicles 2013 and newer.",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -190,14 +190,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "Apply online for a new or used car loan from this bank. Get approved for a financing based on your needs and within your budget.",
-                "Male",
+                "Female",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_5)
 
 
-            var loan_6 = Loan(
+            val loan_6 = Loan(
                 0,
             "JN Bank",
             "Drive Loan",
@@ -215,7 +215,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
 
-            var loan_7 = Loan(
+            val loan_7 = Loan(
                 0,
                 "First Global",
                 "Quick Loan",
@@ -231,23 +231,23 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_7)
 
-            var loan_8 = Loan(
+            val loan_8 = Loan(
                 0,
                 "CIBC",
                 "Infinite Loan",
                 380000,
                 10.5,
                 "80 months",
-                8.0,
-                90,
+                80.0,
+                95,
                 "We don't hide any fees, so you know exactly how much you'll pay.",
-                "Male",
+                "Female",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_8)
 
-            var loan_9 = Loan(
+            val loan_9 = Loan(
                 0,
                 "Sagicor",
                 "Swift Loan",
@@ -257,13 +257,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "We never penalize you for paying off your loan early.",
-                "Female",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_9)
 
-            var loan_10 = Loan(
+            val loan_10 = Loan(
                 0,
                 "CIBC",
                 "Anchor Loan",
@@ -279,7 +279,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_10)
 
-            var loan_11 = Loan(
+            val loan_11 = Loan(
                 0,
                 "Scotiabank",
                 "Ace Loan",
@@ -295,7 +295,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_11)
 
-            var loan_12 = Loan(
+            val loan_12 = Loan(
                 0,
                 "Sagicor",
                 "King Loan",
@@ -311,7 +311,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_12)
 
-            var loan_13 = Loan(
+            val loan_13 = Loan(
                 0,
                 "Sagicor",
                 "Dash Loan",
@@ -327,7 +327,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_13)
 
-            var loan_14 = Loan(
+            val loan_14 = Loan(
                 0,
                 "Scotiabank",
                 "Easy Loan",
@@ -343,7 +343,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_14)
 
-            var loan_15= Loan(
+            val loan_15= Loan(
                 0,
                 "JN Bank",
                 "Hustle Loan",
@@ -359,7 +359,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_15)
 
-            var loan_16 = Loan(
+            val loan_16 = Loan(
                 0,
                 "JN Bank",
                 "Atlas Loan",
@@ -375,7 +375,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_16)
 
-            var loan_17 = Loan(
+            val loan_17 = Loan(
                 0,
                 "Scotiabank",
                 "Cornerstone Loan",
@@ -391,7 +391,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_17)
 
-            var loan_18 = Loan(
+            val loan_18 = Loan(
                 0,
                 "NCB",
                 "Top Loan",
@@ -407,7 +407,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_18)
 
-            var loan_19 = Loan(
+            val loan_19 = Loan(
                 0,
                 "Victoria Mutual",
                 "Brisk Loan",
@@ -423,7 +423,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_19)
 
-            var loan_20 = Loan(
+            val loan_20 = Loan(
                 0,
                 "JN Bank",
                 "Pro Loan",
@@ -439,7 +439,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_20)
 
-            var loan_21 = Loan(
+            val loan_21 = Loan(
                 0,
                 "CIBC",
                 "Express Loan",
@@ -455,7 +455,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_21)
 
-            var loan_22 = Loan(
+            val loan_22 = Loan(
                 0,
                 "NCB",
                 "Optimum Loan",
@@ -465,15 +465,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 80.0,
                 90,
                 "We make it simple for you to choose your auto loan options and payments ahead of time. ",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_22)
 
-            var loan_23 = Loan(
+            val loan_23 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Elite Loan",
                 4000000,
                 10.5,
@@ -481,36 +481,36 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90.0,
                 90,
                 "A low-rate car loan will put you behind the wheel and help you keep a little extra money in your pocket at the same time.",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_23)
 
-            var loan_24 = Loan(
+            val loan_24 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoria Mutual",
                 "Dart Loan",
-                90000,
-                10.5,
-                "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
-                "Male",
+                1000000,
+                15.5,
+                "24 months",
+                100.0,
+                60,
+                "Relax ... just drive. Whether you're after that new-car smell or just want to save money by refinancing your loan from another financial institution",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_24)
 
-            var loan_25 = Loan(
+            val loan_25 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Path Loan",
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                85.0,
                 90,
                 "This is a CIBC loan description",
                 "Male",
@@ -519,9 +519,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_25)
 
-            var loan_26 = Loan(
+            val loan_26 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JMMB",
                 "Sturdy Loan",
                 90000,
                 10.5,
@@ -529,15 +529,15 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "This is a CIBC loan description",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
             loansDao.addNewLoan(loan_26)
 
-            var loan_27 = Loan(
+            val loan_27 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "First Global",
                 "Bound Loan",
                 90000,
                 10.5,
@@ -545,7 +545,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "This is a CIBC loan description",
-                "Male",
+                "Everybody",
                 "Active",
                 "2020-09-01"
             )
@@ -599,7 +599,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_30)
 
-            var loan_31 = Loan(
+            val loan_31 = Loan(
                 0,
                 function.givenList_shouldReturnARandomElement(),
                 "Loanica",
@@ -615,14 +615,14 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_31)
 
-            var loan_32 = Loan(
+            val loan_32 = Loan(
                 0,
                 "CIBC",
                 "Loanus",
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                80.0,
                 90,
                 "This is a CIBC loan description",
                 "Male",
@@ -631,7 +631,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_32)
 
-            var loan_33 = Loan(
+            val loan_33 = Loan(
                 0,
                 "CIBC",
                 "Real Loan",
@@ -647,7 +647,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_33)
 
-            var loan_34 = Loan(
+            val loan_34 = Loan(
                 0,
                 "JN Bank",
                 "Loanzio",
@@ -663,7 +663,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_34)
 
-            var loan_35 = Loan(
+            val loan_35 = Loan(
                 0,
                 "NCB",
                 "mloan",
@@ -679,7 +679,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_35)
 
-            var loan_36 = Loan(
+            val loan_36 = Loan(
                 0,
                 "Victoria Mutual",
                 "Loanvoyage",
@@ -695,7 +695,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             )
             loansDao.addNewLoan(loan_36)
 
-            var loan_37 = Loan(
+            val loan_37 = Loan(
                 0,
                 "NCB",
                 "Bux Loan",
@@ -880,7 +880,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "80 months",
                 8.0,
                 90,
-                "This is a CIBC loan description",
+                "Drive away happy with a low rate auto loan.",
                 "Male",
                 "Active",
                 "2020-09-01"
@@ -897,7 +897,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 8.0,
                 90,
                 "This is a CIBC loan description",
-                "Male",
+                "Female",
                 "Active",
                 "2020-09-01"
             )
@@ -907,12 +907,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "Victoria Mutual",
                 "Wallet Loan",
-                90000,
+                10000000,
                 10.5,
-                "80 months",
-                8.0,
-                90,
-                "This is a CIBC loan description",
+                "72 months",
+                90.0,
+                85,
+                "Finance your dream car with Victoria Mutual",
                 "Male",
                 "Active",
                 "2020-09-01"
