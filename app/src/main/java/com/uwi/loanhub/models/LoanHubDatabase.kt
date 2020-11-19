@@ -2670,7 +2670,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 "CIBC",
                 "59 St James Street",
                 "Montego Bay",
-                "t James",
+                "St James",
                 "",
                 0.00,
                 0.00,
@@ -2750,13 +2750,50 @@ abstract class LoanHubDatabase : RoomDatabase() {
             branchDao.addBranch(vmSpanishTown)
 
 
+        }
 
 
 
+
+
+        suspend fun populateJN(branchDao: BranchDao){
+            val jnHWT = Branch("Half Way Tree", "JN Bank", "2-4 Constant Spring", "Half Way Tree", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jnNewKingston = Branch("New Kingston", "JN Bank", "10-12 Grenada Crescent", "New Kingston", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jnDowntown = Branch("Downtown Kingston", "JN Bank", "32 1/2 Duke Street", "Kingston", "Kingston", "", 0.00, 0.00, "", "Active")
+            val jnMorantBay = Branch("Morant Bay", "JN Bank", "10 Queen Street", "Morant Bay", "St Thomas", "", 0.00, 0.00, "", "Active")
+            val jnMandeville = Branch("Mandeville", "JN Bank", "Mandeville Plaza", "Mandeville", "Manchester", "", 0.00, 0.00, "", "Active")
+            val jnMayPen = Branch("May Pen", "JN Bank", "45a Main Street", "May Pen", "Clarendon", "", 0.00, 0.00, "", "Active")
+            val jnSantaCruz = Branch("Santa Cruz", "JN Bank", "85 Main Street", "Santa Cruz", "St Elizabeth", "", 0.00, 0.00, "", "Active")
+            val jnSpanishTown = Branch("Spanish Town", "JN Bank", "26-28 Wellington Street", "Spanish Town", "", "", 0.00, 0.00, "", "Active")
+            val jnSav = Branch("Savanna la Mar", "JN Bank", "Hendon Corner", "Savanna la Mar", "Westmoreland", "", 0.00, 0.00, "", "Active")
+            val jnBrownsTown = Branch("Brown’s Town", "JN Bank", "Musgrave Square", "Brown’s Town", "St Ann", "", 0.00, 0.00, "", "Active")
+            val jnOchoRios = Branch("Ocho Rios", "JN Bank", "Corner of Graham Street & DaCosta Drive", "Ocho Rios", "St Ann", "", 0.00, 0.00, "", "Active")
+            val jnPortAntonio = Branch("Port Antonio", "JN Bank", "21 Harbour Street", "Port Antonio", "Portland", "", 0.00, 0.00, "", "Active")
+            val jnPortMaria = Branch("Port Maria", "JN Bank", "1 Stennett Street", "Port Maria", "St Mary", "", 0.00, 0.00, "", "Active")
+            val jnUWI = Branch("The University of the West Indies", "JN Bank", "Ring Road", "Mona", "St Andrew", "", 0.00, 0.00, "", "Active")
+            val jnChristiana = Branch("Christiana", "JN Bank", "Samfo Plaza, Main Street", "Christiana", "Manchester", "", 0.00, 0.00, "", "Active")
+            val jnFalmouth = Branch("Falmouth", "JN Bank", "1 Officer’s Alley", "Falmouth", "Trelawny", "", 0.00, 0.00, "", "Active")
+            val jnHighgate = Branch("Highgate", "JN Bank", "Main Street", "Highgate", "St Mary", "", 0.00, 0.00, "", "Active")
+            val jnJunction = Branch("Junction", "JN Bank", "Shops 7-8, Roye’s Plaza", "Junction", "St Elizabeth", "", 0.00, 0.00, "", "Active")
+            val jnLinstead = Branch("Linstead", "JN Bank", "27 King Street", "Linstead", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val jnLucea = Branch("Lucea", "JN Bank", "Mosley Drive", "Lucea", "Hanover", "", 0.00, 0.00, "", "Active")
+            val jnMontegoBay = Branch("Montego Bay", "JN Bank", "2 Market Street", "Montego Bay", "St James", "", 0.00, 0.00, "", "Active")
+            val jnOldHarbour = Branch("Old Harbour", "JN Bank", "8 East Street", "Old Habour", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val jnPortmorePines = Branch("Portmore Pines", "JN Bank", "Portmore Pines", "Portmore", "St Catherine", "", 0.00, 0.00, "", "Active")
+            val jnStAnnsBay = Branch("St Ann’s Bay", "JN Bank", "10 Bravo Street", "St Ann’s Bay", "St Ann", "", 0.00, 0.00, "", "Active")
+            val jnBarbican = Branch("Barbican", "JN Bank", "84 Barbican Road", "Barbican", "St Andrew", "", 0.00, 0.00, "", "Active")
 
 
 
         }
+
+
+
+
+
+
+
+
 
         suspend fun populateGlossary(glossaryDao: GlossaryDao) {
             val word1 = Glossary("Amortization" ,"The process of writing off or liquidating an asset or loan periodically on an installment basis.")
