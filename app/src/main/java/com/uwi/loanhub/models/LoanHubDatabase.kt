@@ -101,8 +101,8 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 0,
                 "NCB",
                 "Empire Loan",
-                60000,
-                1.5,
+                6000000,
+                4.5,
                 "70 months",
                 7.0,
                 80,
@@ -115,12 +115,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_1 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "Loanara",
-                90000,
-                10.5,
-                "80 months",
-                8.0,
+                9050000,
+                11.5,
+                "120 months",
+                80.0,
                 50,
                 "Get 100% financing on new and used vehicles 2013 and newer. Sign Up For Newsletter. Apply Online.",
                 "Male",
@@ -131,12 +131,12 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_2 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JMMB",
                 "Zoom Loan",
-                75000,
+                7500000,
                 10.5,
-                "80 months",
-                8.0,
+                "110 months",
+                80.0,
                 90,
                 "Get a personal loan with no hidden fees, no prepayment penalties, and no origination fees from one of the most trusted loan companies in the market.",
                 "Male",
@@ -147,7 +147,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_3 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Scoot Loan",
                 80000,
                 10.5,
@@ -164,13 +164,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_4 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "Turbo Loan",
-                20000,
+                2000000,
                 10.5,
                 "80 months",
-                8.0,
-                90,
+                85.0,
+                70,
                 "Get 100% financing on new and used vehicles 2013 and newer.",
                 "Male",
                 "Active",
@@ -182,7 +182,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_5 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JMMB",
                 "Smart Loan",
                 25000,
                 10.5,
@@ -199,7 +199,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_6 = Loan(
                 0,
-            function.givenList_shouldReturnARandomElement(),
+            "JN Bank",
             "Drive Loan",
             28000,
             10.5,
@@ -217,7 +217,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_7 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "First Global",
                 "Quick Loan",
                 190000,
                 10.5,
@@ -233,7 +233,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_8 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Infinite Loan",
                 380000,
                 10.5,
@@ -249,7 +249,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_9 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "Swift Loan",
                 980000,
                 10.5,
@@ -265,13 +265,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_10 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Anchor Loan",
                 790000,
-                10.5,
+                7.5,
                 "80 months",
-                8.0,
-                90,
+                80.0,
+                60,
                 "Our simple application only takes a few minutes.",
                 "Everybody",
                 "Active",
@@ -281,13 +281,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_11 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Ace Loan",
-                90000,
-                10.5,
+                850000,
+                11.5,
                 "80 months",
-                8.0,
-                90,
+                50.0,
+                70,
                 "Refinance your car loan with this bank and lower monthly payments.",
                 "Male",
                 "Active",
@@ -297,13 +297,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_12 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "King Loan",
-                90000,
-                10.5,
-                "80 months",
-                8.0,
-                90,
+                19000000,
+                10.7,
+                "120 months",
+                100.0,
+                45,
                 "Our low rates on auto loans make us one of the top auto lenders in Jamaica for new and used vehicles, auto refinance loans, lease buyouts, RV loans.",
                 "Male",
                 "Active",
@@ -313,7 +313,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_13 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Sagicor",
                 "Dash Loan",
                 90000,
                 10.5,
@@ -329,7 +329,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_14 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Easy Loan",
                 90000,
                 10.5,
@@ -345,7 +345,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_15= Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JN Bank",
                 "Hustle Loan",
                 90000,
                 10.5,
@@ -361,13 +361,13 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_16 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JN Bank",
                 "Atlas Loan",
-                90000,
+                2900000,
                 10.5,
-                "80 months",
-                8.0,
-                90,
+                "72 months",
+                4.0,
+                50,
                 "This is a CIBC loan description",
                 "Male",
                 "Active",
@@ -377,7 +377,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_17 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Scotiabank",
                 "Cornerstone Loan",
                 90000,
                 10.5,
@@ -393,7 +393,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_18 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "Top Loan",
                 90000,
                 10.5,
@@ -409,7 +409,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_19 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoia Mutual",
                 "Brisk Loan",
                 90000,
                 10.5,
@@ -617,7 +617,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_32 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Loanus",
                 90000,
                 10.5,
@@ -633,7 +633,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_33 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "CIBC",
                 "Real Loan",
                 90000,
                 10.5,
@@ -649,7 +649,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_34 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "JN Bank",
                 "Loanzio",
                 90000,
                 10.5,
@@ -665,7 +665,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_35 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "mloan",
                 90000,
                 10.5,
@@ -681,7 +681,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_36 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoria Mutual",
                 "Loanvoyage",
                 90000,
                 10.5,
@@ -697,7 +697,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             var loan_37 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "NCB",
                 "Bux Loan",
                 90000,
                 10.5,
@@ -889,7 +889,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_49 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoria Mutual",
                 "Pier Loan",
                 90000,
                 10.5,
@@ -905,7 +905,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
             val loan_50 = Loan(
                 0,
-                function.givenList_shouldReturnARandomElement(),
+                "Victoria Mutual",
                 "Wallet Loan",
                 90000,
                 10.5,
