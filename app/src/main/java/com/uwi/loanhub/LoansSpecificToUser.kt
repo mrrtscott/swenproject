@@ -48,6 +48,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
     private lateinit var otherButton: Button
+    private lateinit var viewComparisonButton :Button
     private lateinit var counterText:TextView
 
 
@@ -60,6 +61,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         otherButton = findViewById(R.id.otherLoansButton)
+        viewComparisonButton = findViewById(R.id.viewComparison)
         counterText= findViewById(R.id.counterLoan)
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
@@ -111,7 +113,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
                 loanAmount = singleUser[0].loanAmount
                 occupation = singleUser[0].occupation
                 loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex.substring(0), creditScore, loanAmount.toInt())
-                println(creditScore)
+
 
 
 
@@ -135,6 +137,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         loanInstitutionViewModel.loansSpecificToUser .observe(this, Observer { loans ->
 
             counterText.text = loans.size.toString()
+            compareList.clear() //Clears the list of loans for comparison just in case the loan position has been changed.
+
 
                 loans?.let{ adapter.setLoan(it)}
 
@@ -142,6 +146,22 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         })
+
+
+
+        viewComparisonButton.setOnClickListener {
+            loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
+                if(compareList.size == 2){
+                    val intent: Intent = Intent(this, CompareLoans::class.java)
+                    intent.putExtra("LOANID_LOANONE", loans[compareList[0]].id)
+                    intent.putExtra("LOANID_LOANTWO", loans[compareList[1]].id)
+                    intent.putExtra("USERNAME", username)
+                    startActivity(intent)
+                }
+
+
+            })
+        }
 
 
 
@@ -188,6 +208,9 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
     }
+
+
+
 
 
 

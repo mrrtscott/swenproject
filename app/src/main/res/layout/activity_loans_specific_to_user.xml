@@ -79,6 +79,15 @@
 
     </TextView>
 
+    <Button
+        android:id="@+id/viewComparison"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="View comparison">
+
+    </Button>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/loanSpecificToUserActivityRecycleView"
         android:layout_width="match_parent"
