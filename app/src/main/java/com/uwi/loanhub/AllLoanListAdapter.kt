@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.User
 
-class LoanListAdapter internal constructor(context: Context, private val loanClickListener: OnLoanClickListener,private val compareItemListener: OnCompareLoanClickListener): RecyclerView.Adapter<LoanListAdapter.LoanViewHolder>()  {
+class AllLoanListAdapter internal constructor(context: Context, private val loanClickListener: OnLoanClickListener, private val compareItemListener: OnCompareLoanClickListener): RecyclerView.Adapter<AllLoanListAdapter.LoanViewHolder>()  {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var loanInstitution = emptyList<LoanInstitution>()

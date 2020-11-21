@@ -15,15 +15,17 @@ import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
 import org.jetbrains.annotations.NotNull
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.concurrent.schedule
 
-class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
+class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener{
 
     private lateinit var username:String
     private lateinit var receivedPassword:String
     private lateinit var userViewModel: UserViewModel
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     private lateinit var functions: Functions
+    private var compareList: ArrayList<Int> = arrayListOf()
 
 
     private  var firstName: String = ""
@@ -123,7 +125,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
 
 
         val recycleView = findViewById<RecyclerView>(R.id.loanSpecificToUserActivityRecycleView)
-        val adapter = LoanListAdapter(this, this)
+        val adapter = LoanListAdapter(this, this,this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -162,6 +164,32 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener {
             startActivity(intent)
         })
     }
+
+    override fun onLoanCompareItemClicked(position: Int, action:String) {
+
+
+
+        if (compareList.size > 1 && action.equals("CHECKED")){
+            Toast.makeText(this, "Too many loans selected", Toast.LENGTH_LONG).show()
+        } else if(compareList.size < 3 && action.equals("CHECKED")){
+            if(!compareList.contains(position)){
+                compareList.add(position)
+            }
+
+        }
+
+        if(action.equals("UNCHECKED")){
+            compareList.remove(position)
+        }
+
+
+
+
+
+
+    }
+
+
 
 
 }

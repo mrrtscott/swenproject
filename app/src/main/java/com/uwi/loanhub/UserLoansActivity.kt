@@ -13,7 +13,7 @@ import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanViewModel
 
-class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
+class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener {
 
     /*
 
@@ -43,7 +43,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
 
         val recycleView = findViewById<RecyclerView>(R.id.userLoansActivityRecycleView)
-        val adapter = LoanListAdapter(this, this)
+        val adapter = AllLoanListAdapter(this, this, this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -64,7 +64,8 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
 
 
     override fun onLoanItemClicked(position: Int) {
-        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
+        println()
+        loanInstitutionViewModel.allLoanInstitution .observe(this, Observer {loans ->
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
@@ -73,5 +74,9 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener {
             intent.putExtra("PARISH", parish)
             startActivity(intent)
         })
+    }
+
+    override fun onLoanCompareItemClicked(position: Int, action:String) {
+
     }
 }

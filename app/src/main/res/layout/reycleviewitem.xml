@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="0dp">
 
         <ImageView
             android:id="@+id/imageInstitutionItemView"
@@ -50,6 +50,7 @@
 
 
 
+
             <TextView
                 android:id="@+id/descriptionItemView"
                 android:layout_marginStart="10dp"
@@ -62,6 +63,10 @@
 
             </TextView>
 
+
+
+
+
             <View android:background="@color/gray"
                 android:layout_width = "match_parent"
                 android:layout_marginStart="10dp"
@@ -71,12 +76,24 @@
 
         </LinearLayout>
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right">
 
+        <CheckBox
+            android:id="@+id/checkBoxLoanList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compare"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_marginBottom="20dp">
 
-
-
-
+        </CheckBox>
     </LinearLayout>
 
 
