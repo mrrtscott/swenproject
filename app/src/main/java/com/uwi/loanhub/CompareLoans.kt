@@ -2,13 +2,17 @@ package com.uwi.loanhub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
+import org.w3c.dom.Text
 
 class CompareLoans : AppCompatActivity() {
 
@@ -23,10 +27,25 @@ class CompareLoans : AppCompatActivity() {
         setContentView(R.layout.activity_compare_loans)
 
 
-        var itemsLayout: LinearLayout = findViewById(R.id.loanTable)
+
         var institutionNameLoanOne:TextView = findViewById(R.id.loanOneInstitutionName)
         var institutionNameLoanTwo:TextView = findViewById(R.id.loanTwoInstitutionName)
-        var
+        var loanAmountLoanOne:TextView = findViewById(R.id.loanOneLoanAmount)
+        var loanAmountLoanTwo:TextView = findViewById(R.id.loanTwoLoanAmount)
+        var loanInterestRateLoanOne:TextView= findViewById(R.id.loanOneInterestRate)
+        var loanInterestRateLoanTwo:TextView= findViewById(R.id.loanTwoInterestRate)
+
+        var loanTermsOfRepaymentLoanOne:TextView = findViewById(R.id.loanOneTermsOfRepayment)
+        var loanTermsOfRepaymentLoanTwo:TextView = findViewById(R.id.loanTwoTermsOfRepayment)
+
+        var loanPercentFinanceLoanOne:TextView = findViewById(R.id.loanOnePercentFinancing)
+        var loanPercentFinanceLoanTwo:TextView = findViewById(R.id.loanTwoPercentFinancing)
+
+        var loanMinimumCreditScoreLoanOne:TextView = findViewById(R.id.loanOneMinimumCreditScore)
+        var loanMinimumCreditScoreLoanTwo:TextView = findViewById(R.id.loanTwoMinimumCreditScore)
+
+        var loanPickLoanOne:ImageView = findViewById(R.id.loanOnePick)
+        var loanPickLoanTwo:ImageView = findViewById(R.id.loanTwoPick)
 
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -50,7 +69,33 @@ class CompareLoans : AppCompatActivity() {
             if(users.size == 1){
 
                 var recommendedLoan = function.loanRecommendation(loanOne, loanTwo, users[0])
-                institutionName.text = loanOne.name
+
+                institutionNameLoanOne.text= loanOne.institution
+                institutionNameLoanTwo.text = loanTwo.institution
+                loanAmountLoanOne.text = ("$"+loanOne.loanAmount)
+                loanAmountLoanTwo.text = ("$"+loanTwo.loanAmount)
+                loanInterestRateLoanOne.text = (loanOne.interestRate.toString() +"%")
+                loanInterestRateLoanTwo.text = (loanTwo.interestRate.toString() +"%")
+
+                loanTermsOfRepaymentLoanOne.text = (loanOne.termsRepay)
+                loanTermsOfRepaymentLoanTwo.text = (loanTwo.termsRepay)
+
+                loanPercentFinanceLoanOne.text = loanOne.percentFinancing.toString() +"%"
+                loanPercentFinanceLoanTwo.text = loanTwo.percentFinancing.toString() +"%"
+
+                loanMinimumCreditScoreLoanOne.text = loanOne.creditScore.toString()
+                loanMinimumCreditScoreLoanTwo.text = loanTwo.creditScore.toString()
+
+                if(recommendedLoan == 0){
+                    loanPickLoanOne.visibility = View.VISIBLE
+                } else{
+                    loanPickLoanTwo.visibility = View.VISIBLE
+                }
+
+
+
+
+
                 println("Recommended Loan: $recommendedLoan")
 
 

@@ -159,6 +159,7 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanOneTermsOfRepayment"
                 android:text="Loan 1"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -167,9 +168,9 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanTwoTermsOfRepayment"
                 android:text="Loan 2"
                 android:layout_width="wrap_content"
-
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -191,6 +192,7 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanOnePercentFinancing"
                 android:text="Loan 1"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -199,9 +201,9 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanTwoPercentFinancing"
                 android:text="Loan 2"
                 android:layout_width="wrap_content"
-
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -223,6 +225,7 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanOneMinimumCreditScore"
                 android:text="Loan 1"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -231,9 +234,9 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/loanTwoMinimumCreditScore"
                 android:text="Loan 2"
                 android:layout_width="wrap_content"
-
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -256,6 +259,7 @@
                 android:gravity="center"/>
 
             <ImageView
+                android:id="@+id/loanOnePick"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:src="@mipmap/ic_greentick_foreground"
@@ -265,6 +269,7 @@
                 android:visibility="invisible"/>
 
             <ImageView
+                android:id="@+id/loanTwoPick"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:src="@mipmap/ic_greentick_foreground"
