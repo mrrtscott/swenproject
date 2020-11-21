@@ -1,12 +1,14 @@
 package com.uwi.loanhub.models
 
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 import java.time.OffsetDateTime
 import java.util.*
 
-
+@Parcelize
 @Entity(tableName = "Loans")
 data class Loan(
     @PrimaryKey(autoGenerate = true) var id: Int,
@@ -21,4 +23,4 @@ data class Loan(
     var target:String,
     var status: String,
     var dateCreated: String
-)
+) : Parcelable

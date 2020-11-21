@@ -1,5 +1,9 @@
 package com.uwi.loanhub.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class LoanInstitution(
     var id: Int,
     var institution : String?,
@@ -21,4 +25,4 @@ data class LoanInstitution(
     var website:String?,
     var openingHours:String?,
     var institutionStatus:String?
-)
+) : Parcelable

@@ -1,22 +1,18 @@
 package com.uwi.loanhub
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
-import org.jetbrains.annotations.NotNull
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.concurrent.schedule
 
 class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener{
 
@@ -26,6 +22,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     private lateinit var loanInstitutionViewModel: LoanInstitutionViewModel
     private lateinit var functions: Functions
     private var compareList: ArrayList<Int> = arrayListOf()
+    private var listOfLoans: MutableList<LoanInstitution> = mutableListOf<LoanInstitution>()
 
 
     private  var firstName: String = ""
@@ -52,7 +49,9 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     private lateinit var counterText:TextView
 
 
-
+    fun getLoanList():List<LoanInstitution>  {
+        return listOfLoans
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,10 +93,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         userViewModel.userList.observe(this, Observer { singleUser ->
 
 
-
-            if(singleUser.size ==  1)
-
-            {
+            if (singleUser.size == 1) {
                 firstName = singleUser[0].firstName
                 lastName = singleUser[0].lastName
                 email = singleUser[0].email
@@ -106,20 +102,17 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
                 dob = singleUser[0].dob
                 salary = singleUser[0].salary
                 creditScore = singleUser[0].creditScore
-                city  = singleUser[0].city
+                city = singleUser[0].city
                 parish = singleUser[0].parish
                 primaryBank = singleUser[0].primaryBank
-                loanType =  singleUser[0].loanType
+                loanType = singleUser[0].loanType
                 loanAmount = singleUser[0].loanAmount
                 occupation = singleUser[0].occupation
-                loanInstitutionViewModel.getLoanInstitutionUserSpecific(sex.substring(0), creditScore, loanAmount.toInt())
-
-
-
-
-
-
-
+                loanInstitutionViewModel.getLoanInstitutionUserSpecific(
+                    sex.substring(0),
+                    creditScore,
+                    loanAmount.toInt()
+                )
 
 
             }
@@ -127,7 +120,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         val recycleView = findViewById<RecyclerView>(R.id.loanSpecificToUserActivityRecycleView)
-        val adapter = LoanListAdapter(this, this,this)
+        val adapter = LoanListAdapter(this, this, this)
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -140,9 +133,14 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
             compareList.clear() //Clears the list of loans for comparison just in case the loan position has been changed.
 
 
-                loans?.let{ adapter.setLoan(it)}
+            loans?.let { adapter.setLoan(it) }
 
 
+            for (loan in loans) {
+                listOfLoans.add(loan)
+            }
+
+            println(listOfLoans.size)
 
 
         })
@@ -150,12 +148,18 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         viewComparisonButton.setOnClickListener {
-            loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
-                if(compareList.size == 2){
+            loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
+                if (compareList.size == 2) {
                     val intent: Intent = Intent(this, CompareLoans::class.java)
-                    intent.putExtra("LOANID_LOANONE", loans[compareList[0]].id)
-                    intent.putExtra("LOANID_LOANTWO", loans[compareList[1]].id)
+
+
+                    intent.putExtra("LOANID_LOANONE", loans[compareList[0]].id.toString())
+                    intent.putExtra("LOANID_LOANTWO", loans[compareList[1]].id.toString())
                     intent.putExtra("USERNAME", username)
+                    intent.putExtra("PASSWORD", receivedPassword)
+                    intent.putExtra("LOAN_ONE", loans[compareList[0]])
+                    intent.putExtra("LOAN_TWO", loans[compareList[1]])
+
                     startActivity(intent)
                 }
 
@@ -174,7 +178,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     }
 
     override fun onLoanItemClicked(position: Int) {
-        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer {loans ->
+        loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
@@ -185,7 +189,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         })
     }
 
-    override fun onLoanCompareItemClicked(position: Int, action:String) {
+    override fun onLoanCompareItemClicked(position: Int, action: String) {
 
 
 
@@ -208,9 +212,6 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
     }
-
-
-
 
 
 
