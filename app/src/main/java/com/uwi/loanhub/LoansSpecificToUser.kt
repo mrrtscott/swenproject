@@ -46,6 +46,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
     private lateinit var otherButton: Button
     private lateinit var viewComparisonButton :Button
+    private lateinit var dashboardButton:Button
     private lateinit var counterText:TextView
 
 
@@ -61,6 +62,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         otherButton = findViewById(R.id.otherLoansButton)
         viewComparisonButton = findViewById(R.id.viewComparison)
+        dashboardButton = findViewById(R.id.dashboardButton)
         counterText= findViewById(R.id.counterLoan)
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
@@ -88,6 +90,11 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
+
+        dashboardButton.setOnClickListener {
+            val intent: Intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
 
 
         userViewModel.userList.observe(this, Observer { singleUser ->

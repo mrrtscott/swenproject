@@ -9,7 +9,7 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:background="@color/app_blue"
         android:orientation="vertical">
 
@@ -73,7 +73,10 @@
     </TextView>
 
     <TextView
-        android:id="@+id/dashboard"
+
+        android:id="@+id/dashboardTips"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"

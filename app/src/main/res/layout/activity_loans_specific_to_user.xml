@@ -33,6 +33,17 @@
             android:textSize="40sp"
             android:textColor="@color/app_blue">
         </TextView>
+
+        <Button
+            android:id="@+id/dashboardButton"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Dashboard">
+
+        </Button>
     </LinearLayout>
 
 
