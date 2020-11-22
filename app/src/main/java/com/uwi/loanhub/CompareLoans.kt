@@ -26,10 +26,12 @@ class CompareLoans : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compare_loans)
 
-
-
+        var institutionImageLoanOne:ImageView = findViewById(R.id.loanOneImage)
+        var institutionImageLoanTwo:ImageView = findViewById(R.id.loanTwoImage)
         var institutionNameLoanOne:TextView = findViewById(R.id.loanOneInstitutionName)
         var institutionNameLoanTwo:TextView = findViewById(R.id.loanTwoInstitutionName)
+        var loanNameLoanOne:TextView = findViewById(R.id.loanOneLoanName)
+        var loanNameLoanTwo:TextView = findViewById(R.id.loanTwoLoanName)
         var loanAmountLoanOne:TextView = findViewById(R.id.loanOneLoanAmount)
         var loanAmountLoanTwo:TextView = findViewById(R.id.loanTwoLoanAmount)
         var loanInterestRateLoanOne:TextView= findViewById(R.id.loanOneInterestRate)
@@ -70,10 +72,17 @@ class CompareLoans : AppCompatActivity() {
 
                 var recommendedLoan = function.loanRecommendation(loanOne, loanTwo, users[0])
 
+                loanOne.logo?.let { institutionImageLoanOne.setImageResource(it) }
+                loanTwo.logo?.let { institutionImageLoanTwo.setImageResource(it) }
+
                 institutionNameLoanOne.text= loanOne.institution
                 institutionNameLoanTwo.text = loanTwo.institution
-                loanAmountLoanOne.text = ("$"+loanOne.loanAmount)
-                loanAmountLoanTwo.text = ("$"+loanTwo.loanAmount)
+
+                loanNameLoanOne.text = loanOne.loanName
+                loanNameLoanTwo.text = loanTwo.loanName
+
+                loanAmountLoanOne.text = ("$"+function.currencyFormatter(loanOne.loanAmount.toString()))
+                loanAmountLoanTwo.text = ("$"+function.currencyFormatter(loanTwo.loanAmount.toString()))
                 loanInterestRateLoanOne.text = (loanOne.interestRate.toString() +"%")
                 loanInterestRateLoanTwo.text = (loanTwo.interestRate.toString() +"%")
 
@@ -96,10 +105,6 @@ class CompareLoans : AppCompatActivity() {
 
 
 
-                println("Recommended Loan: $recommendedLoan")
-
-
-
 
 
             }
@@ -110,8 +115,6 @@ class CompareLoans : AppCompatActivity() {
         })
 
 
-
-        //recommendedLoan = function.loanRecommendation(loanInstitutionViewModel.loansSpecificToUser.value!!.get(loanOne.toInt()), loanInstitutionViewModel.loansSpecificToUser.value!!.get(loanTwo.toInt()), ))
 
 
 
