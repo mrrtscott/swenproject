@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class, Glossary::class), version = 20, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class, Glossary::class, Tips::class), version = 21, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -28,6 +28,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
     abstract fun InstitutionAssetsDao(): InstitutionAssetsDao
     abstract fun BranchDao():BranchDao
     abstract fun GlossaryDao():GlossaryDao
+    abstract fun TipsDao():TipsDao
 
 
     companion object {
@@ -68,7 +69,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-                    /*
+
                     populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao(), database.InstitutionAssetsDao())
                     populateScotiaBranch(database.BranchDao())
                     populateNCBBranch(database.BranchDao())
@@ -79,8 +80,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     populateVMBranch(database.BranchDao())
                     populateJN(database.BranchDao())
                     populateGlossary(database.GlossaryDao())
+                    populateTips(database.TipsDao())
 
-                     */
+
 
 
 
@@ -2857,6 +2859,68 @@ abstract class LoanHubDatabase : RoomDatabase() {
 
 
         }
+
+        suspend fun populateTips(tipsDao: TipsDao) {
+
+            val tip1 = Tips(
+                0,
+                "A good rule of thumb is to spend no more than 25 percent of your monthly household income on all the cars in your household."
+            )
+            val tip2 = Tips(
+                0,
+                "Certified pre-owned options can be a great route toward a new car and a cheaper bill, too. These vehicles have to meet a stamp of approval from the manufacturer – the “certified” meaning – so you will get the reassurance of a warranty that you might not get if you have been thinking about how to buy a car from a private seller."
+            )
+            val tip3 = Tips(
+                0,
+                "After you’ve set your budget and determined the right type of ownership for your driving habits, start researching the vehicles that have caught your eye."
+            )
+            val tip4 = Tips(
+                0,
+                "This new car isn’t going to just sit in your driveway. You’ll be cruising around, and those miles mean more ownership expenses including gas, insurance, repairs and maintenance."
+            )
+            val tip5 = Tips(
+                0,
+                "If the dealership is promoting any cash-back deals, these incentives should again be deducted after you negotiate the price."
+            )
+            val tip6 = Tips(
+                0,
+                "Do you need a car to get to class or work every day, or just for weekend adventures? What’s the weather like where you live—snowy, rainy or hot? Evaluate your lifestyle and the driving conditions you face most often."
+            )
+            val tip7 = Tips(
+                0,
+                "Your credit score helps determine the interest rate you pay on a car loan. Better credit may help get you a more favorable interest rate, which in turn will affect your overall car-buying budget."
+            )
+            val tip8 = Tips(
+                0,
+                "Once you’ve identified a few cars that might fit your needs and budget, take each for a test drive to see how you feel in it and how it performs. Try to drive all the cars you’re considering on the same day so you can easily compare them."
+            )
+            val tip9 = Tips(
+                0,
+                "While you have to pay more monthly with a shorter loan term, you’ll end up saving money in the long run. Paying off the loan faster means you’ll pay less interest over time."
+            )
+            val tip10 = Tips(
+                0,
+                "One of the top tips for anyone purchasing a vehicle is that you should put at least 20% of the total price as a down payment. When you put more money down, this is taken off your initial loan. This will not only decrease the payments, but it may also affect the interest rate."
+            )
+            val tip11 = Tips(
+                0,
+                "Other fees can include anything from dealership fees to documentation fees, and there is always sales tax to look out for when purchasing a vehicle. All of these fees and taxes should be paid for in cash rather than rolled into your loan."
+            )
+
+            tipsDao.addTip(tip1)
+            tipsDao.addTip(tip2)
+            tipsDao.addTip(tip3)
+            tipsDao.addTip(tip4)
+            tipsDao.addTip(tip5)
+            tipsDao.addTip(tip6)
+            tipsDao.addTip(tip7)
+            tipsDao.addTip(tip8)
+            tipsDao.addTip(tip9)
+            tipsDao.addTip(tip10)
+            tipsDao.addTip(tip11)
+
+        }
+
 
 
 

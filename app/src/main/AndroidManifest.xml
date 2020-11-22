@@ -9,23 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ActionBarMaterialComponent">
-        <activity android:name=".CompareLoans"
+        <activity android:name=".Dashboard"></activity>
+        <activity
+            android:name=".CompareLoans"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".TermsOfUse"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".PrivacyPolicy"
             android:theme="@style/NoActionBarMaterialComponent"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".InstitutionActivity"
             android:theme="@style/NoActionBarMaterialComponent"

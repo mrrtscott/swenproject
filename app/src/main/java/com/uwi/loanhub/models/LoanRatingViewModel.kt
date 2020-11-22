@@ -16,6 +16,7 @@ class LoanRatingViewModel (application: Application): AndroidViewModel(applicati
     private var inputArray: ArrayList<String> =  arrayListOf(" ", "0")
     private var loanRatingDao: LoanRatingDao
 
+
     init{
 
         loanRatingDao = LoanHubDatabase.getDatabase(application, viewModelScope).LoanRatingDao()

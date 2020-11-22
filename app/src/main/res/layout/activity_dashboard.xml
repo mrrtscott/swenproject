@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/app_blue"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/menloregularfont"
+                android:textSize="@dimen/f40"
+                android:textFontWeight="800"
+                android:textColor="@color/white"
+                android:text="LOAN">
+
+            </TextView>
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/menloregularfont"
+                android:textSize="@dimen/f40"
+                android:textFontWeight="400"
+                android:textColor="@color/white"
+                android:text="HUB">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FULL NAME"
+            android:textColor="@color/white">
+        </TextView>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TIPS">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/dashboard"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </TextView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/scotiabank">
+        </ImageView>
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/victoriamutual">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ncb">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/sagicormg">
+        </ImageView>
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jmmb">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jn">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE ALL DATA"
+        android:backgroundTint="@color/red">
+
+    </Button>
+
+
+
+
+
+</LinearLayout>
