@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="darkGray">#6c6c6c</color>
     <color name="main_yellow">#FCFFA7</color>
     <color name="main_blue">#3AAFE3</color>
     <color name="main_light_blue">#60D5FF</color>

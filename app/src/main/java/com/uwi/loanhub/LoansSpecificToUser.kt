@@ -2,6 +2,7 @@ package com.uwi.loanhub
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -14,7 +15,17 @@ import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
 
-class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener{
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+
+class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener, NavigationView.OnNavigationItemSelectedListener{
+
+    lateinit var toggle: ActionBarDrawerToggle
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var navView: NavigationView
 
     private lateinit var username:String
     private lateinit var receivedPassword:String
@@ -57,6 +68,15 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loans_specific_to_user)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        drawerLayout = findViewById(R.id.drawerLayout_loansSpecificToUser)
+        navView = findViewById(R.id.navView_loansSpecificToUser)
+
+        toggle = ActionBarDrawerToggle(this,drawerLayout,0,0)
+        toggle.syncState()
+
+        navView.setNavigationItemSelectedListener(this)
 
 
 
@@ -183,6 +203,55 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(toggle.onOptionsItemSelected(item)){
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menu_home -> {
+                Log.i("Toast","home")
+                Toast.makeText(this,"You are home",Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.menu_db -> {
+                val intent:Intent = Intent(this, Dashboard::class.java)
+                startActivity(intent)}
+
+            R.id.menu_loans -> {
+
+                val intent: Intent = Intent(this, UserLoansActivity::class.java)
+                intent.putExtra("USERNAME", username)
+                intent.putExtra("CITY", receivedCity)
+                intent.putExtra("PARISH", receivedParish)
+                startActivity(intent) }
+
+            R.id.menu_settings -> Toast.makeText(this,
+                "settings", Toast.LENGTH_SHORT).show()
+
+            R.id.menu_profile_update -> Toast.makeText(this,
+                "profile", Toast.LENGTH_SHORT).show()
+
+            R.id.menu_logout -> {
+                val intent:Intent = Intent(this, LoginActivityNew::class.java)
+                startActivity(intent)}
+
+            else -> Log.d(this.toString(),item.itemId.toString())
+
+
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+
+
 
     override fun onLoanItemClicked(position: Int) {
         loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
