@@ -76,7 +76,7 @@ class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
 
             R.id.logout -> {
-                var intent: Intent = Intent(this, LoginActivityNew::class.java)
+                val intent: Intent = Intent(this, LoginActivityNew::class.java)
                 startActivity(intent)
             }
 
