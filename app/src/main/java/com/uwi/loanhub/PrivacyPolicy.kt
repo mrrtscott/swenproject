@@ -2,6 +2,7 @@ package com.uwi.loanhub
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
@@ -54,8 +55,22 @@ class PrivacyPolicy : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         when(item.itemId){
 
 
-            R.id.share -> Toast.makeText(this,
-                "share", Toast.LENGTH_SHORT).show()
+            R.id.share ->{
+
+                val text: String = applicationContext.assets.open("privacypolicy.html").bufferedReader().use{
+                    it.readText()
+                }
+
+
+                val sharingIntent = Intent(Intent.ACTION_SEND)
+                sharingIntent.type = "text/html"
+                sharingIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    Html.fromHtml(text)
+                )
+                startActivity(Intent.createChooser(sharingIntent, "Share using"))
+
+            }
 
 
             R.id.logout -> {

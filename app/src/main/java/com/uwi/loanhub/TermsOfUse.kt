@@ -2,17 +2,17 @@ package com.uwi.loanhub
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
-import android.webkit.WebView
-import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
-import android.widget.TextView
+import android.webkit.WebView
 import android.widget.Toast
-import java.io.InputStream
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import java.io.InputStream
 
 
 class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +35,9 @@ class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
         val web =findViewById<WebView>(R.id.webView)
         web.loadUrl("file:///android_asset/terms.html")
+
+        var text = web.url
+        Log.i("web text:", text)
     }
 
 
@@ -54,12 +57,26 @@ class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
         when(item.itemId){
 
 
-            R.id.share -> Toast.makeText(this,
-                "share", Toast.LENGTH_SHORT).show()
+            R.id.share -> {
+
+                val text: String = applicationContext.assets.open("terms.html").bufferedReader().use{
+                    it.readText()
+                }
+
+
+                val sharingIntent = Intent(Intent.ACTION_SEND)
+                sharingIntent.type = "text/html"
+                sharingIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    Html.fromHtml(text)
+                )
+                startActivity(Intent.createChooser(sharingIntent, "Share using"))
+
+            }
 
 
             R.id.logout -> {
-                var intent: Intent = Intent(this,LoginActivityNew::class.java)
+                var intent: Intent = Intent(this, LoginActivityNew::class.java)
                 startActivity(intent)
             }
 
