@@ -69,7 +69,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-
+                    /*
                     populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao(), database.InstitutionAssetsDao())
                     populateScotiaBranch(database.BranchDao())
                     populateNCBBranch(database.BranchDao())
@@ -82,7 +82,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     populateGlossary(database.GlossaryDao())
                     populateTips(database.TipsDao())
 
+                     */
 
+                    /* Need to ensure that loan names are unique to avoid the troubles*/
 
 
 
