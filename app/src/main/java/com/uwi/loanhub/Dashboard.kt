@@ -50,7 +50,10 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         tipsViewModel = ViewModelProvider(this).get(TipsViewModel::class.java)
         tipsTextView = findViewById(R.id.dashboardTips)
 
+        /* Need to put 9.5 second progress bar here*/
+
         handler.postDelayed(Runnable {
+            handler.postDelayed(runnable!!, delay.toLong())
 
 
             tipsViewModel.allTips.observe(this, Observer { tips ->
