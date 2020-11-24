@@ -134,12 +134,16 @@ class Functions {
             loanTwoTotal += 1
         }
 
-        if(loanOneTotal == loanOneTotal){
-            return randomValues[0]
-        } else if(loanOneTotal > loanTwoTotal){
-            return 0
+        loanOneTotal += (inputLoanOne.description!!.length/1000)
+        loanTwoTotal += (inputLoanTwo.description!!.length/1000)
+
+        loanOneTotal += (inputLoanOne.about!!.length/1000)
+        loanTwoTotal += (inputLoanTwo.about!!.length/1000)
+
+        return if(loanOneTotal > loanTwoTotal){
+            0
         } else {
-            return 1
+            1
         }
 
 

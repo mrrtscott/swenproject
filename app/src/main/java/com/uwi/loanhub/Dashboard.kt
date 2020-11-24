@@ -51,7 +51,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         tipsTextView = findViewById(R.id.dashboardTips)
 
         handler.postDelayed(Runnable {
-            handler.postDelayed(runnable!!, delay.toLong())
+
 
             tipsViewModel.allTips.observe(this, Observer { tips ->
 
@@ -113,9 +113,5 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         return true
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-    }
 }
 
