@@ -29,7 +29,10 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
     private lateinit var tipsViewModel: TipsViewModel
     private lateinit var tipsTextView:TextView
 
+
     private lateinit var userFullNameTextView:TextView
+    private lateinit var userUsername:TextView
+
     var handler: Handler = Handler()
     var runnable: Runnable? = null
     var delay = 10000
@@ -57,6 +60,8 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
         tipsViewModel = ViewModelProvider(this).get(TipsViewModel::class.java)
         userFullNameTextView = findViewById(R.id.userFullName)
+        userUsername = findViewById(R.id.userUsername)
+
         tipsTextView = findViewById(R.id.dashboardTips)
 
 
@@ -66,6 +71,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
 
         userFullNameTextView.text = user.firstName.plus(" ").plus(user.lastName)
+        userUsername.text = user.username
 
         /* Need to put 9.5 second progress bar here*/
 
