@@ -12,13 +12,17 @@ import com.uwi.loanhub.models.TipsViewModel
 import com.uwi.loanhub.models.UserViewModel
 import java.util.*
 
+
 import android.view.MenuItem
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.uwi.loanhub.models.User
+import java.time.*
 
 class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
@@ -27,6 +31,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
     lateinit var navView: NavigationView
 
     private lateinit var tipsViewModel: TipsViewModel
+    private lateinit var progressbar:ProgressBar
     private lateinit var tipsTextView:TextView
 
 
@@ -50,6 +55,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
         drawerLayout = findViewById(R.id.drawerLayout_dashboard)
         navView = findViewById(R.id.navView_dashboard)
+        progressbar = findViewById(R.id.progressDashboard)
 
         toggle = ActionBarDrawerToggle(this,drawerLayout,0,0)
         toggle.syncState()
@@ -74,6 +80,17 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         userUsername.text = user.username
 
         /* Need to put 9.5 second progress bar here*/
+
+        var endTime = Instant.now().plusSeconds( 9 )
+
+        Handler().postDelayed(Runnable {
+            progressbar.visibility = View.INVISIBLE
+        }, 9900)
+
+
+
+
+
 
         handler.postDelayed(Runnable {
             handler.postDelayed(runnable!!, delay.toLong())
