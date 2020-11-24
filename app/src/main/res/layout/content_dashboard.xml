@@ -49,12 +49,13 @@
 
 
         <TextView
-
+            android:id="@+id/userFullName"
             android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="FULL NAME"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="@color/white">
         </TextView>
 

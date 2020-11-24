@@ -28,18 +28,20 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
     private lateinit var tipsViewModel: TipsViewModel
     private lateinit var tipsTextView:TextView
+
+    private lateinit var userFullNameTextView:TextView
     var handler: Handler = Handler()
     var runnable: Runnable? = null
     var delay = 10000
     val random = Random()
-    val previousIntent = intent
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        val previousIntent = intent
 
-
-        val user = previousIntent.getParcelableExtra<User>()
+        val user = previousIntent.getParcelableExtra<User>("USER")
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -54,7 +56,16 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
 
         tipsViewModel = ViewModelProvider(this).get(TipsViewModel::class.java)
+        userFullNameTextView = findViewById(R.id.userFullName)
         tipsTextView = findViewById(R.id.dashboardTips)
+
+
+
+
+
+
+
+        userFullNameTextView.text = user.firstName.plus(" ").plus(user.lastName)
 
         /* Need to put 9.5 second progress bar here*/
 
