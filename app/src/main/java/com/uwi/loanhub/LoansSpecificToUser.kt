@@ -20,6 +20,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.models.User
 
 class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener, NavigationView.OnNavigationItemSelectedListener{
 
@@ -34,6 +35,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     private lateinit var functions: Functions
     private var compareList: ArrayList<Int> = arrayListOf()
     private var listOfLoans: MutableList<LoanInstitution> = mutableListOf<LoanInstitution>()
+    private var listOfUser: MutableList<User> = mutableListOf<User>()
 
 
     private  var firstName: String = ""
@@ -113,6 +115,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         dashboardButton.setOnClickListener {
             val intent: Intent = Intent(this, Dashboard::class.java)
+            intent.putExtra("USER", listOfUser[0])
             startActivity(intent)
         }
 
@@ -121,6 +124,9 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
             if (singleUser.size == 1) {
+                for (user in singleUser){
+                    listOfUser.add(user)
+                }
                 firstName = singleUser[0].firstName
                 lastName = singleUser[0].lastName
                 email = singleUser[0].email
@@ -167,7 +173,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
                 listOfLoans.add(loan)
             }
 
-            println(listOfLoans.size)
+
 
 
         })

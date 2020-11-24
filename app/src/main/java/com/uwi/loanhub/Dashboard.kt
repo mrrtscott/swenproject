@@ -57,7 +57,6 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
 
             tipsViewModel.allTips.observe(this, Observer { tips ->
-
                 tipsTextView.text = tips[(0..tips.size-1).random()].tip
 
 

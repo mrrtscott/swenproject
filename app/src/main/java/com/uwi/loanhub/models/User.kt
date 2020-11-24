@@ -1,11 +1,13 @@
 package com.uwi.loanhub.models
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 import org.jetbrains.annotations.NotNull
 import java.time.OffsetDateTime
-
+@Parcelize
 @Entity(tableName = "Users", primaryKeys = ["username"], indices = arrayOf(Index(value = ["email"], unique = true)))
 data class User(
 
@@ -25,4 +27,4 @@ data class User(
     var loanAmount: Double,
     var occupation: String,
     var dateCreated: String
-)
+) : Parcelable
