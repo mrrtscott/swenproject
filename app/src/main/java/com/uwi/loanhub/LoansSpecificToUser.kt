@@ -168,7 +168,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
             loans?.let { adapter.setLoan(it) }
 
-
+            //adding loans to a a list of loans which are manipulable and can be transferred
             for (loan in loans) {
                 listOfLoans.add(loan)
             }
@@ -179,13 +179,11 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         })
 
 
-
+        //When the loan comparator is selected, this function checks to ensure that there are exactly two loans to be compared
         viewComparisonButton.setOnClickListener {
             loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
                 if (compareList.size == 2) {
                     val intent: Intent = Intent(this, CompareLoans::class.java)
-
-
                     intent.putExtra("LOANID_LOANONE", loans[compareList[0]].id.toString())
                     intent.putExtra("LOANID_LOANTWO", loans[compareList[1]].id.toString())
                     intent.putExtra("USERNAME", username)
@@ -194,6 +192,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
                     intent.putExtra("LOAN_TWO", loans[compareList[1]])
 
                     startActivity(intent)
+                } else{
+                    //Toast need to be added to display error message
                 }
 
 

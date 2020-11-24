@@ -62,8 +62,7 @@ class CompareLoans : AppCompatActivity() {
         val loanOne = previousIntent.getParcelableExtra<LoanInstitution>("LOAN_ONE")
         val loanTwo = previousIntent.getParcelableExtra<LoanInstitution>("LOAN_TWO")
 
-        println(loanOneID)
-        println(loanTwoID)
+
 
         userViewModel.inputArrayList(arrayListOf(username, password))
 

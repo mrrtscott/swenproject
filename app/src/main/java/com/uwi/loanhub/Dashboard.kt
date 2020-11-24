@@ -18,6 +18,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.models.User
 
 class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,9 +32,14 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
     var runnable: Runnable? = null
     var delay = 10000
     val random = Random()
+    val previousIntent = intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+
+        val user = previousIntent.getParcelableExtra<User>()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

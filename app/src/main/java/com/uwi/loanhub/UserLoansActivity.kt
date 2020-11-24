@@ -85,9 +85,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
 
     override fun onLoanItemClicked(position: Int) {
-        println()
         loanInstitutionViewModel.allLoanInstitution .observe(this, Observer {loans ->
-            println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
             intent.putExtra("USERNAME", username)
@@ -144,8 +142,4 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
         return true
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-    }
 }
