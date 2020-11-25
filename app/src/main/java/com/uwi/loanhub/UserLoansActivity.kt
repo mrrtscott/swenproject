@@ -24,10 +24,10 @@ import com.uwi.loanhub.models.User
 
 class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener, NavigationView.OnNavigationItemSelectedListener {
 
-    /*
-
-   This class is used to display all the loans that is in the database that are active
-
+    /**
+     *
+     * This class is used to display all the loans that is in the database that are active
+     *
      */
 
     lateinit var toggle: ActionBarDrawerToggle
@@ -68,6 +68,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
         navView.setNavigationItemSelectedListener(this)
 
+        //Receiving values from previous activity
         val previousIntent = intent
         username = previousIntent.getStringExtra("USERNAME")
         receivedPassword = previousIntent.getStringExtra("PASSWORD")
@@ -89,10 +90,9 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
                     intent.putExtra("PASSWORD", receivedPassword)
                     intent.putExtra("LOAN_ONE", loans[compareList[0]])
                     intent.putExtra("LOAN_TWO", loans[compareList[1]])
-
                     startActivity(intent)
                 } else{
-                    //Toast need to be added to display error message
+                    Toast.makeText(this,"You must compare two loans only", Toast.LENGTH_SHORT).show()
                 }
             })
 
@@ -115,9 +115,10 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
     }
 
 
-
-
-
+    /**
+     * This method is used to identify which loans have been clicked
+     * @param position An integer which containing the position of the loan clicked
+     */
     override fun onLoanItemClicked(position: Int) {
         loanInstitutionViewModel.allLoanInstitution .observe(this, Observer {loans ->
 
@@ -130,6 +131,9 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
         })
     }
 
+    /**
+     *
+     */
     override fun onLoanCompareItemClicked(position: Int, action:String) {
 
         if (compareList.size > 1 && action.equals("CHECKED")){
