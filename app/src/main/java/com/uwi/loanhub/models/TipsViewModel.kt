@@ -7,6 +7,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
+/**
+ *
+ */
 class TipsViewModel(application: Application): AndroidViewModel(application) {
 
     private var repository:TipsRepository
@@ -20,6 +24,11 @@ class TipsViewModel(application: Application): AndroidViewModel(application) {
 
     }
 
+
+    /**
+     * A method to add a tip to the database
+     * @param inputTips A tip
+     */
     fun addTips(inputTips: Tips) = viewModelScope.launch(Dispatchers.IO){
         repository.addTip(inputTips)
     }
