@@ -66,6 +66,7 @@ class Functions {
 
     /**
      * A simple function that formats dollars.
+     * @return
      */
     @RequiresApi(Build.VERSION_CODES.N)
     fun currencyFormatter(num: String): String? {
@@ -80,7 +81,7 @@ class Functions {
      * @param inputLoanOne Referred to as Loan One and is the first loan on which operation can be performed. It is of type LoanInstitution
      * @param inputLoanTwo Referred to as Loan Two and is the second loan on which operation can be performed. It is of type LoanInstitution
      * @param inputUser An inout of type User from which critical details will be extracted for the algorithm to work
-     * @return The function returns which of the two loans is being recommended
+     * @return The function returns which of the two loans is being recommended of type integer. Zero (0) represents the first loan and one (1) the second
      */
     fun loanRecommendation (inputLoanOne:LoanInstitution, inputLoanTwo:LoanInstitution, inputUser: User):Int{
         var loanOneTotal: Int = 0
