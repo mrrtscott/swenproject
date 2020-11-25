@@ -47,7 +47,7 @@ class LoginActivityNew : AppCompatActivity() {
 
     /**
      * Ensures that the login button and the input texts are functional to the user after some function which have disabled them
-     *
+     * @param hasFocus A boolean which indicates whether the focus has changed
      */
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
