@@ -82,6 +82,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
+        //Comparison button that and a internal checker to ensure only two loans have been selected before operation can be performed
         viewComparson.setOnClickListener {
             loanInstitutionViewModel.allLoanInstitution.observe(this, Observer { loans ->
                 if (compareList.size == 2) {
