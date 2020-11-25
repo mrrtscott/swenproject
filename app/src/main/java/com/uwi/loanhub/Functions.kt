@@ -31,7 +31,7 @@ class Functions {
         return sb.toString()
     }
 
-
+    //Function that generates the current date and time
     fun getCurrentDate(): String{
 
         val current = LocalDateTime.now()
