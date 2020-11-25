@@ -117,7 +117,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 6000000,
                 4.5,
                 "70 months",
-                7.0,
+                70.0,
                 80,
                 "Thinking of buying your own car? A National Bank car loan can be tailored to almost any budget—choose the payment options that are best for you. You can request a National Bank car loan at most dealerships.",
                 "Everybody",

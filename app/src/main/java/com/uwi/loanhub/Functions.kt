@@ -163,6 +163,17 @@ class Functions {
             loanTwoTotal += 1
         }
 
+        if((inputLoanOne.interestRate?.times(2))!! < inputLoanTwo.interestRate!!){
+            loanOneTotal += 1
+        }
+
+
+        if((inputLoanTwo.interestRate?.times(2))!! < inputLoanOne.interestRate!!){
+            loanTwoTotal += 1
+        }
+
+
+
         loanOneTotal += (inputLoanOne.description!!.length/1000)
         loanTwoTotal += (inputLoanTwo.description!!.length/1000)
 
