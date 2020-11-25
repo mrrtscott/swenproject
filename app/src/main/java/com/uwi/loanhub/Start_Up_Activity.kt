@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
+/**
+ * Used to manage the start up section of the application
+ */
 class Start_Up_Activity : AppCompatActivity() {
 
     private lateinit var startButton: Button
