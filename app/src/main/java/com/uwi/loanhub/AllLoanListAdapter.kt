@@ -83,5 +83,9 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
         notifyDataSetChanged()
     }
 
+    /**
+     * This function is responsible for getting the number of loans which have been loaded
+     * @return An value of type integer which is tht total number of loan which have been loaded
+     */
     override fun getItemCount() = loanInstitution.size
 }
