@@ -15,6 +15,7 @@ import java.util.*
 
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -41,6 +42,8 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
     private lateinit var userFullNameTextView:TextView
     private lateinit var userUsername:TextView
 
+    private lateinit var dashboardLogout:Button
+
     var handler: Handler = Handler()
     var runnable: Runnable? = null
     var delay = 10000
@@ -60,6 +63,8 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         drawerLayout = findViewById(R.id.drawerLayout_dashboard)
         navView = findViewById(R.id.navView_dashboard)
         progressbar = findViewById(R.id.progressDashboard)
+
+        dashboardLogout = findViewById(R.id.dashboardLogout)
 
         toggle = ActionBarDrawerToggle(this,drawerLayout,0,0)
         toggle.syncState()
@@ -83,6 +88,14 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         //A concatenation of the user first name and last name. The line below sets the result to the relevant text view
         userFullNameTextView.text = user.firstName.plus(" ").plus(user.lastName)
         userUsername.text = user.username
+
+        //Log out button which when triggered logs out a user from the application
+        dashboardLogout.setOnClickListener {
+            val intent = Intent(this, LoginActivityNew::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
 
 
 

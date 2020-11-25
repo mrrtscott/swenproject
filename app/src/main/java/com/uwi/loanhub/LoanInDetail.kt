@@ -18,7 +18,9 @@ import com.uwi.loanhub.fragments.SearchWord
 import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
 
-
+/**
+ * This is used to mange the details related to each loan
+ */
 
 class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListener {
 
@@ -63,7 +65,7 @@ class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListen
 
 
 
-
+        //Receiving data from previous activity
         val previousIntent = intent
         val LoanID = previousIntent.getIntExtra("LOANID", 0)
         val username = previousIntent.getStringExtra("USERNAME")
