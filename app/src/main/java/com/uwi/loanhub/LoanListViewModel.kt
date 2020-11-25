@@ -2,6 +2,10 @@ package com.uwi.loanhub
 
 import androidx.lifecycle.ViewModel
 
+
+/**
+ * An old set up of loans list
+ */
 class LoanListViewModel : ViewModel(){
 
     var  loan = mutableListOf<Loans>()
