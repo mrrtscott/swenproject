@@ -8,6 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.Branch
 
+/**
+ *
+ */
 class BranchListAdapter  internal constructor(context: Context): RecyclerView.Adapter<BranchListAdapter.BranchViewHolder>()  {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)

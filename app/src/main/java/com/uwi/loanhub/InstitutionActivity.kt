@@ -37,7 +37,9 @@ import com.uwi.loanhub.models.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-
+/**
+ * This is used in the application to manage information on bank institutions
+ */
 class InstitutionActivity : AppCompatActivity() {
 
     private lateinit var institutionAssets: InstitutionAssetsViewModel
@@ -101,7 +103,7 @@ class InstitutionActivity : AppCompatActivity() {
 
 
         institutionAssets.specificInstitutionInstitutionAssets.observe(this, androidx.lifecycle.Observer { institution ->
-            println("The size".plus(institution.size))
+
 
 
 
@@ -118,7 +120,7 @@ class InstitutionActivity : AppCompatActivity() {
 
 
                     for (i in institution){
-                    println(i.year.toString())
+
                     seriesData.add(CustomDataEntry(i.year.toString(), i.revenue, i.income, i.totalAssets))
                 }
 

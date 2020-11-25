@@ -10,11 +10,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.LoanInstitution
 
+
+/**
+ * This class is responsible for the taking raw loans likes data and structure it for the loans likes recycle view
+ * @param context Context of the application
+ * @property loanClickListener a listener to determine which loan has been liked
+ *
+ */
 class LikeLoanListAdapter internal constructor(context: Context, private val loanClickListener: OnLoanClickListener) : RecyclerView.Adapter<LikeLoanListAdapter.LikeLoanViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var loanLike = emptyList<LoanInstitution>()
 
+    /**
+     * An internal class which initialises the various views required
+     */
     inner class LikeLoanViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
 
         val loanNameView: TextView = itemView.findViewById(R.id.loanOfInterestLoanName)
@@ -25,6 +35,12 @@ class LikeLoanListAdapter internal constructor(context: Context, private val loa
 
     }
 
+    /**
+     * The primary function of this method is to inflate the recycle item view which holds a loan like structure
+     * @param parent
+     * @param viewType
+     * @return The entire view which has been inflated
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LikeLoanViewHolder  {
         val itemView = inflater.inflate(R.layout.recycleviewiteminterest, parent, false)
         return LikeLoanViewHolder(itemView)
