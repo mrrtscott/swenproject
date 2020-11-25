@@ -31,7 +31,10 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
     }
 
     /**
-     *
+     * The primary function of this method is to inflate the recycle item view which holds a single loan structure
+     * @param parent
+     * @param viewType
+     * @return  The entire view which has been inflated
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoanViewHolder {
         val itemView = inflater.inflate(R.layout.reycleviewitem, parent, false)
@@ -39,7 +42,11 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
     }
 
 
-
+    /**
+     * This function is responsible for setting the values in the holder to its respective view
+     * @param holder takes an inner class of type LoanViewHolder wis used to initialise the various views
+     * @param position This take the position of the item in the holder.
+     */
     override fun onBindViewHolder(holder: LoanViewHolder, position: Int) {
         val current = loanInstitution[position]
         holder.loanNameView.text = "${current.loanName}"
@@ -52,6 +59,7 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
             loanClickListener.onLoanItemClicked(position)
         }
 
+        //This method returns the action and the position of the item which the action was performed on
         holder.checkBoxLoanList.setOnCheckedChangeListener ({buttonView, isChecked ->
 
             if (isChecked) {
