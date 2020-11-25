@@ -46,9 +46,19 @@ class LikeLoanListAdapter internal constructor(context: Context, private val loa
         return LikeLoanViewHolder(itemView)
     }
 
-
+    /**
+     * This function is responsible for getting the number of loans which have been loaded
+     * @return An value of type integer which is tht total number of loan which have been loaded
+     */
     override fun getItemCount() = loanLike.size
 
+
+
+    /**
+     * This function is responsible for setting the values in the holder to its respective view
+     * @param holder takes an inner class of type LoanViewHolder wis used to initialise the various views
+     * @param position This take the position of the item in the holder.
+     */
     override fun onBindViewHolder(holder: LikeLoanViewHolder, position: Int) {
         val current = loanLike[position]
         holder.loanNameView.text = "${current.loanName}"
@@ -59,6 +69,10 @@ class LikeLoanListAdapter internal constructor(context: Context, private val loa
         holder.shareButton.setOnClickListener { loanClickListener.onLoanItemClicked(position) }
     }
 
+    /**
+     * Sets the internal list to a list of loans which have been passed by the database
+     * @property loans input loans of type LoanInstitution
+     */
     internal fun setLoan (loans: List<LoanInstitution>){
         this.loanLike = loans
         notifyDataSetChanged()
