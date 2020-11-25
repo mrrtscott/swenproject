@@ -1,11 +1,22 @@
 <resources>
+
+    <string name="settings_Me">Me</string>
+    <string name="set_Me">John Doe</string>
+    <string name="settings_Notifications">Notifications</string>
+    <string name="set_Notifications">All</string>
+    <string name="settings_General">General</string>
+    <string name="set_General">Access</string>
+    <string name="settings_Account">Account</string>
+    <string name="set_Account">john.doe@mail.com</string>
+    <string name="settings_Privacy">Privacy</string>
+    <string name="set_Privacy">Only me</string>
+    <string name="settings_Data">Data</string>
+    <string name="set_Data">12 MB</string>
+    <string name="settings_Help">Help</string>
+    <string name="set_Help">Questions?</string>
+
     <string name="privacy_header">Privacy Policy</string>
     <string name="terms_of_use_header">Terms of Use</string>
-
-
-
-
-
 
 
     <string name="signup_Text">Not a member?</string>

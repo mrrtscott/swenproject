@@ -243,8 +243,10 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
                 intent.putExtra("PARISH", receivedParish)
                 startActivity(intent) }
 
-            R.id.menu_settings -> Toast.makeText(this,
-                "settings", Toast.LENGTH_SHORT).show()
+            R.id.menu_settings -> {
+                val intent:Intent = Intent(this, Settings::class.java)
+                intent.putExtra("USER", listOfUser[0])
+                startActivity(intent)}
 
             R.id.menu_profile_update -> Toast.makeText(this,
                 "profile", Toast.LENGTH_SHORT).show()
