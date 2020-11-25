@@ -22,10 +22,19 @@ class InstitutionViewModel (application: Application): AndroidViewModel(applicat
 
     }
 
+
+    /**
+     * A method used to add new institution to the database
+     * @param inputInstitution input of type Institution
+     */
     fun addNewInstitution(inputInstitution: Institution) = viewModelScope.launch(Dispatchers.IO) {
         repository.addNewInstitution(inputInstitution)
     }
 
+    /**
+     * A method used to get a specific institution
+     * @param inputName The name of the institution
+     */
     fun getUSpecificInstitution(inputName: String) = viewModelScope.launch(Dispatchers.IO){
         val list = repository.getUSpecificInstitution(inputName)
         institutionList.postValue(list)
