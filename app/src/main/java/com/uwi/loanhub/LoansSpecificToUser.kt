@@ -231,12 +231,14 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
             R.id.menu_db -> {
                 val intent:Intent = Intent(this, Dashboard::class.java)
+                intent.putExtra("USER", listOfUser[0])
                 startActivity(intent)}
 
             R.id.menu_loans -> {
 
                 val intent: Intent = Intent(this, UserLoansActivity::class.java)
                 intent.putExtra("USERNAME", username)
+                intent.putExtra("PASSWORD", receivedPassword)
                 intent.putExtra("CITY", receivedCity)
                 intent.putExtra("PARISH", receivedParish)
                 startActivity(intent) }
