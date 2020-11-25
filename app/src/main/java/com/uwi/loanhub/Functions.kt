@@ -54,6 +54,9 @@ class Functions {
 
     }
 
+    /**
+     *
+     */
     fun givenList_shouldReturnARandomElement():String  {
         val givenList = Arrays.asList("NCB", "First Global","Scotiabank", "Victoria Mutual", "JN Bank", "JMMB", "Sagicor", "CIBC")
         val rand = Random()
@@ -61,7 +64,9 @@ class Functions {
         return randomElement
     }
 
-    //A simple function that formats dollars.
+    /**
+     * A simple function that formats dollars.
+     */
     @RequiresApi(Build.VERSION_CODES.N)
     fun currencyFormatter(num: String): String? {
         val m = num.toDouble()
@@ -70,7 +75,13 @@ class Functions {
     }
 
 
-    //An simple algorithm which will calculate which loan to recommend
+    /**
+     * An simple algorithm which will calculate which loan to recommend
+     * @param inputLoanOne Referred to as Loan One and is the first loan on which operation can be performed. It is of type LoanInstitution
+     * @param inputLoanTwo Referred to as Loan Two and is the second loan on which operation can be performed. It is of type LoanInstitution
+     * @param inputUser An inout of type User from which critical details will be extracted for the algorithm to work
+     * @return The function returns which of the two loans is being recommended
+     */
     fun loanRecommendation (inputLoanOne:LoanInstitution, inputLoanTwo:LoanInstitution, inputUser: User):Int{
         var loanOneTotal: Int = 0
         var loanTwoTotal: Int = 0
@@ -82,7 +93,6 @@ class Functions {
         val loanTwoLoanToSalaryRatio = (inputLoanTwo.loanAmount?.minus(inputUser.loanAmount))?.div(
             inputUser.salary
         )
-
 
 
         if(inputLoanOne.institution!!.decapitalize() == inputUser.primaryBank.decapitalize()){
