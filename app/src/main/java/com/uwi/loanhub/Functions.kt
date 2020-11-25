@@ -13,25 +13,38 @@ import java.util.*
 import kotlin.experimental.and
 import kotlin.random.Random.*
 
+/**
+ * This class is stores a number of method which provide universal services to other classes
+ */
 class Functions {
 
-
+    /**
+     * This method is used to encrypt a string which has been passed to it
+     * @param inputPassword A raw string which has characters that are visible
+     * @return An encrypted string
+     */
     fun encryptSys(inputPassword: String): String {
 
         var md: MessageDigest = MessageDigest.getInstance("SHA-512")
         var digest = md.digest(inputPassword.toByteArray())
         var sb: StringBuilder = StringBuilder()
-
-        var i = 0
-        while (i < digest.count()) {
-            sb.append(((digest[i] and 0xff.toByte()) + 0x100).toString(16).substring(0, 1))
-            i++
+        if(inputPassword.isNotEmpty()){
+            var i = 0
+            while (i < digest.count()) {
+                sb.append(((digest[i] and 0xff.toByte()) + 0x100).toString(16).substring(0, 1))
+                i++
+            }
         }
 
         return sb.toString()
+
+
     }
 
-    //Function that generates the current date and time
+    /**
+     * A that generates the current date and time
+     * @return A formatted date which is of type string
+     */
     fun getCurrentDate(): String{
 
         val current = LocalDateTime.now()
