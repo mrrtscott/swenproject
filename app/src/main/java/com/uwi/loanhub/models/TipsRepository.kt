@@ -10,6 +10,10 @@ class TipsRepository(private val inputTipsDao: TipsDao) {
 
     val allTips:LiveData<List<Tips>> = inputTipsDao.getTips()
 
+    /**
+     * A method to add a tip to the database
+     * @param inputTips Tip
+     */
     suspend fun addTip (inputTips: Tips){
         inputTipsDao.addTip(inputTips)
     }
