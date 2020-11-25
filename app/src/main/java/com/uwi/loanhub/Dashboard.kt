@@ -24,6 +24,9 @@ import com.google.android.material.navigation.NavigationView
 import com.uwi.loanhub.models.User
 import java.time.*
 
+/**
+ * The Dashboard class manages the user dashboard
+ */
 class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var toggle: ActionBarDrawerToggle
@@ -75,14 +78,15 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
 
 
-
+        //A concatenation of the user first name and last name. The line below sets the result to the relevant text view
         userFullNameTextView.text = user.firstName.plus(" ").plus(user.lastName)
         userUsername.text = user.username
 
-        /* Need to put 9.5 second progress bar here*/
+
 
         var endTime = Instant.now().plusSeconds( 9 )
 
+        //This ensures that the progress bar stop showing after the specified number of seconds
         Handler().postDelayed(Runnable {
             progressbar.visibility = View.INVISIBLE
         }, 9900)
@@ -91,7 +95,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
 
 
-
+        //This function randomly generates the tips which are to be shown to the user
         handler.postDelayed(Runnable {
             handler.postDelayed(runnable!!, delay.toLong())
 
