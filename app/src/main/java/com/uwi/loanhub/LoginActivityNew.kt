@@ -2,6 +2,7 @@ package com.uwi.loanhub
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -113,6 +114,9 @@ class LoginActivityNew : AppCompatActivity() {
 
 
 
+
+
+
                     Timer().schedule(8000) {
 
                         startActivity(intent)
@@ -120,8 +124,14 @@ class LoginActivityNew : AppCompatActivity() {
 
                     }
 
+                    //This function allows the database loading on the first time to properly populate
                     Toast.makeText(this, "Welcome ".plus(users.get(0).firstName.plus("! Please wait")), Toast.LENGTH_SHORT).show()
-                    startWaitBar.visibility = View.GONE
+                    Handler().postDelayed(Runnable {
+                        startWaitBar.visibility = View.GONE
+                    },8000)
+
+
+
 
 
 
