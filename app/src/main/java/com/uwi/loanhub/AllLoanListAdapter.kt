@@ -30,6 +30,9 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
         val checkBoxLoanList: CheckBox = itemView.findViewById(R.id.checkBoxLoanList)
     }
 
+    /**
+     *
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoanViewHolder {
         val itemView = inflater.inflate(R.layout.reycleviewitem, parent, false)
         return LoanViewHolder(itemView)
@@ -64,6 +67,7 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
     }
 
     /**
+     * Sets the internal list to a list of loans which have been passed by the database
      * @property loans input loans of type LoanInstitution
      */
     internal fun setLoan (loans: List<LoanInstitution>){
