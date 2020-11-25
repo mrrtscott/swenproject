@@ -10,7 +10,9 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
+/**
+ * This is used to manage the model access the database for the database
+ */
 class UserViewModel (application: Application): AndroidViewModel(application) {
 
 
@@ -39,7 +41,10 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
         
     }
 
-
+    /**
+     * This method adds new user to the database
+     * @param user input of type User
+     */
      fun addUser(user: User) = viewModelScope.launch(Dispatchers.IO){
         repository.addNewUser(user)
     }
