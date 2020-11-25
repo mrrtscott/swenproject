@@ -4,7 +4,8 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 
 /**
- * Repository class that handles data structures for the User class
+ * Repository class that handles data structures for the User class\
+ * @param inputUserDao A User Data Access Class
  */
 class UserRepository (private val inputUserDao: UserDao, inputArrayList: ArrayList<String>) {
 
