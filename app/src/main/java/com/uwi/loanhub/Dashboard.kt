@@ -52,6 +52,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         setContentView(R.layout.activity_dashboard)
         val previousIntent = intent
 
+        //Gets the user data strcuture whcih has been based from the previous activity
         val user = previousIntent.getParcelableExtra<User>("USER")
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
