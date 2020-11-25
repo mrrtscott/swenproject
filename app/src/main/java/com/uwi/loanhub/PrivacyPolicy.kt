@@ -16,7 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
 /**
- * Used to manage the privacy policy of the applciation
+ * Used to manage the privacy policy of the application
  */
 class PrivacyPolicy : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toggle: ActionBarDrawerToggle
