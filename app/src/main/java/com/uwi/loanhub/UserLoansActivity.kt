@@ -106,6 +106,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
         loanInstitutionViewModel.allLoanInstitution.observe(this, Observer { loans ->
             compareList.clear()
             loans?.let{ adapter.setLoan(it)
+                //Adding each of the loan into another storage structure
                 for (loan in loans) {
                     listOfLoans.add(loan)
                 }
@@ -134,6 +135,8 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
     /**
      *
+     * @param position The position of the of the loan in the list
+     * @param action This is the input of what action was performed whether checked or unchecked
      */
     override fun onLoanCompareItemClicked(position: Int, action:String) {
 
