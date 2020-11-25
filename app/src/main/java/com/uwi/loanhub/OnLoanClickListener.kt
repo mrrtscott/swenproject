@@ -1,7 +1,7 @@
 package com.uwi.loanhub
 
 /**
- * A simple interface which will handle the position of a loan when the loan item is clicked
+ * A simple interface which will provide the set up to handle the position of a loan when the loan item is clicked
  */
 interface OnLoanClickListener {
 
