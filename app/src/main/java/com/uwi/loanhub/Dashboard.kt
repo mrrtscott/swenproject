@@ -89,7 +89,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         userFullNameTextView.text = user.firstName.plus(" ").plus(user.lastName)
         userUsername.text = user.username
 
-
+        //Log out button which when triggered logs out a user from the application
         dashboardLogout.setOnClickListener {
             val intent = Intent(this, LoginActivityNew::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
