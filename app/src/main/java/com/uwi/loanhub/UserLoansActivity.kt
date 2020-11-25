@@ -40,7 +40,9 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
     var city:String = ""
     var parish:String = ""
 
-    var viewComparson: Button
+    private var receivedPassword:String = " "
+
+    private lateinit var viewComparson: Button
 
     private var compareList: ArrayList<Int> = arrayListOf()
     private var listOfLoans: MutableList<LoanInstitution> = mutableListOf<LoanInstitution>()
@@ -68,6 +70,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
         val previousIntent = intent
         username = previousIntent.getStringExtra("USERNAME")
+        receivedPassword = previousIntent.getStringExtra("PASSWORD")
         city = previousIntent.getStringExtra("CITY")
         parish = previousIntent.getStringExtra("PARISH")
 
@@ -78,12 +81,33 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this)
 
+        viewComparson.setOnClickListener {
+            loanInstitutionViewModel.allLoanInstitution.observe(this, Observer { loans ->
+                if (compareList.size == 2) {
+                    val intent: Intent = Intent(this, CompareLoans::class.java)
+                    intent.putExtra("USERNAME", username)
+                    intent.putExtra("PASSWORD", receivedPassword)
+                    intent.putExtra("LOAN_ONE", loans[compareList[0]])
+                    intent.putExtra("LOAN_TWO", loans[compareList[1]])
+
+                    startActivity(intent)
+                } else{
+                    //Toast need to be added to display error message
+                }
+            })
+
+
+        }
+
         loanViewModel = ViewModelProvider(this).get(LoanViewModel::class.java)
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
 
         loanInstitutionViewModel.allLoanInstitution.observe(this, Observer { loans ->
-
+            compareList.clear()
             loans?.let{ adapter.setLoan(it)
+                for (loan in loans) {
+                    listOfLoans.add(loan)
+                }
 
 
             }
@@ -96,6 +120,7 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
     override fun onLoanItemClicked(position: Int) {
         loanInstitutionViewModel.allLoanInstitution .observe(this, Observer {loans ->
+
             val intent: Intent = Intent(this, LoanInDetail::class.java)
             intent.putExtra("LOANID", loans[position].id)
             intent.putExtra("USERNAME", username)

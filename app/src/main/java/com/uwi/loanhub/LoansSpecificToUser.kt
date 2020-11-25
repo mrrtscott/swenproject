@@ -86,13 +86,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         viewComparisonButton = findViewById(R.id.viewComparison)
         dashboardButton = findViewById(R.id.dashboardButton)
         counterText= findViewById(R.id.counterLoan)
-        otherButton.setOnClickListener{
-            val intent: Intent = Intent(this, UserLoansActivity::class.java)
-            intent.putExtra("USERNAME", username)
-            intent.putExtra("CITY", receivedCity)
-            intent.putExtra("PARISH", receivedParish)
-            startActivity(intent)
-        }
+
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val previousIntent = intent
@@ -112,6 +106,16 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
+
+
+        otherButton.setOnClickListener{
+            val intent: Intent = Intent(this, UserLoansActivity::class.java)
+            intent.putExtra("USERNAME", username)
+            intent.putExtra("PASSWORD", receivedPassword)
+            intent.putExtra("CITY", receivedCity)
+            intent.putExtra("PARISH", receivedParish)
+            startActivity(intent)
+        }
 
         dashboardButton.setOnClickListener {
             val intent: Intent = Intent(this, Dashboard::class.java)
