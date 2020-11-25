@@ -3,6 +3,7 @@ package com.uwi.loanhub
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -16,9 +17,11 @@ class login_activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         setContentView(R.layout.activity_login_activity)
-        backButton = findViewById(R.id.back_arrow_white);
-        loginButton = findViewById(R.id.main_login_btn);
+        backButton = findViewById(R.id.back_arrow_white)
+        loginButton = findViewById(R.id.main_login_btn)
         username = findViewById(R.id.usr_username)
         password = findViewById(R.id.usr_password)
 
