@@ -16,6 +16,9 @@ import java.util.*
 import kotlin.concurrent.schedule
 
 
+/**
+ * This class manages the login mechanism for the application
+ */
 class LoginActivityNew : AppCompatActivity() {
 
     private lateinit var editText_username_Login_Activity: EditText
@@ -41,7 +44,11 @@ class LoginActivityNew : AppCompatActivity() {
         editText_password_Login_Activity.isEnabled = true
 
     }
-    //Ensures that the login button and the input texts are functional to the user after some function which have disabled them
+
+    /**
+     * Ensures that the login button and the input texts are functional to the user after some function which have disabled them
+     *
+     */
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         loginButton.isEnabled = true
@@ -52,7 +59,11 @@ class LoginActivityNew : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_new)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN // This ensures that the application will be in full screen
+
+
         functions = Functions()
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         startWaitBar = findViewById(R.id.startWaitBar)
