@@ -55,7 +55,8 @@ class Functions {
     }
 
     /**
-     *
+     * This function is used to generate a random bank name stored in a list
+     * @return The name of the randomly selected bank is returned as a String
      */
     fun givenList_shouldReturnARandomElement():String  {
         val givenList = Arrays.asList("NCB", "First Global","Scotiabank", "Victoria Mutual", "JN Bank", "JMMB", "Sagicor", "CIBC")
@@ -66,7 +67,8 @@ class Functions {
 
     /**
      * A simple function that formats dollars.
-     * @return
+     * @param num A figure of type Double which is to to be formatted.
+     * @return A formatted date which is of type String
      */
     @RequiresApi(Build.VERSION_CODES.N)
     fun currencyFormatter(num: String): String? {
