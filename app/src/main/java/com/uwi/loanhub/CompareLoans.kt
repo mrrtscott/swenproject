@@ -14,6 +14,9 @@ import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.UserViewModel
 import org.w3c.dom.Text
 
+/**
+ * The class is used to manage the loan comparison
+ */
 class CompareLoans : AppCompatActivity() {
 
 
@@ -53,7 +56,7 @@ class CompareLoans : AppCompatActivity() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
 
-
+        //Receiving values for the previous activity
         val previousIntent = intent
         val username = previousIntent.getStringExtra("USERNAME")
         val password = previousIntent.getStringExtra("PASSWORD")
@@ -65,6 +68,7 @@ class CompareLoans : AppCompatActivity() {
 
 
         userViewModel.inputArrayList(arrayListOf(username, password))
+
 
         userViewModel.singleUser.observe(this, Observer { users->
             if(users.size == 1){
