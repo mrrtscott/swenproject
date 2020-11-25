@@ -65,16 +65,23 @@ class LoginActivityNew : AppCompatActivity() {
 
 
         functions = Functions()
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         startWaitBar = findViewById(R.id.startWaitBar)
-
         privacyPolicyButton = findViewById(R.id.privacyPolicyButton)
+        termOfUseButton = findViewById(R.id.privacyTermsButton)
+        editText_username_Login_Activity = findViewById(R.id.userNameLoginActivity)
+        editText_password_Login_Activity = findViewById(R.id.passwordLoginActivity)
+        signUpButton = findViewById(R.id.signupLoginActivity)
+        loginButton = findViewById(R.id.LoginButtonSignInActicity)
+
+
+        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
         privacyPolicyButton.setOnClickListener {
             val intent:Intent = Intent(this, PrivacyPolicy::class.java)
             startActivity(intent)
         }
 
-        termOfUseButton = findViewById(R.id.privacyTermsButton)
+
         termOfUseButton.setOnClickListener{
             val intent:Intent = Intent(this, TermsOfUse::class.java)
             startActivity(intent)
@@ -84,11 +91,10 @@ class LoginActivityNew : AppCompatActivity() {
 
 
 
-        editText_username_Login_Activity = findViewById(R.id.userNameLoginActivity)
-        editText_password_Login_Activity = findViewById(R.id.passwordLoginActivity)
 
 
-        signUpButton = findViewById(R.id.signupLoginActivity)
+
+
         signUpButton.setOnClickListener {
             val intent: Intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
@@ -101,7 +107,7 @@ class LoginActivityNew : AppCompatActivity() {
 
         userViewModel.userList
 
-        loginButton = findViewById(R.id.LoginButtonSignInActicity)
+
         loginButton.setOnClickListener {
             startWaitBar.visibility = View.VISIBLE
             loginButton.isEnabled = false
