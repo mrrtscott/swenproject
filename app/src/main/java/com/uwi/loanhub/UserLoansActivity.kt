@@ -15,10 +15,12 @@ import com.uwi.loanhub.models.LoanInstitutionViewModel
 import com.uwi.loanhub.models.LoanViewModel
 
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.models.User
 
 class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,6 +40,12 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
     var city:String = ""
     var parish:String = ""
 
+    var viewComparson: Button
+
+    private var compareList: ArrayList<Int> = arrayListOf()
+    private var listOfLoans: MutableList<LoanInstitution> = mutableListOf<LoanInstitution>()
+    private var listOfUser: MutableList<User> = mutableListOf<User>()
+
 
 
 
@@ -45,6 +53,8 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_loans)
+
+        viewComparson = findViewById(R.id.viewComparisonAllLoans)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

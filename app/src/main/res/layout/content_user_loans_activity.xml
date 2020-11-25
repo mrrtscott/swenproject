@@ -19,6 +19,15 @@
 
     </TextView>
 
+    <Button
+        android:id="@+id/viewComparisonAllLoans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="View comparison">
+
+    </Button>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userLoansActivityRecycleView"
