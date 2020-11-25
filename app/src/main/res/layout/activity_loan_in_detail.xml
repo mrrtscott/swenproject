@@ -15,33 +15,53 @@
         android:orientation="vertical">
         <!-- Header -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="100dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/startActivityLoanString"
-            android:fontFamily="@font/menloregularfont"
-            android:textSize="@dimen/f40"
-            android:textFontWeight="800"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/app_blue">
-        </TextView>
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/menloregularfont"
-            android:textFontWeight="400"
-            android:text="HUB"
-            android:textSize="40sp"
-            android:textColor="@color/app_blue">
-        </TextView>
-    </LinearLayout>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/startActivityLoanString"
+                android:fontFamily="@font/menloregularfont"
+                android:textSize="@dimen/f40"
+                android:textFontWeight="800"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/app_blue">
+            </TextView>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/menloregularfont"
+                android:textFontWeight="400"
+                android:text="HUB"
+                android:textSize="40sp"
+                android:textColor="@color/app_blue">
+            </TextView>
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/likedLoans"
+                app:icon="@drawable/ic_outline_analytics_24"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Rated"/>
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/institutionDetail"
+                app:icon="@drawable/ic_outline_domain_24"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Bank"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/loanDetailLoanName"
@@ -148,6 +168,32 @@
 
                 </TextView>
 
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/likeToggleGroup"
+                    app:singleSelection="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    >
+                    <Button
+                        android:id="@+id/likeButton"
+                        app:icon="@drawable/ic_outline_thumb_up_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/dislikeButton"
+                        app:icon="@drawable/ic_outline_thumb_down_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -212,8 +258,8 @@
 
 
         <Button
-            android:id="@+id/requirementsButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/requirementsButton"
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
@@ -251,24 +297,40 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loanRatingInput"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginBottom="30dp"
             android:layout_marginTop="20dp"
             android:hint="Rate Loan"
             android:textColorHint="#2699FB">
 
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            <AutoCompleteTextView
                 android:id="@+id/autoCompleteLoanInDetailRating"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="none">
 
-            </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+            </AutoCompleteTextView>
+
+
 
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:backgroundTint="#2699FB"
+            android:src="@drawable/ic_baseline_search_24"
+            android:contentDescription="@string/search"
+            android:layout_margin="16dp" />
+
+
 
 
     </LinearLayout>
