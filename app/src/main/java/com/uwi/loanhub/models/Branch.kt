@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.time.OffsetDateTime
 
+/* Used to construct a database table that will hold the branches of the various banks */
 
 @Entity (tableName = "BankBranch", primaryKeys = ["name", "bank"] )
 data class Branch (

@@ -132,6 +132,19 @@ class UserLoansActivity : AppCompatActivity(), OnLoanClickListener, OnCompareLoa
 
     override fun onLoanCompareItemClicked(position: Int, action:String) {
 
+        if (compareList.size > 1 && action.equals("CHECKED")){
+            Toast.makeText(this, "Too many loans selected", Toast.LENGTH_LONG).show()
+        } else if(compareList.size < 3 && action.equals("CHECKED")){
+            if(!compareList.contains(position)){
+                compareList.add(position)
+            }
+
+        }
+
+        if(action.equals("UNCHECKED")){
+            compareList.remove(position)
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
