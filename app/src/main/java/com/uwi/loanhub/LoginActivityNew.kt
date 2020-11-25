@@ -41,7 +41,7 @@ class LoginActivityNew : AppCompatActivity() {
         editText_password_Login_Activity.isEnabled = true
 
     }
-
+    //Ensures that the login button and the input texts are functional to the user after some function which have disabled them
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         loginButton.isEnabled = true
@@ -97,6 +97,7 @@ class LoginActivityNew : AppCompatActivity() {
             editText_username_Login_Activity.isEnabled = false
             editText_password_Login_Activity.isEnabled = false
 
+            //The user's password is being encrypted by another function
             userViewModel.inputArrayList(arrayListOf(editText_username_Login_Activity.text.toString(), functions.encryptSys(editText_password_Login_Activity.text.toString())))
 
 
