@@ -15,7 +15,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-
+/**
+ * Used to manage the privacy policy of the applciation
+ */
 class PrivacyPolicy : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
@@ -35,7 +37,7 @@ class PrivacyPolicy : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         navView.setNavigationItemSelectedListener(this)
 
         val web =findViewById<WebView>(R.id.webView)
-        web.loadUrl("file:///android_asset/privacypolicy.html")
+        web.loadUrl("file:///android_asset/privacypolicy.html") //reading the privacy policy from the declared url which is stored locally
         }
 
 

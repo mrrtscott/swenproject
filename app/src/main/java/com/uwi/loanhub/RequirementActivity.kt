@@ -9,6 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.uwi.loanhub.models.LoanRequirementViewModel
 import kotlinx.android.synthetic.main.activity_requirement.*
 
+/**
+ * This is used to manage the loan requirements
+ */
 class RequirementActivity : AppCompatActivity() {
 
     lateinit var section1: View
@@ -49,7 +52,7 @@ class RequirementActivity : AppCompatActivity() {
         vehicleTextView = findViewById(R.id.vehicleInformationRequirement)
 
 
-
+        //These are high level sections of the requirements being declared
         val header1 = findViewById<TextView>(R.id.header1)
 
         header1.setOnClickListener{
