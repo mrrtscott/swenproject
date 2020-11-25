@@ -22,6 +22,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.uwi.loanhub.models.User
 
+
+/**
+ * A class which manages loan which are specific to the current user of the application
+ */
 class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareLoanClickListener, NavigationView.OnNavigationItemSelectedListener{
 
     lateinit var toggle: ActionBarDrawerToggle
@@ -89,6 +93,8 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+
+        //Fetching data data from the previous class
         val previousIntent = intent
         val parsedStringID = previousIntent.getStringExtra("USERNAME")
         receivedPassword = previousIntent.getStringExtra("PASSWORD")
@@ -107,7 +113,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         loanInstitutionViewModel = ViewModelProvider(this).get(LoanInstitutionViewModel::class.java)
 
-
+        //Sending data to the other User Loans Activity
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
             intent.putExtra("USERNAME", username)
