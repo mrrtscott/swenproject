@@ -3,13 +3,14 @@ package com.uwi.loanhub.models
 
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 import java.time.OffsetDateTime
 import java.util.*
 
 @Parcelize
-@Entity(tableName = "Loans")
+@Entity(tableName = "Loans", indices = arrayOf(Index(value = ["loanName"], unique = true)))
 data class Loan(
     @PrimaryKey(autoGenerate = true) var id: Int,
     var institution : String,

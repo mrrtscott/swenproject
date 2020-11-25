@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class, Glossary::class, Tips::class), version = 21, exportSchema = false)
+@Database(entities = arrayOf(User::class, Loan::class, Institution::class, LoanRequirement::class, LoanLikes::class, LoanRating::class, InstitutionAssets::class, Branch::class, Glossary::class, Tips::class), version = 22, exportSchema = false)
 abstract class LoanHubDatabase : RoomDatabase() {
 
 
@@ -69,7 +69,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-                    /*
+
                     populateDatabase(database.LoanDao(), database.InstitutionDao(), database.LoanRequirementDao(), database.InstitutionAssetsDao())
                     populateScotiaBranch(database.BranchDao())
                     populateNCBBranch(database.BranchDao())
@@ -82,9 +82,9 @@ abstract class LoanHubDatabase : RoomDatabase() {
                     populateGlossary(database.GlossaryDao())
                     populateTips(database.TipsDao())
 
-                     */
 
-                    /* Need to ensure that loan names are unique to avoid the troubles*/
+
+
 
 
 
@@ -165,7 +165,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 80000,
                 10.5,
                 "80 months",
-                8.0,
+                70.0,
                 90,
                 "Fast Application, Competitive Rates And Quick Decisions. Apply for a new or used car loan or refinance your existing auto loan your bank.",
                 "Male",
@@ -200,7 +200,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 25000,
                 10.5,
                 "80 months",
-                8.0,
+                80.0,
                 90,
                 "Apply online for a new or used car loan from this bank. Get approved for a financing based on your needs and within your budget.",
                 "Female",
@@ -217,7 +217,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
             28000,
             10.5,
             "80 months",
-            8.0,
+            85.0,
             90,
             "Car Loans. Get your rates quickly on new, used and refinanced loans.",
             "Male",
@@ -235,7 +235,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 190000,
                 10.5,
                 "Get terms up to 84 months and no payments for 60 days.",
-                8.0,
+                98.0,
                 90,
                 "This is a CIBC loan description",
                 "Everybody",
@@ -267,7 +267,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 980000,
                 10.5,
                 "80 months",
-                8.0,
+                65.0,
                 90,
                 "We never penalize you for paying off your loan early.",
                 "Everybody",
@@ -347,7 +347,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
                 "Be more confident when buying your next car or vehicle. Find an auto loan with our bank that fits your budget. See all financing options & apply now.",
                 "Male",
@@ -363,7 +363,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
                 "Fast Approval. Contact Us Today For A Quote!",
                 "Male",
@@ -379,7 +379,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 2900000,
                 10.5,
                 "72 months",
-                4.0,
+                100.0,
                 50,
                 "We give you the opportunity to purchase a new or used motor vehicle with a secured loan so that you can drive away in style. ",
                 "Male",
@@ -555,7 +555,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90000,
                 10.5,
                 "80 months",
-                8.0,
+                100.0,
                 90,
                 "A car loan is secured against the vehicle you intend to purchase, which means the vehicle serves as collateral for the loan.",
                 "Everybody",
@@ -603,7 +603,7 @@ abstract class LoanHubDatabase : RoomDatabase() {
                 90000,
                 6.75,
                 "80 months",
-                8.0,
+                100.0,
                 90,
                 "Get pre-approved before you buy a new or used vehicle or refinance your existing auto loan. ",
                 "Everybody",
