@@ -15,6 +15,9 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.experimental.and
 
+/**
+ * This is used to manage the sign up process of users
+ */
 class SignupActivity : AppCompatActivity() {
     private lateinit var editText_First_Name_Main_Activity: EditText
     private lateinit var editText_Last_Name_Main_Activity: EditText
@@ -108,7 +111,7 @@ class SignupActivity : AppCompatActivity() {
         buttons_start_main_act.setOnClickListener {
 
 
-
+            //Proving the user with the appropriate feedback. Users are not allowed to continue unless the required feels are entered
             if(editText_First_Name_Main_Activity.text.toString().isEmpty()  || editText_Last_Name_Main_Activity.text.toString().isEmpty() || drop_text_city.text.toString().isEmpty() || drop_text_parish.text.toString().isEmpty())
             {
                 Toast.makeText(this, "Please enter fill all the fields", Toast.LENGTH_SHORT).show()
@@ -120,6 +123,7 @@ class SignupActivity : AppCompatActivity() {
             }
             else
             {
+                //Constructing a new user
                 val user = User(
                     editText_First_Name_Main_Activity.text.toString().trim(),
                     editText_Last_Name_Main_Activity.text.toString().trim(),
