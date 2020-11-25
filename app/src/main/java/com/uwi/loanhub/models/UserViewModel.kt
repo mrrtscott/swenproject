@@ -28,7 +28,7 @@ class UserViewModel (application: Application): AndroidViewModel(application) {
 
 
     init {
-        UserDao = LoanHubDatabase.getDatabase(application, viewModelScope).UserDao()
+        UserDao = LoanHubDatabase.getDatabase(application, viewModelScope).UserDao() //Accessing the database
         repository = UserRepository(UserDao, receivedArrayList)
 
         allUsers = repository.allUsers
