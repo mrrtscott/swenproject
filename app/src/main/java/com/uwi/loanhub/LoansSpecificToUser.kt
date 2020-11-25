@@ -132,7 +132,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         userViewModel.userList.observe(this, Observer { singleUser ->
 
-
+            //A second factor check to ensure that only one user has been identified
             if (singleUser.size == 1) {
                 for (user in singleUser){
                     listOfUser.add(user)
