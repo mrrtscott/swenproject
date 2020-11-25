@@ -9,7 +9,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
-
+/**
+ * This is an old class which managed the loan details
+ */
 class LoanDetails : AppCompatActivity() {
 
     lateinit var selectedLoan: Loans //Used to store the selected loan based on ID
