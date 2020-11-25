@@ -66,11 +66,12 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         navView.setNavigationItemSelectedListener(this)
 
 
-
+        //Used to connect the dashboard class to the database
         tipsViewModel = ViewModelProvider(this).get(TipsViewModel::class.java)
+
+        //Text views
         userFullNameTextView = findViewById(R.id.userFullName)
         userUsername = findViewById(R.id.userUsername)
-
         tipsTextView = findViewById(R.id.dashboardTips)
 
 
