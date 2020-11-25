@@ -101,11 +101,8 @@ class LoginActivityNew : AppCompatActivity() {
 
 
             userViewModel.userList.observe(this, Observer { users ->
-                println(users.size)
-                if (users.size == 1)
+                if (users.size == 1) //This is a second factor check to ensure that only one user was found with the username and password combination
                 {
-
-
                     val intent = Intent (this,LoansSpecificToUser::class.java )
                     intent.putExtra( "USERNAME", users[0].username)
                     intent.putExtra( "CITY", users[0].city)
@@ -138,8 +135,8 @@ class LoginActivityNew : AppCompatActivity() {
 
 
                 }
+                //Indicates when a username and password combination is wrong.
                 else{
-
                     Toast.makeText(this, "Your username and password is incorrect", Toast.LENGTH_SHORT).show()
                     startWaitBar.visibility = View.GONE
                     loginButton.isEnabled = true
