@@ -48,6 +48,7 @@ class Functions {
         return randomElement
     }
 
+    //A simple function that formats dollars.
     @RequiresApi(Build.VERSION_CODES.N)
     fun currencyFormatter(num: String): String? {
         val m = num.toDouble()
@@ -55,6 +56,8 @@ class Functions {
         return formatter.format(m)
     }
 
+
+    //An simple algorithm which will calculate which loan to recommend
     fun loanRecommendation (inputLoanOne:LoanInstitution, inputLoanTwo:LoanInstitution, inputUser: User):Int{
         var loanOneTotal: Int = 0
         var loanTwoTotal: Int = 0
