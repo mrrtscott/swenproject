@@ -11,6 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.User
 
+/**
+*This class is responsible for the taking raw loans data and structure it for the loans recycle view
+ *  @param context The context of the application
+ *  @property loanClickListener a listener for when the loan is clicked
+ *  @property compareItemListener a listener for when loans are checked and unchecked
+ */
 class AllLoanListAdapter internal constructor(context: Context, private val loanClickListener: OnLoanClickListener, private val compareItemListener: OnCompareLoanClickListener): RecyclerView.Adapter<AllLoanListAdapter.LoanViewHolder>()  {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -38,15 +44,16 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
         holder.loanDescriptionView.text = "${current.description}"
         holder.institutionImage.setImageResource("${current.logo}".toInt())
 
+        //This here returns the position of the loan which was clicked
         holder.itemView.setOnClickListener {
             loanClickListener.onLoanItemClicked(position)
         }
 
-        holder.checkBoxLoanList.setOnCheckedChangeListener({buttonView, isChecked ->
+        holder.checkBoxLoanList.setOnCheckedChangeListener ({buttonView, isChecked ->
 
-            if (isChecked){
+            if (isChecked) {
                 compareItemListener.onLoanCompareItemClicked(position, "CHECKED")
-            }else{
+            } else {
                 compareItemListener.onLoanCompareItemClicked(position, "UNCHECKED")
             }
 
@@ -54,12 +61,11 @@ class AllLoanListAdapter internal constructor(context: Context, private val loan
         })
 
 
-
-
-
     }
 
-
+    /**
+     * @property loans input loans of type LoanInstitution
+     */
     internal fun setLoan (loans: List<LoanInstitution>){
         this.loanInstitution = loans
         notifyDataSetChanged()
