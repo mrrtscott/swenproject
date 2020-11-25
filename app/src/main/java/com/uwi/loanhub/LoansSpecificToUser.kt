@@ -269,8 +269,9 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
     }
 
 
-
-
+    /**
+     * An implementation of a method which will be used to identify the position of the loan which was clicked by the user
+     */
     override fun onLoanItemClicked(position: Int) {
         loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
             println(loans[position].id)
