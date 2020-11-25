@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 
 /**
- *
+ * A class which manages the database interaction for Tips
  */
 class TipsViewModel(application: Application): AndroidViewModel(application) {
 
