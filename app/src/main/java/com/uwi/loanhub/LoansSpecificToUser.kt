@@ -203,7 +203,7 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
                     startActivity(intent)
                 } else{
-                    //Toast need to be added to display error message
+                    Toast.makeText(this,"You must compare two loans only", Toast.LENGTH_SHORT).show()
                 }
 
 
