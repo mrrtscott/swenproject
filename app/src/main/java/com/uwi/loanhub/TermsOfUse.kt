@@ -14,7 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import java.io.InputStream
 
-
+/**
+ * Manages the terms of use activity by loading a html file containing the content ofg the terms of use
+ */
 class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
@@ -34,7 +36,7 @@ class TermsOfUse : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
         navView.setNavigationItemSelectedListener(this)
 
         val web =findViewById<WebView>(R.id.webView)
-        web.loadUrl("file:///android_asset/terms.html")
+        web.loadUrl("file:///android_asset/terms.html") // processing the internal html file
 
         var text = web.url
         Log.i("web text:", text)
