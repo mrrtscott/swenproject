@@ -3,6 +3,9 @@ package com.uwi.loanhub.models
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 
+/**
+ * Repository class that handles data structures for the User class
+ */
 class UserRepository (private val inputUserDao: UserDao, inputArrayList: ArrayList<String>) {
 
     var inputUsername = inputArrayList[0]
