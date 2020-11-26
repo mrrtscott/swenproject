@@ -1,7 +1,15 @@
 package com.uwi.loanhub
 
 object AppConstants {
-     val WAIT_TIME = 8000L
+     const val WAIT_TIME = 8000L
+     const val DASHBOARD_DELAY = 9900L
+     const val CHECKED = "CHECKED"
+     const val UNCHECKED = "UNCHECKED"
+     const val INSTITUTION  = "INSTITUTION"
+     const val CITY = "CITY"
+     const val PARISH = "PARISH"
+     const val HTTP_PREFIX = "http"
+
 
 
 }

@@ -22,6 +22,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.AppConstants.DASHBOARD_DELAY
 import com.uwi.loanhub.models.User
 import java.time.*
 
@@ -104,7 +105,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         //This ensures that the progress bar stop showing after the specified number of seconds
         Handler().postDelayed(Runnable {
             progressbar.visibility = View.INVISIBLE
-        }, 9900)
+        }, DASHBOARD_DELAY)
 
 
 

@@ -33,6 +33,9 @@ import com.anychart.core.cartesian.series.Column
 import com.anychart.data.Set
 import com.anychart.enums.LegendLayout
 import com.anychart.enums.Orientation
+import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.INSTITUTION
+import com.uwi.loanhub.AppConstants.PARISH
 import com.uwi.loanhub.models.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -59,9 +62,9 @@ class InstitutionActivity : AppCompatActivity() {
 
 
         val previousIntent = intent
-        val institution = previousIntent.getStringExtra("INSTITUTION")
-        val city = previousIntent.getStringExtra("CITY")
-        val parish = previousIntent.getStringExtra("PARISH")
+        val institution = previousIntent.getStringExtra(INSTITUTION)
+        val city = previousIntent.getStringExtra(CITY)
+        val parish = previousIntent.getStringExtra(PARISH)
 
 
         branchesModel = ViewModelProvider(this).get(BranchViewModel::class.java)
