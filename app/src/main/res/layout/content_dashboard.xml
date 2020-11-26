@@ -154,62 +154,64 @@
         android:layout_height="100dp">
 
     </TextView>
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/scotiabank">
-        </ImageView>
+        android:fillViewport="false"
+        android:padding="20dp"
+        android:scrollbars="vertical">
 
-        <ImageView
-            android:layout_marginStart="10dp"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/victoriamutual">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        </ImageView>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/scotiabank"></ImageView>
 
-        <ImageView
-            android:layout_marginStart="10dp"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/ncb">
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/victoriamutual">
 
-        </ImageView>
+            </ImageView>
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ncb">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/sagicormg">
-        </ImageView>
+            </ImageView>
 
-        <ImageView
-            android:layout_marginStart="10dp"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/jmmb">
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/sagicormg"></ImageView>
 
-        </ImageView>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/jmmb">
 
-        <ImageView
-            android:layout_marginStart="10dp"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/jn">
+            </ImageView>
 
-        </ImageView>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/jn">
 
-    </LinearLayout>
+            </ImageView>
+        </LinearLayout>
 
+
+    </ScrollView>
 
 
 
