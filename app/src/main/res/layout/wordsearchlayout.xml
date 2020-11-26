@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCF1F9FF">
+    android:background="#CCF1F9FF"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp">
 
-    <EditText
-        android:id="@+id/inputWordSearch"
-        android:layout_width="350dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search word here"
-        android:maxLines="1"
-        android:drawableEnd="@drawable/ic_outline_search_blue_24">
+        android:layout_marginTop="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:endIconDrawable="@drawable/ic_outline_search_blue_24">
 
-    </EditText>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/inputWordSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_outline_search_blue_24"
+            android:hint="Search word here"
+            android:textColor="@color/gray">
+
+        </androidx.appcompat.widget.AppCompatEditText>
 
 
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Definition:">
 
     </TextView>
 
     <View
+        android:id="@+id/separatorTop"
         android:layout_width="fill_parent"
         android:layout_height="0.2dp"
-        android:id="@+id/separatorTop"
-        android:visibility="visible"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray"
+        android:visibility="visible" />
 
     <com.google.android.material.textview.MaterialTextView
 
@@ -43,30 +55,22 @@
     </com.google.android.material.textview.MaterialTextView>
 
     <View
+        android:id="@+id/separator"
         android:layout_width="fill_parent"
         android:layout_height="0.2dp"
-        android:id="@+id/separator"
-        android:visibility="visible"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray"
+        android:visibility="visible" />
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/searchWordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="30dp"
+        android:text="SEARCH">
 
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/searchWordButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SEARCH"
-            android:layout_gravity="right"
-            android:layout_marginEnd="30dp">
-
-        </com.google.android.material.button.MaterialButton>
-
-
-
-
-
+    </com.google.android.material.button.MaterialButton>
 
 
 </LinearLayout>
