@@ -8,6 +8,8 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.uwi.loanhub.AppConstants.CHECKED
+import com.uwi.loanhub.AppConstants.UNCHECKED
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.User
 
@@ -49,9 +51,9 @@ class LoanListAdapter internal constructor(context: Context, private val loanCli
         holder.checkBoxLoanList.setOnCheckedChangeListener({buttonView, isChecked ->
 
             if (isChecked){
-                compareItemListener.onLoanCompareItemClicked(position, "CHECKED")
+                compareItemListener.onLoanCompareItemClicked(position, CHECKED)
             }else{
-                compareItemListener.onLoanCompareItemClicked(position, "UNCHECKED")
+                compareItemListener.onLoanCompareItemClicked(position, UNCHECKED)
             }
 
 

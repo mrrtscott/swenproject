@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 
 
 /**
- * An old set up of loans list
+ * An old set up of loans list. This class is no longer useful in the application
  */
 class LoanListViewModel : ViewModel(){
 
