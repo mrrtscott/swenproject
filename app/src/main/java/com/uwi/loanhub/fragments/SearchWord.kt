@@ -79,7 +79,10 @@ class SearchWord : DialogFragment() {
 
             glossaryModel.setArray(arrayListOf(searchWordTxt.text.toString()))
             glossaryModel.glossaryDefinition.observe(viewLifecycleOwner, Observer { definition->
-                wordDefinition.text = definition[0].definition
+                if (definition.isNotEmpty()){
+                    wordDefinition.text = definition[0].definition
+                }
+
             })
 
 
