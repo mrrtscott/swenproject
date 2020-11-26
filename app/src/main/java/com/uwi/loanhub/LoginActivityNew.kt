@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.uwi.loanhub.AppConstants.WAIT_TIME
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
 import kotlinx.coroutines.Dispatchers
@@ -132,7 +133,7 @@ class LoginActivityNew : AppCompatActivity() {
 
 
 
-                    Timer().schedule(8000) {
+                    Timer().schedule(WAIT_TIME) {
 
                         startActivity(intent)
 
@@ -143,7 +144,7 @@ class LoginActivityNew : AppCompatActivity() {
                     Toast.makeText(this, "Welcome ".plus(users.get(0).firstName.plus("! Please wait")), Toast.LENGTH_SHORT).show()
                     Handler().postDelayed(Runnable {
                         startWaitBar.visibility = View.GONE
-                    },8000)
+                    },WAIT_TIME)
 
 
 
