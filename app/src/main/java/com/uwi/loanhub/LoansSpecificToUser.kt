@@ -20,6 +20,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.PARISH
+import com.uwi.loanhub.AppConstants.PASSWORD
+import com.uwi.loanhub.AppConstants.USER
+import com.uwi.loanhub.AppConstants.USERNAME
 import com.uwi.loanhub.models.User
 
 
@@ -96,10 +101,10 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
         //Fetching data data from the previous class
         val previousIntent = intent
-        val parsedStringID = previousIntent.getStringExtra("USERNAME")
-        receivedPassword = previousIntent.getStringExtra("PASSWORD")
-        receivedCity = previousIntent.getStringExtra("CITY")
-        receivedParish = previousIntent.getStringExtra("PARISH")
+        val parsedStringID = previousIntent.getStringExtra(USERNAME)
+        receivedPassword = previousIntent.getStringExtra(PASSWORD)
+        receivedCity = previousIntent.getStringExtra(CITY)
+        receivedParish = previousIntent.getStringExtra(PARISH)
 
 
 
@@ -116,16 +121,16 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         //Sending data to the other User Loans Activity
         otherButton.setOnClickListener{
             val intent: Intent = Intent(this, UserLoansActivity::class.java)
-            intent.putExtra("USERNAME", username)
-            intent.putExtra("PASSWORD", receivedPassword)
-            intent.putExtra("CITY", receivedCity)
-            intent.putExtra("PARISH", receivedParish)
+            intent.putExtra(USERNAME, username)
+            intent.putExtra(PASSWORD, receivedPassword)
+            intent.putExtra(CITY, receivedCity)
+            intent.putExtra(PARISH, receivedParish)
             startActivity(intent)
         }
 
         dashboardButton.setOnClickListener {
             val intent: Intent = Intent(this, Dashboard::class.java)
-            intent.putExtra("USER", listOfUser[0])
+            intent.putExtra(USER, listOfUser[0])
             startActivity(intent)
         }
 

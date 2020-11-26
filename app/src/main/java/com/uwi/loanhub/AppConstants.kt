@@ -16,6 +16,8 @@ object AppConstants {
      const val NET_ASSETS = "Total assets"
      const val USERNAME = "USERNAME"
      const val LOANID = "LOANID"
+     const val PASSWORD = "PASSWORD"
+     const val USER = "USER"
 
 
 
