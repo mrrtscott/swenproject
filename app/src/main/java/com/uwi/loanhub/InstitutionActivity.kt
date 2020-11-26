@@ -37,7 +37,10 @@ import com.uwi.loanhub.AppConstants.CITY
 import com.uwi.loanhub.AppConstants.HTTP_PREFIX
 import com.uwi.loanhub.AppConstants.INSTITUTION
 import com.uwi.loanhub.AppConstants.MAIL_PREFIX
+import com.uwi.loanhub.AppConstants.NET_ASSETS
+import com.uwi.loanhub.AppConstants.NET_INCOME
 import com.uwi.loanhub.AppConstants.PARISH
+import com.uwi.loanhub.AppConstants.REVENUE
 import com.uwi.loanhub.AppConstants.TEL_PREFIX
 import com.uwi.loanhub.models.*
 import java.util.*
@@ -175,15 +178,15 @@ class InstitutionActivity : AppCompatActivity() {
             val series3Data = set.mapAs("{ x: 'x', value: 'value3' }")
 
             val series1: Column = column.column(series1Data)
-            series1.name("Revenue")
+            series1.name(REVENUE)
                 .color("#00ff00")
 
             val series2: Column = column.column(series2Data)
-            series2.name("Net income")
+            series2.name(NET_INCOME)
                 .color("#0000ff")
 
             val series3: Column = column.column(series3Data)
-            series3.name("Total assets")
+            series3.name(NET_ASSETS)
                 .color("#ffff00")
 
             column.xAxis(0).orientation(Orientation.TOP)

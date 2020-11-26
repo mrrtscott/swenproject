@@ -12,6 +12,10 @@ object AppConstants {
      const val TEL_PREFIX = "tel"
      const val MAIL_PREFIX = "mailto"
      const val REVENUE = "Revenue"
+     const val NET_INCOME = "Net income"
+     const val NET_ASSETS = "Total assets"
+     const val USERNAME = "USERNAME"
+     const val LOANID = "LOANID"
 
 
 

@@ -14,6 +14,11 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.INSTITUTION
+import com.uwi.loanhub.AppConstants.LOANID
+import com.uwi.loanhub.AppConstants.PARISH
+import com.uwi.loanhub.AppConstants.USERNAME
 import com.uwi.loanhub.fragments.SearchWord
 import com.uwi.loanhub.models.*
 import kotlinx.android.synthetic.main.activity_loan_in_detail.*
@@ -152,16 +157,16 @@ class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListen
 
             likeLoanButton.setOnClickListener {
                 val intent = Intent(this, LoanInterest::class.java)
-                intent.putExtra("USERNAME", username)
-                intent.putExtra("LOANID", loans.get(0).id)
+                intent.putExtra(USERNAME, username)
+                intent.putExtra(LOANID, loans.get(0).id)
                 startActivity(intent)
             }
 
             institutionButton.setOnClickListener {
                 val intent = Intent(this, InstitutionActivity::class.java)
-                intent.putExtra("INSTITUTION", loans[0].institution)
-                intent.putExtra("CITY", city)
-                intent.putExtra("PARISH", parish)
+                intent.putExtra(INSTITUTION, loans[0].institution)
+                intent.putExtra(CITY, city)
+                intent.putExtra(PARISH, parish)
                 startActivity(intent)
             }
 
@@ -244,7 +249,7 @@ class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListen
 
             requirementsButton.setOnClickListener {
                 val intent = Intent(this, RequirementActivity::class.java)
-                intent.putExtra("INSTITUTION", loans[0].institution)
+                intent.putExtra(INSTITUTION, loans[0].institution)
                 startActivity(intent)
             }
 
