@@ -20,9 +20,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.uwi.loanhub.AppConstants.CHECKED
 import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.LOANID
+import com.uwi.loanhub.AppConstants.LOANID_LOANONE
+import com.uwi.loanhub.AppConstants.LOANID_LOANTWO
+import com.uwi.loanhub.AppConstants.LOAN_ONE
+import com.uwi.loanhub.AppConstants.LOAN_TWO
 import com.uwi.loanhub.AppConstants.PARISH
 import com.uwi.loanhub.AppConstants.PASSWORD
+import com.uwi.loanhub.AppConstants.UNCHECKED
 import com.uwi.loanhub.AppConstants.USER
 import com.uwi.loanhub.AppConstants.USERNAME
 import com.uwi.loanhub.models.User
@@ -199,12 +206,12 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
             loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
                 if (compareList.size == 2) {
                     val intent: Intent = Intent(this, CompareLoans::class.java)
-                    intent.putExtra("LOANID_LOANONE", loans[compareList[0]].id.toString())
-                    intent.putExtra("LOANID_LOANTWO", loans[compareList[1]].id.toString())
-                    intent.putExtra("USERNAME", username)
-                    intent.putExtra("PASSWORD", receivedPassword)
-                    intent.putExtra("LOAN_ONE", loans[compareList[0]])
-                    intent.putExtra("LOAN_TWO", loans[compareList[1]])
+                    intent.putExtra(LOANID_LOANONE, loans[compareList[0]].id.toString())
+                    intent.putExtra(LOANID_LOANTWO, loans[compareList[1]].id.toString())
+                    intent.putExtra(USERNAME, username)
+                    intent.putExtra(PASSWORD, receivedPassword)
+                    intent.putExtra(LOAN_ONE, loans[compareList[0]])
+                    intent.putExtra(LOAN_TWO, loans[compareList[1]])
 
                     startActivity(intent)
                 } else{
@@ -248,10 +255,10 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
             R.id.menu_loans -> {
 
                 val intent: Intent = Intent(this, UserLoansActivity::class.java)
-                intent.putExtra("USERNAME", username)
-                intent.putExtra("PASSWORD", receivedPassword)
-                intent.putExtra("CITY", receivedCity)
-                intent.putExtra("PARISH", receivedParish)
+                intent.putExtra(USERNAME, username)
+                intent.putExtra(PASSWORD, receivedPassword)
+                intent.putExtra(CITY, receivedCity)
+                intent.putExtra(PARISH, receivedParish)
                 startActivity(intent) }
 
             R.id.menu_settings -> {
@@ -284,10 +291,10 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
         loanInstitutionViewModel.loansSpecificToUser.observe(this, Observer { loans ->
             println(loans[position].id)
             val intent: Intent = Intent(this, LoanInDetail::class.java)
-            intent.putExtra("LOANID", loans[position].id)
-            intent.putExtra("USERNAME", username)
-            intent.putExtra("CITY", receivedCity)
-            intent.putExtra("PARISH", receivedParish)
+            intent.putExtra(LOANID, loans[position].id)
+            intent.putExtra(USERNAME, username)
+            intent.putExtra(CITY, receivedCity)
+            intent.putExtra(PARISH, receivedParish)
             startActivity(intent)
         })
     }
@@ -302,16 +309,16 @@ class LoansSpecificToUser : AppCompatActivity(), OnLoanClickListener, OnCompareL
 
 
 
-        if (compareList.size > 1 && action.equals("CHECKED")){
+        if (compareList.size > 1 && action.equals(CHECKED)){
             Toast.makeText(this, "Too many loans selected", Toast.LENGTH_LONG).show()
-        } else if(compareList.size < 3 && action.equals("CHECKED")){
+        } else if(compareList.size < 3 && action.equals(CHECKED)){
             if(!compareList.contains(position)){
                 compareList.add(position)
             }
 
         }
 
-        if(action.equals("UNCHECKED")){
+        if(action.equals(UNCHECKED)){
             compareList.remove(position)
         }
 

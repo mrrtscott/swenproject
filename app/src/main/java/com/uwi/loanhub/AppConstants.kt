@@ -18,6 +18,10 @@ object AppConstants {
      const val LOANID = "LOANID"
      const val PASSWORD = "PASSWORD"
      const val USER = "USER"
+     const val LOAN_ONE = "LOAN_ONE"
+     const val LOAN_TWO = "LOAN_TWO"
+     const val LOANID_LOANONE = "LOANID_LOANONE"
+     const val LOANID_LOANTWO = "LOANID_LOANTWO"
 
 
 

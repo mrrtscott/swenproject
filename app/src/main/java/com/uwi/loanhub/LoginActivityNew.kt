@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.PARISH
+import com.uwi.loanhub.AppConstants.PASSWORD
+import com.uwi.loanhub.AppConstants.USERNAME
 import com.uwi.loanhub.AppConstants.WAIT_TIME
 import com.uwi.loanhub.models.User
 import com.uwi.loanhub.models.UserViewModel
@@ -123,10 +127,10 @@ class LoginActivityNew : AppCompatActivity() {
                 if (users.size == 1) //This is a second factor check to ensure that only one user was found with the username and password combination
                 {
                     val intent = Intent (this,LoansSpecificToUser::class.java )
-                    intent.putExtra( "USERNAME", users[0].username)
-                    intent.putExtra( "CITY", users[0].city)
-                    intent.putExtra( "PARISH", users[0].parish)
-                    intent.putExtra( "PASSWORD", functions.encryptSys(editText_password_Login_Activity.text.toString()))
+                    intent.putExtra( USERNAME, users[0].username)
+                    intent.putExtra( CITY, users[0].city)
+                    intent.putExtra( PARISH, users[0].parish)
+                    intent.putExtra( PASSWORD, functions.encryptSys(editText_password_Login_Activity.text.toString()))
 
 
 
