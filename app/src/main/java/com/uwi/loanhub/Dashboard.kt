@@ -23,6 +23,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.uwi.loanhub.AppConstants.DASHBOARD_DELAY
+import com.uwi.loanhub.AppConstants.DELAY
 import com.uwi.loanhub.models.User
 import java.time.*
 
@@ -47,7 +48,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
 
     var handler: Handler = Handler()
     var runnable: Runnable? = null
-    var delay = 10000
+    var delay = DELAY
     val random = Random()
 
 
@@ -56,7 +57,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         setContentView(R.layout.activity_dashboard)
         val previousIntent = intent
 
-        //Gets the user data strcuture whcih has been based from the previous activity
+        //Gets the user data structure which has been based from the previous activity
         val user = previousIntent.getParcelableExtra<User>("USER")
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

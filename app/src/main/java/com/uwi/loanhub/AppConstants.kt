@@ -3,6 +3,7 @@ package com.uwi.loanhub
 object AppConstants {
      const val WAIT_TIME = 8000L
      const val DASHBOARD_DELAY = 9900L
+     const val DELAY = 10000
      const val CHECKED = "CHECKED"
      const val UNCHECKED = "UNCHECKED"
      const val INSTITUTION  = "INSTITUTION"
