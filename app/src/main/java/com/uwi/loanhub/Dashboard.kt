@@ -24,6 +24,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.uwi.loanhub.AppConstants.DASHBOARD_DELAY
 import com.uwi.loanhub.AppConstants.DELAY
+import com.uwi.loanhub.AppConstants.USER
 import com.uwi.loanhub.models.User
 import java.time.*
 
@@ -58,7 +59,7 @@ class Dashboard : AppCompatActivity(),NavigationView.OnNavigationItemSelectedLis
         val previousIntent = intent
 
         //Gets the user data structure which has been based from the previous activity
-        val user = previousIntent.getParcelableExtra<User>("USER")
+        val user = previousIntent.getParcelableExtra<User>(USER)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
