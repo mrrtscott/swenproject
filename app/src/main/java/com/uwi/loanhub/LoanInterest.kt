@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.uwi.loanhub.AppConstants.LOANID
+import com.uwi.loanhub.AppConstants.USERNAME
 import com.uwi.loanhub.models.LoanInstitution
 import com.uwi.loanhub.models.LoanInstitutionViewModel
 
@@ -33,8 +35,8 @@ class LoanInterest : AppCompatActivity(), OnLoanClickListener {
         recycleView.layoutManager = LinearLayoutManager(this)
 
         val previousIntent = intent
-        val LoanID = previousIntent.getIntExtra("LOANID", 0)
-        val username = previousIntent.getStringExtra("USERNAME")
+        val LoanID = previousIntent.getIntExtra(LOANID, 0)
+        val username = previousIntent.getStringExtra(USERNAME)
 
 
 

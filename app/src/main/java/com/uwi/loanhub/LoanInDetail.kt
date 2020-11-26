@@ -72,11 +72,11 @@ class LoanInDetail : AppCompatActivity(), SearchWord.OnFragmentInteractionListen
 
         //Receiving data from previous activity
         val previousIntent = intent
-        val LoanID = previousIntent.getIntExtra("LOANID", 0)
-        val username = previousIntent.getStringExtra("USERNAME")
+        val LoanID = previousIntent.getIntExtra(LOANID, 0)
+        val username = previousIntent.getStringExtra(USERNAME)
 
-        city = previousIntent.getStringExtra("CITY")
-        parish = previousIntent.getStringExtra("PARISH")
+        city = previousIntent.getStringExtra(CITY)
+        parish = previousIntent.getStringExtra(PARISH)
 
 
         requirementsButton = findViewById(R.id.requirementsButton)
