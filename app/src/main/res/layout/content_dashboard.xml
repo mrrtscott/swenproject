@@ -171,7 +171,9 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/scotiabank"></ImageView>
+                android:src="@drawable/scotiabank">
+
+            </ImageView>
 
             <ImageView
                 android:layout_width="130dp"
@@ -192,7 +194,10 @@
             <ImageView
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/sagicormg"></ImageView>
+                android:layout_marginStart="10dp"
+                android:src="@drawable/sagicormg">
+
+            </ImageView>
 
             <ImageView
                 android:layout_width="130dp"
@@ -209,6 +214,22 @@
                 android:src="@drawable/jn">
 
             </ImageView>
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/firstglobal">
+
+            </ImageView>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/cibc">
+
+            </ImageView>
+
         </LinearLayout>
 
 
