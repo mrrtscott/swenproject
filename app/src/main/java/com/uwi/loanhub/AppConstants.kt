@@ -9,6 +9,9 @@ object AppConstants {
      const val CITY = "CITY"
      const val PARISH = "PARISH"
      const val HTTP_PREFIX = "http"
+     const val TEL_PREFIX = "tel"
+     const val MAIL_PREFIX = "mailto"
+     const val REVENUE = "Revenue"
 
 
 

@@ -34,8 +34,11 @@ import com.anychart.data.Set
 import com.anychart.enums.LegendLayout
 import com.anychart.enums.Orientation
 import com.uwi.loanhub.AppConstants.CITY
+import com.uwi.loanhub.AppConstants.HTTP_PREFIX
 import com.uwi.loanhub.AppConstants.INSTITUTION
+import com.uwi.loanhub.AppConstants.MAIL_PREFIX
 import com.uwi.loanhub.AppConstants.PARISH
+import com.uwi.loanhub.AppConstants.TEL_PREFIX
 import com.uwi.loanhub.models.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -130,7 +133,7 @@ class InstitutionActivity : AppCompatActivity() {
 
                 websiteButton.setOnClickListener {
 
-                    if(institution[0].website.startsWith("http")){
+                    if(institution[0].website.startsWith(HTTP_PREFIX)){
                         intent = Intent(Intent.ACTION_VIEW)
                         intent.data = Uri.parse(institution[0].website)
                         startActivity(intent)
@@ -141,7 +144,7 @@ class InstitutionActivity : AppCompatActivity() {
                 phoneButton.setOnClickListener {
                     if (institution[0].phone.isNotEmpty()){
                         intent = Intent(Intent.ACTION_DIAL)
-                        intent.data = Uri.fromParts("tel", institution[0].phone , null)
+                        intent.data = Uri.fromParts(TEL_PREFIX, institution[0].phone , null)
                         startActivity(intent)
 
                     }
@@ -150,7 +153,7 @@ class InstitutionActivity : AppCompatActivity() {
                 emailButton.setOnClickListener {
                     if(institution[0].email.isNotEmpty()){
                         intent = Intent(Intent.ACTION_SENDTO)
-                        intent.data = Uri.fromParts("mailto", institution[0].email, null)
+                        intent.data = Uri.fromParts(MAIL_PREFIX, institution[0].email, null)
                         intent.putExtra(Intent.EXTRA_SUBJECT, institution[0].name)
                         startActivity(Intent.createChooser(intent,"Enquire about loan"))
 
